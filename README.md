@@ -33,7 +33,7 @@ GUNDOGDU_PUBLIC_API_ORIGIN yerel router’ın public GET proxy kaynağını değ
 
 Yeni koy/gün doğumu SVG işareti, açık/koyu varyantı ve favicon assets/brand/ içinde. Mevcut işletme logosu doğrulanamadığı için çizildi.
 
-İki gerçek Gideros fotoğrafı Makalp / Commons, CC BY-SA 3.0. Arşiv tarihi, atıf ve dönüşümler /galeri/#kaynaklar altında görünür. Oda/yemek fotoğrafı gibi sunulmaz. Görseller yerel WebP, fontlar Türkçe karakterleri içeren yerel WOFF2; içerik görselleri lazy loading kullanır.
+İki gerçek Gideros fotoğrafı Makalp / Commons, CC BY-SA 3.0. Lisans/kaynak ve dönüşüm atıfları tüm sayfalarda altbilgide açılabilen kısa «Fotoğraf kredileri» alanındadır. Oda/yemek fotoğrafı gibi sunulmaz. Görseller yerel WebP, fontlar Türkçe karakterleri içeren yerel WOFF2; içerik görselleri lazy loading kullanır.
 
 BlackSea’den Canvas çekirdeği, koordinat/scheduler/random yardımcıları, offshore ve foam alındı. Gideros geometrisi/ayarları ayrıdır. 20 fps, 650 bin piksel bütçesi, azaltılmış hareket/düşük donanım/ağır çizimde statik fotoğraf ve kullanıcı durdurma desteği vardır.
 

@@ -68,7 +68,7 @@ function photo(int $number, string $class = '', bool $priority = false, string $
     ?><img class="<?= esc($class) ?>" src="/assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp" srcset="/assets/img/gideros-<?= $number ?>-720.webp 720w, /assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp <?= $largest ?>w" sizes="<?= $class === 'hero-photo' ? '100vw' : '(max-width: 760px) 100vw, 55vw' ?>" width="<?= $largest ?>" height="<?= $number === 1 ? 1228 : 941 ?>" alt="<?= esc(site_text($alt)) ?>" <?= $priority ? 'fetchpriority="high"' : 'loading="lazy"' ?> decoding="async"><?php
 }
 function photo_credit(): void { ?>
-<a class="photo-credit" href="/galeri/#kaynaklar">Gideros Koyu · Makalp / CC BY-SA 3.0 <?= icon('arrow') ?></a>
+<a class="photo-credit" href="#foto-atiflari">Gideros Koyu · Makalp / CC BY-SA 3.0 <?= icon('arrow') ?></a>
 <?php }
 function subhero(string $eyebrow, string $title, string $text, int $number = 2): void { ?>
 <section class="subhero"><div class="shell"><p class="eyebrow"><?= esc($eyebrow) ?></p><h1><?= $title ?></h1><p class="lede"><?= esc($text) ?></p></div><figure><?php photo($number, '', true); ?><figcaption>Gideros Koyu · Bölge fotoğrafı</figcaption></figure></section>
@@ -114,7 +114,12 @@ function page_bottom(): void {
     if (can_reserve('rooms')) $widget['publicSurfaces'][]='accommodation';
     if (can_reserve('tables')) $widget['publicSurfaces'][]='food_service';
     if ($c['map']) $widget['publicSurfaces'][]='directions';
-    ?></main><footer class="site-footer"><div class="shell footer-main"><a class="brand" href="/"><img src="/assets/brand/mark.svg" width="57" height="52" alt=""><span class="brand-copy"><strong>Gündoğdu</strong><small>PANSİYON &amp; RESTORAN</small></span></a><p>Denizin sesi, ormanın nefesi.<br>Gideros’ta küçük bir mola.</p><nav aria-label="Alt gezinme"><?php nav_links(''); ?></nav></div><div class="shell footer-bottom"><small>© <?= date('Y') ?> <?= esc(brand_name()) ?></small><a href="/galeri/#kaynaklar">Fotoğraf kaynakları &amp; kullanım</a><span>Gideros · Cide</span></div></footer>
+    ?></main><footer class="site-footer"><div class="shell footer-main"><a class="brand" href="/"><img src="/assets/brand/mark.svg" width="57" height="52" alt=""><span class="brand-copy"><strong>Gündoğdu</strong><small>PANSİYON &amp; RESTORAN</small></span></a><p>Denizin sesi, ormanın nefesi.<br>Gideros’ta küçük bir mola.</p><nav aria-label="Alt gezinme"><?php nav_links(''); ?></nav></div><div class="shell footer-bottom"><small>© <?= date('Y') ?> <?= esc(brand_name()) ?></small><details class="photo-attributions" id="foto-atiflari"><summary>Fotoğraf kredileri</summary><div class="photo-attributions__details">
+Gideros Koyu arşiv fotoğrafları: Makalp ·
+<?php foreach (scenic_gallery() as $i=>$photo): ?><a href="<?= esc($photo['source']) ?>" target="_blank" rel="noopener">Gideros Bay<?= $i+1 ?></a><?= $i === 0 ? ' · ' : '' ?><?php endforeach; ?>
+· <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="license noopener">CC BY-SA 3.0</a>.
+WebP boyutlandırması, ekran ve sosyal paylaşım kırpması yapıldı; türevler aynı lisansla sunulur.
+</div></details><span>Gideros · Cide</span></div></footer>
 <dialog class="lightbox" aria-label="Fotoğraf görüntüleyici"><button class="lightbox-close" type="button" aria-label="Fotoğrafı kapat"><?= icon('close') ?></button><figure><img alt=""><figcaption></figcaption></figure><div class="lightbox-nav"><button type="button" data-photo-prev aria-label="Önceki fotoğraf">←</button><span data-photo-count></span><button type="button" data-photo-next aria-label="Sonraki fotoğraf">→</button></div></dialog>
 <template id="public-icons"><?php foreach (['bed','plate','arrow','plus','phone','mail','pin'] as $name): ?><span data-icon="<?= esc($name) ?>"><?= icon($name) ?></span><?php endforeach; ?></template>
 <script type="application/json" id="widget-config"><?= json_html($widget) ?></script>

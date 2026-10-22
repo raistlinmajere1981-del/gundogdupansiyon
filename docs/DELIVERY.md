@@ -7,7 +7,7 @@ Site tamamlandı. Canlı yayın, commit ve push yapılmadı.
 - Ana sayfa, Odalar, Restoran, Galeri, İletişim ve HTTP 404.
 - Koyun geniş fotoğrafı; sıcak kireç, koyu orman, kum paleti; serif başlıklar, sade mobil gezinme.
 - Yeni özgün SVG logo, açık/koyu varyant ve favicon. Mevcut logo doğrulanamadı.
-- Makalp’in gerçek Gideros Bay1/Bay2 fotoğrafları, CC BY-SA 3.0; 2007 tarihi ve atıflar galeri kaynaklarında. [Kaynak kaydı](SOURCES.md).
+- Makalp’in gerçek Gideros Bay1/Bay2 fotoğrafları, CC BY-SA 3.0; 2007 arşiv tarihi kaynak kaydında; kısa kaynak/lisans atıfları altbilgide açılır. [Kaynak kaydı](SOURCES.md).
 - BlackSea Canvas çekirdeği, offshore/foam; Gideros’a özgü su/kıyı geometrisi, 26 yüzey parçası ve 2 küçük köpük rotası. Daha düşük hız/şiddet, 20/15 fps, 650 bin piksel, statik ve azaltılmış hareket desteği.
 - Canonical widget değişmeden; siteye özel tipografi, panel, kart, buton, takvim ve saat teması. Yayın/katalog/capability kapıları, klavye ve odak desteği.
 - business/rooms/tables/menu/marketing public API bağlantıları. İletişim, harita, WhatsApp, sosyal bağlantılar ve JSON-LD aynı işletme projeksiyonundan.

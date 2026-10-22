@@ -17,7 +17,7 @@ Yeni özgün SVG çizildi: iki kıyı, koy/ufuk ve doğan güneş. Coğrafi hari
 
 İki dosya sayfasında yazar, kendi eseri ve lisans bilgileri kontrol edildi. Fotoğraflar **30 Haziran 2007 tarihli gerçek Gideros arşiv fotoğraflarıdır**. Güncel işletme görünümü, oda/restoran görseli veya manzara garantisi olarak sunulmaz.
 
-Bay1 için 720/1200/1818 px WebP, Bay2 için 720/1275 px WebP, ilk fotoğraftan 1200×630 sosyal paylaşım kırpması hazırlandı. İçerik/renk değiştirilmedi; boyutlandırma, yeniden kodlama ve ekran kırpması yapıldı. Fotoğraf türevleri aynı CC BY-SA 3.0 lisansıyla sunulur. Yazar/kaynak/lisans/değişiklik atfı /galeri/#kaynaklar altında görünür. Atıf, fotoğrafçının işletmeyi desteklediği anlamına gelmez.
+Bay1 için 720/1200/1818 px WebP, Bay2 için 720/1275 px WebP, ilk fotoğraftan 1200×630 sosyal paylaşım kırpması hazırlandı. İçerik/renk değiştirilmedi; boyutlandırma, yeniden kodlama ve ekran kırpması yapıldı. Fotoğraf türevleri aynı CC BY-SA 3.0 lisansıyla sunulur. Yazar/kaynak/lisans/değişiklik atfı tüm sayfalardaki altbilgi «Fotoğraf kredileri» alanında açılarak görüntülenebilir. Atıf, fotoğrafçının işletmeyi desteklediği anlamına gelmez.
 
 İşletme görselleri business.gallery üzerinden yayınlanınca “İşletmeden” olarak ayrılır. Facebook veya turizm dizinlerinden izinsiz işletme fotoğrafı alınmadı.
 
@@ -52,4 +52,4 @@ BlackSea read-only kaynaklarından `language.js` endpoint localization algoritma
 
 Pannellum 2.5.6 (`assets/vendor/pannellum/`) BlackSea’nin kullandığı sürümdür; JS/CSS dağıtımı jsDelivr npm paketinden alınıp yerelleştirildi. MIT lisansı `assets/vendor/pannellum/LICENSE` içinde dağıtılır. Test videosu ffmpeg ile yalnız geçici fixture dizininde üretilir; gerçek işletme medyası değildir ve deploy edilmez.
 
-Galeri artık bölge fotoğraflarını fallback olarak kullanmaz. Bölge fotoğraf atıfları kapak/bölge bölümlerinde ve `/galeri/#kaynaklar` altında kalır. Oda, masa, ürün ve işletme galeri içeriği yalnız yayınlı public API projeksiyonlarından gelir.
+Galeri artık bölge fotoğraflarını fallback olarak kullanmaz. Bölge fotoğraf atıfları kapak/bölge bölümlerinde ve altbilgide açılabilir «Fotoğraf kredileri» alanında kalır. Oda, masa, ürün ve işletme galeri içeriği yalnız yayınlı public API projeksiyonlarından gelir.

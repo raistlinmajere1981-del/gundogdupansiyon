@@ -162,6 +162,15 @@ try {
   await page.setViewportSize({width:390,height:844});await visit(origin+'/');
   await page.locator('.menu-toggle').click();await expect(page.locator('#mobile-nav')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('#mobile-nav')).toBeHidden();check('Mobile menu keyboard open/close and focus');
   await visit(origin+'/galeri/');
+  await expect(page.locator('.photo-sources, .source-grid, #kaynaklar')).toHaveCount(0);
+  await expect(page.locator('.photo-attributions summary')).toHaveText('Fotoğraf kredileri');
+  await expect(page.locator('.photo-attributions__details')).toBeHidden();
+  await page.locator('.photo-attributions summary').click();
+  await expect(page.locator('.photo-attributions__details')).toBeVisible();
+  await expect(page.locator('.photo-attributions__details a[href*="commons.wikimedia.org"]')).toHaveCount(2);
+  await expect(page.locator('.photo-attributions__details a[rel*=license]')).toHaveCount(1);
+  await page.locator('.photo-attributions summary').click();
+  check('Gallery omits photo-source articles; compact footer credit remains accessible and normally collapsed');
   assert.equal(await page.locator('.gallery-item:visible').count(),1);
   await page.locator('.gallery-item:visible button').click();await expect(page.locator('.lightbox')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('.lightbox')).toBeHidden();check('Published-only gallery + native modal lightbox + Escape');
   await visit(origin+'/odalar/');
