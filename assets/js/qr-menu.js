@@ -16,7 +16,7 @@
   };
   const formatterCache = new Map();
 
-  const normalizeImageUrl = value => window.GundogduPublicData.mediaUrl(value);
+  const normalizeImageUrl = value => window.GundogduPublicData.menuImageUrl(value);
   const formatPrice = (price, currency) => {
     if (price === null || price === undefined || price === "" || !Number.isFinite(Number(price)) || Number(price) < 0) return "";
     if (!/^[A-Z]{3}$/.test(String(currency || ""))) return "";

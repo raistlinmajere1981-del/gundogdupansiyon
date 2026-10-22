@@ -4,6 +4,43 @@
 
   const labels = {indoor:'İç mekân',outdoor:'Açık alan',terrace:'Teras / veranda',window_side:'Cam kenarı',sea_view:'Deniz manzarası',garden_view:'Bahçe manzarası',quiet_area:'Sakin bölüm',wheelchair_friendly:'Tekerlekli sandalye erişimine uygun',unspecified:'Belirtilmedi',non_smoking:'Sigara içilmez',smoking_allowed:'Sigara içilebilir',outdoor_only:'Yalnız açık alanda sigara içilebilir'};
   const label = value => t(labels[value] || String(value));
+  // Match room-detail icons: static, known SVG paths; published text is never parsed as markup.
+  const iconPaths = {
+    users: '<circle cx="8" cy="7" r="2.5"/><circle cx="16.5" cy="8" r="2"/><path d="M3 20v-2c0-3 2-5 5-5s5 2 5 5v2M13 20v-1c0-2.5 1.5-4 3.5-4S20 16.5 20 19v1"/>',
+    area: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 10h18M10 10v11M10 3v7"/>',
+    indoor: '<path d="m3 11 9-8 9 8M5 10v11h14V10M9 21v-8h6v8"/>',
+    outdoor: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+    terrace: '<path d="M3 11h18M5 11V6h14v5M7 14v6M17 14v6M4 20h16"/>',
+    window_side: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/>',
+    sea_view: '<path d="M3 8c2 0 2 1.5 4 1.5S9 8 11 8s2 1.5 4 1.5S17 8 19 8s2 1.5 2 1.5M3 14c2 0 2 1.5 4 1.5S9 14 11 14s2 1.5 4 1.5S17 14 19 14s2 1.5 2 1.5"/>',
+    garden_view: '<path d="M20 4C11 4 5 8 5 15c0 3 2 5 5 5 7 0 10-7 10-16ZM5 20c3-5 7-8 12-11"/>',
+    quiet_area: '<path d="M4 11v2a8 8 0 0 0 14 5M6 7a8 8 0 0 1 14 5M3 3l18 18"/>',
+    wheelchair_friendly: '<circle cx="10" cy="4" r="2"/><path d="M10 7v5h5l3 6M10 9H7M9 12l-2 5M8 21a5 5 0 1 1 2-9"/>',
+    smoking_allowed: '<path d="M3 16h13v4H3zM18 16h3v4h-3zM7 13c0-3 4-2 4-5 0-2-2-2-2-4"/>',
+    non_smoking: '<path d="M3 16h13v4H3zM18 16h3v4h-3zM7 13c0-3 4-2 4-5 0-2-2-2-2-4M4 4l16 16"/>',
+    outdoor_only: '<path d="M3 16h13v4H3zM18 16h3v4h-3zM7 13c0-3 4-2 4-5 0-2-2-2-2-4M3 3l18 18"/>'
+  };
+  const svgIcon = kind => {
+    const icon = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    icon.setAttribute('viewBox','0 0 24 24');
+    icon.setAttribute('aria-hidden','true');
+    icon.setAttribute('focusable','false');
+    icon.setAttribute('fill','none');
+    icon.setAttribute('stroke','currentColor');
+    icon.setAttribute('stroke-width','1.7');
+    icon.setAttribute('stroke-linecap','round');
+    icon.setAttribute('stroke-linejoin','round');
+    icon.innerHTML = iconPaths[kind] || '<circle cx="12" cy="12" r="8"/>';
+    return icon;
+  };
+  const initIcons = () => {
+    document.querySelectorAll('[data-table-icon]').forEach(node => {
+      if (node.dataset.tableIcon === 'smoking') return;
+      node.classList.add('amenity-icon');
+      node.replaceChildren(svgIcon(node.dataset.tableIcon));
+    });
+  };
+  initIcons();
   const normalizeMediaUrl = value => window.GundogduPublicData.mediaUrl(value);
 
   const mediaByKind = (table, kind) => (Array.isArray(table.media) ? table.media : [])
@@ -21,7 +58,11 @@
     root.replaceChildren();
     for (const feature of Array.isArray(table.features) ? table.features : []) {
       const item = document.createElement('div'); item.className = 'amenity-item';
-      item.textContent = label(feature); root.append(item);
+      item.dataset.tableFeature = String(feature);
+      const mark = document.createElement('span'); mark.className = 'amenity-icon';
+      mark.append(svgIcon(String(feature)));
+      const title = document.createElement('span'); title.textContent = label(feature);
+      item.append(mark,title); root.append(item);
     }
     root.hidden = !root.childNodes.length;
   };
@@ -171,8 +212,19 @@
     }
     setText("[data-table-capacity]", Number(table.capacity) > 0 ? t("{0} kişi", {0:Math.trunc(Number(table.capacity))}) : "");
     setText('[data-table-area]', table.area || '');
-    setText('[data-table-smoking]', table.smoking_policy ? t('Sigara politikası') + ': ' + label(table.smoking_policy) : '');
-    setText('[data-table-id]', t('Masa kimliği') + ': ' + String(table.id));
+    const policy = String(table.smoking_policy || '').trim();
+    setText('[data-table-smoking]', policy ? label(policy) : '');
+    const smokingRow = document.querySelector('[data-table-smoking-container]');
+    if (smokingRow) smokingRow.hidden = !policy;
+    const smokingIcon = document.querySelector('[data-table-icon="smoking"]');
+    if (smokingIcon) {
+      smokingIcon.classList.add('amenity-icon');
+      smokingIcon.replaceChildren(...(policy ? [svgIcon(policy)] : []));
+    }
+    const cap = document.querySelector('[data-table-capacity-item]');
+    if (cap) cap.hidden = !(Number(table.capacity) > 0);
+    const area = document.querySelector('[data-table-area-item]');
+    if (area) area.hidden = !String(table.area || '').trim();
 
     renderFeatureGrid(table);
 
@@ -225,7 +277,7 @@
     document.querySelectorAll('[data-table-media-section], [data-table-photo-gallery], [data-table-media-card]').forEach(node => { node.hidden = true; });
     const loading = document.querySelector('[data-table-detail-loading]');
     if (loading) loading.hidden = false;
-    document.querySelectorAll('[data-table-name], [data-table-description], [data-table-area], [data-table-capacity], [data-table-smoking], [data-table-id]').forEach(node => { node.textContent = ''; });
+    document.querySelectorAll('[data-table-name], [data-table-description], [data-table-area], [data-table-capacity], [data-table-smoking]').forEach(node => { node.textContent = ''; });
     const reserve = document.querySelector('[data-table-reserve]');
     reserve.hidden = true;
     ['yaResourceId','yaResourceName','yaImageUrl'].forEach(key => delete reserve.dataset[key]);

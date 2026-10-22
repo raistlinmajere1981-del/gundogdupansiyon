@@ -193,7 +193,12 @@ try {
     await expect(page.locator('[data-table-area]')).toHaveText(tableFixture.area);
     await expect(page.locator('[data-table-capacity]')).toHaveText('4 kişi');
     await expect(page.locator('[data-table-description]')).toHaveText(tableFixture.description);
-    await expect(page.locator('[data-table-id]')).toContainText(tableFixture.id);
+    await expect(page.locator('[data-table-id]')).toHaveCount(0);
+    await expect(page.locator('[data-table-feature-list] [data-table-feature="window_side"] svg')).toHaveCount(1);
+    await expect(page.locator('[data-table-icon="users"] svg')).toHaveCount(1);
+    await expect(page.locator('[data-table-icon="area"] svg')).toHaveCount(1);
+    await expect(page.locator('[data-table-icon="smoking"] svg')).toHaveCount(1);
+    await expect(page.locator('.table-smoking')).toBeVisible();
     await expect(page.locator('[data-table-smoking]')).toContainText('Sigara içilmez');
     await expect(page.locator('[data-table-feature-list]')).toContainText('Cam kenarı');
   }
@@ -255,7 +260,8 @@ try {
   await page.keyboard.press('Escape');
   await page.locator('[data-open-video]').click(); await expect(page.locator('[data-room-video]')).toHaveAttribute('controls','');
   await page.locator('[data-room-video]').evaluate(async video => { await video.play(); }); await page.waitForFunction(()=>document.querySelector('[data-room-video]').currentTime>0); await page.keyboard.press('Escape');
-  assert.equal(await page.locator('[data-room-video]').evaluate(video=>video.paused),true);
+  await expect(page.locator('[data-video-dialog]')).toBeHidden();
+  await expect.poll(()=>page.locator('[data-room-video]').evaluate(video=>video.paused)).toBe(true);
   publish(moduleRoot,'room_catalog',{enabled:false,rooms:[]});
   await page.evaluate(()=>window.GundogduPublicData.load());
   await expect(page.locator('[data-room-detail-content]')).toBeHidden();
@@ -275,7 +281,10 @@ try {
   await expect(page.locator('.qr-menu-item')).toHaveCount(2);
   await page.unroute('**/yardimci-asistan/api/menu.php');
   check('Canonical menu endpoint 200 with omitted enabled still publishes items, while explicitly disabled menus stay hidden');
-  await visit(origin+'/restoran/'); await page.locator('#menu [data-menu-link]').click();
+  await page.setViewportSize({width:1440,height:1000});
+  await visit(origin+'/restoran/');
+  await expect(page.locator('#menu, [data-public-menu]')).toHaveCount(0);
+  await page.locator('.desktop-nav [data-menu-link]').click();
   await expect(page).toHaveURL(/\/qr-menu\//); await expect(page.locator('.qr-menu-item')).toHaveCount(2);
   await page.locator('[data-category-id=b]').click(); await expect(page.locator('.qr-menu-item')).toHaveCount(1);
   await expect(page.locator('.qr-menu-item')).toContainText('İkinci');
@@ -283,6 +292,17 @@ try {
   await expect(page.locator('[data-menu-link]:visible')).toHaveCount(0); await expect(page.locator('.qr-menu-item')).toHaveCount(0);
   await expect(page.locator('[data-qr-menu-status]')).toContainText('yayında değil');
   publish(moduleRoot,'menu',menuFixture);
+  // Canonical public menu may publish an inline image instead of a media path.
+  const inlineProductImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEklEQVR4nGNUTo1kYGBgYgADAAqAAOXu6/thAAAAAElFTkSuQmCC';
+  publish(moduleRoot,'menu',{...menuFixture,items:[{...menuFixture.items[0],image_url:inlineProductImage},menuFixture.items[1]]});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('.qr-menu-item img')).toHaveAttribute('src',inlineProductImage);
+  await page.waitForFunction(()=>[...document.querySelectorAll('.qr-menu-item img')].every(img=>img.complete&&img.naturalWidth>0));
+  publish(moduleRoot,'menu',{...menuFixture,items:[{...menuFixture.items[0],image_url:'data:image/svg+xml;base64,PHN2Zz48L3N2Zz4='},menuFixture.items[1]]});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('.qr-menu-item img')).toHaveCount(0);
+  publish(moduleRoot,'menu',menuFixture);
+  check('Inline published PNG QR product photo loads; SVG data payload is rejected');
   publish(moduleRoot,'business_context',{...businessFixture,gallery:[]});
   await visit(origin+'/galeri/'); await expect(page.locator('[data-public-gallery] img')).toHaveCount(0);
   await expect(page.locator('.gallery-note')).toBeVisible(); await expect(page.locator('[data-gallery-filter]')).toHaveCount(0);
@@ -363,12 +383,14 @@ try {
   await expect(page.locator('.ya-widget-request-success')).toBeVisible();check('Room request date picker, preserved 503 draft, same retry idempotency key, isolated fixture receipt + room context');
   await screenshot(page,'widget-mobile-success');
   await page.keyboard.press('Escape');await expect(page.locator('.ya-widget-panel')).toHaveCount(0);
-  await visit(origin+'/restoran/');await expect(page.locator('.menu-grid')).toContainText('YEREL TEST Yemek');
+  await visit(origin+'/restoran/');await expect(page.locator('#menu, [data-public-menu], .menu-grid')).toHaveCount(0);
+  await visit(origin+'/qr-menu/');await expect(page.locator('.qr-menu-item')).toContainText('YEREL TEST Yemek');
+  await visit(origin+'/restoran/');
   await page.locator('.table-card a').first().click(); await page.locator('[data-table-reserve]').click();await expect(page.locator('.ya-widget-panel')).toContainText(tableFixture.name);await expect(page.locator('[data-ya-restaurant-date]')).toBeVisible();
   await page.locator('[data-ya-open-time-picker]').click();await expect(page.locator('[data-ya-time-popover]')).toBeVisible();
   await screenshot(page,'widget-mobile-time');
   await page.locator('[data-ya-time-hour="19"]').click();await page.locator('[data-ya-time-minute="30"]').click();
-  assert.equal(await page.locator('[name=time]').inputValue(),'19:30');check('Restaurant menu, table context and mobile hour/minute picker');
+  assert.equal(await page.locator('[name=time]').inputValue(),'19:30');check('Standalone QR menu, table detail context and mobile hour/minute picker');
   await page.keyboard.press('Escape');
   assert.equal(bodies.length,2, 'One POST per deliberate submit, including one failed retry');
   const receipts = JSON.parse(readFileSync(join(moduleRoot,'receipts.json'),'utf8')); assert.equal(Object.keys(receipts).length,1);

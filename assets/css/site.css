@@ -350,3 +350,11 @@ em{font-weight:inherit;color:inherit}
 @media(max-width:800px){.wave-guide-toggle{right:15px;top:68px;max-width:270px;font-size:10px}.table-image{height:200px}}
 
 .table-detail-heading h1{font-size:clamp(42px,6vw,72px);line-height:1.1;margin-top:22px;overflow-wrap:anywhere}.table-detail-heading+.room-detail-overview .breadcrumb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+
+/* Table detail follows the same icon vocabulary and spacing as room details. */
+.table-detail-overview .room-stats > div,
+[data-table-detail] .room-stats > div { display:flex; align-items:center; gap:9px; }
+[data-table-detail] .amenity-icon { width:24px; height:24px; flex:0 0 24px; display:inline-flex; align-items:center; justify-content:center; }
+[data-table-detail] .amenity-icon svg { width:22px; height:22px; }
+[data-table-detail] .table-smoking { display:flex; align-items:center; gap:10px; }
+[data-table-detail] .room-amenities .amenity-grid { align-items:start; }

@@ -23,11 +23,11 @@ page_top('restoran/masa', 'Masa detayları', 'Masa detayları ve masa bilgileri.
           <p class="lead" data-table-description></p>
 
           <div class="room-stats" aria-label="<?= esc(site_text('Temel masa bilgileri')) ?>">
-            <div><span class="amenity-icon" aria-hidden="true">◎</span><strong data-table-capacity></strong></div>
-            <div><span class="amenity-icon" aria-hidden="true">⌁</span><strong data-table-area></strong></div>
+            <div data-table-capacity-item><span data-table-icon="users" aria-hidden="true"></span><strong data-table-capacity></strong></div>
+            <div data-table-area-item><span data-table-icon="area" aria-hidden="true"></span><strong data-table-area></strong></div>
           </div>
 
-          <p class="room-detail-floor" data-table-smoking></p>
+          <p class="room-detail-floor table-smoking" data-table-smoking-container><span data-table-icon="smoking" aria-hidden="true"></span><span data-table-smoking></span></p>
 
           <div class="room-amenities">
             <p class="room-amenities-title"><?= esc(site_text('Masa olanakları')) ?></p>
@@ -36,7 +36,6 @@ page_top('restoran/masa', 'Masa detayları', 'Masa detayları ve masa bilgileri.
             </div>
           </div>
 
-          <p class="room-price-note" data-table-id></p>
           <button
             type="button"
             class="button button-primary"

@@ -26,6 +26,13 @@
     for (const origin of [canonicalOrigin, location.origin]) if (raw.startsWith(origin + '/')) raw = raw.slice(origin.length);
     return /^\/yardimci-asistan\/media\/[A-Za-z0-9_./-]+$/.test(raw) && !/(?:^|\/)\.{1,2}(?:\/|$)/.test(raw) ? raw : '';
   };
+  // Only menu product images may use canonical published JPEG/PNG/WebP data URLs.
+  // No SVG/HTML data payloads, arbitrary protocols or oversized inline images.
+  const menuImageUrl = value => {
+    const raw = text(value);
+    if (/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/i.test(raw) && raw.length <= 5000000) return raw;
+    return media(raw);
+  };
   function link(label, href, className = 'text-link', external = false) {
     const node = el('a', className, label); node.href = href;
     if (external) { node.target = '_blank'; node.rel = 'noopener'; }
@@ -259,5 +266,5 @@
     })();
     return inFlight;
   }
-  window.GundogduPublicData = {load, mediaUrl: media};
+  window.GundogduPublicData = {load, mediaUrl: media, menuImageUrl};
 })();
