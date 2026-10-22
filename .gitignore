@@ -1,0 +1,10 @@
+.deploy/
+.local/
+.env
+.env.*
+!.env.example
+node_modules/
+.test-artifacts/
+artifacts/
+.DS_Store
+Thumbs.db
