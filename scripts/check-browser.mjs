@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { mkdtempSync, cpSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { createServer } from 'node:net';
 import { installLocalApi, publish } from './browser-fixture.mjs';
 const require = createRequire(new URL('../.local/browser-tools/package.json', import.meta.url));
@@ -11,19 +11,23 @@ const site = resolve(new URL('..',import.meta.url).pathname);
 const output = join(site,'.test-artifacts');
 mkdirSync(output,{recursive:true});
 const temp = mkdtempSync(join(output,'gundogdu-qa-'));
-for (const name of ['assets','inc','odalar','restoran','galeri','iletisim','index.php','404.php','router.php','robots.txt','sitemap.xml']) cpSync(join(site,name),join(temp,name),{recursive:true});
+for (const name of ['assets','inc','odalar','qr-menu','restoran','galeri','iletisim','index.php','404.php','router.php','robots.txt','sitemap.xml']) cpSync(join(site,name),join(temp,name),{recursive:true});
 const moduleRoot = installLocalApi(join(temp,'yardimci-asistan'));
 mkdirSync(join(moduleRoot,'media/fixture'),{recursive:true});
 cpSync(join(site,'assets/img/gideros-1-720.webp'),join(moduleRoot,'media/fixture/photo.webp'));
+cpSync(join(site,'assets/img/gideros-2-720.webp'),join(moduleRoot,'media/fixture/photo2.webp'));
 const image = '/yardimci-asistan/media/fixture/photo.webp';
+const clip = spawnSync('ffmpeg',['-loglevel','error','-f','lavfi','-i','color=c=green:s=320x180:d=1','-c:v','libx264','-pix_fmt','yuv420p','-movflags','+faststart',join(moduleRoot,'media/fixture/tour.mp4')]);
+assert.equal(clip.status,0,'Generate isolated playable video fixture');
 const caps = ['customer.requests','accommodation.rooms','service.whatsapp'];
 const businessFixture = {business_name:'YEREL TEST Kıyı Evi',profile_id:'pension_restaurant',phone:'+90 (555) 010 20 30',whatsapp:'+90 555 010 20 30',whatsapp_enabled:true,email:'fixture@example.test',address:'Yalnız Test Sokak No:7',latitude:40.1234,longitude:30.4321,directions_note:'Yalnız izole test kapısı.',about_text:'YALNIZ YEREL API TEST METNİ',gallery:[{id:'fixture-image',kind:'photo',title:'YEREL TEST fotoğrafı',url:image}],social_links:[{platform:'instagram',url:'https://www.instagram.com/example/'}]};
 const roomFixture = {id:'fixture-room',name:'YEREL TEST Odası',description:'İşletme odası değildir; fixture.',capacity:2,bed_info:'YEREL TEST yatak',nightly_price_minor:123456,currency:'TRY',price_note:'Yalnız test fiyatıdır.',media:[{kind:'cover',url:image}]};
-const tableFixture = {id:'fixture-table',name:'YEREL TEST Masası',capacity:4,area:'Test alanı',description:'Fixture masa.'};
+const tableFixture = {id:'fixture-table',name:'YEREL TEST Masası',capacity:4,area:'Test alanı',description:'Fixture masa.',smoking_policy:'non_smoking',features:['indoor','window_side','sea_view'],media:[{kind:'photo',url:'/yardimci-asistan/media/fixture/photo2.webp',sort_order:2},{kind:'cover',url:image,sort_order:1}]};
+const noImageTable = {...tableFixture,id:'fixture-table-no-image',name:'YEREL TEST Görselsiz Masa',media:[]};
 publish(moduleRoot,'android_snapshot',{enabled:false,business_capabilities:caps});
 publish(moduleRoot,'business_context',businessFixture);
 publish(moduleRoot,'room_catalog',{version:1,enabled:true,rooms:[roomFixture]});
-publish(moduleRoot,'table_catalog',{version:1,enabled:true,tables:[tableFixture]});
+publish(moduleRoot,'table_catalog',{version:1,enabled:true,tables:[tableFixture,noImageTable]});
 publish(moduleRoot,'menu',{enabled:true,categories:[{id:'test',name:'YEREL TEST Menü'}],items:[{id:'meal',category_id:'test',name:'YEREL TEST Yemek',price:123.45,currency:'TRY',description:'Fixture yemek.',image_url:image}]});
 publish(moduleRoot,'marketing_website',{version:1,enabled:true,publications:[{id:'test-news',published:true,channel:'website',placement:'homepage_feature',revision:1,title:'YEREL TEST Duyurusu',text:'Fixture duyuru metni.',images:[]}]});
 const freePort = () => new Promise(resolvePort => {const server=createServer();server.listen(0,'127.0.0.1',()=>{const port=server.address().port;server.close(()=>resolvePort(port));});});
@@ -61,7 +65,7 @@ async function screenshot(page,name,fullPage=false) {
   if(fullPage) {
     await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=700){scrollTo(0,y);await new Promise(r=>setTimeout(r,45));}scrollTo(0,0);});
     await page.locator('main img').evaluateAll(images=>images.forEach(image=>{image.loading='eager';}));
-    await page.waitForFunction(()=>[...document.querySelectorAll('main img')].every(image=>image.complete && image.naturalWidth>0));
+    await page.waitForFunction(()=>[...document.querySelectorAll('main img')].every(image=>!image.getAttribute('src') || image.complete && image.naturalWidth>0));
   }
   await page.screenshot({path:join(output,name+'.png'),fullPage});report.screenshots.push(name+'.png');
 }
@@ -89,28 +93,226 @@ try {
   await expect(page.locator('.news-grid')).toContainText('YEREL TEST Duyurusu');check('Business, room minor-unit price, gallery and marketing publication rendering');
   await page.waitForFunction(()=>window.gundogduWater?.inspect().frames>2);
   let water=await page.evaluate(()=>{const w=window.gundogduWater.inspect();return {running:w.running,fps:w.fps,pixels:w.pixelCount,effects:w.effects.map(e=>({type:e.type,count:e.count,active:e.active}))};});
-  assert(water.running && water.pixels<=650000);assert(water.effects.find(e=>e.type==='foam').count===2);report.water=water;check('Gideros surface + foam alive within 650k canvas budget');
-  await page.locator('.motion-toggle').click();assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().running),false);await page.locator('.motion-toggle').click();check('Visitor can pause/resume water');
+  assert(water.running && water.pixels<=650000);assert(water.effects.find(e=>e.type==='foam').count===6);report.water=water;check('Gideros surface + foam alive within 650k canvas budget');
+  await expect(page.locator('.motion-toggle')).toContainText('TEST · MAX');
+  assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().diagnostic),true);
+  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeVisible();
+  assert.equal(await page.locator('.wave-guide polygon').count(),2);
+  await screenshot(page,'wave-max-guide');
+  await page.locator('.motion-toggle').click(); await expect(page.locator('.wave-guide')).toBeHidden();
+  await page.reload(); await expect(page.locator('.motion-toggle')).toHaveAttribute('aria-pressed','false');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('gundogdu-waves')),'off');
+  await page.locator('.motion-toggle').click();
+  await page.waitForFunction(()=>window.gundogduWater.inspect().frames>2);
+  await page.locator('.motion-toggle').click();assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().running),false); await expect(page.locator('.canvas-overlay')).toBeHidden(); const framesOff=await page.evaluate(()=>window.gundogduWater.inspect().frames); await page.waitForTimeout(250); assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().frames),framesOff); await page.locator('.motion-toggle').click(); await expect(page.locator('.canvas-overlay')).toBeVisible();check('Visitor can pause/resume water');
+  await page.waitForFunction(()=>{const c=document.querySelector('.canvas-overlay'); return c && c.getContext('2d').getImageData(0,0,c.width,c.height).data.some((v,i)=>i%4===3&&v>0);});
+  report.waterPixels = await page.evaluate(() => {
+    const c=document.querySelector('.canvas-overlay'), pixels=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
+    let painted=0,strong=0,maxAlpha=0;
+    for(let i=3;i<pixels.length;i+=4){if(pixels[i])painted++;if(pixels[i]>80)strong++;maxAlpha=Math.max(maxAlpha,pixels[i]);}
+    return {painted,strong,maxAlpha,inspect:window.gundogduWater.inspect()};
+  });
+  assert(report.waterPixels.strong>100,'MAX needs clearly opaque pixels, not just almost transparent paint');
+  const pixelSignature = () => page.evaluate(()=>{
+    const c=document.querySelector('.canvas-overlay'), p=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
+    let sum=0; for(let i=3;i<p.length;i+=4)sum=(sum+p[i]*i)%1000000007;
+    return {sum,frames:window.gundogduWater.inspect().frames};
+  });
+  const movingBefore=await pixelSignature(); await page.waitForTimeout(300); const movingAfter=await pixelSignature();
+  assert(movingAfter.frames>movingBefore.frames); assert.notEqual(movingAfter.sum,movingBefore.sum,'Enabled effects must change painted pixels over time');
+  report.waterMotion={before:movingBefore,after:movingAfter};
+  await screenshot(page,'wave-max-effects');
+  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeVisible();
+  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeHidden();
+  check('MAX paints strong alpha pixels, accurately projected surface/foam/shore guide toggles, persisted OFF freezes frames and ON resumes');
   await screenshot(page,'fixture-desktop-home',true);
+  for(const width of [320,390]) {
+    await page.setViewportSize({width,height:844});
+    await page.waitForFunction(()=>window.gundogduWater.inspect().running);
+    await page.locator('.wave-guide-toggle').click();
+    await expect(page.locator('.wave-guide')).toBeVisible();
+    await page.waitForTimeout(200);
+    const mapping=await page.evaluate(()=>{
+      const w=window.gundogduWater.inspect(), v=w.transform.view;
+      const guide=document.querySelector('.wave-guide').viewBox.baseVal;
+      const c=document.querySelector('.canvas-overlay'), data=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
+      return {expected:[v.x,v.y,v.width,v.height],actual:[guide.x,guide.y,guide.width,guide.height],strong:data.filter((n,i)=>i%4===3&&n>80).length};
+    });
+    mapping.expected.forEach((n,i)=>assert(Math.abs(n-mapping.actual[i])<.01,'Guide must use the same cover crop as canvas'));
+    assert(mapping.strong>100,'Mobile MAX must paint strong visible pixels');
+    await screenshot(page,'wave-max-guide-'+width);
+    await page.locator('.wave-guide-toggle').click();
+    await expect(page.locator('.wave-guide')).toBeHidden();
+  }
+  check('320/390px MAX paints strong pixels and guide viewBox matches the actual canvas photo crop');
   for(const width of [320,360,390,768,1440]){
     await page.setViewportSize({width,height:width<500?844:1000});
-    for(const path of ['/','/odalar/','/restoran/','/galeri/','/iletisim/']){
+    for(const path of ['/','/odalar/','/odalar/oda/?id=fixture-room','/qr-menu/','/restoran/','/restoran/masa/?id=fixture-table','/galeri/','/iletisim/']){
       const response=await visit(origin+path);assert.equal(response.status(),200);
       await page.evaluate(()=>document.fonts.ready);
       const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
       assert(overflow<=1,'Overflow '+width+' '+path+': '+overflow);
       assert.equal(await page.locator('h1').count(),1);
-      const images=await page.locator('main img').evaluateAll(images=>images.filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src));
+      const images=await page.locator('main img').evaluateAll(images=>images.filter(i=>i.getAttribute('src')&&i.complete&&i.naturalWidth===0).map(i=>i.src));
       assert.deepEqual(images,[],'Broken images '+path);
       report.viewports.push({width,path,overflow});
     }
   }
-  check('25 page/viewport layouts at 320,360,390,768,1440px; no horizontal overflow or broken loaded images');
+  check('40 page/viewport layouts at 320,360,390,768,1440px; no horizontal overflow or broken loaded images');
   await page.setViewportSize({width:390,height:844});await visit(origin+'/');
   await page.locator('.menu-toggle').click();await expect(page.locator('#mobile-nav')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('#mobile-nav')).toBeHidden();check('Mobile menu keyboard open/close and focus');
   await visit(origin+'/galeri/');
-  await page.locator('[data-gallery-filter=business]').click();assert.equal(await page.locator('.gallery-item:visible').count(),1);
-  await page.locator('.gallery-item:visible button').click();await expect(page.locator('.lightbox')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('.lightbox')).toBeHidden();check('Published gallery filters + native modal lightbox + Escape');
+  assert.equal(await page.locator('.gallery-item:visible').count(),1);
+  await page.locator('.gallery-item:visible button').click();await expect(page.locator('.lightbox')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('.lightbox')).toBeHidden();check('Published-only gallery + native modal lightbox + Escape');
+  await visit(origin+'/odalar/');
+  await page.locator('.room-card .room-image').click();
+  await expect(page).toHaveURL(/\/odalar\/oda\/\?id=fixture-room/);
+  await expect(page.locator('[data-room-name]').last()).toHaveText(roomFixture.name);
+  await expect(page.locator('[data-room-photo-gallery] img')).toHaveCount(1);
+  await expect(page.locator('[data-room-media-card]:visible')).toHaveCount(0);
+  await page.locator('[data-room-photo-gallery] button').click();
+  await expect(page.locator('[data-gallery-dialog]')).toBeVisible(); await page.keyboard.press('Escape');
+  await page.locator('[data-room-reserve]').click(); await expect(page.locator('[data-ya-form]')).toBeVisible();
+  await expect(page.locator('.ya-widget-panel')).toContainText(roomFixture.name); await page.keyboard.press('Escape');
+  for (const suffix of ['?id=unknown','']) {
+    await visit(origin+'/odalar/oda/'+suffix);
+    await expect(page.locator('[data-room-detail-content]')).toBeHidden();
+    await expect(page.locator('[data-room-media-section]')).toBeHidden();
+    await expect(page.locator('[data-room-detail-loading]')).toBeVisible();
+  }
+  check('Room image navigates to exact detail; gallery and selected-room widget; missing/unknown IDs fail closed');
+  for (const target of ['.table-image','h3']) {
+    await visit(origin+'/restoran/');
+    await expect(page.locator('.table-card')).toHaveCount(2);
+    await expect(page.locator('.table-card [data-ya-action]')).toHaveCount(0);
+    await expect(page.locator('.table-card').first().locator('img')).toHaveAttribute('src',image);
+    await expect(page.locator('.table-card').last().locator('.placeholder-photo')).toBeVisible();
+    await page.locator('.table-card').first().locator(target).click();
+    await expect(page).toHaveURL(/\/restoran\/masa\/\?id=fixture-table$/);
+    await expect(page.locator('[data-table-name]').last()).toHaveText(tableFixture.name);
+    await expect(page.locator('[data-table-area]')).toHaveText(tableFixture.area);
+    await expect(page.locator('[data-table-capacity]')).toHaveText('4 kişi');
+    await expect(page.locator('[data-table-description]')).toHaveText(tableFixture.description);
+    await expect(page.locator('[data-table-id]')).toContainText(tableFixture.id);
+    await expect(page.locator('[data-table-smoking]')).toContainText('Sigara içilmez');
+    await expect(page.locator('[data-table-feature-list]')).toContainText('Cam kenarı');
+  }
+  await expect(page.locator('[data-table-photo-gallery] img')).toHaveCount(2);
+  await page.locator('[data-table-photo-gallery] button').last().click();
+  await expect(page.locator('[data-gallery-dialog]')).toBeVisible();
+  await expect(page.locator('[data-gallery-image]')).toHaveAttribute('src','/yardimci-asistan/media/fixture/photo2.webp');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('[data-table-reserve]')).toHaveAttribute('data-ya-action','food.reserve');
+  await expect(page.locator('[data-table-reserve]')).toHaveAttribute('data-ya-resource-type','table');
+  await expect(page.locator('[data-table-reserve]')).toHaveAttribute('data-ya-resource-id',tableFixture.id);
+  await expect(page.locator('[data-table-reserve]')).toHaveAttribute('data-ya-image-url',image);
+  await page.locator('[data-table-reserve]').click();
+  await expect(page.locator('[data-ya-form]')).toBeVisible();
+  await expect(page.locator('.ya-widget-panel')).toContainText(tableFixture.name);
+  await expect(page.locator('.ya-widget-panel img').first()).toHaveAttribute('src',image);
+  await page.keyboard.press('Escape');
+  await screenshot(page,'fixture-table-detail',true);
+  publish(moduleRoot,'business_context',{...businessFixture,requests_enabled:false});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('[data-table-detail-content]')).toBeVisible();
+  await expect(page.locator('[data-table-reserve]')).toBeHidden();
+  await expect(page.locator('[data-table-contact]')).toBeVisible();
+  publish(moduleRoot,'business_context',businessFixture);
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[noImageTable]});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('[data-table-detail-content]')).toBeHidden();
+  await expect(page.locator('[data-table-cover]')).not.toHaveAttribute('src');
+  await expect(page.locator('[data-table-name]').last()).toBeEmpty();
+  await expect(page.locator('[data-table-reserve]')).not.toHaveAttribute('data-ya-resource-id');
+  await expect(page.locator('[data-table-photo-gallery] img')).toHaveCount(0);
+  for(const suffix of ['?id=unknown','','?id=fixture-table-no-image']) {
+    await visit(origin+'/restoran/masa/'+suffix);
+    if(suffix.includes('no-image')) {await expect(page.locator('[data-table-cover-placeholder]')).toBeVisible();await expect(page.locator('[data-table-photo-gallery] img')).toHaveCount(0);}
+    else {await expect(page.locator('[data-table-detail-content]')).toBeHidden();await expect(page.locator('[data-table-contact-fallback]')).toBeVisible();}
+  }
+  // Broken published media must degrade to the branded empty state.
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[{...tableFixture,media:[{kind:'cover',url:'/yardimci-asistan/media/fixture/missing.webp'}]}]});
+  await visit(origin+'/restoran/'); await expect(page.locator('.table-card .placeholder-photo')).toBeVisible();
+  await visit(origin+'/restoran/masa/?id=fixture-table'); await expect(page.locator('[data-table-cover-placeholder]')).toBeVisible();
+  const mediaTable={...tableFixture,media:[...tableFixture.media,{kind:'panorama_180',url:image},{kind:'panorama_360',url:image},{kind:'video',url:'/yardimci-asistan/media/fixture/tour.mp4'}]};
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[mediaTable,noImageTable]});
+  await visit(origin+'/restoran/masa/?id=fixture-table');
+  await expect(page.locator('[data-table-media-card]:visible')).toHaveCount(3);
+  await page.locator('[data-open-panorama]').first().click(); await expect(page.locator('#panorama-viewer')).toHaveClass(/pnlm-container/); await page.keyboard.press('Escape');
+  await page.locator('[data-open-video]').click(); await page.locator('[data-room-video]').evaluate(video=>video.play()); await page.waitForFunction(()=>document.querySelector('[data-room-video]').currentTime>0); await page.keyboard.press('Escape');
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable]});
+  check('Table photo/title navigate to details with all attributes, sorted cover/gallery, selected table widget context, closed requests, missing/withdrawn/no-image/broken-image and canonical panorama/video');
+  const mediaRoom = {...roomFixture,features:['wifi','balcony'],media:[...roomFixture.media,{kind:'photo',url:image+'?bad=1'},{kind:'photo',url:image},{kind:'photo',url:'/yardimci-asistan/media/fixture/photo2.webp'},{kind:'panorama_180',url:image},{kind:'panorama_360',url:image},{kind:'video',url:'/yardimci-asistan/media/fixture/tour.mp4',mime_type:'video/mp4'}]};
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[mediaRoom]});
+  await visit(origin+'/odalar/oda/?id=fixture-room');
+  await expect(page.locator('[data-room-media-card]:visible')).toHaveCount(3);
+  await expect(page.locator('[data-room-photo-gallery] img')).toHaveCount(2);
+  await expect(page.locator('[data-room-feature=wifi]')).toBeVisible();
+  await screenshot(page,'fixture-room-detail',true);
+  await page.locator('[data-open-panorama]').first().click();
+  await expect(page.locator('[data-panorama-dialog]')).toBeVisible();
+  await expect(page.locator('#panorama-viewer')).toHaveClass(/pnlm-container/);
+  await page.keyboard.press('Escape');
+  await page.locator('[data-open-video]').click(); await expect(page.locator('[data-room-video]')).toHaveAttribute('controls','');
+  await page.locator('[data-room-video]').evaluate(async video => { await video.play(); }); await page.waitForFunction(()=>document.querySelector('[data-room-video]').currentTime>0); await page.keyboard.press('Escape');
+  assert.equal(await page.locator('[data-room-video]').evaluate(video=>video.paused),true);
+  publish(moduleRoot,'room_catalog',{enabled:false,rooms:[]});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('[data-room-detail-content]')).toBeHidden();
+  await expect(page.locator('[data-room-media-card]:visible')).toHaveCount(0);
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]});
+  check('Published panorama 180/360 viewer, controlled video and known features only; detail withdrawal removes media');
+  const menuFixture = {enabled:true,categories:[{id:'a',name:'Başlangıç'},{id:'b',name:'İçecek'}],items:[{id:'one',category_id:'a',name:'Birinci',price:10,currency:'TRY',image_url:image},{id:'two',category_id:'b',name:'İkinci',price:20,currency:'TRY'},{id:'off',category_id:'a',name:'Kapalı ürün',is_available:false}]};
+  publish(moduleRoot,'menu',menuFixture);
+  await visit(origin+'/restoran/'); await page.locator('#menu [data-menu-link]').click();
+  await expect(page).toHaveURL(/\/qr-menu\//); await expect(page.locator('.qr-menu-item')).toHaveCount(2);
+  await page.locator('[data-category-id=b]').click(); await expect(page.locator('.qr-menu-item')).toHaveCount(1);
+  await expect(page.locator('.qr-menu-item')).toContainText('İkinci');
+  publish(moduleRoot,'menu',{...menuFixture,enabled:false}); await page.evaluate(()=>window.GundogduPublicData.load());
+  await expect(page.locator('[data-menu-link]:visible')).toHaveCount(0); await expect(page.locator('.qr-menu-item')).toHaveCount(0);
+  await expect(page.locator('[data-qr-menu-status]')).toContainText('yayında değil');
+  publish(moduleRoot,'menu',menuFixture);
+  publish(moduleRoot,'business_context',{...businessFixture,gallery:[]});
+  await visit(origin+'/galeri/'); await expect(page.locator('[data-public-gallery] img')).toHaveCount(0);
+  await expect(page.locator('.gallery-note')).toBeVisible(); await expect(page.locator('[data-gallery-filter]')).toHaveCount(0);
+  publish(moduleRoot,'business_context',{...businessFixture,gallery:[{id:'cover',kind:'cover',title:'Önce',url:image},{id:'photo',kind:'photo',title:'Sonra',url:image}]});
+  await page.evaluate(()=>window.GundogduPublicData.load());
+  assert.deepEqual(await page.locator('.gallery-item figcaption>span').allTextContents(),['Önce','Sonra']);
+  assert((await page.locator('[data-public-gallery] img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src')))).every(src=>src===image));
+  check('QR navigation, category filter, withdrawal and unavailable products; gallery empty and published order only');
+  const localization = translations => ({version:1,source_language:'tr',target_languages:['en'],translations});
+  publish(moduleRoot,'business_context',{...businessFixture,localization:localization({business:{business:{en:{about_text:'Published English about',description:'Published English SEO'}}},gallery:{'fixture-image':{en:{title:'Published English photo'}}}})});
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture],localization:localization({room:{'fixture-room':{en:{name:'Published English Room',description:'Published English description'}}}})});
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable],localization:localization({table:{'fixture-table':{en:{name:'Published English Table',area:'Published English Area'}}}})});
+  publish(moduleRoot,'menu',{...menuFixture,localization:localization({menu_category:{a:{en:{name:'Starters'}}},menu_product:{one:{en:{name:'Published English Dish'}}}})});
+  await visit(origin+'/odalar/oda/?id=fixture-room');
+  await page.locator('[data-flag-language] summary').click(); await page.locator('button[name=lang][value=en]').click();
+  await expect(page.locator('html')).toHaveAttribute('lang','en'); await expect(page).toHaveURL(/id=fixture-room.*lang=en/);
+  await expect(page.locator('[data-room-name]').last()).toHaveText('Published English Room');
+  await expect(page.locator('[data-room-bed]')).toHaveText(roomFixture.bed_info);
+  await expect(page.locator('.desktop-nav')).toContainText('Rooms');
+  await page.locator('[data-room-reserve]').click(); await expect(page.locator('[name=customer_name]')).toBeVisible();
+  await expect(page.locator('[data-ya-form]')).toContainText('Full name'); await page.keyboard.press('Escape');
+  await visit(origin+'/'); await expect(page.locator('html')).toHaveAttribute('lang','en'); await expect(page.locator('[data-public-about]')).toHaveText('Published English about');
+  assert.equal(JSON.parse(await page.locator('[data-business-structured-data]').textContent()).description,'Published English SEO');
+  await visit(origin+'/galeri/'); await expect(page.locator('.gallery-item')).toContainText('Published English photo');
+  await visit(origin+'/restoran/'); await expect(page.locator('.table-card').first()).toContainText('Published English Table');
+  await page.locator('.table-card').first().locator('h3').click(); await expect(page.locator('[data-table-name]').last()).toHaveText('Published English Table'); await expect(page.locator('[data-table-area]')).toHaveText('Published English Area'); await expect(page.locator('[data-table-smoking]')).toContainText('Non-smoking');
+  await visit(origin+'/qr-menu/'); await expect(page.locator('.qr-menu-item').first()).toContainText('Published English Dish');
+  await expect(page.locator('[data-category-id=a]')).toHaveText('Starters');
+  await screenshot(page,'fixture-english-menu',true);
+  for(const width of [320,390]) { await page.setViewportSize({width,height:844}); for(const path of ['/odalar/oda/?id=fixture-room','/qr-menu/','/restoran/','/restoran/masa/?id=fixture-table']) {await visit(origin+path); assert((await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth))<=1,'English overflow '+width+path);} }
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[{...roomFixture,name:'Restoran'}],localization:{...localization({room:{'fixture-room':{en:{name:'Should not appear'}}}}),target_languages:[]}});
+  await visit(origin+'/odalar/'); await expect(page.locator('.room-card h3')).toHaveText('Restoran');
+  publish(moduleRoot,'business_context',{...businessFixture,public_surfaces:['rooms','restaurant']});
+  await visit(origin+'/qr-menu/'); await expect(page.locator('.qr-menu-item')).toHaveCount(0); await expect(page.locator('[data-menu-link]:visible')).toHaveCount(0);
+  check('Unsupported endpoint English metadata preserves source business name; missing menu capability hides published menu');
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]});
+  await visit(origin+'/?lang=tr'); await expect(page.locator('html')).toHaveAttribute('lang','tr');
+  await expect(page.locator('.room-card')).toContainText(roomFixture.name);
+  publish(moduleRoot,'business_context',businessFixture); publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]}); publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable]});
+  publish(moduleRoot,'menu',{enabled:true,categories:[{id:'test',name:'YEREL TEST Menü'}],items:[{id:'meal',category_id:'test',name:'YEREL TEST Yemek',price:123.45,currency:'TRY'}]});
+  check('TR/EN selector preserves ID; preference survives navigation; endpoint-specific English projections, Turkish field fallback, gallery/SEO/widget and 320/390px English layouts');
   await visit(origin+'/iletisim/');
   await expect(page.locator('a[href="tel:+905550102030"]')).toBeVisible();
   await expect(page.locator('a[href="https://wa.me/905550102030"]')).toBeVisible();
@@ -151,7 +353,7 @@ try {
   await screenshot(page,'widget-mobile-success');
   await page.keyboard.press('Escape');await expect(page.locator('.ya-widget-panel')).toHaveCount(0);
   await visit(origin+'/restoran/');await expect(page.locator('.menu-grid')).toContainText('YEREL TEST Yemek');
-  await page.locator('.table-card [data-ya-action]').click();await expect(page.locator('[data-ya-restaurant-date]')).toBeVisible();
+  await page.locator('.table-card a').first().click(); await page.locator('[data-table-reserve]').click();await expect(page.locator('.ya-widget-panel')).toContainText(tableFixture.name);await expect(page.locator('[data-ya-restaurant-date]')).toBeVisible();
   await page.locator('[data-ya-open-time-picker]').click();await expect(page.locator('[data-ya-time-popover]')).toBeVisible();
   await screenshot(page,'widget-mobile-time');
   await page.locator('[data-ya-time-hour="19"]').click();await page.locator('[data-ya-time-minute="30"]').click();
@@ -254,10 +456,10 @@ try {
   await expect(page.locator('a[href^="javascript:"], [data-public-about] img, .social-links a')).toHaveCount(0);
   assert.equal(await page.evaluate(()=>window.fixtureXss),undefined);
   check('Untrusted text is inert; off-origin/traversal media, unsafe map/social/contact URLs and null coordinates are rejected');
-  publish(moduleRoot,'business_context',businessFixture); publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]}); publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture]});
+  publish(moduleRoot,'business_context',businessFixture); publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]}); publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable]});
   // Withdrawal and capability transitions must remove prior data.
   publish(moduleRoot,'room_catalog',{version:1,enabled:false,rooms:[roomFixture]});
-  publish(moduleRoot,'table_catalog',{version:1,enabled:false,tables:[tableFixture]});
+  publish(moduleRoot,'table_catalog',{version:1,enabled:false,tables:[tableFixture,noImageTable]});
   publish(moduleRoot,'menu',{enabled:false,categories:[{id:'test',name:'YEREL TEST Menü'}],items:[{id:'meal',category_id:'test',name:'YEREL TEST Yemek',price:123.45,currency:'TRY'}]});
   publish(moduleRoot,'marketing_website',{version:1,enabled:false,publications:[]});
   publish(moduleRoot,'business_context',{business_name:'YEREL TEST Boş',profile_id:'pension_restaurant',phone:'',address:'',whatsapp:'',email:'',gallery:[],social_links:[]});
@@ -269,10 +471,18 @@ try {
   publish(moduleRoot,'room_catalog',{version:1,enabled:true,rooms:[roomFixture]});
   publish(moduleRoot,'android_snapshot',{enabled:false,business_capabilities:[]});
   await visit(origin+'/odalar/');await expect(page.locator('body')).toHaveAttribute('data-stay-enabled','false');check('Requests capability OFF hides booking even with published room catalog');
+  publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable]});
+  publish(moduleRoot,'business_context',{...businessFixture,requests_enabled:false});
+  await visit(origin+'/restoran/'); await expect(page.locator('.table-card').first()).toContainText(tableFixture.name);
+  await expect(page.locator('.table-card [data-ya-action]')).toHaveCount(0); await expect(page.locator('.table-card a').first()).toHaveAttribute('href','/restoran/masa/?id=fixture-table');
+  await page.locator('.table-card a').first().click(); await expect(page.locator('[data-table-detail-content]')).toBeVisible(); await expect(page.locator('[data-table-reserve]')).toBeHidden(); await expect(page.locator('[data-table-contact]')).toBeVisible();
+  check('Closed reservations keep table information and accessible contact link without a submit action');
   for(const mode of ['503','malformed']){
     writeFileSync(join(temp,'failure-mode'),mode);await visit(origin+'/iletisim/');await expect(page.locator('.contact-empty')).toBeVisible();
     assert(!('telephone' in JSON.parse(await page.locator('[data-business-structured-data]').textContent())));
     await visit(origin+'/');await expect(page.locator('.stay-placeholder')).toBeVisible();
+    await visit(origin+'/qr-menu/'); await expect(page.locator('.qr-menu-item')).toHaveCount(0); await expect(page.locator('[data-menu-link]:visible')).toHaveCount(0);
+    await visit(origin+'/odalar/oda/?id=fixture-room'); await expect(page.locator('[data-room-detail-content]')).toBeHidden();
   }
   rmSync(join(temp,'failure-mode'));check('HTTP 503 and structurally malformed API responses render complete safe pages, empty contact and SEO');
   await page.emulateMedia({reducedMotion:'reduce'});await visit(origin+'/');assert.equal(await page.locator('.canvas-overlay').count(),0);await expect(page.locator('.motion-toggle')).toBeHidden();check('Reduced motion starts with static hero and no canvas');
@@ -282,6 +492,10 @@ try {
   const low=await browser.newContext({viewport:{width:390,height:844}});
   await low.addInitScript(()=>Object.defineProperty(navigator,'hardwareConcurrency',{get:()=>2}));
   const lowPage=await low.newPage();await lowPage.goto(origin+'/');assert.equal(await lowPage.locator('.canvas-overlay').count(),0);await low.close();check('Low-power two-core device receives static photo');
+  const saver=await browser.newContext({viewport:{width:390,height:844}});
+  await saver.addInitScript(()=>Object.defineProperty(navigator,'connection',{get:()=>({saveData:true})}));
+  const saverPage=await saver.newPage(); await saverPage.goto(origin+'/'); await expect(saverPage.locator('.canvas-overlay')).toHaveCount(0); await expect(saverPage.locator('.motion-toggle')).toBeHidden(); await saver.close();
+  check('Save-data devices retain the static credited hero');
   const nojs=await browser.newContext({javaScriptEnabled:false});const nojsPage=await nojs.newPage();await nojsPage.goto(origin+'/odalar/');await expect(nojsPage.locator('h1')).toBeVisible();await expect(nojsPage.locator('a[href="/iletisim/#rezervasyon"]').first()).toHaveAttribute('href','/iletisim/#rezervasyon');await nojs.close();check('Server-rendered pages and booking fallback work without JS');
   const missing=await visit(origin+'/olmayan-sayfa/');assert.equal(missing.status(),404);check('Custom HTTP 404');
   assert.deepEqual(report.pageErrors,[]);assert(!/PHP (?:Warning|Fatal|Parse error)/.test(serverLog));check('Zero browser exceptions and PHP warnings/fatals');

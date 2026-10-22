@@ -1,12 +1,13 @@
 (() => {
   'use strict';
+  const {text:t} = window.GundogduLanguage;
   const menu = document.querySelector('#mobile-nav');
   const toggle = document.querySelector('.menu-toggle');
   const setMenu = (open) => {
     if (!menu || !toggle) return;
     menu.hidden = !open;
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    toggle.setAttribute('aria-label', open ? t('Menüyü kapat') : t('Menüyü aç'));
   };
   toggle?.addEventListener('click', () => setMenu(menu.hidden));
   menu?.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
@@ -65,18 +66,18 @@
   const present = () => {
     if (!root) return;
     const launcher = root.querySelector('.ya-widget-launcher-copy');
-    if (launcher?.querySelector('strong')?.textContent !== 'Ziyaret planınız' && launcher) {
-      launcher.querySelector('strong').textContent = 'Ziyaret planınız';
+    if (launcher?.querySelector('strong')?.textContent !== t('Ziyaret planınız') && launcher) {
+      launcher.querySelector('strong').textContent = t('Ziyaret planınız');
       launcher.querySelector('small').textContent = 'Gündoğdu · Yardımcı Asistan';
     }
     const opener = root.querySelector('[data-ya-open]');
-    if (opener?.getAttribute('aria-label') !== 'Ziyaret planı asistanını aç') opener?.setAttribute('aria-label', 'Ziyaret planı asistanını aç');
+    if (opener?.getAttribute('aria-label') !== t('Ziyaret planı asistanını aç')) opener?.setAttribute('aria-label', t('Ziyaret planı asistanını aç'));
     root.querySelectorAll('[data-ya-request-type]').forEach(button => {
       const hidden = !allowed(button.dataset.yaRequestType); if (button.hidden !== hidden) button.hidden = hidden;
     });
     const home = root.querySelector('.ya-widget-home'), title = root.querySelector('#ya-widget-title');
     if (title?.lastChild?.nodeType === Node.TEXT_NODE && title.lastChild.textContent !== config.businessName) title.lastChild.textContent = config.businessName;
-    const message = !stayEnabled && !tableEnabled ? 'Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.' : !stayEnabled ? 'Online konaklama talebi şu anda açık değil.' : !tableEnabled ? 'Online masa talebi şu anda açık değil.' : '';
+    const message = !stayEnabled && !tableEnabled ? t('Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.') : !stayEnabled ? t('Online konaklama talebi şu anda açık değil.') : !tableEnabled ? t('Online masa talebi şu anda açık değil.') : '';
     let note = home?.querySelector('.site-widget-note');
     if (home && message) {
       if (!note) { note = document.createElement('p'); note.className = 'site-widget-note'; home.append(note); }
@@ -90,6 +91,7 @@
   };
   observe();
   document.addEventListener('gundogdu:public-data', event => {
+    if (lightbox?.open) lightbox.close();
     const m = event.detail, b = m.business, c = m.contact;
     stayEnabled = m.stayEnabled; tableEnabled = m.tableEnabled;
     config = {...config, businessName: 'Gündoğdu Pansiyon & Restoran', profileId: '',
@@ -99,11 +101,12 @@
     if (configNode) configNode.textContent = JSON.stringify(config);
     widget?.init(config); observe(); present();
   });
-  const hydrate = () => window.GundogduPublicData?.load();
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrate, {once: true});
+  const hydrate = (options) => window.GundogduPublicData?.load(options);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => hydrate(), {once: true});
   else hydrate();
   window.addEventListener('pageshow', event => { if (event.persisted) hydrate(); });
   present();
+  setInterval(() => { if (document.visibilityState === 'visible' && !root?.querySelector('.ya-widget-panel') && !document.querySelector('dialog[open]')) hydrate({quiet:true}); }, 15000);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       if (toggle?.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); }

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/data.php';
+require_once __DIR__ . '/language.php';
+require_once __DIR__ . '/flag-language.php';
 
 function icon(string $name, string $class = ''): string {
     $paths = [
@@ -27,27 +29,29 @@ function booking_link(string $label = 'Ziyaretinizi planlayın', string $kind = 
 function page_top(string $page, string $title, string $description): void {
     $GLOBALS['site_page'] = $page;
     $path = $page === 'home' ? '/' : '/' . $page . '/';
+    if ($page === 'odalar/oda' && is_string($_GET['id'] ?? null)) $path .= '?id=' . rawurlencode($_GET['id']);
     header('Content-Type: text/html; charset=utf-8'); header('Cache-Control: no-cache'); header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: strict-origin-when-cross-origin');
     ?><!doctype html>
-<html lang="tr"><head>
+<html lang="<?= site_language() ?>"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= esc($title) ?> · <?= esc(brand_name()) ?></title>
-<meta name="description" content="<?= esc($description) ?>"><meta name="theme-color" content="#244c45">
+<title><?= esc(site_text($title)) ?> · <?= esc(brand_name()) ?></title>
+<meta name="description" content="<?= esc(site_text($description)) ?>"><meta name="theme-color" content="#244c45">
 <link rel="canonical" href="<?= esc(SITE_ORIGIN . $path) ?>"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<meta property="og:type" content="website"><meta property="og:locale" content="tr_TR"><meta property="og:site_name" content="<?= esc(brand_name()) ?>">
-<meta property="og:title" content="<?= esc($title . ' · ' . brand_name()) ?>"><meta property="og:description" content="<?= esc($description) ?>">
+<meta property="og:type" content="website"><meta property="og:locale" content="<?= site_language() === 'en' ? 'en_GB' : 'tr_TR' ?>"><meta property="og:site_name" content="<?= esc(brand_name()) ?>">
+<meta property="og:title" content="<?= esc(site_text($title) . ' · ' . brand_name()) ?>"><meta property="og:description" content="<?= esc(site_text($description)) ?>">
 <meta property="og:url" content="<?= esc(SITE_ORIGIN . $path) ?>"><meta property="og:image" content="<?= esc(SITE_ORIGIN) ?>/assets/img/social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Gideros Koyu · Makalp · CC BY-SA 3.0">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/cormorant-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<?= esc(asset('css/site.css')) ?>"><link rel="stylesheet" href="<?= esc(asset('css/widget-theme.css')) ?>">
 <script type="application/ld+json" data-business-structured-data><?= json_html(structured_data()) ?></script>
+<script>window.GundogduEnglish=<?= json_html(site_words()) ?>;</script><script src="/assets/js/language.js" defer></script>
 </head><body data-page="<?= esc($page) ?>" data-site="gundogdu" data-stay-enabled="<?= can_reserve('rooms') ? 'true' : 'false' ?>" data-table-enabled="<?= can_reserve('tables') ? 'true' : 'false' ?>">
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
 <header class="site-header"><div class="header-inner">
 <a class="brand" href="/" aria-label="<?= esc(brand_name()) ?> ana sayfa"><img src="/assets/brand/mark.svg" width="57" height="52" alt=""><span class="brand-copy"><strong>Gündoğdu</strong><small>PANSİYON &amp; RESTORAN</small></span></a>
 <nav class="desktop-nav" aria-label="Ana gezinme"><?php nav_links($page); ?></nav>
-<?php booking_link('Rezervasyon', '', 'button header-booking'); ?>
+<?php render_flag_language(site_language(), ['tr','en']); booking_link('Rezervasyon', '', 'button header-booking'); ?>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menüyü aç"><?= icon('menu') ?></button>
 </div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobil gezinme" hidden><?php nav_links($page); booking_link('Ziyaretinizi planlayın'); ?></nav></header>
 <main id="icerik" tabindex="-1">
@@ -56,12 +60,12 @@ function page_top(string $page, string $title, string $description): void {
 function nav_links(string $current): void {
     foreach (['odalar'=>'Odalar','restoran'=>'Restoran','galeri'=>'Galeri','iletisim'=>'İletişim'] as $key=>$name): ?>
     <a href="/<?= esc($key) ?>/"<?= $current === $key ? ' aria-current="page"' : '' ?>><?= esc($name) ?></a>
-    <?php endforeach;
+    <?php endforeach; ?><a href="/qr-menu/" data-menu-link hidden>QR Menü</a><?php
 }
 function photo(int $number, string $class = '', bool $priority = false, string $alt = ''): void {
     $largest = $number === 1 ? 1818 : 1275;
     $alt = $alt ?: ($number === 1 ? 'Ormanlarla çevrili Gideros Koyu’nun panoramik görünümü' : 'Gideros Koyu’nun yeşil kıyıları ve durgun suyu');
-    ?><img class="<?= esc($class) ?>" src="/assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp" srcset="/assets/img/gideros-<?= $number ?>-720.webp 720w, /assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp <?= $largest ?>w" sizes="<?= $class === 'hero-photo' ? '100vw' : '(max-width: 760px) 100vw, 55vw' ?>" width="<?= $largest ?>" height="<?= $number === 1 ? 1228 : 941 ?>" alt="<?= esc($alt) ?>" <?= $priority ? 'fetchpriority="high"' : 'loading="lazy"' ?> decoding="async"><?php
+    ?><img class="<?= esc($class) ?>" src="/assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp" srcset="/assets/img/gideros-<?= $number ?>-720.webp 720w, /assets/img/gideros-<?= $number ?>-<?= $largest ?>.webp <?= $largest ?>w" sizes="<?= $class === 'hero-photo' ? '100vw' : '(max-width: 760px) 100vw, 55vw' ?>" width="<?= $largest ?>" height="<?= $number === 1 ? 1228 : 941 ?>" alt="<?= esc(site_text($alt)) ?>" <?= $priority ? 'fetchpriority="high"' : 'loading="lazy"' ?> decoding="async"><?php
 }
 function photo_credit(): void { ?>
 <a class="photo-credit" href="/galeri/#kaynaklar">Gideros Koyu · Makalp / CC BY-SA 3.0 <?= icon('arrow') ?></a>
@@ -74,24 +78,13 @@ function rooms_section(bool $full = false): void {
 <section class="section shell" id="konaklama"><div class="section-heading"><div><p class="eyebrow">KONAKLAMA</p><h2>Biraz dinlenin.<br><em>Doğaya uyanın.</em></h2></div><div class="section-aside"><p>Günün telaşına küçük bir ara.<br>Gideros’ta yeni bir sabaha yer açın.</p><?php if (!$full): ?><a class="text-link" href="/odalar/">Odaları keşfedin <?= icon('arrow') ?></a><?php endif; ?></div></div>
 <div data-public-rooms data-full="<?= $full ? 'true' : 'false' ?>"><?php if (!$rooms): ?>
 <div class="unpublished stay-placeholder"><div class="line-art"><?= icon('bed') ?><span class="art-sun"></span></div><div><p class="eyebrow">KONAKLAMANIZ İÇİN</p><h3>Size uygun bir mola.</h3><p>Güncel oda seçenekleri şu anda görüntülenemiyor. Güncel bilgi ve ziyaret planınız için iletişim seçeneklerini inceleyebilirsiniz.</p><a class="text-link" href="/iletisim/">İletişime geçin <?= icon('arrow') ?></a></div><span class="vertical-note" aria-hidden="true">YAVAŞLA · NEFES AL · DİNLEN</span></div>
-<?php else: ?><div class="room-grid">
-<?php foreach (($full ? $rooms : array_slice($rooms, 0, 3)) as $room):
-    $cover = ''; foreach (records($room['media'] ?? []) as $media) { if (in_array($media['kind'] ?? '', ['cover','photo'], true) && media_url($media['url'] ?? '') !== '') { $cover = media_url($media['url']); break; } }
-    $price = money($room['nightly_price_minor'] ?? null, $room['currency'] ?? '', 100);
-    ?><article class="room-card"><?php if ($cover): ?><button class="room-image" type="button" data-lightbox="<?= esc($cover) ?>" data-caption="<?= esc($room['name'] ?? '') ?>" aria-label="<?= esc($room['name'] ?? '') ?> fotoğrafını büyüt"><img src="<?= esc($cover) ?>" alt="<?= esc($room['name'] ?? '') ?>" loading="lazy" width="600" height="420"></button><?php else: ?><div class="room-image placeholder-photo"><?= icon('bed') ?><span>Oda fotoğrafı henüz yayınlanmadı</span></div><?php endif; ?>
-    <div class="room-body"><p class="eyebrow"><?= is_numeric($room['capacity'] ?? null) && (int) $room['capacity'] > 0 ? esc($room['capacity']) . ' KİŞİ' : 'KONAKLAMA' ?></p><h3><?= esc($room['name'] ?? '') ?></h3><p><?= nl2br(esc($room['description'] ?? '')) ?></p><?php if (txt($room['bed_info'] ?? '')): ?><p class="room-meta"><?= esc($room['bed_info']) ?></p><?php endif; ?>
-    <?php if ($price): ?><p class="price"><?= esc($price) ?><small> / gece</small></p><?php endif; ?><?php if (txt($room['price_note'] ?? '')): ?><p class="fine-print"><?= esc($room['price_note']) ?></p><?php endif; ?>
-    <?php if (can_reserve('rooms')): ?><a href="/iletisim/#rezervasyon" class="text-link" data-ya-action="accommodation.reserve" data-ya-resource-type="room" data-ya-resource-id="<?= esc($room['id'] ?? '') ?>" data-ya-resource-name="<?= esc($room['name'] ?? '') ?>">Konaklamayı planlayın <?= icon('arrow') ?></a><?php else: ?><a class="text-link" href="/iletisim/">Bilgi alın <?= icon('arrow') ?></a><?php endif; ?></div></article>
-<?php endforeach; ?></div><?php endif; ?></div>
+<?php endif; ?></div>
 </section><?php
 }
-function gallery_section(bool $full = false): void {
-    $published = published_gallery(); $photos = $published ?: scenic_gallery(); ?>
-<section class="section shell" id="fotograflar"><div class="section-heading"><div><p class="eyebrow">FOTOĞRAF DEFTERİ</p><h2><?= $published ? 'Gündoğdu’dan kareler.' : 'Bazı manzaralar,<br><em>insana iyi gelir.</em>' ?></h2></div><div class="section-aside"><p><?= $published ? 'İşletmemizin yayınladığı fotoğraflar.' : 'Gideros’un yeşiline ve mavisine bir pencere.' ?></p><?php if (!$full): ?><a class="text-link" href="/galeri/">Galeriye göz atın <?= icon('arrow') ?></a><?php endif; ?></div></div>
-<?php if ($full): ?><div class="gallery-tabs" role="group" aria-label="Fotoğraf seçimi"><button class="chip is-active" type="button" data-gallery-filter="all" aria-pressed="true">Tümü</button><button class="chip" type="button" data-gallery-filter="scenic" aria-pressed="false">Gideros Koyu</button><button class="chip" type="button" data-gallery-filter="business" aria-pressed="false" hidden>İşletmeden</button></div><?php $photos = array_merge($published, scenic_gallery()); endif; ?>
-<div class="gallery-grid" data-public-gallery data-full="<?= $full ? 'true' : 'false' ?>"><?php foreach (array_slice($photos, 0, $full ? 82 : 4) as $i=>$photo): ?><figure class="gallery-item" data-gallery-kind="<?= $photo['published'] ? 'business' : 'scenic' ?>"><button type="button" data-lightbox="<?= esc($photo['url']) ?>" data-caption="<?= esc($photo['title']) ?><?= $photo['published'] ? '' : ' · Bölge fotoğrafı, Makalp · CC BY-SA 3.0' ?>" aria-label="<?= esc($photo['title']) ?> fotoğrafını büyüt"><img src="<?= esc($photo['url']) ?>" alt="<?= esc($photo['title']) ?>" width="900" height="650" loading="lazy"><span class="gallery-expand"><?= icon('plus') ?></span></button><figcaption><span><?= esc($photo['title']) ?></span><small><?= $photo['published'] ? 'İŞLETMEDEN' : 'GİDEROS KOYU' ?></small></figcaption></figure><?php endforeach; ?></div>
-<?php if (!$published): ?><p class="gallery-note">Bu kareler Gideros Koyu’na aittir; pansiyonun oda veya restoran fotoğrafları değildir. İşletme fotoğrafları yayınlandığında burada yer alacaktır.</p><?php endif; ?>
-</section><?php
+function gallery_section(bool $full = false): void { ?>
+<section class="section shell" id="fotograflar"><div class="section-heading"><div><p class="eyebrow">FOTOĞRAF DEFTERİ</p><h2>Gündoğdu’dan kareler.</h2></div><div class="section-aside"><p>İşletmemizin yayınladığı fotoğraflar.</p><?php if (!$full): ?><a class="text-link" href="/galeri/">Galeriye göz atın <?= icon('arrow') ?></a><?php endif; ?></div></div>
+<div class="gallery-grid" data-public-gallery data-full="<?= $full ? 'true' : 'false' ?>"><p class="gallery-note">İşletme fotoğrafları henüz yayınlanmadı.</p></div></section>
+<?php
 }
 function contact_section(bool $full = false): void { $c = contact(); ?>
 <section class="section shell contact-section" id="konum"><div><p class="eyebrow">YOLUMUZ GİDEROS’A DÜŞSÜN</p><h2>Bir merhaba<br><em>ile başlasın.</em></h2><p class="contact-intro">Konaklama ve restoran ziyaretinizi planlamak için yayınlanan iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
@@ -127,6 +120,6 @@ function page_bottom(): void {
 <script type="application/json" id="widget-config"><?= json_html($widget) ?></script>
 <script src="<?= esc(asset('assistant/widget.js')) ?>" data-api-base-url="/yardimci-asistan" data-logo-url="/assets/brand/mark.svg" data-ai-enabled="false" data-whatsapp-enabled="false" defer></script>
 <script src="<?= esc(asset('js/public-data.js')) ?>" defer></script>
-<script src="<?= esc(asset('js/site.js')) ?>" defer></script><script type="module" src="<?= esc(asset('js/water.mjs')) ?>"></script>
+<script src="/assets/js/flag-language.js" defer></script><script src="<?= esc(asset('js/site.js')) ?>" defer></script><script type="module" src="<?= esc(asset('js/water.mjs')) ?>"></script>
 </body></html><?php
 }

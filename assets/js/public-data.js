@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  const {text:t, locale, localize} = window.GundogduLanguage;
   const endpoints = ['business', 'rooms', 'tables', 'menu', 'marketing'];
   const canonicalOrigin = 'https://yardimciasistangunduodu.alwaysdata.net';
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -35,11 +36,11 @@
   }
   function photoButton(url, caption, className = '') {
     const node = el('button', className); node.type = 'button'; node.dataset.lightbox = url; node.dataset.caption = caption;
-    node.setAttribute('aria-label', caption + ' fotoğrafını büyüt'); return node;
+    node.setAttribute('aria-label', t('{0} fotoğrafını büyüt', {0:caption})); return node;
   }
   function price(amount, currency, divisor = 1) {
     if (!number(amount) || Number(amount) < 0 || !/^[A-Z]{3}$/.test(text(currency))) return '';
-    return (Number(amount) / divisor).toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + (currency === 'TRY' ? '₺' : currency);
+    return (Number(amount) / divisor).toLocaleString(locale, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + (currency === 'TRY' ? '₺' : currency);
   }
   function contact(b) {
     const phone = text(b.phone), digits = phone.replace(/[\s().-]+/g, ''), wa = text(b.whatsapp).replace(/[\s()+.-]+/g, '');
@@ -70,10 +71,10 @@
     const has = surface => b.public_surfaces?.includes(surface) === true;
     const catalog = kind => has(kind === 'rooms' ? 'rooms' : 'restaurant') && p[kind]?.enabled === true && namedRows(p[kind][kind]) ? p[kind][kind] : [];
     const rooms = catalog('rooms'), tables = catalog('tables');
-    const menu = enabled(p.menu) && (has('menu') || has('qr_menu')) && namedRows(p.menu?.categories) && namedRows(p.menu?.items) ? p.menu : {categories: [], items: []};
+    const menu = p.menu?.enabled === true && (has('menu') || has('qr_menu')) && namedRows(p.menu?.categories) && namedRows(p.menu?.items) ? p.menu : {categories: [], items: []};
     const news = b.public_surfaces && enabled(p.marketing) && rows(p.marketing?.publications) ? p.marketing.publications.filter(item => text(item.id) && text(item.title) && item.published === true && item.placement === 'homepage_feature' && (!item.channel || item.channel === 'website')).slice(0, 6) : [];
-    const gallery = rows(b.gallery) ? b.gallery.map(photo => ({url: media(photo.url), title: text(photo.title) || 'İşletmeden bir kare'})).filter(photo => photo.url).slice(0, 80) : [];
-    return {business: b, rooms, tables, menu, news, gallery, contact: contact(b),
+    const gallery = rows(b.gallery) ? b.gallery.map(photo => ({url: media(photo.url), title: text(photo.title) || t('İşletmeden bir kare')})).filter(photo => photo.url).slice(0, 80) : [];
+    return {business: b, rooms, tables, menu, news, gallery, contact: contact(b), menuUnavailable: !p.menu, menuEnabled: p.menu?.enabled === true && (has('menu') || has('qr_menu')),
       stayEnabled: b.requests_enabled === true && has('accommodation') && rooms.length > 0,
       tableEnabled: b.requests_enabled === true && has('food_service') && tables.length > 0};
   }
@@ -86,7 +87,7 @@
   const galleryHeading = document.querySelector('#fotograflar h2'), galleryAside = document.querySelector('#fotograflar .section-aside p');
   const headingFallback = galleryHeading?.cloneNode(true), asideFallback = galleryAside?.textContent;
   function booking(label, kind, row, enabled) {
-    const node = link(enabled ? label : 'Bilgi alın', enabled ? '/iletisim/#rezervasyon' : '/iletisim/');
+    const node = link(enabled ? label : t('Bilgi alın'), enabled ? '/iletisim/#rezervasyon' : '/iletisim/');
     if (enabled) {
       node.dataset.yaAction = kind === 'rooms' ? 'accommodation.reserve' : 'food.reserve';
       node.dataset.yaResourceType = kind === 'rooms' ? 'room' : 'table';
@@ -105,14 +106,14 @@
       for (const room of rooms) {
         const card = el('article', 'room-card'), body = el('div', 'room-body');
         const cover = rows(room.media) ? room.media.find(photo => ['cover', 'photo'].includes(photo.kind) && media(photo.url)) : null;
-        if (cover) { const button = photoButton(media(cover.url), text(room.name), 'room-image'); button.append(image(media(cover.url), room.name, 600, 420)); card.append(button); }
-        else { const placeholder = el('div', 'room-image placeholder-photo'); placeholder.append(icon('bed'), el('span', '', 'Oda fotoğrafı henüz yayınlanmadı')); card.append(placeholder); }
-        body.append(el('p', 'eyebrow', number(room.capacity) && Number(room.capacity) > 0 ? text(room.capacity) + ' KİŞİ' : 'KONAKLAMA'), el('h3', '', room.name), el('p', 'public-multiline', room.description));
+        if (cover) { const button = link('', '/odalar/oda/?id=' + encodeURIComponent(room.id), 'room-image'); button.append(image(media(cover.url), room.name, 600, 420)); card.append(button); }
+        else { const placeholder = el('div', 'room-image placeholder-photo'); placeholder.append(icon('bed'), el('span', '', t('Oda fotoğrafı henüz yayınlanmadı'))); card.append(placeholder); }
+        body.append(el('p', 'eyebrow', number(room.capacity) && Number(room.capacity) > 0 ? text(room.capacity) + ' ' + t('KİŞİ') : t('KONAKLAMA')), (() => { const h = el('h3'); h.append(link(room.name, '/odalar/oda/?id=' + encodeURIComponent(room.id), '')); return h; })(), el('p', 'public-multiline', room.description));
         if (text(room.bed_info)) body.append(el('p', 'room-meta', room.bed_info));
         const cost = price(room.nightly_price_minor, room.currency, 100);
-        if (cost) { const node = el('p', 'price', cost); node.append(el('small', '', ' / gece')); body.append(node); }
+        if (cost) { const node = el('p', 'price', cost); node.append(el('small', '', t(' / gece'))); body.append(node); }
         if (text(room.price_note)) body.append(el('p', 'fine-print', room.price_note));
-        body.append(booking('Konaklamayı planlayın', 'rooms', room, m.stayEnabled)); card.append(body); grid.append(card);
+        body.append(booking(t('Konaklamayı planlayın'), 'rooms', room, m.stayEnabled)); card.append(body); grid.append(card);
       }
       slot.replaceChildren(grid);
     });
@@ -121,8 +122,19 @@
       const grid = el('div', 'table-grid');
       for (const table of m.tables) {
         const card = el('article', 'table-card');
-        card.append(icon('plate'), el('h3', '', table.name), el('p', '', table.description), el('p', 'room-meta', [text(table.area), number(table.capacity) && Number(table.capacity) > 0 ? text(table.capacity) + ' kişi' : ''].filter(Boolean).join(' · ')));
-        if (m.tableEnabled) card.append(booking('Masa talebi iletin', 'tables', table, true)); grid.append(card);
+        const anchor = link('', '/restoran/masa/?id=' + encodeURIComponent(table.id), 'table-detail-link');
+        const photos = (Array.isArray(table.media) ? table.media : []).filter(p => p && media(p.url));
+        const cover = ['cover','photo'].map(kind => photos.filter(p => p.kind === kind).sort((a,b) => Number(a.sort_order || 0)-Number(b.sort_order || 0))[0]).find(Boolean);
+        const placeholder = el('span', 'table-image placeholder-photo', t('Masa fotoğrafı henüz yayınlanmadı'));
+        if (cover) {
+          const photo = image(media(cover.url), table.name, 600, 420);
+          photo.className = 'table-image';
+          photo.addEventListener('error', () => photo.replaceWith(placeholder), {once:true});
+          anchor.append(photo);
+        } else anchor.append(placeholder);
+        const body = el('div', 'table-body');
+        body.append(el('h3', '', table.name), el('p', 'public-multiline', table.description), el('p', 'room-meta', [text(table.area), number(table.capacity) && Number(table.capacity) > 0 ? text(table.capacity) + ' ' + t('kişi') : ''].filter(Boolean).join(' · ')), el('span', 'text-link', t('Masa detayları')));
+        anchor.append(body); card.append(anchor); grid.append(card);
       }
       slot.replaceChildren(grid);
     });
@@ -157,18 +169,19 @@
       }
     }
     document.querySelectorAll('[data-public-gallery]').forEach(grid => {
+      grid.replaceChildren(el('p', 'gallery-note', t('İşletme fotoğrafları henüz yayınlanmadı.')));
       if (m.gallery.length) {
-        if (grid.dataset.full !== 'true') grid.replaceChildren();
+        grid.replaceChildren();
         const figures = m.gallery.slice(0, grid.dataset.full === 'true' ? 80 : 4).map(photo => {
           const figure = el('figure', 'gallery-item'), button = photoButton(photo.url, photo.title), expand = el('span', 'gallery-expand'), caption = el('figcaption');
           figure.dataset.galleryKind = 'business'; expand.append(icon('plus')); button.append(image(photo.url, photo.title, 900, 650), expand);
-          caption.append(el('span', '', photo.title), el('small', '', 'İŞLETMEDEN')); figure.append(button, caption); return figure;
+          caption.append(el('span', '', photo.title), el('small', '', t('İŞLETMEDEN'))); figure.append(button, caption); return figure;
         });
         grid.prepend(...figures);
       }
     });
-    if (galleryHeading) { galleryHeading.replaceChildren(...[...headingFallback.childNodes].map(node => node.cloneNode(true))); if (m.gallery.length) galleryHeading.textContent = 'Gündoğdu’dan kareler.'; }
-    if (galleryAside) galleryAside.textContent = m.gallery.length ? 'İşletmemizin yayınladığı fotoğraflar.' : asideFallback;
+    if (galleryHeading) { galleryHeading.replaceChildren(...[...headingFallback.childNodes].map(node => node.cloneNode(true))); if (m.gallery.length) galleryHeading.textContent = t('Gündoğdu’dan kareler.'); }
+    if (galleryAside) galleryAside.textContent = m.gallery.length ? t('İşletmemizin yayınladığı fotoğraflar.') : asideFallback;
     document.querySelectorAll('[data-gallery-filter]').forEach(button => {
       button.hidden = button.dataset.galleryFilter === 'business' && !m.gallery.length;
       const active = button.dataset.galleryFilter === 'all'; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active));
@@ -179,14 +192,14 @@
       for (const [label, value, href, symbol] of [['TELEFON', c.phone, c.tel, 'phone'], ['E-POSTA', c.email, c.email ? 'mailto:' + c.email : '', 'mail'], ['WHATSAPP', 'Mesaj gönderin', c.whatsapp, 'phone'], ['ADRES', c.address, '', 'pin']]) {
         if (label === 'ADRES' ? !value : !href) continue;
         const row = href ? link('', href, '', label === 'WHATSAPP') : el('div'), copy = el('span');
-        copy.append(el('small', '', label), el('strong', '', value)); row.append(icon(symbol), copy); if (href) row.append(icon('arrow')); entries.push(row);
+        copy.append(el('small', '', t(label)), el('strong', '', value)); row.append(icon(symbol), copy); if (href) row.append(icon('arrow')); entries.push(row);
       }
       if (entries.length) list.replaceChildren(...entries);
     });
     document.querySelectorAll('[data-public-contact-extra]').forEach(extra => {
       extra.replaceChildren();
       if (c.note) extra.append(el('p', 'fine-print public-multiline', c.note));
-      if (c.map) { const node = link('Yol tarifi alın', c.map, 'text-link', true); node.append(icon('arrow')); extra.append(node); }
+      if (c.map) { const node = link(t('Yol tarifi alın'), c.map, 'text-link', true); node.append(icon('arrow')); extra.append(node); }
       const socials = el('div', 'social-links');
       if (rows(b.social_links)) for (const social of b.social_links) { const url = https(social.url); if (url) socials.append(link((text(social.platform) || 'Sosyal medya') + ' ↗', url, '', true)); }
       extra.append(socials);
@@ -195,7 +208,7 @@
       if (!c.embed) return;
       const frame = el('iframe'); frame.title = 'İşletmenin yayınlanmış harita konumu'; frame.src = c.embed; frame.loading = 'lazy'; frame.referrerPolicy = 'no-referrer'; frame.allowFullscreen = true;
       card.replaceChildren(frame);
-      if (c.attribution) card.append(link('© OpenStreetMap katkıda bulunanlar', 'https://www.openstreetmap.org/copyright', 'map-attribution', true));
+      if (c.attribution) card.append(link(t('© OpenStreetMap katkıda bulunanlar'), 'https://www.openstreetmap.org/copyright', 'map-attribution', true));
     });
     const policies = document.querySelector('[data-public-policies]');
     if (policies) {
@@ -206,8 +219,8 @@
     document.body.dataset.stayEnabled = String(m.stayEnabled); document.body.dataset.tableEnabled = String(m.tableEnabled);
     document.querySelectorAll('[data-booking-kind]').forEach(node => { node.dataset.yaAction = node.dataset.bookingKind === 'rooms' && m.stayEnabled ? 'accommodation.reserve' : node.dataset.bookingKind === 'tables' && m.tableEnabled ? 'food.reserve' : 'home'; });
     const enabled = m.stayEnabled || m.tableEnabled;
-    document.querySelectorAll('[data-reservation-copy]').forEach(node => { node.textContent = enabled ? 'Tarihlerinizi seçin, ziyaret talebinizi birlikte planlayalım.' : 'Ziyaretinizi planlamak için güncel seçenekleri keşfedin.'; });
-    document.querySelectorAll('[data-visit-copy]').forEach(node => { node.textContent = enabled ? 'Asistandan tarih ve kişi bilgilerini iletebilirsiniz. Talebiniz, işletme onayı ile kesinleşir.' : 'Online oda ve masa talebi şu anda açık değil. Yayınlanan iletişim kanalları üzerinden bilgi alabilirsiniz.'; });
+    document.querySelectorAll('[data-reservation-copy]').forEach(node => { node.textContent = t(enabled ? 'Tarihlerinizi seçin, ziyaret talebinizi birlikte planlayalım.' : 'Ziyaretinizi planlamak için güncel seçenekleri keşfedin.'); });
+    document.querySelectorAll('[data-visit-copy]').forEach(node => { node.textContent = t(enabled ? 'Asistandan tarih ve kişi bilgilerini iletebilirsiniz. Talebiniz, işletme onayı ile kesinleşir.' : 'Online oda ve masa talebi şu anda açık değil. Yayınlanan iletişim kanalları üzerinden bilgi alabilirsiniz.'); });
     const structured = {'@context': 'https://schema.org', '@type': 'LodgingBusiness', name: 'Gündoğdu Pansiyon & Restoran', url: canonicalOrigin, logo: canonicalOrigin + '/assets/brand/mark.svg'};
     if (c.tel) structured.telephone = c.tel.slice(4);
     if (c.address) structured.address = {'@type': 'PostalAddress', streetAddress: c.address};
@@ -215,7 +228,9 @@
     if (c.map) structured.hasMap = c.map;
     if (rows(b.social_links)) { const urls = b.social_links.map(social => https(social.url)).filter(Boolean); if (urls.length) structured.sameAs = urls; }
     if (m.gallery.length) structured.image = m.gallery.map(photo => canonicalOrigin + photo.url);
+    if (text(b.description)) { structured.description = b.description; document.querySelector('meta[name=description]')?.setAttribute('content', b.description); }
     const seo = document.querySelector('[data-business-structured-data]'); if (seo) seo.textContent = JSON.stringify(structured);
+    document.querySelectorAll('[data-menu-link]').forEach(node => { node.hidden = !m.menuEnabled; });
     document.dispatchEvent(new CustomEvent('gundogdu:public-data', {detail: m}));
   }
   async function read(name, signal) {
@@ -231,16 +246,16 @@
       const payload = JSON.parse(new TextDecoder().decode(bytes)); return object(payload) && payload.ok === true ? payload : null;
     } catch { return null; }
   }
-  let inFlight;
-  function load() {
+  let inFlight, lastSnapshot;
+  function load({quiet = false} = {}) {
     if (inFlight) return inFlight;
-    render(model([])); document.body.dataset.publicState = 'loading';
+    if (!quiet) { render(model([])); document.body.dataset.publicState = 'loading'; }
     inFlight = (async () => {
       const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 7000);
-      try { const m = model(await Promise.all(endpoints.map(name => read(name, controller.signal)))); render(m); document.body.dataset.publicState = 'ready'; return m; }
+      try { const m = model(await Promise.all(endpoints.map(async name => localize(await read(name, controller.signal), name)))); const snapshot = JSON.stringify(m); if (!quiet || snapshot !== lastSnapshot) render(m); lastSnapshot = snapshot; document.body.dataset.publicState = 'ready'; return m; }
       finally { clearTimeout(timeout); inFlight = null; }
     })();
     return inFlight;
   }
-  window.GundogduPublicData = {load};
+  window.GundogduPublicData = {load, mediaUrl: media};
 })();

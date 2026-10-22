@@ -15,12 +15,13 @@ ssh_rsync='ssh -o BatchMode=yes -o ConnectTimeout=12 -o StrictHostKeyChecking=ye
   echo 'Site henüz tasarlanmadı: işaretli index.php bulunamadı. Yayın yapılmadı.' >&2; exit 1;
 }
 for c in php ssh rsync curl; do command -v "$c" >/dev/null || { echo "Eksik: $c" >&2; exit 1; }; done
-site_dirs='assets inc odalar restoran galeri iletisim'
+# restoran includes the published /restoran/masa/ detail page.
+site_dirs='assets inc odalar restoran galeri iletisim qr-menu'
 site_files='.htaccess 404.php robots.txt sitemap.xml'
 for name in $site_dirs $site_files; do
   [[ -e "$repo/$name" && ! -L "$repo/$name" ]] || { echo "Eksik veya symlink site girdisi: $name" >&2; exit 1; }
 done
-[[ -z "$(find "$repo/assets" "$repo/inc" "$repo/odalar" "$repo/restoran" "$repo/galeri" "$repo/iletisim" -type l -print -quit)" ]] || { echo 'Site paketinde symlink bulundu.' >&2; exit 1; }
+[[ -z "$(find "$repo/assets" "$repo/inc" "$repo/odalar" "$repo/restoran" "$repo/galeri" "$repo/iletisim" "$repo/qr-menu" -type l -print -quit)" ]] || { echo 'Site paketinde symlink bulundu.' >&2; exit 1; }
 while IFS= read -r -d '' file; do php -l "$file" >/dev/null; done < <(
   find "$repo" -name .git -prune -o -name .deploy -prune -o -type f -name '*.php' -print0
 )
@@ -32,7 +33,7 @@ command -v rsync >/dev/null
 php -r 'exit(PHP_VERSION_ID >= 80000 && function_exists("curl_multi_init") ? 0 : 1);' || {
   echo 'Hosting PHP 8+ ve cURL eklentisi gerektiriyor.' >&2; exit 1;
 }
-for name in assets inc odalar restoran galeri iletisim .htaccess 404.php robots.txt sitemap.xml index.php; do
+for name in assets inc odalar restoran galeri iletisim qr-menu .htaccess 404.php robots.txt sitemap.xml index.php; do
   [[ ! -L "$root/$name" ]] || { echo "Uzak site girdisi symlink: $name" >&2; exit 1; }
 done
 if [[ -e "$root/index.php" ]] && ! grep -q 'gundogdu-site' "$root/index.php"; then

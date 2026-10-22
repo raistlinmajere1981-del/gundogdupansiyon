@@ -45,3 +45,11 @@ Widget, Yardımcı Asistan test-site/landing/assets/assistant dağıtımından d
 BlackSea, Yardımcı Asistan ve Teknikel reposuna değişiklik yazılmadı.
 
 [Superdesign panosu](https://superdesign.dev/teams/d43e8b12-551a-4b15-a10c-e48c388c4fc6/projects/39685a69-d293-4384-8f47-d1332826d6d0): Gemini 3.1 Pro ile ilk taslak. Taslağın doğrulanmamış tanıtım ifadeleri site koduna alınmadı. Son uygulamanın kanıtı yerel tarayıcı ekranlarıdır.
+
+## 22 Ekim özellik eşliği uyarlaması
+
+BlackSea read-only kaynaklarından `language.js` endpoint localization algoritması, `rooms.js` oda detay/medya render akışı, `qr-menu.js` kategori/ürün filtreleri, `flag-language.js`, `inc/flag-language.php` ve `assets/flags/{tr,en}.svg` yeniden kullanıldı. Fetch ve capability akışı Gündoğdu’nun tek `public-data.js` sahibinde kaldı; ikinci HTTP istemcisi/poller eklenmedi. Site sözlüğü BlackSea marka metinleri içermez. Gündoğdu fontları, logosu, paleti ve kompozisyonu korundu.
+
+Pannellum 2.5.6 (`assets/vendor/pannellum/`) BlackSea’nin kullandığı sürümdür; JS/CSS dağıtımı jsDelivr npm paketinden alınıp yerelleştirildi. MIT lisansı `assets/vendor/pannellum/LICENSE` içinde dağıtılır. Test videosu ffmpeg ile yalnız geçici fixture dizininde üretilir; gerçek işletme medyası değildir ve deploy edilmez.
+
+Galeri artık bölge fotoğraflarını fallback olarak kullanmaz. Bölge fotoğraf atıfları kapak/bölge bölümlerinde ve `/galeri/#kaynaklar` altında kalır. Oda, masa, ürün ve işletme galeri içeriği yalnız yayınlı public API projeksiyonlarından gelir.

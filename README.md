@@ -1,6 +1,6 @@
 # Gündoğdu Pansiyon & Restoran
 
-Gideros Koyu için bağımsız PHP sitesi. Ana sayfa, Odalar, Restoran, Galeri ve İletişim tamamlandı. Canlı site: https://yardimciasistangunduodu.alwaysdata.net/.
+Gideros Koyu için PHP sitesi; BlackSea’nin olgun dil, oda detayı, QR menü ve Canvas kalıpları Gündoğdu’nun mevcut görsel kimliğine uyarlanmıştır. Ana sayfa, Odalar, Oda Detayı, Restoran, QR Menü, Galeri ve İletişim sayfaları bulunur. Canlı site: https://yardimciasistangunduodu.alwaysdata.net/.
 
 ## Yerel önizleme
 
@@ -25,7 +25,7 @@ Mevcut hostingdeki **public GET** yayınları okunur. Yerel router canlıya reze
 | marketing.php | Ana sayfa duyuru ve kampanyaları |
 | request.php, availability.php, chat.php | Canonical widget’ın mevcut işlem uçları |
 
-PHP yalnız markalı sayfa düzenini, gerçek bölge fotoğraflarını ve güvenli boş durumları üretir; SSR sırasında HTTP isteği yapılmaz. Böylece PHP-FPM kendi public uçlarını bekleyerek worker havuzunu kilitlemez. assets/js/public-data.js DOMContentLoaded sonrasında mevcut beş aynı origin public GET ucunu bir kez, no-store ve süre/boyut sınırıyla okur. Odalar, masalar, menü, duyurular, işletme galerisi, hakkımızda, koşullar, iletişim, harita ve JSON-LD tarayıcıda güncellenir. İçerik textContent/DOM düğümleriyle, medya ve dış bağlantılar doğrulanarak yerleştirilir. İşletme kayıtları yerelde saklanmaz; polling yapılmaz. Sayfa yeniden açıldığında veya tarayıcı geçmişinden geri getirildiğinde yayın yeniden okunur. API hatası, bozuk yanıt veya geri çekilmiş yayında ilgili içerik ve rezervasyon seçeneği kapanır; eski/tahmini telefon/adres kullanılmaz. JS olmadan markalı düzen, manzara ve iletişim sayfasına yönlendiren bağlantılar kalır.
+PHP yalnız markalı sayfa düzenini, gerçek bölge fotoğraflarını ve güvenli boş durumları üretir; SSR sırasında HTTP isteği yapılmaz. Böylece PHP-FPM kendi public uçlarını bekleyerek worker havuzunu kilitlemez. assets/js/public-data.js DOMContentLoaded sonrasında mevcut beş aynı origin public GET ucunu bir kez, no-store ve süre/boyut sınırıyla okur. Odalar, masalar, menü, duyurular, işletme galerisi, hakkımızda, koşullar, iletişim, harita ve JSON-LD tarayıcıda güncellenir. İçerik textContent/DOM düğümleriyle, medya ve dış bağlantılar doğrulanarak yerleştirilir. İşletme kayıtları yerelde saklanmaz. Görünür sayfada 15 saniyelik ortak GET yenilemesi vardır; açık widget ve medya diyaloğu sırasında ertelenir, aynı snapshot tekrar çizilmez. Sayfa yeniden açıldığında veya tarayıcı geçmişinden geri getirildiğinde yayın yeniden okunur. API hatası, bozuk yanıt veya geri çekilmiş yayında ilgili içerik ve rezervasyon seçeneği kapanır; eski/tahmini telefon/adres kullanılmaz. JS olmadan markalı düzen, manzara ve iletişim sayfasına yönlendiren bağlantılar kalır.
 
 GUNDOGDU_PUBLIC_API_ORIGIN yerel router’ın public GET proxy kaynağını değiştirebilir; mevcut fixture kullanımı korunur. Tarayıcı her durumda /yardimci-asistan/api/ altındaki aynı origin uçlarını çağırır. Bu ayar SSR okumalarını tekrar açmaz. Yerel proxy varsayılanı verilen Alwaysdata adresidir. .env dosyaları Git dışındadır.
 
@@ -49,7 +49,7 @@ Tarayıcı testi için bağımlılığı çalışma kökünde kurun:
 
     npm install --prefix .local/browser-tools --no-audit --no-fund @playwright/test
 
-Test /usr/bin/brave kullanır; PLAYWRIGHT_CHROMIUM_EXECUTABLE ile değişebilir. Komşu repo, özel veri veya secret okunmaz. Fixture sunucusu ve geçici site kopyası .test-artifacts/ altında oluşturulur ve kapanışta temizlenir. Test, tek PHP worker’ında kendi public GET’ini bekleyen geçici tanıyla errno 28 / HTTP 0 durumunu üretir; ardından SSR’nin API çağrısı yapmadan tamamlandığını ve tarayıcının bağımsız HTTP fixture’ından 3 oda / 8 masa yüklediğini kanıtlar. Capability/yayın geri çekme, 503/bozuk JSON/ağ/zaman aşımı, güvenli metin/URL, widget seçenekleri, tekrar gönderim anahtarı ve 25 ekran boyutu kontrol edilir. Rapor ve ekranlar .test-artifacts/browser-report.json ve aynı dizindeki PNG dosyalarındadır.
+Test /usr/bin/brave kullanır; PLAYWRIGHT_CHROMIUM_EXECUTABLE ile değişebilir. Komşu repo, özel veri veya secret okunmaz. Fixture sunucusu ve geçici site kopyası .test-artifacts/ altında oluşturulur ve kapanışta temizlenir. Test, tek PHP worker’ında kendi public GET’ini bekleyen geçici tanıyla errno 28 / HTTP 0 durumunu üretir; ardından SSR’nin API çağrısı yapmadan tamamlandığını ve tarayıcının bağımsız HTTP fixture’ından 3 oda / 8 masa yüklediğini kanıtlar. Capability/yayın geri çekme, 503/bozuk JSON/ağ/zaman aşımı, güvenli metin/URL, widget seçenekleri, tekrar gönderim anahtarı ve 40 sayfa/ekran kombinasyonu ile ek İngilizce 320/390 px kontrolleri çalıştırılır. Oda navigasyonu/bilinmeyen kimlik/medya, masa bağlamı, QR filtreleri ve yayın geri çekme, yalnız yayınlı galeri, endpoint metadata çevirileri, canonical widget dili, oynatılabilir fixture video ve gerçek canvas çizim/durdurma durumu doğrulanır. Video fixture üretimi için ffmpeg gerekir. Rapor ve ekranlar .test-artifacts/browser-report.json ve aynı dizindeki PNG dosyalarındadır.
 
 Çalışan yerel önizlemeden gerçek public verilerle ekran almak için:
 
@@ -57,10 +57,32 @@ Test /usr/bin/brave kullanır; PLAYWRIGHT_CHROMIUM_EXECUTABLE ile değişebilir.
 
 ## Yayın sınırı
 
-Mevcut deploy scripti kullanılır. Allowlist: assets, inc, odalar, restoran, galeri, iletisim, kök .htaccess, 404.php, robots.txt, sitemap.xml, index.php.
+Mevcut deploy scripti kullanılır. `--dry-run` da SSH bağlantısı açar; bu çalışma kapsamında yalnız `--dry-run` ön kontrolü başarılı oldu; uzak dosyalar değiştirilmedi. Allowlist: assets, inc, odalar (oda detayı dahil), qr-menu, restoran (masa detayı dahil), galeri, iletisim, kök .htaccess, 404.php, robots.txt, sitemap.xml, index.php.
 
 /yardimci-asistan, config/runtime, .local, .env, .git, testler ve belgeler aktarılmaz. Silme senkronizasyonu yoktur. SSH host anahtarı, PHP/cURL, symlink ve bilinmeyen site index/htaccess kontrolleri vardır.
 
 **Canlı yayın yalnız tasarım incelemesi ve açık kullanıcı onayı sonrasında yapılır.** Bu teslimde --yes, commit/push çalıştırılmadı.
 
 [Teslim raporu](docs/DELIVERY.md) · [Kaynaklar ve lisanslar](docs/SOURCES.md)
+
+## Özellik sahipleri
+
+- `assets/js/public-data.js`: tek site GET/yenileme, yayın ve rezervasyon kapıları, güvenli medya URL’leri, katalog/galeri/iletişim projeksiyonları. Canonical widget kendi sözleşmesi kapsamında business GET yapmaya devam eder.
+- `inc/language.php`, `assets/js/language.js`, `assets/i18n/en.json`: siteye ait TR/EN arayüz; `?lang=en|tr` ve yıl süreli site çerezi. Dil seçicisi mevcut path ve `id` parametresini korur. SSR dil seçimi API çağırmaz. API kayıtları yalnız kendi endpoint `localization.version=1`, `source_language=tr`, `target_languages` içinde `en` olduğunda alan bazında çevrilir; eksik alan Türkçe kalır.
+- `assets/js/rooms.js`, `odalar/oda/`, `assets/js/room-media.js`: BlackSea oda detay/media renderer uyarlaması; yalnız tam kimlik eşleşmesi. Kapak/fotoğraf lightbox, yayın varsa 180/360 panorama ve kontrollü video. Panorama Pannellum 2.5.6 yerel dağıtımıdır; CDN çalışma zamanı bağımlılığı yoktur.
+- `assets/js/qr-menu.js`, `qr-menu/`: BlackSea kategori/ürün/fiyat renderer uyarlaması, ortak snapshot üzerinden çalışır. Menü yayını ve menu/qr_menu yüzeyi kapalıysa bağlantılar gizlenir; doğrudan URL boş durumu korur.
+- Galeri gridi yalnız `business.gallery` sırasını kullanır; Gideros fotoğrafları kapak/bölge bölümleri ve kaynak atfıyla sınırlıdır. Yayın yoksa galeri boştur.
+- Oda görseli/başlığı detay bağlantısıdır. Masa kartının tamamı `/restoran/masa/?id=...` detayına gider. Detay, tüm yayınlı özellikler ve kapak/fotoğraf, desteklenen panorama/video içerir. Yalnız detay içindeki rezervasyon düğmesi seçili masa ID/ad/görselini canonical `food.reserve` bağlamına taşır; kapalı rezervasyonda detay ve iletişim bağlantısı kalır. Bilinmeyen/geri çekilmiş ID başka kayıt veya eski görsel göstermez.
+- Dalga anahtarı gerçek ticker ve overlay’i kapatır/açar; seçim yerelde saklanır. Azaltılmış hareket, saveData, düşük donanım ve ağır çizim statik fallback’i korunur.
+
+İzole fixture testleri üretim Desktop yayınını, gerçek cihazları veya canlı rezervasyon sağlayıcısını kanıtlamaz. Canlı ortama değişiklik yapılmamıştır.
+
+## Geçici dalga tanısı: TEST · MAX
+
+Bu test sürümünde hero dalgası varsayılan olarak MAX: 120 offshore yaması, 6 köpük rotası; yüksek opaklık, hız, deformasyon ve genişlik. `Etki alanları` düğmesi mavi yüzey poligonunu, sarı köpük güvenli alanını ve mercan kıyı rotasını açar. SVG rehberi fotoğrafın `object-fit`/`object-position` dönüşümünü izler; farklı ekran kırpmalarında aynı kaynak koordinatlarını gösterir. Canvas karartma katmanının üstünde, metnin altında çizilir; hero kırpması köpüğü görünür tutmak için %65 düşey konum kullanır.
+
+Kapat, canvası temizleyip ticker'ı durdurur ve rehberi gizler; seçim `gundogdu-waves` anahtarıyla saklanır. Rehber ayrı açılır ve tercihi sayfa boyunca korunur. Reduced-motion/saveData/az donanım statik fotoğraf, 650.000 piksel ve 20 fps üst sınırı, ağır çizimde statik fallback sürer. MAX doğal görünüm için kalıcı ayar değildir.
+
+Doğal ayara dönüş: `assets/js/water.mjs` içindeki `diagnostic = false` yapın. `giderosScene({diagnostic:false})` korunmuş doğal parametreleri kullanır; TEST/MAX etiketi ve rehber kalkar. İstenirse CSS'teki `.hero-landscape .hero-photo` düşey konumunu tekrar `%50` yapın. Testte MAX'a özel 6 köpük/etiket/opak piksel beklentilerini doğal ayarla uyarlayın. İlk tekrar testinde kayıtlı OFF varsa düğmeden açın.
+
+Görsel kanıtlar `.test-artifacts/wave-max-effects.png`, `wave-max-guide.png`, mobil wave PNG'leri ve `fixture-table-detail.png`; piksel alfa sayımları ve motor `inspect()` ölçümleri `browser-report.json` içindedir. Bunlar izole yerel test kanıtıdır.

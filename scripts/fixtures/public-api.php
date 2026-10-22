@@ -13,12 +13,12 @@ $surfaces = $business['public_surfaces'] ?? ['accommodation','food_service','roo
 if ($name === 'business') {
     $business = array_merge(['display_name'=>$business['business_name'] ?? 'YEREL TEST','profile_id'=>'pension_restaurant',
         'public_surfaces'=>$surfaces,'requests_enabled'=>in_array('customer.requests',$caps,true),'ai_enabled'=>false,'whatsapp_enabled'=>false], $business);
-    echo json_encode(['ok'=>true,'business'=>$business]);
+    echo json_encode(['ok'=>true,'business'=>$business,'localization'=>$business['localization'] ?? null]);
 } elseif (in_array($name,['rooms','tables'],true)) {
     $payload=$read($name === 'rooms' ? 'room_catalog' : 'table_catalog');
-    echo json_encode(['ok'=>true,'enabled'=>($payload['enabled'] ?? false) === true,$name=>$payload[$name] ?? []]);
+    echo json_encode(['ok'=>true,'enabled'=>($payload['enabled'] ?? false) === true,$name=>$payload[$name] ?? [],'localization'=>$payload['localization'] ?? null]);
 } elseif ($name === 'menu') {
-    $payload=$read('menu'); echo json_encode(['ok'=>true,'enabled'=>($payload['enabled'] ?? false) === true,'categories'=>$payload['categories'] ?? [],'items'=>$payload['items'] ?? []]);
+    $payload=$read('menu'); echo json_encode(['ok'=>true,'enabled'=>($payload['enabled'] ?? false) === true,'categories'=>$payload['categories'] ?? [],'items'=>$payload['items'] ?? [],'localization'=>$payload['localization'] ?? null]);
 } elseif ($name === 'marketing') {
     $payload=$read('marketing_website'); echo json_encode(['ok'=>true,'enabled'=>($payload['enabled'] ?? false) === true,'publications'=>$payload['publications'] ?? []]);
 } elseif ($name === 'availability') {
