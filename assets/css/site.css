@@ -337,3 +337,5 @@ em{font-weight:inherit;color:inherit}
 }
 @media(max-width:350px){.header-inner{padding-inline:15px;gap:10px}.brand-copy strong{font-size:25px}.brand-copy small{font-size:5.5px}.brand>img{width:35px}.header-booking{padding-inline:9px;font-size:9px}.hero h1{font-size:53px}.hero-content>p:not(.eyebrow){font-size:11px}.slow-strip>.shell{gap:20px}.footer-main>nav{gap:20px}h2,.intro-section h2,.restaurant-copy h2{font-size:35px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.canvas-overlay{display:none!important}}
+
+.public-multiline{white-space:pre-line}

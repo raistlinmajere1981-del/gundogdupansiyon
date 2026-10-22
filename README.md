@@ -1,16 +1,16 @@
 # Gündoğdu Pansiyon & Restoran
 
-Gideros Koyu için bağımsız PHP sitesi. Ana sayfa, Odalar, Restoran, Galeri ve İletişim tamamlandı. Canlıya yayın yapılmadı.
+Gideros Koyu için bağımsız PHP sitesi. Ana sayfa, Odalar, Restoran, Galeri ve İletişim tamamlandı. Canlı site: https://yardimciasistangunduodu.alwaysdata.net/.
 
 ## Yerel önizleme
 
-PHP 8+ ve cURL gerekir. Üretim için Node, framework veya site veritabanı gerekmez.
+PHP 8+ gerekir. Yerel public GET proxy’si için cURL kullanılır. Üretim için Node, framework veya site veritabanı gerekmez.
 
     bash scripts/dev.sh
 
 Adres: http://127.0.0.1:8077
 
-Mevcut hostingdeki **public GET** yayınları okunur. Yerel router canlıya rezervasyon/talep/AI isteği göndermez; bu işlemler 503 döner. İşlem akışları izole test backend’iyle doğrulanır.
+Mevcut hostingdeki **public GET** yayınları okunur. Yerel router canlıya rezervasyon/talep/AI isteği göndermez; bu işlemler 503 döner. Tarayıcı işlem akışları, yalnız bu repo içindeki geçici HTTP contract fixture’larıyla kontrol edilir; gerçek backend entegrasyonu veya canlı rezervasyon kanıtı sayılmaz.
 
 ## Veri sahipliği
 
@@ -25,9 +25,9 @@ Mevcut hostingdeki **public GET** yayınları okunur. Yerel router canlıya reze
 | marketing.php | Ana sayfa duyuru ve kampanyaları |
 | request.php, availability.php, chat.php | Canonical widget’ın mevcut işlem uçları |
 
-inc/data.php her sayfa isteğinde beş salt-okunur ucu paralel ve süre/boyut sınırlı okur. İşletme kayıtları yerelde saklanmaz. Yayın değişiklikleri sonraki sayfa isteğinde görünür; açık sayfada polling yapılmaz. API hatasında veya boş yayında eski/tahmini iletişim bilgisine dönülmez.
+PHP yalnız markalı sayfa düzenini, gerçek bölge fotoğraflarını ve güvenli boş durumları üretir; SSR sırasında HTTP isteği yapılmaz. Böylece PHP-FPM kendi public uçlarını bekleyerek worker havuzunu kilitlemez. assets/js/public-data.js DOMContentLoaded sonrasında mevcut beş aynı origin public GET ucunu bir kez, no-store ve süre/boyut sınırıyla okur. Odalar, masalar, menü, duyurular, işletme galerisi, hakkımızda, koşullar, iletişim, harita ve JSON-LD tarayıcıda güncellenir. İçerik textContent/DOM düğümleriyle, medya ve dış bağlantılar doğrulanarak yerleştirilir. İşletme kayıtları yerelde saklanmaz; polling yapılmaz. Sayfa yeniden açıldığında veya tarayıcı geçmişinden geri getirildiğinde yayın yeniden okunur. API hatası, bozuk yanıt veya geri çekilmiş yayında ilgili içerik ve rezervasyon seçeneği kapanır; eski/tahmini telefon/adres kullanılmaz. JS olmadan markalı düzen, manzara ve iletişim sayfasına yönlendiren bağlantılar kalır.
 
-GUNDOGDU_PUBLIC_API_ORIGIN yerel/izole test kaynağını değiştirebilir. Varsayılan, verilen Alwaysdata adresidir. .env dosyaları Git dışındadır.
+GUNDOGDU_PUBLIC_API_ORIGIN yerel router’ın public GET proxy kaynağını değiştirebilir; mevcut fixture kullanımı korunur. Tarayıcı her durumda /yardimci-asistan/api/ altındaki aynı origin uçlarını çağırır. Bu ayar SSR okumalarını tekrar açmaz. Yerel proxy varsayılanı verilen Alwaysdata adresidir. .env dosyaları Git dışındadır.
 
 ## Görsel motorlar
 
@@ -37,7 +37,7 @@ Yeni koy/gün doğumu SVG işareti, açık/koyu varyantı ve favicon assets/bran
 
 BlackSea’den Canvas çekirdeği, koordinat/scheduler/random yardımcıları, offshore ve foam alındı. Gideros geometrisi/ayarları ayrıdır. 20 fps, 650 bin piksel bütçesi, azaltılmış hareket/düşük donanım/ağır çizimde statik fotoğraf ve kullanıcı durdurma desteği vardır.
 
-assets/assistant/widget.js değişmemiş canonical bundle’dır. assets/css/widget-theme.css yalnız body[data-site="gundogdu"] altında tipografi, kart, buton, tarih/saat ve paneli temalar. assets/js/site.js yayın kapılarına göre görünür seçenekleri, klavye ve dış tetikleyicileri bağlar. Talep validasyonu, retry/idempotency, availability ve gönderim bundle’da kalır. Ortak repo değiştirilmedi.
+assets/assistant/widget.js değişmemiş canonical bundle’dır. assets/css/widget-theme.css yalnız body[data-site="gundogdu"] altında tipografi, kart, buton, tarih/saat ve paneli temalar. assets/js/site.js güncel tarayıcı snapshot’ına göre widget config’ini, görünür seçenekleri, klavye ve dış tetikleyicileri bağlar. Widget’ın bağımsız business GET’i katalog yayın kapılarını aşamaz; yalnız yayınlanmış katalog + requests_enabled + ilgili public_surfaces birlikte rezervasyon açar. Site katmanı POST göndermez; canonical widget tek gönderim sahibidir. Talep validasyonu, retry/idempotency, availability ve gönderim bundle’da kalır. Ortak repo değiştirilmedi.
 
 ## Kontroller
 
@@ -45,7 +45,11 @@ assets/assistant/widget.js değişmemiş canonical bundle’dır. assets/css/wid
     node scripts/check-browser.mjs
     bash scripts/deploy-site.sh --dry-run
 
-Tarayıcı testi komşu Yardımcı Asistan reposundaki Playwright ve /usr/bin/brave kullanır. YARDIMCI_ASISTAN_REPO ve PLAYWRIGHT_CHROMIUM_EXECUTABLE ile değişebilir. Yalnız API/lib kaynakları geçici dizine kopyalanır; müşteri config/veritabanı/secret’ları okunmaz. Test yayın/talepleri geçici backend’de oluşturulup silinir. Rapor/ekranlar Git dışındaki .test-artifacts/ içindedir.
+Tarayıcı testi için bağımlılığı çalışma kökünde kurun:
+
+    npm install --prefix .local/browser-tools --no-audit --no-fund @playwright/test
+
+Test /usr/bin/brave kullanır; PLAYWRIGHT_CHROMIUM_EXECUTABLE ile değişebilir. Komşu repo, özel veri veya secret okunmaz. Fixture sunucusu ve geçici site kopyası .test-artifacts/ altında oluşturulur ve kapanışta temizlenir. Test, tek PHP worker’ında kendi public GET’ini bekleyen geçici tanıyla errno 28 / HTTP 0 durumunu üretir; ardından SSR’nin API çağrısı yapmadan tamamlandığını ve tarayıcının bağımsız HTTP fixture’ından 3 oda / 8 masa yüklediğini kanıtlar. Capability/yayın geri çekme, 503/bozuk JSON/ağ/zaman aşımı, güvenli metin/URL, widget seçenekleri, tekrar gönderim anahtarı ve 25 ekran boyutu kontrol edilir. Rapor ve ekranlar .test-artifacts/browser-report.json ve aynı dizindeki PNG dosyalarındadır.
 
 Çalışan yerel önizlemeden gerçek public verilerle ekran almak için:
 

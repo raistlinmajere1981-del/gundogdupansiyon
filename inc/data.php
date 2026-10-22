@@ -31,37 +31,24 @@ function public_origin(): string {
     return preg_match('#^https?://[a-zA-Z0-9.:-]+$#D', $origin) ? rtrim($origin, '/') : SITE_ORIGIN;
 }
 
-/** Public HTTP only. No second database, backend file reads, private config or persisted cache. */
-function public_snapshot(): array {
-    static $snapshot;
-    if (isset($snapshot)) return $snapshot;
-    $snapshot = array_fill_keys(PUBLIC_ENDPOINTS, []);
-    if (!function_exists('curl_multi_init')) return $snapshot;
-    $multi = curl_multi_init(); $handles = []; $buffers = [];
-    foreach (PUBLIC_ENDPOINTS as $name) {
-        $buffers[$name] = '';
-        $handle = curl_init(public_origin() . '/yardimci-asistan/api/' . $name . '.php');
-        curl_setopt_array($handle, [CURLOPT_HTTPHEADER => ['Accept: application/json'], CURLOPT_CONNECTTIMEOUT_MS => 650,
-            CURLOPT_TIMEOUT_MS => 1800, CURLOPT_FOLLOWLOCATION => false, CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
-            CURLOPT_WRITEFUNCTION => static function ($handle, string $chunk) use (&$buffers, $name): int {
-                if (strlen($buffers[$name]) + strlen($chunk) > 2097152) return 0;
-                $buffers[$name] .= $chunk; return strlen($chunk);
-            }]);
-        curl_multi_add_handle($multi, $handle); $handles[$name] = $handle;
-    }
-    do {
-        $status = curl_multi_exec($multi, $running);
-        if ($running) curl_multi_select($multi, .1);
-    } while ($running && $status === CURLM_OK);
-    foreach ($handles as $name => $handle) {
-        if (curl_errno($handle) === 0 && curl_getinfo($handle, CURLINFO_RESPONSE_CODE) === 200) {
-            $payload = json_decode($buffers[$name], true, 64);
-            if (is_array($payload) && ($payload['ok'] ?? false) === true) $snapshot[$name] = $payload;
-        }
-        curl_multi_remove_handle($multi, $handle); curl_close($handle);
-    }
-    curl_multi_close($multi);
-    return $snapshot;
+/** SSR never calls the site's own PHP pool. Browser GETs own all published data. */
+function public_snapshot(): array { return array_fill_keys(PUBLIC_ENDPOINTS, []); }
+
+/** Local preview proxy only; GUNDOGDU_PUBLIC_API_ORIGIN remains a fixture override. */
+function preview_public_get(string $name): array {
+    if (!in_array($name, PUBLIC_ENDPOINTS, true) || !function_exists('curl_init')) return [];
+    $body = ''; $handle = curl_init(public_origin() . '/yardimci-asistan/api/' . $name . '.php');
+    curl_setopt_array($handle, [CURLOPT_HTTPHEADER=>['Accept: application/json'], CURLOPT_CONNECTTIMEOUT_MS=>650,
+        CURLOPT_TIMEOUT_MS=>1800, CURLOPT_FOLLOWLOCATION=>false, CURLOPT_PROTOCOLS=>CURLPROTO_HTTP | CURLPROTO_HTTPS,
+        CURLOPT_WRITEFUNCTION=>static function ($handle, string $chunk) use (&$body): int {
+            if (strlen($body) + strlen($chunk) > 2097152) return 0;
+            $body .= $chunk; return strlen($chunk);
+        }]);
+    curl_exec($handle);
+    $valid = curl_errno($handle) === 0 && curl_getinfo($handle, CURLINFO_RESPONSE_CODE) === 200;
+    curl_close($handle);
+    $payload = $valid ? json_decode($body, true, 64) : null;
+    return is_array($payload) && ($payload['ok'] ?? false) === true ? $payload : [];
 }
 function business(): array { $value = public_snapshot()['business']['business'] ?? []; return is_array($value) ? $value : []; }
 function brand_name(): string { return txt(business()['display_name'] ?? business()['name'] ?? '') ?: 'Gündoğdu'; }

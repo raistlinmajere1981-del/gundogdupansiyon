@@ -1,8 +1,7 @@
 import { createRequire } from 'node:module';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { backendRoot } from './local-api.mjs';
-const require=createRequire(join(backendRoot,'package.json'));
+const require=createRequire(new URL('../.local/browser-tools/package.json',import.meta.url));
 const {chromium}=require('@playwright/test');
 const output=new URL('../.test-artifacts/',import.meta.url).pathname;
 mkdirSync(output,{recursive:true});
@@ -10,6 +9,7 @@ const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROM
 try {
   const page=await browser.newPage({viewport:{width:1440,height:1000}});
   await page.goto(process.env.GUNDOGDU_PREVIEW_URL || 'http://127.0.0.1:8077/');
+  await page.waitForFunction(()=>document.body.dataset.publicState==='ready');
   await page.evaluate(()=>document.fonts.ready);
   await page.locator('main img').evaluateAll(images=>images.forEach(image=>{image.loading='eager';}));
   await page.waitForFunction(()=>[...document.querySelectorAll('main img')].every(image=>image.complete && image.naturalWidth>0));

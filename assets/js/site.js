@@ -25,9 +25,11 @@
     lightbox.querySelector('figcaption').textContent = button.dataset.caption || '';
     lightbox.querySelector('[data-photo-count]').textContent = (activePhoto + 1) + ' / ' + photos.length;
   }
-  document.querySelectorAll('[data-lightbox]').forEach(button => button.addEventListener('click', () => {
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-lightbox]');
+    if (!button || !lightbox) return;
     photoTrigger = button; displayPhoto(photoButtons().indexOf(button)); lightbox.showModal();
-  }));
+  });
   lightbox?.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
   lightbox?.querySelector('[data-photo-prev]').addEventListener('click', () => displayPhoto(activePhoto - 1));
   lightbox?.querySelector('[data-photo-next]').addEventListener('click', () => displayPhoto(activePhoto + 1));
@@ -39,44 +41,69 @@
     });
     document.querySelectorAll('[data-gallery-kind]').forEach(item => { item.hidden = button.dataset.galleryFilter !== 'all' && item.dataset.galleryKind !== button.dataset.galleryFilter; });
   }));
-  const config = JSON.parse(document.querySelector('#widget-config')?.textContent || '{}');
+  const configNode = document.querySelector('#widget-config');
+  let config = JSON.parse(configNode?.textContent || '{}');
   const widget = window.YardimciAsistanWidget;
-  widget?.init(config);
-  const stayEnabled = document.body.dataset.stayEnabled === 'true';
-  const tableEnabled = document.body.dataset.tableEnabled === 'true';
-  let widgetOpener = null;
-  // Presentation only; dates, validation, idempotency and submission remain canonical.
+  let stayEnabled = false, tableEnabled = false, widgetOpener = null;
   const allowed = type => type === 'pension_reservation' ? stayEnabled : type === 'restaurant_reservation' ? tableEnabled : true;
+  // Capture only rejects unpublished actions. Canonical handlers alone open and submit.
   document.addEventListener('click', event => {
     const trigger = event.target.closest('[data-ya-action], [data-ya-open], [data-ya-request-type]');
     if (!trigger) return;
     if (!trigger.closest('#yardimci-asistan-widget')) widgetOpener = trigger;
-    if (trigger.dataset.yaRequestType && !allowed(trigger.dataset.yaRequestType)) {
-      event.preventDefault(); event.stopImmediatePropagation(); widget?.open({ intent: 'home' });
+    const type = trigger.dataset.yaRequestType || (trigger.dataset.yaAction === 'accommodation.reserve' ? 'pension_reservation' : trigger.dataset.yaAction === 'food.reserve' ? 'restaurant_reservation' : '');
+    if (type && !allowed(type)) {
+      event.preventDefault(); event.stopImmediatePropagation(); widget?.open({intent: 'home'});
     }
   }, true);
-  const root = document.querySelector('#yardimci-asistan-widget');
-  if (root) {
-    const present = () => {
-      const launcher = root.querySelector('.ya-widget-launcher-copy');
-      if (launcher && launcher.querySelector('strong').textContent !== 'Ziyaret planınız') {
-        launcher.querySelector('strong').textContent = 'Ziyaret planınız';
-        launcher.querySelector('small').textContent = 'Gündoğdu · Yardımcı Asistan';
-      }
-      root.querySelector('[data-ya-open]')?.setAttribute('aria-label', 'Ziyaret planı asistanını aç');
-      root.querySelectorAll('[data-ya-request-type]').forEach(button => { button.hidden = !allowed(button.dataset.yaRequestType); });
-      const home = root.querySelector('.ya-widget-home');
-      const title = root.querySelector('#ya-widget-title');
-      if (title?.lastChild?.nodeType === Node.TEXT_NODE && title.lastChild.textContent !== config.businessName) title.lastChild.textContent = config.businessName;
-      if (home && !home.querySelector('.site-widget-note') && (!stayEnabled || !tableEnabled)) {
-        const note = document.createElement('p'); note.className = 'site-widget-note';
-        note.textContent = !stayEnabled && !tableEnabled ? 'Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.' : !stayEnabled ? 'Online konaklama talebi şu anda açık değil.' : 'Online masa talebi şu anda açık değil.';
-        home.append(note);
-      }
-    };
-    new MutationObserver(present).observe(root, { childList: true, subtree: true });
-    present();
-  }
+  document.addEventListener('submit', event => {
+    if (!event.target.matches('#yardimci-asistan-widget [data-ya-form]')) return;
+    const type = new FormData(event.target).get('request_type');
+    if (!allowed(type) || !stayEnabled && !tableEnabled) { event.preventDefault(); event.stopImmediatePropagation(); widget?.open({intent: 'home'}); }
+  }, true);
+  let root = document.querySelector('#yardimci-asistan-widget'), observedRoot = null;
+  const present = () => {
+    if (!root) return;
+    const launcher = root.querySelector('.ya-widget-launcher-copy');
+    if (launcher?.querySelector('strong')?.textContent !== 'Ziyaret planınız' && launcher) {
+      launcher.querySelector('strong').textContent = 'Ziyaret planınız';
+      launcher.querySelector('small').textContent = 'Gündoğdu · Yardımcı Asistan';
+    }
+    const opener = root.querySelector('[data-ya-open]');
+    if (opener?.getAttribute('aria-label') !== 'Ziyaret planı asistanını aç') opener?.setAttribute('aria-label', 'Ziyaret planı asistanını aç');
+    root.querySelectorAll('[data-ya-request-type]').forEach(button => {
+      const hidden = !allowed(button.dataset.yaRequestType); if (button.hidden !== hidden) button.hidden = hidden;
+    });
+    const home = root.querySelector('.ya-widget-home'), title = root.querySelector('#ya-widget-title');
+    if (title?.lastChild?.nodeType === Node.TEXT_NODE && title.lastChild.textContent !== config.businessName) title.lastChild.textContent = config.businessName;
+    const message = !stayEnabled && !tableEnabled ? 'Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.' : !stayEnabled ? 'Online konaklama talebi şu anda açık değil.' : !tableEnabled ? 'Online masa talebi şu anda açık değil.' : '';
+    let note = home?.querySelector('.site-widget-note');
+    if (home && message) {
+      if (!note) { note = document.createElement('p'); note.className = 'site-widget-note'; home.append(note); }
+      if (note.textContent !== message) note.textContent = message;
+    } else note?.remove();
+  };
+  // Observe children only and write only changed values, so skin mutations settle.
+  const observe = () => {
+    root = document.querySelector('#yardimci-asistan-widget');
+    if (root && root !== observedRoot) { new MutationObserver(present).observe(root, {childList: true, subtree: true}); observedRoot = root; }
+  };
+  observe();
+  document.addEventListener('gundogdu:public-data', event => {
+    const m = event.detail, b = m.business, c = m.contact;
+    stayEnabled = m.stayEnabled; tableEnabled = m.tableEnabled;
+    config = {...config, businessName: 'Gündoğdu Pansiyon & Restoran', profileId: '',
+      publicSurfaces: [...(stayEnabled ? ['accommodation'] : []), ...(tableEnabled ? ['food_service'] : []), ...(c.map ? ['directions'] : [])],
+      requestsEnabled: stayEnabled || tableEnabled, aiEnabled: b.ai_enabled === true,
+      whatsappEnabled: Boolean(c.whatsapp), whatsappPhone: c.whatsapp ? c.whatsapp.slice('https://wa.me/'.length) : '', address: c.address, mapUrl: c.map};
+    if (configNode) configNode.textContent = JSON.stringify(config);
+    widget?.init(config); observe(); present();
+  });
+  const hydrate = () => window.GundogduPublicData?.load();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hydrate, {once: true});
+  else hydrate();
+  window.addEventListener('pageshow', event => { if (event.persisted) hydrate(); });
+  present();
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       if (toggle?.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); }

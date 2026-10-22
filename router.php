@@ -23,7 +23,7 @@ if (str_starts_with($path, '/yardimci-asistan/')) {
     if ($_SERVER['REQUEST_METHOD'] !== 'GET' || !preg_match('#^/yardimci-asistan/api/(business|rooms|tables|menu|marketing)\.php$#D', $path)) {
         http_response_code(503); header('Content-Type: application/json'); echo '{"ok":false,"message":"Yerel önizlemede işlem gönderimi kapalı."}'; exit;
     }
-    $name = basename($path, '.php'); $payload = public_snapshot()[$name];
+    $name = basename($path, '.php'); $payload = preview_public_get($name);
     header('Content-Type: application/json; charset=utf-8'); header('Cache-Control: no-store');
     if (!$payload) http_response_code(503);
     echo json_html($payload ?: ['ok'=>false]); exit;
