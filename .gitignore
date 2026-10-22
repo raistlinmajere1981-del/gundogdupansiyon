@@ -8,3 +8,5 @@ node_modules/
 artifacts/
 .DS_Store
 Thumbs.db
+.superdesign/draft.html
+.superdesign/tmp/

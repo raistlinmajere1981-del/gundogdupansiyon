@@ -1,0 +1,66 @@
+/* Site-owned visual theme. The canonical widget and its submission logic remain byte-identical. */
+body[data-site="gundogdu"] #yardimci-asistan-widget{font-family:var(--sans);color:var(--ink);right:22px;bottom:max(22px,env(safe-area-inset-bottom));line-height:1.6}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-button{background:var(--green);color:var(--paper);border:1px solid #ffffff55;border-radius:50px;min-height:54px;padding:8px 20px 8px 11px;box-shadow:0 5px 24px #14382b22}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-launcher-avatar{width:33px;height:33px;background:url('/assets/brand/mark-light.svg') center/contain no-repeat}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-launcher-avatar>*{visibility:hidden}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-launcher-copy strong{font-size:12px;font-weight:600}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-launcher-copy small{color:#d7e1d5;font-size:9px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-panel{width:435px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 44px);border:1px solid #b8c5b3;border-radius:7px;background:var(--cream);box-shadow:0 15px 70px #153c3140}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-header{background:var(--green);color:var(--paper);padding:20px 65px 20px 22px;min-height:76px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-identity{flex:1;min-width:0}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-title-copy strong{white-space:normal}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-close{position:absolute;top:20px;right:18px}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-home,.ya-widget-subview){padding:0;gap:16px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-header::before,body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-header::after{display:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-title-copy strong{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:0}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-title-copy small{font:400 10px/1.6 var(--sans);color:#d3ddcf}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-business-mark{width:31px;height:31px;margin-right:9px;background:url('/assets/brand/mark-light.svg') center/contain no-repeat}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-business-mark img{visibility:hidden}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-close{background:transparent;border:1px solid #ffffff55;color:var(--paper);border-radius:50%;width:35px;height:35px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-content{padding:24px;overscroll-behavior:contain;scrollbar-color:#a8b6a3 var(--cream)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-welcome{background:transparent;padding:0;margin-bottom:10px;align-items:center;flex-direction:row;text-align:left;border:0;border-radius:0}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-nexa-welcome{width:68px;height:80px;flex-basis:68px;padding-bottom:0}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-nexa-welcome::after{display:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-view-title{font:500 30px/1.12 var(--serif);color:var(--green);letter-spacing:-.02em}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-kicker{color:#6b7a66;font-size:8px;letter-spacing:.16em}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-welcome p{font:400 11px/1.8 var(--sans);color:var(--muted)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-actions{display:grid;grid-template-columns:1fr;gap:12px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-card{background:var(--paper);border:1px solid #d2dacb;border-radius:4px;box-shadow:none;padding:17px 15px;min-height:78px;color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-card:hover{background:#e8eee3;border-color:#9eb298}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-icon{background:#e9ede1;color:#4e6d52;border-radius:50%;width:37px;height:37px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-copy strong{font-size:12px;color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-copy small{font-size:10px;color:var(--muted);line-height:1.6}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-action-arrow{color:#7d9078}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-subview-intro{background:#e8ece0;border-color:#d5ddcc;border-radius:4px;padding:16px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-subview-intro p{font-size:10px;color:var(--muted)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-subview .ya-widget-view-title{font-size:25px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-request-success-card{background:var(--paper);border:1px solid #c3d0bb;border-radius:3px;color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-subview-nav button{color:var(--green);border-color:#c4cfbd;background:transparent;border-radius:3px}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(input,textarea,select){color:var(--ink);background:var(--paper);border:1px solid #cbd4c3;border-radius:3px;box-shadow:none;font-size:13px}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-field,.ya-widget-date-group,.ya-widget-guest-group){color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-primary-action,button[type="submit"]){background:var(--green);border:1px solid var(--green);color:var(--paper);border-radius:3px;font-size:12px;min-height:46px;box-shadow:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-secondary-action,.ya-widget-suggestions button,.ya-widget-topic-chips button){background:#edf0e6;border:1px solid #c5d0bd;color:var(--green);border-radius:4px;box-shadow:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-date-picker>button,.ya-widget-time-trigger,.ya-widget-stepper){background:var(--paper);border:1px solid #c5d0bd;color:var(--green);border-radius:3px;box-shadow:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-calendar,.ya-widget-time-popover){background:var(--paper);border:1px solid #a9ba9e;border-radius:4px;box-shadow:0 8px 25px #244c4520;color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-calendar-head,.ya-widget-time-popover-head){background:#e9eee1;color:var(--green);border-color:#ccd7c3}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-calendar-days button,.ya-widget-time-column button,.ya-widget-calendar-shortcuts button){color:var(--green);border-radius:3px}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-calendar-days,.ya-widget-time-column,.ya-widget-calendar-shortcuts) button.is-selected{background:var(--green);color:var(--paper);border-color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-calendar-days button.is-range-edge{background:var(--green);color:var(--paper);border-color:var(--green)}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-suggestions,.ya-widget-topic-chips) button.is-active{background:#e4ebdc;color:var(--green);border-color:#93a787}
+body[data-site="gundogdu"] #yardimci-asistan-widget :is(.ya-widget-notice,.ya-widget-ai-answer,.ya-widget-message-preview,.ya-widget-context-card,.ya-widget-location-card){background:#e8ece0;color:var(--green);border-color:#c3d0bb;border-radius:3px}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-context-card{box-shadow:none}
+body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-inline-trust{color:var(--muted);font-size:10px}
+body[data-site="gundogdu"] #yardimci-asistan-widget :focus-visible{outline:3px solid var(--sand);outline-offset:3px}
+body[data-site="gundogdu"][data-stay-enabled="false"] #yardimci-asistan-widget [data-ya-request-type="pension_reservation"],
+body[data-site="gundogdu"][data-table-enabled="false"] #yardimci-asistan-widget [data-ya-request-type="restaurant_reservation"]{display:none!important}
+body[data-site="gundogdu"] #yardimci-asistan-widget .site-widget-note{font-size:10px;line-height:1.8;color:var(--muted);margin-top:16px;border-top:1px solid #d4dccb;padding-top:14px}
+@media(max-width:520px){
+ body[data-site="gundogdu"] #yardimci-asistan-widget{right:16px;bottom:max(16px,env(safe-area-inset-bottom))}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-panel{width:calc(100vw - 32px);max-height:calc(100dvh - 32px)}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-header{padding:16px 58px 16px 18px}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-title-copy strong{font-size:22px}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-content{padding:18px}
+ body[data-site="gundogdu"] #yardimci-asistan-widget :is(input,textarea,select){font-size:16px}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-field-grid{grid-template-columns:1fr}
+ body[data-site="gundogdu"] #yardimci-asistan-widget .ya-widget-view-title{font-size:27px}
+}

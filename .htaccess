@@ -1,0 +1,18 @@
+# gundogdu-site
+DirectoryIndex index.php
+Options -Indexes
+ErrorDocument 404 /404.php
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<FilesMatch "^(?:README\.md|.*\.local.*|\.env.*)$">
+  Require all denied
+</FilesMatch>
