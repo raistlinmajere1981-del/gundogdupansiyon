@@ -71,10 +71,12 @@
     const has = surface => b.public_surfaces?.includes(surface) === true;
     const catalog = kind => has(kind === 'rooms' ? 'rooms' : 'restaurant') && p[kind]?.enabled === true && namedRows(p[kind][kind]) ? p[kind][kind] : [];
     const rooms = catalog('rooms'), tables = catalog('tables');
-    const menu = p.menu?.enabled === true && (has('menu') || has('qr_menu')) && namedRows(p.menu?.categories) && namedRows(p.menu?.items) ? p.menu : {categories: [], items: []};
+    // The canonical public menu API omits enabled on 200; disabled publications return 404.
+    const menuVisible = Boolean(p.menu && enabled(p.menu) && (has('menu') || has('qr_menu')));
+    const menu = menuVisible && namedRows(p.menu?.categories) && namedRows(p.menu?.items) ? p.menu : {categories: [], items: []};
     const news = b.public_surfaces && enabled(p.marketing) && rows(p.marketing?.publications) ? p.marketing.publications.filter(item => text(item.id) && text(item.title) && item.published === true && item.placement === 'homepage_feature' && (!item.channel || item.channel === 'website')).slice(0, 6) : [];
     const gallery = rows(b.gallery) ? b.gallery.map(photo => ({url: media(photo.url), title: text(photo.title) || t('İşletmeden bir kare')})).filter(photo => photo.url).slice(0, 80) : [];
-    return {business: b, rooms, tables, menu, news, gallery, contact: contact(b), menuUnavailable: !p.menu, menuEnabled: p.menu?.enabled === true && (has('menu') || has('qr_menu')),
+    return {business: b, rooms, tables, menu, news, gallery, contact: contact(b), menuUnavailable: !p.menu, menuEnabled: menuVisible,
       stayEnabled: b.requests_enabled === true && has('accommodation') && rooms.length > 0,
       tableEnabled: b.requests_enabled === true && has('food_service') && tables.length > 0};
   }

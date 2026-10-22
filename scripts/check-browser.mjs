@@ -264,6 +264,17 @@ try {
   check('Published panorama 180/360 viewer, controlled video and known features only; detail withdrawal removes media');
   const menuFixture = {enabled:true,categories:[{id:'a',name:'Başlangıç'},{id:'b',name:'İçecek'}],items:[{id:'one',category_id:'a',name:'Birinci',price:10,currency:'TRY',image_url:image},{id:'two',category_id:'b',name:'İkinci',price:20,currency:'TRY'},{id:'off',category_id:'a',name:'Kapalı ürün',is_available:false}]};
   publish(moduleRoot,'menu',menuFixture);
+  // Live canonical menu.php returns a 200 response without an enabled property.
+  await page.route('**/yardimci-asistan/api/menu.php',async route=>{
+    const response=await route.fetch();
+    const payload=await response.json();
+    delete payload.enabled;
+    await route.fulfill({response,json:payload});
+  });
+  await visit(origin+'/qr-menu/');
+  await expect(page.locator('.qr-menu-item')).toHaveCount(2);
+  await page.unroute('**/yardimci-asistan/api/menu.php');
+  check('Canonical menu endpoint 200 with omitted enabled still publishes items, while explicitly disabled menus stay hidden');
   await visit(origin+'/restoran/'); await page.locator('#menu [data-menu-link]').click();
   await expect(page).toHaveURL(/\/qr-menu\//); await expect(page.locator('.qr-menu-item')).toHaveCount(2);
   await page.locator('[data-category-id=b]').click(); await expect(page.locator('.qr-menu-item')).toHaveCount(1);
