@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {checkHero} from './hero-checks.mjs';
 import { createRequire } from 'node:module';
 import { mkdtempSync, cpSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -91,60 +92,7 @@ try {
   await expect(page.locator('.room-card')).toContainText('YEREL TEST Odası');
   await expect(page.locator('.room-card .price')).toContainText('1.234,56');
   await expect(page.locator('.news-grid')).toContainText('YEREL TEST Duyurusu');check('Business, room minor-unit price, gallery and marketing publication rendering');
-  await page.waitForFunction(()=>window.gundogduWater?.inspect().frames>2);
-  let water=await page.evaluate(()=>{const w=window.gundogduWater.inspect();return {running:w.running,fps:w.fps,pixels:w.pixelCount,effects:w.effects.map(e=>({type:e.type,count:e.count,active:e.active}))};});
-  assert(water.running && water.pixels<=650000);assert(water.effects.find(e=>e.type==='foam').count===6);report.water=water;check('Gideros surface + foam alive within 650k canvas budget');
-  await expect(page.locator('.motion-toggle')).toContainText('TEST · MAX');
-  assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().diagnostic),true);
-  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeVisible();
-  assert.equal(await page.locator('.wave-guide polygon').count(),2);
-  await screenshot(page,'wave-max-guide');
-  await page.locator('.motion-toggle').click(); await expect(page.locator('.wave-guide')).toBeHidden();
-  await page.reload(); await expect(page.locator('.motion-toggle')).toHaveAttribute('aria-pressed','false');
-  assert.equal(await page.evaluate(()=>localStorage.getItem('gundogdu-waves')),'off');
-  await page.locator('.motion-toggle').click();
-  await page.waitForFunction(()=>window.gundogduWater.inspect().frames>2);
-  await page.locator('.motion-toggle').click();assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().running),false); await expect(page.locator('.canvas-overlay')).toBeHidden(); const framesOff=await page.evaluate(()=>window.gundogduWater.inspect().frames); await page.waitForTimeout(250); assert.equal(await page.evaluate(()=>window.gundogduWater.inspect().frames),framesOff); await page.locator('.motion-toggle').click(); await expect(page.locator('.canvas-overlay')).toBeVisible();check('Visitor can pause/resume water');
-  await page.waitForFunction(()=>{const c=document.querySelector('.canvas-overlay'); return c && c.getContext('2d').getImageData(0,0,c.width,c.height).data.some((v,i)=>i%4===3&&v>0);});
-  report.waterPixels = await page.evaluate(() => {
-    const c=document.querySelector('.canvas-overlay'), pixels=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
-    let painted=0,strong=0,maxAlpha=0;
-    for(let i=3;i<pixels.length;i+=4){if(pixels[i])painted++;if(pixels[i]>80)strong++;maxAlpha=Math.max(maxAlpha,pixels[i]);}
-    return {painted,strong,maxAlpha,inspect:window.gundogduWater.inspect()};
-  });
-  assert(report.waterPixels.strong>100,'MAX needs clearly opaque pixels, not just almost transparent paint');
-  const pixelSignature = () => page.evaluate(()=>{
-    const c=document.querySelector('.canvas-overlay'), p=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
-    let sum=0; for(let i=3;i<p.length;i+=4)sum=(sum+p[i]*i)%1000000007;
-    return {sum,frames:window.gundogduWater.inspect().frames};
-  });
-  const movingBefore=await pixelSignature(); await page.waitForTimeout(300); const movingAfter=await pixelSignature();
-  assert(movingAfter.frames>movingBefore.frames); assert.notEqual(movingAfter.sum,movingBefore.sum,'Enabled effects must change painted pixels over time');
-  report.waterMotion={before:movingBefore,after:movingAfter};
-  await screenshot(page,'wave-max-effects');
-  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeVisible();
-  await page.locator('.wave-guide-toggle').click(); await expect(page.locator('.wave-guide')).toBeHidden();
-  check('MAX paints strong alpha pixels, accurately projected surface/foam/shore guide toggles, persisted OFF freezes frames and ON resumes');
-  await screenshot(page,'fixture-desktop-home',true);
-  for(const width of [320,390]) {
-    await page.setViewportSize({width,height:844});
-    await page.waitForFunction(()=>window.gundogduWater.inspect().running);
-    await page.locator('.wave-guide-toggle').click();
-    await expect(page.locator('.wave-guide')).toBeVisible();
-    await page.waitForTimeout(200);
-    const mapping=await page.evaluate(()=>{
-      const w=window.gundogduWater.inspect(), v=w.transform.view;
-      const guide=document.querySelector('.wave-guide').viewBox.baseVal;
-      const c=document.querySelector('.canvas-overlay'), data=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
-      return {expected:[v.x,v.y,v.width,v.height],actual:[guide.x,guide.y,guide.width,guide.height],strong:data.filter((n,i)=>i%4===3&&n>80).length};
-    });
-    mapping.expected.forEach((n,i)=>assert(Math.abs(n-mapping.actual[i])<.01,'Guide must use the same cover crop as canvas'));
-    assert(mapping.strong>100,'Mobile MAX must paint strong visible pixels');
-    await screenshot(page,'wave-max-guide-'+width);
-    await page.locator('.wave-guide-toggle').click();
-    await expect(page.locator('.wave-guide')).toBeHidden();
-  }
-  check('320/390px MAX paints strong pixels and guide viewBox matches the actual canvas photo crop');
+  await checkHero(page, {origin, visit, screenshot, report, check, activeInstalled:existsSync(join(temp,'assets/effects/hero.scene.json'))});
   for(const width of [320,360,390,768,1440]){
     await page.setViewportSize({width,height:width<500?844:1000});
     for(const path of ['/','/odalar/','/odalar/oda/?id=fixture-room','/qr-menu/','/restoran/','/restoran/masa/?id=fixture-table','/galeri/','/iletisim/']){
@@ -527,16 +475,16 @@ try {
     await visit(origin+'/odalar/oda/?id=fixture-room'); await expect(page.locator('[data-room-detail-content]')).toBeHidden();
   }
   rmSync(join(temp,'failure-mode'));check('HTTP 503 and structurally malformed API responses render complete safe pages, empty contact and SEO');
-  await page.emulateMedia({reducedMotion:'reduce'});await visit(origin+'/');assert.equal(await page.locator('.canvas-overlay').count(),0);await expect(page.locator('.motion-toggle')).toBeHidden();check('Reduced motion starts with static hero and no canvas');
+  await page.emulateMedia({reducedMotion:'reduce'});await visit(origin+'/');assert.equal(await page.locator('.canvas-overlay').count(),0);await expect(page.locator('.motion-toggle')).toHaveCount(0);check('Reduced motion starts with static hero and no canvas');
   await screenshot(page,'empty-mobile-home',true);
-  await page.emulateMedia({reducedMotion:'no-preference'});await visit(origin+'/');await page.waitForFunction(()=>window.gundogduWater?.inspect().running);
-  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>!window.gundogduWater.inspect().running);check('Runtime reduced motion change stops ticker');
+  await page.emulateMedia({reducedMotion:'no-preference'});await visit(origin+'/?effect-scene=sample');await page.waitForFunction(()=>window.heroEffects?.inspect().running);
+  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>!window.heroEffects.inspect().running);check('Runtime reduced motion change stops ticker');
   const low=await browser.newContext({viewport:{width:390,height:844}});
   await low.addInitScript(()=>Object.defineProperty(navigator,'hardwareConcurrency',{get:()=>2}));
   const lowPage=await low.newPage();await lowPage.goto(origin+'/');assert.equal(await lowPage.locator('.canvas-overlay').count(),0);await low.close();check('Low-power two-core device receives static photo');
   const saver=await browser.newContext({viewport:{width:390,height:844}});
   await saver.addInitScript(()=>Object.defineProperty(navigator,'connection',{get:()=>({saveData:true})}));
-  const saverPage=await saver.newPage(); await saverPage.goto(origin+'/'); await expect(saverPage.locator('.canvas-overlay')).toHaveCount(0); await expect(saverPage.locator('.motion-toggle')).toBeHidden(); await saver.close();
+  const saverPage=await saver.newPage(); await saverPage.goto(origin+'/'); await expect(saverPage.locator('.canvas-overlay')).toHaveCount(0); await expect(saverPage.locator('.motion-toggle')).toHaveCount(0); await saver.close();
   check('Save-data devices retain the static credited hero');
   const nojs=await browser.newContext({javaScriptEnabled:false});const nojsPage=await nojs.newPage();await nojsPage.goto(origin+'/odalar/');await expect(nojsPage.locator('h1')).toBeVisible();await expect(nojsPage.locator('a[href="/iletisim/#rezervasyon"]').first()).toHaveAttribute('href','/iletisim/#rezervasyon');await nojs.close();check('Server-rendered pages and booking fallback work without JS');
   const missing=await visit(origin+'/olmayan-sayfa/');assert.equal(missing.status(),404);check('Custom HTTP 404');

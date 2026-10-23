@@ -36,7 +36,12 @@ SIL Open Font License dosyaları assets/fonts/ içinde dağıtılır. Ziyaretçi
 
 ## Kod ve tasarım kökeni
 
-BlackSea’den coordinates.mjs, ticker.mjs, random.mjs, offshore.mjs, foam.mjs değişmeden alındı. core.mjs içine opt-in ağır çizim/statik fallback eklendi. Gideros fotoğraf koordinatları ve tema yeni dosyalardadır.
+İlk Gideros tasarımında BlackSea'nin eski Canvas deniz motoru temel alınmıştı.
+Bu prototip artık kullanımda değildir ve dosyaları kaldırılmıştır.
+Güncel ana sayfa, Efekt Atölyesi 1.1.0'ın ortak motorunu kullanır; çalışma
+alanı JSON sahnesindeki çokgen ve efekt katmanlarından oluşur. Kıyı köpüğü
+eklenmez; azaltılmış hareket tercihinde ve düşük donanımda fotoğraf sabit kalır.
+Motor lisansları ve sahne kurulum akışı: docs/EFFECT_ENGINE.md.
 
 Widget, Yardımcı Asistan test-site/landing/assets/assistant dağıtımından değişmeden kopyalandı. widget.js SHA-256:
 

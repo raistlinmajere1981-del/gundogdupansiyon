@@ -71,6 +71,13 @@ mv "$stage" "$root/index.php"
 if [[ -e "$root/index.html" ]] && grep -qi 'alwaysdata' "$root/index.html"; then
   rm "$root/index.html"
 fi
+# Only the retired pre-Studio Gideros motor. Never delete the shared engine or scenes.
+if [[ -d "$root/assets/js/canvas" && ! -L "$root/assets/js/canvas" ]]; then
+  rm -rf -- "$root/assets/js/canvas"
+fi
+if [[ ! -L "$root/assets/js/water.mjs" ]]; then
+  rm -f -- "$root/assets/js/water.mjs"
+fi
 ACTIVATE
 code="$(curl -LsS -o /dev/null -w '%{http_code}' --max-time 15 "$site")"
 [[ "$code" == 200 ]] || { echo "Canlı HTTP $code" >&2; exit 1; }

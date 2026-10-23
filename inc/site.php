@@ -44,6 +44,11 @@ function page_top(string $page, string $title, string $description): void {
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/cormorant-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<?= esc(asset('css/site.css')) ?>"><link rel="stylesheet" href="<?= esc(asset('css/widget-theme.css')) ?>">
+<?php if ($page === 'home'): ?>
+<link rel="modulepreload" href="/assets/js/hero-effects.mjs">
+<link rel="modulepreload" href="/assets/effect-engine/src/model/project.mjs">
+<link rel="modulepreload" href="/assets/effect-engine/src/runtime/index.mjs">
+<?php endif; ?>
 <script type="application/ld+json" data-business-structured-data><?= json_html(structured_data()) ?></script>
 <script>window.GundogduEnglish=<?= json_html(site_words()) ?>;</script><script src="/assets/js/language.js" defer></script>
 </head><body data-page="<?= esc($page) ?>" data-site="gundogdu" data-stay-enabled="<?= can_reserve('rooms') ? 'true' : 'false' ?>" data-table-enabled="<?= can_reserve('tables') ? 'true' : 'false' ?>">
@@ -125,6 +130,6 @@ WebP boyutlandırması, ekran ve sosyal paylaşım kırpması yapıldı; türevl
 <script type="application/json" id="widget-config"><?= json_html($widget) ?></script>
 <script src="<?= esc(asset('assistant/widget.js')) ?>" data-api-base-url="/yardimci-asistan" data-logo-url="/assets/brand/mark.svg" data-ai-enabled="false" data-whatsapp-enabled="false" defer></script>
 <script src="<?= esc(asset('js/public-data.js')) ?>" defer></script>
-<script src="/assets/js/flag-language.js" defer></script><script src="<?= esc(asset('js/site.js')) ?>" defer></script><script type="module" src="<?= esc(asset('js/water.mjs')) ?>"></script>
+<script src="/assets/js/flag-language.js" defer></script><script src="<?= esc(asset('js/site.js')) ?>" defer></script><script type="module" src="<?= esc(asset('js/hero-effects.mjs')) ?>"></script>
 </body></html><?php
 }

@@ -517,8 +517,6 @@
   "Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.": "Online room and table requests are currently closed. Please use the published contact options.",
   "Online konaklama talebi şu anda açık değil.": "Online accommodation requests are currently closed.",
   "Online masa talebi şu anda açık değil.": "Online table requests are currently closed.",
-  "Dalga: Açık · Kapat": "Waves: On · Turn off",
-  "Dalga: Kapalı · Aç": "Waves: Off · Turn on",
   "Yayınlanan menü, ürünler ve fiyatlar.": "Published menu, products and prices.",
   "Odalar & Konaklama": "Rooms & Accommodation",
   "Restoran & Sofrada Buluşma": "Restaurant & Dining",
@@ -613,7 +611,6 @@
   "Kısa masa turu": "A short table tour",
   "360° masa görünümü": "360° table view",
   "Etki alanları": "Effect zones",
-  "Mavi: yüzey · Sarı: köpük · Mercan: kıyı": "Blue: surface · Yellow: foam · Coral: shoreline",
   "non_smoking": "Non-smoking",
   "smoking": "Smoking permitted",
   "smoking_allowed": "Smoking permitted",
@@ -631,5 +628,9 @@
   "Belirtilmedi": "Not specified",
   "Sigara içilmez": "Non-smoking",
   "Sigara içilebilir": "Smoking permitted",
-  "Yalnız açık alanda sigara içilebilir": "Smoking permitted outdoors only"
+  "Yalnız açık alanda sigara içilebilir": "Smoking permitted outdoors only",
+  "Işık yoğunluğu": "Light intensity",
+  "Doğal": "Natural",
+  "Su efekti testi": "Water effect diagnostics",
+  "Mavi: tanı · Sarı: ışık yolu": "Blue: diagnostic · Yellow: sun path"
 }

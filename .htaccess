@@ -16,3 +16,14 @@ ErrorDocument 404 /404.php
 <FilesMatch "^(?:README\.md|.*\.local.*|\.env.*)$">
   Require all denied
 </FilesMatch>
+
+# Exported Studio scenes must refresh immediately after installation.
+<IfModule mod_headers.c>
+  <FilesMatch "^hero(?:\.sample)?\.scene\.json$">
+    Header always set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType text/javascript .mjs
+</IfModule>

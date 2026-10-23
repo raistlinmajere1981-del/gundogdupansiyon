@@ -23,7 +23,7 @@ function acquireHost(host) {
  */
 export function createOverlay(image, config, {host = image.parentElement?.tagName === 'PICTURE' ? image.parentElement.parentElement : image.parentElement, enabled = true} = {}) {
   if (!host || image.tagName !== 'IMG' || !host.contains(image)) throw new TypeError('An <img> inside its overlay host is required');
-  if (!config.effects?.length) throw new TypeError('Supply at least one effect factory');
+  if (!Array.isArray(config.effects)) throw new TypeError('Supply an effects array');
   const releaseHost = acquireHost(host);
   const canvas = document.createElement('canvas');
   canvas.className = 'canvas-overlay';
@@ -40,14 +40,14 @@ export function createOverlay(image, config, {host = image.parentElement?.tagNam
   let dprLimit = constrained ? policy.lowPowerDpr || 1 : policy.maxDpr || 1.5;
   const effects = [];
   try {
-    config.effects.forEach((effect, index) => effects.push(effect.create({random: seededRandom(`${config.seed ?? 1}:${index}`), params: effect.params || {}})));
+    config.effects.forEach((effect, index) => effects.push(effect.create({random: seededRandom(`${config.seed ?? 1}:${effect.seed ?? index}`), params: effect.params || {}})));
   } catch (error) {
     effects.forEach(effect => effect.destroy?.());
     canvas.remove(); releaseHost();
     throw error;
   }
   let disposed = false, visible = false, pageActive = true, ready = false, unsubscribe = null, everConnected = image.isConnected;
-  let transform, bounds, dpr, elapsed = 0, frames = 0, cost = 0, slowFrames = 0;
+  let transform, bounds, dpr, elapsed = 0, frames = 0, cost = 0, totalCost = 0, slowFrames = 0, paused = false;
   const removers = [];
   const listen = (target, event, callback) => {
     target?.addEventListener(event, callback);
@@ -64,8 +64,13 @@ export function createOverlay(image, config, {host = image.parentElement?.tagNam
     clear();
   }
   function sync() {
-    const run = !disposed && enabled && ready && visible && pageActive && !document.hidden && !media.matches;
-    if (!run) { stop(); return; }
+    const run = !disposed && !paused && enabled && ready && visible && pageActive && !document.hidden && !media.matches;
+    if (!run) {
+      // Visibility and canvas resize can clear a paused frame; repaint without advancing time.
+      if (paused && ready && visible && enabled && !disposed && !media.matches && pageActive && !document.hidden) { unsubscribe?.(); unsubscribe = null; canvas.style.display = 'block'; draw(0); }
+      else stop();
+      return;
+    }
     if (!unsubscribe) { canvas.style.display = 'block'; unsubscribe = ticker.add(draw, fps); }
   }
   function draw(dt) {
@@ -87,6 +92,7 @@ export function createOverlay(image, config, {host = image.parentElement?.tagNam
     }
     frames++;
     cost = performance.now() - start;
+    totalCost += cost;
     // Site opt-in: sustained slow rendering falls back to the unchanged photograph.
     if (policy.staticFallbackCost && cost > policy.staticFallbackCost && slowFrames >= 40) {
       image.dataset.water = 'static-performance';
@@ -162,7 +168,17 @@ export function createOverlay(image, config, {host = image.parentElement?.tagNam
   try { resize(); } catch (error) { destroy(); throw error; }
   return {
     canvas, destroy, refresh: resize,
+    setPaused(value) { if (!disposed) { paused = Boolean(value); sync(); } },
+    // Deterministic test frame: reset via destroy/create before seeking backwards.
+    renderAt(seconds = 0) {
+      if (!ready || disposed || media.matches) return;
+      if (!Number.isFinite(seconds) || seconds < elapsed || seconds > 60) throw new RangeError('renderAt requires elapsed ≤ seconds ≤ 60');
+      paused = true; unsubscribe?.(); unsubscribe = null;
+      canvas.style.display = 'block';
+      while (seconds - elapsed > .000001) draw(Math.min(1/24, seconds - elapsed));
+      if (!frames) draw(0);
+    },
     setEnabled(value) { if (!disposed) { enabled = Boolean(value); sync(); } },
-    inspect() { return {running: Boolean(unsubscribe), disposed, ready, visible, reducedMotion: media.matches, frames, elapsed, fps, dpr, pixelCount: canvas.width * canvas.height, costMs: cost, transform, effects: effects.map(effect => effect.inspect?.())}; },
+    inspect() { return {running: Boolean(unsubscribe), disposed, ready, visible, reducedMotion: media.matches, frames, elapsed, fps, dpr, pixelCount: canvas.width * canvas.height, costMs: cost, avgCostMs: frames ? totalCost / frames : 0, paused, transform, effects: effects.map(effect => effect.inspect?.())}; },
   };
 }

@@ -35,7 +35,7 @@ Yeni koy/gün doğumu SVG işareti, açık/koyu varyantı ve favicon assets/bran
 
 İki gerçek Gideros fotoğrafı Makalp / Commons, CC BY-SA 3.0. Lisans/kaynak ve dönüşüm atıfları tüm sayfalarda altbilgide açılabilen kısa «Fotoğraf kredileri» alanındadır. Oda/yemek fotoğrafı gibi sunulmaz. Görseller yerel WebP, fontlar Türkçe karakterleri içeren yerel WOFF2; içerik görselleri lazy loading kullanır.
 
-BlackSea’den Canvas çekirdeği, koordinat/scheduler/random yardımcıları, offshore ve foam alındı. Gideros geometrisi/ayarları ayrıdır. 20 fps, 650 bin piksel bütçesi, azaltılmış hareket/düşük donanım/ağır çizimde statik fotoğraf ve kullanıcı durdurma desteği vardır.
+BlackSea’den Canvas çekirdeği, koordinat/scheduler/random yardımcıları ve offshore alındı. Hero köpük kullanmaz; güneş parıltısı siteye özel shimmer katmanıdır. Gideros geometrisi/ayarları ayrıdır. 20 fps, 650 bin piksel bütçesi, azaltılmış hareket/düşük donanım/ağır çizimde statik fotoğraf ve kullanıcı durdurma desteği vardır.
 
 assets/assistant/widget.js değişmemiş canonical bundle’dır. assets/css/widget-theme.css yalnız body[data-site="gundogdu"] altında tipografi, kart, buton, tarih/saat ve paneli temalar. assets/js/site.js güncel tarayıcı snapshot’ına göre widget config’ini, görünür seçenekleri, klavye ve dış tetikleyicileri bağlar. Widget’ın bağımsız business GET’i katalog yayın kapılarını aşamaz; yalnız yayınlanmış katalog + requests_enabled + ilgili public_surfaces birlikte rezervasyon açar. Site katmanı POST göndermez; canonical widget tek gönderim sahibidir. Talep validasyonu, retry/idempotency, availability ve gönderim bundle’da kalır. Ortak repo değiştirilmedi.
 
@@ -77,12 +77,8 @@ Mevcut deploy scripti kullanılır. `--dry-run` da SSH bağlantısı açar; bu �
 
 İzole fixture testleri üretim Desktop yayınını, gerçek cihazları veya canlı rezervasyon sağlayıcısını kanıtlamaz. Canlı ortama değişiklik yapılmamıştır.
 
-## Geçici dalga tanısı: TEST · MAX
+## Hero · Efekt Atölyesi 1.1.0
 
-Bu test sürümünde hero dalgası varsayılan olarak MAX: 120 offshore yaması, 6 köpük rotası; yüksek opaklık, hız, deformasyon ve genişlik. `Etki alanları` düğmesi mavi yüzey poligonunu, sarı köpük güvenli alanını ve mercan kıyı rotasını açar. SVG rehberi fotoğrafın `object-fit`/`object-position` dönüşümünü izler; farklı ekran kırpmalarında aynı kaynak koordinatlarını gösterir. Canvas karartma katmanının üstünde, metnin altında çizilir; hero kırpması köpüğü görünür tutmak için %65 düşey konum kullanır.
+Varsayılan görünüm statik fotoğraftır. Yalnız yeni Studio motoru kullanılır; eski MAX/debug/intensity ve Gideros motoru hero'dan çıkarıldı. `?effect-scene=sample` pasif örneği, `?effect-scene=off` zorunlu statik görünümü açar. Aktif sahne kullanıcı JSON kurulumundan sonra çalışır.
 
-Kapat, canvası temizleyip ticker'ı durdurur ve rehberi gizler; seçim `gundogdu-waves` anahtarıyla saklanır. Rehber ayrı açılır ve tercihi sayfa boyunca korunur. Reduced-motion/saveData/az donanım statik fotoğraf, 650.000 piksel ve 20 fps üst sınırı, ağır çizimde statik fallback sürer. MAX doğal görünüm için kalıcı ayar değildir.
-
-Doğal ayara dönüş: `assets/js/water.mjs` içindeki `diagnostic = false` yapın. `giderosScene({diagnostic:false})` korunmuş doğal parametreleri kullanır; TEST/MAX etiketi ve rehber kalkar. İstenirse CSS'teki `.hero-landscape .hero-photo` düşey konumunu tekrar `%50` yapın. Testte MAX'a özel 6 köpük/etiket/opak piksel beklentilerini doğal ayarla uyarlayın. İlk tekrar testinde kayıtlı OFF varsa düğmeden açın.
-
-Görsel kanıtlar `.test-artifacts/wave-max-effects.png`, `wave-max-guide.png`, mobil wave PNG'leri ve `fixture-table-detail.png`; piksel alfa sayımları ve motor `inspect()` ölçümleri `browser-report.json` içindedir. Bunlar izole yerel test kanıtıdır.
+Atölye'de doğru 1818×1228 Gideros fotoğrafını düzenle → JSON dışa aktar → site dizininde `bash scripts/install-effect-scene.sh ~/Downloads/file.json` → yerelde doğrula → açık onaydan sonra site-only deploy. Ayrıntılar ve motor eşleme: [EFFECT_ENGINE.md](docs/EFFECT_ENGINE.md).
