@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 // Site-owned configuration. Public HTTP service only; never a sync secret or DB path.
 return [
-    'public_origin' => getenv('YA_SITE_PUBLIC_ORIGIN') ?: '',
+    'public_origin' => getenv('YA_SITE_PUBLIC_ORIGIN') ?: 'https://yardimciasistangunduodu.alwaysdata.net',
     'api_origin' => getenv('YA_SITE_API_ORIGIN') ?: '',
     'api_base_path' => '/yardimci-asistan',
     'base_path' => '',
