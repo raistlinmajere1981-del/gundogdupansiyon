@@ -1,0 +1,81 @@
+{
+  "note": "Sources are relative to the preserved legacy gundogdu_web root. Photos: Makalp, CC BY-SA 3.0, archive 2007-06-30. Scenes are inactive private archives.",
+  "files": {
+    "public/assets/site/fonts/CormorantGaramond-OFL.txt": {
+      "source": "assets/fonts/CormorantGaramond-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+    },
+    "public/assets/site/fonts/Manrope-OFL.txt": {
+      "source": "assets/fonts/Manrope-OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    "public/assets/site/fonts/cormorant-500-latin-ext.woff2": {
+      "source": "assets/fonts/cormorant-500-latin-ext.woff2",
+      "sha256": "3de1b0f23516d8ff77cc1a5af88b6c19037a375ec52729a8a5633998f58aa609"
+    },
+    "public/assets/site/fonts/cormorant-500-latin.woff2": {
+      "source": "assets/fonts/cormorant-500-latin.woff2",
+      "sha256": "8197bf53615ddc8c423f444c7f0eec63b7fa0ba093fcfbec60dfdd28429b0fc8"
+    },
+    "public/assets/site/fonts/manrope-400-latin-ext.woff2": {
+      "source": "assets/fonts/manrope-400-latin-ext.woff2",
+      "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb"
+    },
+    "public/assets/site/fonts/manrope-400-latin.woff2": {
+      "source": "assets/fonts/manrope-400-latin.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    "public/assets/site/fonts/manrope-600-latin-ext.woff2": {
+      "source": "assets/fonts/manrope-600-latin-ext.woff2",
+      "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb"
+    },
+    "public/assets/site/fonts/manrope-600-latin.woff2": {
+      "source": "assets/fonts/manrope-600-latin.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    "public/assets/site/brand/favicon.svg": {
+      "source": "assets/brand/favicon.svg",
+      "sha256": "14825d9527fc07b09f49ae7ce9a177370b04a2a8000685ad346ea2384a0cb4fe"
+    },
+    "public/assets/site/brand/mark-light.svg": {
+      "source": "assets/brand/mark-light.svg",
+      "sha256": "cd9afab4995019aff2e3c090a8b2c1bf1ad83a4c24d35dd1055822e83821d73f"
+    },
+    "public/assets/site/brand/mark.svg": {
+      "source": "assets/brand/mark.svg",
+      "sha256": "cd5dd7aff120c129e6993983074915eff37339f4bd81762b6a3566faea1eddd1"
+    },
+    "public/assets/site/img/gideros-1-1200.webp": {
+      "source": "assets/img/gideros-1-1200.webp",
+      "sha256": "3a2dae600e0b2afb8c87b9a0e31b39cb6e1a19fda0e16b9a0b6347a0081a10ed"
+    },
+    "public/assets/site/img/gideros-1-1818.webp": {
+      "source": "assets/img/gideros-1-1818.webp",
+      "sha256": "c485ec856b335154ee07a346e936e5a5f4c4b5e14a17b9934293935bcfa76498"
+    },
+    "public/assets/site/img/gideros-1-720.webp": {
+      "source": "assets/img/gideros-1-720.webp",
+      "sha256": "0d117f5caa5eb6417376dfcbd73ed44a31d8f8bc3116e0fef2be3a82fccc8594"
+    },
+    "public/assets/site/img/gideros-2-1275.webp": {
+      "source": "assets/img/gideros-2-1275.webp",
+      "sha256": "a1f4971c745280ea6afec803f62b2e5cdeb24b21f962ad915cf8c235ad1148cf"
+    },
+    "public/assets/site/img/gideros-2-720.webp": {
+      "source": "assets/img/gideros-2-720.webp",
+      "sha256": "e6e254cc140e646491c2b79e2b081150944bbb8ea4e80fb6cddf54e994a7c65f"
+    },
+    "public/assets/site/img/social.jpg": {
+      "source": "assets/img/social.jpg",
+      "sha256": "8e9c0ce6cb46c2443776fb8be676b36581678b2c1c196c3e48439cb84945c6da"
+    },
+    "site/preserved-effects/hero.scene.json": {
+      "source": "assets/effects/hero.scene.json",
+      "sha256": "f554c6ead22d7b32fad3740209a61ef7e39ed089e1792bed4677ec4a20b84880"
+    },
+    "site/preserved-effects/hero.sample.scene.json": {
+      "source": "assets/effects/hero.sample.scene.json",
+      "sha256": "8f0e5e53d29f4af0331e19bbecfd3a5bfd45859a25fcc16de0ddcf15aac68d79"
+    }
+  }
+}

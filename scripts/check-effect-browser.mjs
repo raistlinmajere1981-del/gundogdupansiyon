@@ -5,7 +5,7 @@ import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createServer} from 'node:net';
 import {spawn} from 'node:child_process';
-const {chromium}=createRequire('/home/raistlin/gundogdu_web/.local/browser-tools/package.json')('playwright');
+const {chromium}=createRequire(new URL('../../gundogdu_web/.local/browser-tools/package.json',import.meta.url))('playwright');
 const root=fileURLToPath(new URL('..',import.meta.url));
 const g=root.includes('gundogdu_web'),output=join(root,g?'.test-artifacts/effect-engine':'artifacts/effect-engine');
 mkdirSync(output,{recursive:true});const temp=mkdtempSync(join(output,'site-'));
