@@ -36,14 +36,27 @@ php -r 'exit(PHP_VERSION_ID >= 80000 && function_exists("curl_multi_init") ? 0 :
 for name in assets inc odalar restoran galeri iletisim qr-menu .htaccess 404.php robots.txt sitemap.xml index.php; do
   [[ ! -L "$root/$name" ]] || { echo "Uzak site girdisi symlink: $name" >&2; exit 1; }
 done
+# The original Gündoğdu staging site used the shared canonical PHP adapter.
+# Accept only this verified, site-origin-bound adapter for the one-time takeover;
+# no arbitrary foreign index.php is ever eligible.
+legacy=false
 if [[ -e "$root/index.php" ]] && ! grep -q 'gundogdu-site' "$root/index.php"; then
-  echo 'Farklı siteye ait index.php bulundu. Durduruldu.' >&2; exit 1
+  if [[ "$(sha256sum "$root/index.php" | cut -d' ' -f1)" == 'a290a964d3399e51fdcf033c05bae7760bf8878396ee57a40bcd95375a856fea' ]] \
+      && [[ -f "$root/site/config.php" ]] \
+      && grep -Fq 'https://yardimciasistangunduodu.alwaysdata.net' "$root/site/config.php"; then
+    legacy=true
+    echo 'Gündoğdu ortak şablon adaptöründen özel siteye güvenli geçiş doğrulandı.'
+  else
+    echo 'Farklı siteye ait index.php bulundu. Durduruldu.' >&2; exit 1
+  fi
 fi
 if [[ -e "$root/index.html" ]] && ! grep -qi 'alwaysdata' "$root/index.html"; then
   echo 'Bilinmeyen index.html bulundu. Durduruldu.' >&2; exit 1
 fi
 if [[ -e "$root/.htaccess" ]] && ! grep -q 'gundogdu-site' "$root/.htaccess"; then
-  echo 'Bilinmeyen kök .htaccess bulundu. Durduruldu.' >&2; exit 1
+  if [[ "$legacy" != true ]] || [[ "$(sha256sum "$root/.htaccess" | cut -d' ' -f1)" != '9fc4c75b0fd55205d5ce7a34dc5d803bfd5ed92aa4eeb8730758d3c977c0a0b0' ]]; then
+    echo 'Bilinmeyen kök .htaccess bulundu. Durduruldu.' >&2; exit 1
+  fi
 fi
 CHECK
 for name in $site_dirs; do
