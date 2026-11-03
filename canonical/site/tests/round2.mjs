@@ -131,13 +131,13 @@ try{
     await page.goto(base+'/?page=menu&category=TEST-second');await capture(page,`menu-${width}.png`);
     await page.locator('[data-ya-open]').click();await expect(page.locator('#ya-widget-title')).toHaveText('Ziyaret yardımcısı');await expect(page.locator('[data-ya-view="info"],[data-ya-view="voice"]')).toHaveCount(0);await page.locator('[data-ya-request-type="general_info"]').click();await expect(page.locator('[data-ya-open-date-picker]')).toHaveCount(0);await fits(page);await capture(page,`widget-general-${width}.png`);await page.keyboard.press('Escape');await expect(page.locator('[data-ya-open]')).toBeFocused();
   });
-  await scenario('return-to-tab freshness notice preserves request draft without another API fetch',async page=>{
+  await scenario('return-to-tab preserves request draft without a banner or another API fetch',async page=>{
     await page.goto(base+'/');await page.locator('[data-ya-open]').click();await page.locator('[data-ya-request-type=general_info]').click();
     const name=page.locator('#yardimci-asistan-widget input[name=customer_name]');await name.fill('TEST korunacak taslak');await page.waitForLoadState('networkidle');
-    await expect(page.locator('[data-publication-freshness]')).toBeHidden();const before=state.calls.length;
-    await page.evaluate(()=>{const now=Date.now();Date.now=()=>now+61000;window.dispatchEvent(new Event('focus'));});
-    await expect(page.locator('[data-publication-freshness]')).toBeVisible();await expect(name).toHaveValue('TEST korunacak taslak');assert.equal(state.calls.length,before,'Freshness notice must not add polling or fetches');
-    await page.keyboard.press('Escape');await capture(page,'publication-freshness-390.png');
+    await expect(page.locator('[data-publication-freshness]')).toHaveCount(0);const before=state.calls.length;
+    await page.evaluate(()=>{const now=Date.now();Date.now=()=>now+61000;window.dispatchEvent(new Event('focus'));document.dispatchEvent(new Event('visibilitychange'));});
+    await expect(page.locator('[data-publication-freshness]')).toHaveCount(0);await expect(name).toHaveValue('TEST korunacak taslak');assert.equal(state.calls.length,before,'Returning to the tab must not add polling or fetches');
+    await page.keyboard.press('Escape');await capture(page,'publication-return-390.png');
   });
   await scenario('published RTL category translation, stale hash fallback and language withdrawal',async page=>{
     const source=await (await fetch(base+'/?resource=translation-source')).json();const key='page.menu';const hero='theme.gundogdu.hero.title';
