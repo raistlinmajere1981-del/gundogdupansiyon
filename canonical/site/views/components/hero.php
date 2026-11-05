@@ -17,4 +17,3 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
     </div>
   </div>
 </section>
-<div class="photo-caption shell"><span><?= e(t($site, 'theme.gundogdu.photo.caption')) ?></span><a href="#photo-credits"><?= e(t($site, 'theme.gundogdu.photo.credits')) ?> <span aria-hidden="true">↗</span></a></div>

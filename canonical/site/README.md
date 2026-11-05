@@ -110,3 +110,41 @@ Kalan yayın işleri: gerçek domain/origin ve hosting rewrite/HTTPS, aynı-orig
 web modülü/medya, gerçek sağlayıcılar ve availability freshness, fiziksel cihaz
 kabulü, son ortak sürüm/hash sabitlemesi ve bütün sitelerin kontrollü eşitlenmesi.
 Gerçek hosting, canlı işlem veya kesin rezervasyon onayı kanıtı yoktur.
+
+## Visual chunk A (site-only, 2026-11-05)
+
+Presentation overrides live in `site/views/` and `public/assets/site/theme.css`;
+`assets/site/theme.css` is the required public mirror. All 76 common files and
+`template-manifest.json` remain unchanged. No publication, media, effect scene,
+shared widget behavior or source-language manifest changes are needed.
+
+Menu cards use only the shared view's published `image_url`, price and featured
+flag. Missing images stay absent. Duplicate page eyebrows are omitted only when
+they equal the heading. Announcements retain all validated published images and
+full text in keyboard-accessible disclosures; home previews stop at three items
+and 150-character excerpts. Widget overrides use `body #yardimci-asistan-widget`
+to win against injected runtime CSS; form scrolling remains available.
+
+Gideros attribution remains in the initially collapsed `#photo-credits` footer.
+`photo-credit-catalog.php` snapshots the existing demo generator's exact media
+titles, authors, source URLs, license URLs and modification notes. Only matching,
+validated, published local module media receive these credits; external visitor
+URLs receive no inferred license. Original published media titles remain in alt
+text, panorama hooks and normal visitor captions remain unchanged. The shared
+media component's sorting, kind, publication and URL checks are retained in the
+site override. Keep that narrow override aligned with future upstream releases.
+
+Separate demo-generator/photography work: improve representative room/table and
+food photography, provide missing menu image URLs through the publication owner,
+and add structured per-media author/source/license/change metadata upstream so
+exact-title catalog matching can eventually be retired. Review source rights and
+actual-business photography there; this chunk neither generates images nor
+republishes demo or owner content.
+
+Narrow checks: the three requested package/assets/manifest commands,
+`git diff --check`, and `php tests/canonical-visual-a.php`.
+`node tests/canonical-visual-a.mjs` is a focused synthetic browser check capped at
+85 seconds; it blocks external traffic and saves desktop/mobile evidence under
+`.test-artifacts/visual-a/` when the host permits local HTTP and Chromium. This
+session's sandbox denied HTTP listen (EPERM), and Chromium launch failed, so visual
+screenshots and computed browser geometry remain unverified here.
