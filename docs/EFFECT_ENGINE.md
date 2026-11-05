@@ -1,20 +1,43 @@
-# Efekt Atölyesi 1.1.0
+# Gündoğdu · Kanonik Efekt Yayını
 
-Hero yalnız `assets/effect-engine/src` içindeki Studio motorunu kullanır. Eski motor, eski kontroller ve preset uyumluluğu yoktur. Kıyı köpüğü henüz Studio registry içinde değildir.
+Güncel site kanonik şablonu kullanır. Ana sayfanın sabit fotoğrafı
+`assets/site/img/gideros-1-1818.webp` (1818 × 1228) dosyasıdır.
 
-Aktif `assets/effects/hero.scene.json` Atölye üzerinden kurulur; yoksa fotoğraf statiktir. `?effect-scene=sample` pasif örneği açar; `?effect-scene=off` her zaman fotoğrafı gösterir. Geçersiz/eksik JSON, azaltılmış hareket, veri tasarrufu ve çok düşük donanım statik kalır. Motor görünmeyen sekme/viewport için durur, piksel/FPS bütçesi uygular; sürekli yavaş çizimde statik fotoğrafa döner. Sahne isteği `cache: no-store` kullanır.
+## Aktif bağlantı
 
-1. Atölye'de doğru fotoğrafla çalışın: Gündoğdu `examples/gideros.scene.json` (1818×1228), BlackSea `examples/blacksea.scene.json` (1536×1024). BlackSea örneği `?example=blacksea` ile açılabilir. Fotoğraf kullanım hakkı siteye bağlıdır.
-2. Bölgeleri/efektleri düzenleyin, **JSON dışa aktar** kullanın.
-3. Hedef site dizininde:
-   ```bash
-   bash scripts/install-effect-scene.sh ~/Downloads/file.json --check-only
-   bash scripts/install-effect-scene.sh ~/Downloads/file.json
-   node scripts/check-effect-engine.mjs
-   node scripts/check-effect-browser.mjs
-   ```
-4. Yerelde kontrol edin. Onay geldiğinde yalnız site deploy edin; bu çalışma deploy yapmaz.
+- Sahne: `canonical/public/assets/site/scenes/hero.scene.json`
+- Manifest: `canonical/public/assets/site/scenes/effects-manifest.json`
+- Tarayıcı aynaları: `assets/site/scenes/hero.scene.json` ve
+  `assets/site/scenes/effects-manifest.json`
+- Manifest kaydı: `source: site/img/gideros-1-1818.webp`,
+  `slot: hero`, `scene: hero.scene.json`
+- Runtime: ortak `canonical/public/assets/core/effects.mjs` ve
+  `canonical/public/assets/vendor/effect-engine/`
 
-Kurucu vendor `importProject` ile şema, çokgen, tür ve parametreleri; ayrıca site boyutlarını doğrular. Geçersiz dosya ve `--check-only` mevcut kurulumu değiştirmez. Geçerli dosya aynı dizinde geçici dosyaya yazılır ve atomik rename ile kurulur. Mutlak/göreli dosya yolu kabul edilir. `photo.src` yalnız metadata'dır; site fotoğrafını veya responsive picture kaynağını değiştirmez. BlackSea mobil kırpması adapter tarafından derlenen sahneye eklenir (0,0,1180,1024).
+Eski `assets/effects/hero.scene.json` ve `assets/js/hero-effects.mjs`
+kanonik ana sayfada kullanılmaz. Eski `install-effect-scene.sh`
+betiği de aktif yayını güncellemez.
 
-Motor güncelleme: `bash scripts/sync-effect-engine.sh`. Varsayılan kaynak kardeş `../EfektAtolyesi`; alternatif `EFFECT_STUDIO_ROOT=/path/to/EfektAtolyesi bash scripts/sync-effect-engine.sh`. Runtime/registry/model byte-identical kopyalanır; siteye özel motor fork'u yoktur. Çalışma zamanında Studio dizinine bağımlılık yoktur. Deploy betikleri bütün `assets` dizinini kopyalar; motor ve varsa aktif sahne de pakete girer.
+## Yayın akışı
+
+Efekt Atölyesi'nde Gündoğdu → Ana sayfa · Gideros hero seçilip
+kaydedildikten sonra **Siteye yayınla**:
+
+1. Fotoğraf SHA-256'sı ve v1 sahne/efekt geçerliliği kontrol edilir.
+2. Kanonik sahne ile manifest her iki yerel varlık dizinine yazılır.
+3. Yalnız dört site dosyası alwaysdata'ya SSH üzerinden aktarılır.
+4. HTTPS üzerinden canlı sahne ve manifest karşılaştırılır.
+
+Yardımcı Asistan web modülüne ve API verilerine dokunulmaz.
+Geçersiz sahne, azaltılmış hareket veya düşük donanım koşullarında
+orijinal fotoğraf görünür kalır.
+
+## Doğrulama
+
+- `node scripts/package-site.mjs --check`
+- `node scripts/sync-public-assets.mjs --check`
+- `node --test tests/canonical-effects.test.mjs`
+- `bash scripts/deploy-site.sh --dry-run`
+
+Canlı kabulde ana sayfanın `.hero-photo[data-effect-state=animated]`
+işareti ve efekt Canvas'ı hem masaüstü hem mobilde kontrol edilir.

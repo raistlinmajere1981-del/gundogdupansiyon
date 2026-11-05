@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "bindings": [
+    {
+      "source": "site/img/gideros-1-1818.webp",
+      "slot": "hero",
+      "scene": "hero.scene.json"
+    }
+  ]
+}
