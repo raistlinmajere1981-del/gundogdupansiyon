@@ -10,9 +10,13 @@ $read = static fn(string $name): array => json_decode(@file_get_contents($root .
 $business = $read('business_context');
 $caps = $read('android_snapshot')['business_capabilities'] ?? [];
 $surfaces = $business['public_surfaces'] ?? ['accommodation','food_service','rooms','restaurant','menu','qr_menu','directions'];
+$requestsEnabled = in_array('customer.requests', $caps, true) && in_array('core.customers', $caps, true);
+$requestTypes = $requestsEnabled ? array_merge(['general_info'],
+    in_array('accommodation.reservations', $caps, true) ? ['pension_reservation'] : [],
+    in_array('food_service.reservations', $caps, true) ? ['restaurant_reservation'] : []) : [];
 if ($name === 'business') {
     $business = array_merge(['display_name'=>$business['business_name'] ?? 'YEREL TEST','profile_id'=>'pension_restaurant',
-        'public_surfaces'=>$surfaces,'requests_enabled'=>in_array('customer.requests',$caps,true),'ai_enabled'=>false,'whatsapp_enabled'=>false], $business);
+        'public_surfaces'=>$surfaces,'requests_enabled'=>$requestsEnabled,'request_types'=>$requestTypes,'ai_enabled'=>false,'whatsapp_enabled'=>false], $business);
     echo json_encode(['ok'=>true,'business'=>$business,'localization'=>$business['localization'] ?? null]);
 } elseif (in_array($name,['rooms','tables'],true)) {
     $payload=$read($name === 'rooms' ? 'room_catalog' : 'table_catalog');

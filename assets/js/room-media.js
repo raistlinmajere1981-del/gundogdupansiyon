@@ -73,6 +73,7 @@ const {text:t} = window.GundogduLanguage;
       panorama = window.pannellum.viewer("panorama-viewer", {
         type: "equirectangular",
         panorama: source,
+        haov: (button.dataset.roomMediaCard || button.dataset.tableMediaCard) === "panorama_180" ? 180 : 360,
         autoLoad: true,
         showZoomCtrl: true,
         showFullscreenCtrl: true,

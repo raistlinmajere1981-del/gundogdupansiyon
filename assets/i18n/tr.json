@@ -1,0 +1,2652 @@
+{
+  "version": 1,
+  "id": "gundogdu-site",
+  "revision": "3744f3e38b834149a3faa88ec55b8b5930f1a42668f73a6c71fbb35ce6602461",
+  "source_language": "tr",
+  "entries": {
+    "phrase.ac90663caf6fc1f1d5cca0bbc6465ffd6156a11c9f0640ad1a124469ed3df922": {
+      "text": "(isteğe bağlı)",
+      "hash": "ac90663caf6fc1f1d5cca0bbc6465ffd6156a11c9f0640ad1a124469ed3df922"
+    },
+    "phrase.5ac9565a9d8ea7b9fbc6a7d31750abf8b828824ce1097d1eaa595952e4625617": {
+      "text": "/ gece",
+      "hash": "5ac9565a9d8ea7b9fbc6a7d31750abf8b828824ce1097d1eaa595952e4625617"
+    },
+    "phrase.b7ed876262fad48e0c2aae53bb73c2c252fed5d36756926b40c6c58998d0462c": {
+      "text": "01 / BİR KIYI MOLASI",
+      "hash": "b7ed876262fad48e0c2aae53bb73c2c252fed5d36756926b40c6c58998d0462c"
+    },
+    "phrase.a0b3d3f6f6fc52c04b2bb53ee2b578b6be9b780b5c1dd13608717dd263007323": {
+      "text": "05xx xxx xx xx veya +ülke kodu",
+      "hash": "a0b3d3f6f6fc52c04b2bb53ee2b578b6be9b780b5c1dd13608717dd263007323"
+    },
+    "phrase.ad6f62eb4314030d388b56c5b6d38fc43281651c47a4c52c7dc50e05fdc29627": {
+      "text": "1 gece",
+      "hash": "ad6f62eb4314030d388b56c5b6d38fc43281651c47a4c52c7dc50e05fdc29627"
+    },
+    "phrase.0db094c95fa2ea9fbe83fc6d18fa5f83eab5b501a149f21f0ed90fce40459475": {
+      "text": "1 oda",
+      "hash": "0db094c95fa2ea9fbe83fc6d18fa5f83eab5b501a149f21f0ed90fce40459475"
+    },
+    "phrase.7ac4a37c505443cd3ee8677d3ccf8b03e6dda19829330a73c3d88000eaafe998": {
+      "text": "180° görünüm",
+      "hash": "7ac4a37c505443cd3ee8677d3ccf8b03e6dda19829330a73c3d88000eaafe998"
+    },
+    "phrase.2609f59f5fad5d910ea4794178660c7bcfcbe1571181c5775109848aff3a4860": {
+      "text": "180° panoramik görünüm",
+      "hash": "2609f59f5fad5d910ea4794178660c7bcfcbe1571181c5775109848aff3a4860"
+    },
+    "phrase.167de7be65d72164828564f514256db1764b07506654d0f9b5a8eeb6df23a006": {
+      "text": "360° masa deneyimi",
+      "hash": "167de7be65d72164828564f514256db1764b07506654d0f9b5a8eeb6df23a006"
+    },
+    "phrase.1c061a029a2ed76174354b08d6ef016dd5fee9bf74c0fbabf7f3247b16f490f8": {
+      "text": "360° masa görünümü",
+      "hash": "1c061a029a2ed76174354b08d6ef016dd5fee9bf74c0fbabf7f3247b16f490f8"
+    },
+    "phrase.82bc7df29a8693faf843a43886a6f5230f83e99a6101cacce6d3b18231cd5fb2": {
+      "text": "360° oda deneyimi",
+      "hash": "82bc7df29a8693faf843a43886a6f5230f83e99a6101cacce6d3b18231cd5fb2"
+    },
+    "phrase.9d265c614bb363b55e86937e1a052006bed951546d9c6b730ae0596f6525e51f": {
+      "text": "360° oda görünümü",
+      "hash": "9d265c614bb363b55e86937e1a052006bed951546d9c6b730ae0596f6525e51f"
+    },
+    "phrase.2434f508b5530f7322c40662bd7c74ac333ffc1395a9889692b91b76b5197b72": {
+      "text": "ADRES",
+      "hash": "2434f508b5530f7322c40662bd7c74ac333ffc1395a9889692b91b76b5197b72"
+    },
+    "phrase.f4ae99f7210c335e64aa17bc205d64a161f133e2c3866ff1a9b60cbe78e8483e": {
+      "text": "AI desteğiyle sorularınıza yanıt",
+      "hash": "f4ae99f7210c335e64aa17bc205d64a161f133e2c3866ff1a9b60cbe78e8483e"
+    },
+    "phrase.1e4dafd5157ae44786f7e502a14ccfde39605189cccb6c65bc1827f193717da5": {
+      "text": "AI yanıtları bilgi amaçlıdır. Güncel fiyat, müsaitlik ve rezervasyon için işletme teyidi gerekir.",
+      "hash": "1e4dafd5157ae44786f7e502a14ccfde39605189cccb6c65bc1827f193717da5"
+    },
+    "phrase.96f3ba9da06e7d3c98eb590ef3d5797671ce30135790f31ee5c654323e77561b": {
+      "text": "AI şu anda kullanılamıyor. Sorunuzu bilgi talebiyle veya WhatsApp üzerinden iletebilirsiniz.",
+      "hash": "96f3ba9da06e7d3c98eb590ef3d5797671ce30135790f31ee5c654323e77561b"
+    },
+    "phrase.ad0fcbcc7996b405abdd79c565223293017661a517f89c445aba6fbc1fdfae4b": {
+      "text": "Ad soyad",
+      "hash": "ad0fcbcc7996b405abdd79c565223293017661a517f89c445aba6fbc1fdfae4b"
+    },
+    "phrase.dee84a0abeea5f01b12f71df84b72461c580137cec99c305f1023a34a0d3d2df": {
+      "text": "Ad soyad: {0}",
+      "hash": "dee84a0abeea5f01b12f71df84b72461c580137cec99c305f1023a34a0d3d2df"
+    },
+    "phrase.32c6bebf1cb00776af32fe71dce4cdf4afb5955bfd9792011d5dcddc30c84755": {
+      "text": "Adres",
+      "hash": "32c6bebf1cb00776af32fe71dce4cdf4afb5955bfd9792011d5dcddc30c84755"
+    },
+    "phrase.104447465e95a8a77dec3fefaed7e42ec39cf28c4473227c7c117b38a4203f56": {
+      "text": "Adres bilgisi henüz yayınlanmadı.",
+      "hash": "104447465e95a8a77dec3fefaed7e42ec39cf28c4473227c7c117b38a4203f56"
+    },
+    "phrase.38828dc3ca1767f97407261954ae55bda1be0130912a01926fc07fee509ec392": {
+      "text": "Adınız soyadınız",
+      "hash": "38828dc3ca1767f97407261954ae55bda1be0130912a01926fc07fee509ec392"
+    },
+    "phrase.b0163736afc03d776cdb0baa6773ced0b98175e2c5ad62a051de57f52eff759c": {
+      "text": "Aile işletmesi",
+      "hash": "b0163736afc03d776cdb0baa6773ced0b98175e2c5ad62a051de57f52eff759c"
+    },
+    "phrase.5ddf89bd61fc32a8eea9c516852657d3b725e037419217568026366cef01ca96": {
+      "text": "Aklınızda ne var?",
+      "hash": "5ddf89bd61fc32a8eea9c516852657d3b725e037419217568026366cef01ca96"
+    },
+    "phrase.a887e651718d42acda9443d0da4494cf71ebd7ede65087befc16f7bbf9cbc35b": {
+      "text": "Alt gezinme",
+      "hash": "a887e651718d42acda9443d0da4494cf71ebd7ede65087befc16f7bbf9cbc35b"
+    },
+    "phrase.dcd2f7f89bdc791d4ab80f26dc233e3fa4b00c92533419e7261ff72b65729e1f": {
+      "text": "Ana Sayfa",
+      "hash": "dcd2f7f89bdc791d4ab80f26dc233e3fa4b00c92533419e7261ff72b65729e1f"
+    },
+    "phrase.338a27d7a65ab2d0842fede3cc7d87bfffe708b1101ec59940c4d53dbfdcfbf3": {
+      "text": "Ana gezinme",
+      "hash": "338a27d7a65ab2d0842fede3cc7d87bfffe708b1101ec59940c4d53dbfdcfbf3"
+    },
+    "phrase.489a38bb4ae9f8f64390e139434f09d698b0d6bef9fd770cd1fae66efb94f93e": {
+      "text": "Ana menü",
+      "hash": "489a38bb4ae9f8f64390e139434f09d698b0d6bef9fd770cd1fae66efb94f93e"
+    },
+    "phrase.dc1356403d5c2bb34229131810fb739fccda79a6860ac059b0ca93fd68bc2d24": {
+      "text": "Ana sayfaya dön",
+      "hash": "dc1356403d5c2bb34229131810fb739fccda79a6860ac059b0ca93fd68bc2d24"
+    },
+    "phrase.cf8883d5805f66955ec09cc884a99cd695affff8c753f7f32b479715dcc42961": {
+      "text": "Aradığınız sayfa bulunamadı.",
+      "hash": "cf8883d5805f66955ec09cc884a99cd695affff8c753f7f32b479715dcc42961"
+    },
+    "phrase.c5cc744a9b93fae18d3210248fa834f075aed9714be7b14702110ee8594356d1": {
+      "text": "Asistandan tarih ve kişi bilgilerini iletebilirsiniz. Talebiniz, işletme onayı ile kesinleşir.",
+      "hash": "c5cc744a9b93fae18d3210248fa834f075aed9714be7b14702110ee8594356d1"
+    },
+    "phrase.86e82eaf29a8369f23491d694264c2e887a01c45cd6fd8cc26eab09d582c13e8": {
+      "text": "Asistanı kapat",
+      "hash": "86e82eaf29a8369f23491d694264c2e887a01c45cd6fd8cc26eab09d582c13e8"
+    },
+    "phrase.fd124a067d3b540cad82f6c0570c842f86bdd02ec034f3c1e662be587e65f16d": {
+      "text": "Aydıncık Köyü sınırlarındaki Kerempe Burnu, açık Karadeniz manzarası ve hâlâ görev yapan tarihi feneriyle uzun kıyı rotasının güçlü durağı.",
+      "hash": "fd124a067d3b540cad82f6c0570c842f86bdd02ec034f3c1e662be587e65f16d"
+    },
+    "phrase.1de74ffa66ab7b54ea140e7522cf672cfda26d6a9dc2c5ea6effdf15e9fd5f5b": {
+      "text": "Aydıncık ve Kerempe, merkez çevresi gezisinden farklı olarak daha uzun bir kıyı yolculuğu; dönüş saatini hava ve yol durumuna göre planlayın.",
+      "hash": "1de74ffa66ab7b54ea140e7522cf672cfda26d6a9dc2c5ea6effdf15e9fd5f5b"
+    },
+    "phrase.065541b8c341c7fbd2e36c2c603572eb000a0d2839ad0bffd9d1f979a75ad547": {
+      "text": "Azdavay · Cam seyir terası",
+      "hash": "065541b8c341c7fbd2e36c2c603572eb000a0d2839ad0bffd9d1f979a75ad547"
+    },
+    "phrase.4700943e2b942137006971d61100f2667225b7147eaa2f048faf20194c45998c": {
+      "text": "Azdavay’ın ormanları arasındaki kanyon, yüksekten manzarayı izlemeye imkân veren cam seyir terasıyla tanınır.",
+      "hash": "4700943e2b942137006971d61100f2667225b7147eaa2f048faf20194c45998c"
+    },
+    "phrase.0e1d20e7ff7cdad6cb5c3b2879df23971ef0d156cd7035b1159f643bbf6ffcfb": {
+      "text": "Açık alan",
+      "hash": "0e1d20e7ff7cdad6cb5c3b2879df23971ef0d156cd7035b1159f643bbf6ffcfb"
+    },
+    "phrase.21e35622375acf86b29ca0ceeea6906daf4a9f4232d8ae7286d199403847f85c": {
+      "text": "Bagaj emaneti",
+      "hash": "21e35622375acf86b29ca0ceeea6906daf4a9f4232d8ae7286d199403847f85c"
+    },
+    "phrase.58b7a69368a02d71dc66bb5ea47b383db5ea662a56ee1988543d5379f8d4c22b": {
+      "text": "Bahçe",
+      "hash": "58b7a69368a02d71dc66bb5ea47b383db5ea662a56ee1988543d5379f8d4c22b"
+    },
+    "phrase.54db561dfdfa26ac2d5210812cc5907825fd9bb90f7030d0f39c8b45ec06220c": {
+      "text": "Bahçe manzarası",
+      "hash": "54db561dfdfa26ac2d5210812cc5907825fd9bb90f7030d0f39c8b45ec06220c"
+    },
+    "phrase.ff9f658402a62fc66b04b801da499a7fe6c0313f7b603891b6c497a653e8698f": {
+      "text": "Balkon",
+      "hash": "ff9f658402a62fc66b04b801da499a7fe6c0313f7b603891b6c497a653e8698f"
+    },
+    "phrase.3a29766575a75f87c1437858fc753b8629901ec5d194811b6a84ccabda33a373": {
+      "text": "Basamaksız erişim",
+      "hash": "3a29766575a75f87c1437858fc753b8629901ec5d194811b6a84ccabda33a373"
+    },
+    "phrase.a3d0ca2a471a16ba228c6e86409a4c5a84334067397a675ad9dcc3f034ab9478": {
+      "text": "Bazen en güzel plan,",
+      "hash": "a3d0ca2a471a16ba228c6e86409a4c5a84334067397a675ad9dcc3f034ab9478"
+    },
+    "phrase.e0442542426ec20978c1ac1971fb4814310041eb828eb91b703a48a30fd01403": {
+      "text": "Bağlantı değişmiş olabilir. Ana sayfaya dönebilir veya odalarımıza göz atabilirsiniz.",
+      "hash": "e0442542426ec20978c1ac1971fb4814310041eb828eb91b703a48a30fd01403"
+    },
+    "phrase.77421d55854f81d58c488fcc837892433d1c2ba30118d5f3a9ebfe4e3987d7ec": {
+      "text": "Bağlantı kurulamadı. Bilgileriniz bu ekranda korunuyor; yeniden deneyebilirsiniz.",
+      "hash": "77421d55854f81d58c488fcc837892433d1c2ba30118d5f3a9ebfe4e3987d7ec"
+    },
+    "phrase.96a81e8bd935be32ba9f354de92df3be3f6418e5ad687d9db716dddd0832def1": {
+      "text": "Belirsiz",
+      "hash": "96a81e8bd935be32ba9f354de92df3be3f6418e5ad687d9db716dddd0832def1"
+    },
+    "phrase.8fd6cbabf5c73b43b8e34605c1d3eb37a0ceb90606ccf584b94ccb6fa1f2b393": {
+      "text": "Belirtilmedi",
+      "hash": "8fd6cbabf5c73b43b8e34605c1d3eb37a0ceb90606ccf584b94ccb6fa1f2b393"
+    },
+    "phrase.d6555385ddcc0186be4e7c7aa06d30cec85b1bd07dba9351471b28146dd7a181": {
+      "text": "Bilgi alın",
+      "hash": "d6555385ddcc0186be4e7c7aa06d30cec85b1bd07dba9351471b28146dd7a181"
+    },
+    "phrase.ee1c910445ed9562d66a36c1fe2716388804d316384823c2f32c7a425a4eb6d6": {
+      "text": "Bilgi talebi gönder",
+      "hash": "ee1c910445ed9562d66a36c1fe2716388804d316384823c2f32c7a425a4eb6d6"
+    },
+    "phrase.cf909edfd8db117845f1c291338e6ff56beca2d032204f4cb1ad67a9306a1e37": {
+      "text": "Bilgi talebinizi iletin",
+      "hash": "cf909edfd8db117845f1c291338e6ff56beca2d032204f4cb1ad67a9306a1e37"
+    },
+    "phrase.4b9be979c06b05e89c3ae4db988ed83d764444c6ae72c19273518a143d5ab75f": {
+      "text": "Bilgiler yükleniyor…",
+      "hash": "4b9be979c06b05e89c3ae4db988ed83d764444c6ae72c19273518a143d5ab75f"
+    },
+    "phrase.f95184645536e49d3e102968852da6c0cbf78280f1b8fa16d1b51097cda57b9c": {
+      "text": "Bilgilere şu anda ulaşılamıyor. Lütfen yeniden deneyin.",
+      "hash": "f95184645536e49d3e102968852da6c0cbf78280f1b8fa16d1b51097cda57b9c"
+    },
+    "phrase.7dd50afee7949c45b946d8e1c5a582dc15ba29a0d3d93417fb3492b95ecdab75": {
+      "text": "Bilmenizde fayda var.",
+      "hash": "7dd50afee7949c45b946d8e1c5a582dc15ba29a0d3d93417fb3492b95ecdab75"
+    },
+    "phrase.eef59daffaeba40028058777a82b1f81b8a04ec19c73a0964a91ff06d25fb12d": {
+      "text": "Bir merhaba",
+      "hash": "eef59daffaeba40028058777a82b1f81b8a04ec19c73a0964a91ff06d25fb12d"
+    },
+    "phrase.377e7585a4d06e0b64ed3ad06a9760d23bdd6fe5daa39c836ea30d3a61aec4fc": {
+      "text": "Bir sonraki güzel anınız,",
+      "hash": "377e7585a4d06e0b64ed3ad06a9760d23bdd6fe5daa39c836ea30d3a61aec4fc"
+    },
+    "phrase.8542a9cdb2f3d5a22f7f169892342e2bbf8b15888bc5dea88a9367d8be9ec92f": {
+      "text": "Bir yanı orman, bir yanı deniz. Gideros Koyu’nun doğal güzelliğinde, gündelik telaşa küçük bir ara vermeye davetlisiniz.",
+      "hash": "8542a9cdb2f3d5a22f7f169892342e2bbf8b15888bc5dea88a9367d8be9ec92f"
+    },
+    "phrase.5f84aa81861aa1616577850a13afc7b5fb5b16fb1149f2b319914c2b86206e97": {
+      "text": "Biraz dinlenin.",
+      "hash": "5f84aa81861aa1616577850a13afc7b5fb5b16fb1149f2b319914c2b86206e97"
+    },
+    "phrase.6af4d5fd0e33dbd7bdeb025190e63bc8192d6b5b9ae0eabda4c6b457531d1a00": {
+      "text": "Biraz huzur.",
+      "hash": "6af4d5fd0e33dbd7bdeb025190e63bc8192d6b5b9ae0eabda4c6b457531d1a00"
+    },
+    "phrase.cbbe09213f52029eb9a486323fde8602443ad6ee8953d91f17034f2b9a80b6c1": {
+      "text": "Biraz mavi.",
+      "hash": "cbbe09213f52029eb9a486323fde8602443ad6ee8953d91f17034f2b9a80b6c1"
+    },
+    "phrase.0c7ae29280d1912397200c10df56a5023a518ade5891928e80d9de8c30fb3d5b": {
+      "text": "Biraz yavaşlamaktır.",
+      "hash": "0c7ae29280d1912397200c10df56a5023a518ade5891928e80d9de8c30fb3d5b"
+    },
+    "phrase.ff437cc4cb651b802b0a4af8792541af75c94a73f3626bdb26b29c5e3ddc57cb": {
+      "text": "Biraz yeşil.",
+      "hash": "ff437cc4cb651b802b0a4af8792541af75c94a73f3626bdb26b29c5e3ddc57cb"
+    },
+    "phrase.4f23f7dd6f4f1730582d0c301001298be579b694168c8854d01b75ebb6021d35": {
+      "text": "Birlikte planlayalım",
+      "hash": "4f23f7dd6f4f1730582d0c301001298be579b694168c8854d01b75ebb6021d35"
+    },
+    "phrase.2fcb86fe0c00d50d3df272472cd21fbc427902f1bdfe3cfae94b9cb30f8cd579": {
+      "text": "Bizden size",
+      "hash": "2fcb86fe0c00d50d3df272472cd21fbc427902f1bdfe3cfae94b9cb30f8cd579"
+    },
+    "phrase.e16298d8acaae3ed920c195dc113ad6662cb80d3665fe6712532c179cae5b147": {
+      "text": "Bize bir şey sorun",
+      "hash": "e16298d8acaae3ed920c195dc113ad6662cb80d3665fe6712532c179cae5b147"
+    },
+    "phrase.5a6ba2257bc600c5fec1765a620838e0b9ee04e76bea490586808cf3537974ea": {
+      "text": "Bize sormak veya eklemek istedikleriniz…",
+      "hash": "5a6ba2257bc600c5fec1765a620838e0b9ee04e76bea490586808cf3537974ea"
+    },
+    "phrase.daf37822f1131dae5b87c2807092132731420d06d5fa3ae99eadfedab758da4b": {
+      "text": "Bu form bilgi talebi oluşturur; bir rezervasyon onayı değildir.",
+      "hash": "daf37822f1131dae5b87c2807092132731420d06d5fa3ae99eadfedab758da4b"
+    },
+    "phrase.39ea8a7cbd3a0c21445ce27530414128993d071b559a3ab1e0eb137ebfb3dc3b": {
+      "text": "Bu form rezervasyon talebi oluşturur. Kesin fiyat, müsaitlik ve rezervasyon işletmemizin teyidiyle netleşir.",
+      "hash": "39ea8a7cbd3a0c21445ce27530414128993d071b559a3ab1e0eb137ebfb3dc3b"
+    },
+    "phrase.e8f1d7107df8463f8e0035daf23942a1a28ae6c7826b0522ff962fec21a75a30": {
+      "text": "Bu kategori için aktif ürün bulunmuyor.",
+      "hash": "e8f1d7107df8463f8e0035daf23942a1a28ae6c7826b0522ff962fec21a75a30"
+    },
+    "phrase.69809ea940a68bc1bd4b05f71b5662098a0824289e8016550678782155d296a4": {
+      "text": "Bu kıyıda aradığınız sayfa yok.",
+      "hash": "69809ea940a68bc1bd4b05f71b5662098a0824289e8016550678782155d296a4"
+    },
+    "phrase.91933182fec259a716860909f6b3a0f7ec8bbb963b0756ec9ff9197006c4f1fb": {
+      "text": "Bu masa artık yayında değil veya bulunamadı.",
+      "hash": "91933182fec259a716860909f6b3a0f7ec8bbb963b0756ec9ff9197006c4f1fb"
+    },
+    "phrase.86a0df3729045749473ba645630f1ddc646076cdbd91726b3a9da60cf40a4598": {
+      "text": "Bu masanın fotoğrafları henüz hazır değil.",
+      "hash": "86a0df3729045749473ba645630f1ddc646076cdbd91726b3a9da60cf40a4598"
+    },
+    "phrase.4b7b2ad3092744cecd2e6b60687ec9211d67ebafd75aa255db1d57cdced77df2": {
+      "text": "Bu mesaj kesin rezervasyon onayı değildir. Fiyat ve müsaitlik ayrıca teyit edilir.",
+      "hash": "4b7b2ad3092744cecd2e6b60687ec9211d67ebafd75aa255db1d57cdced77df2"
+    },
+    "phrase.51e93a4fde183f53418c25cb3beb8b74b2ed510ab8dbafa564fd8f18921820ab": {
+      "text": "Bu oda artık yayında değil veya bulunamadı.",
+      "hash": "51e93a4fde183f53418c25cb3beb8b74b2ed510ab8dbafa564fd8f18921820ab"
+    },
+    "phrase.618b3923b5d6a4e7d3552e1206f86767490be736da1d6e74435bd6d6069ec560": {
+      "text": "Bu odanın fotoğrafları henüz hazır değil.",
+      "hash": "618b3923b5d6a4e7d3552e1206f86767490be736da1d6e74435bd6d6069ec560"
+    },
+    "phrase.6b6afe12e742bdd6871f9c6ae72907713dc61d48345b22406be72a759dd01952": {
+      "text": "Bu sitedeki iki bölge fotoğrafı Gideros Koyu’nda 30 Haziran 2007’de Makalp tarafından çekilmiştir. İşletmeye ait güncel bir görünüm veya oda ve restoran görseli olarak sunulmaz.",
+      "hash": "6b6afe12e742bdd6871f9c6ae72907713dc61d48345b22406be72a759dd01952"
+    },
+    "phrase.b8dbb8970513ffa1c4cdf28136280b332d74b44b853bc855fbd341dd83719355": {
+      "text": "Bu sonuç kesin rezervasyon onayı değildir. Seçtiğiniz oda ve son durum işletme tarafından teyit edilir.",
+      "hash": "b8dbb8970513ffa1c4cdf28136280b332d74b44b853bc855fbd341dd83719355"
+    },
+    "phrase.bd557635a50f1a383efe9d17a7fbe2d926af4469f7d8348e973ab5a5b4628724": {
+      "text": "Bugün · 1 gece",
+      "hash": "bd557635a50f1a383efe9d17a7fbe2d926af4469f7d8348e973ab5a5b4628724"
+    },
+    "phrase.0a281904191cb39b0f9e782cca1a61a0a4dff10d91c1ea545f7c339abaa19b5c": {
+      "text": "Bugün,",
+      "hash": "0a281904191cb39b0f9e782cca1a61a0a4dff10d91c1ea545f7c339abaa19b5c"
+    },
+    "phrase.220a613f03168d76a9931d44a5b51a461e603470f22583215898f18f7f7e5844": {
+      "text": "Bunlar katı programlar değil; Cide’nin coğrafyasını yorulmadan tanımak için pratik bir sıralama.",
+      "hash": "220a613f03168d76a9931d44a5b51a461e603470f22583215898f18f7f7e5844"
+    },
+    "phrase.8e4207bee2da9d84d70dc4d1a1d22e473f67b10f237cdbb429bc2c44d702c1b1": {
+      "text": "Buradaki olanaklar işletme ayarlarında seçilen müşteri-facing bilgilerden otomatik güncellenir.",
+      "hash": "8e4207bee2da9d84d70dc4d1a1d22e473f67b10f237cdbb429bc2c44d702c1b1"
+    },
+    "phrase.0ea2de8a9e51ee73dd34483bc90c12d370b5c821033720b390fa196afb935952": {
+      "text": "BİR KIYI MOLASI",
+      "hash": "0ea2de8a9e51ee73dd34483bc90c12d370b5c821033720b390fa196afb935952"
+    },
+    "phrase.26ac132b46e3792fc77136cb5b25194bed0c13dcad94f013c177ed9a7fceac5f": {
+      "text": "BİR YERDEN DAHA FAZLASI",
+      "hash": "26ac132b46e3792fc77136cb5b25194bed0c13dcad94f013c177ed9a7fceac5f"
+    },
+    "phrase.99ab5c2c9867faa21c4d10cdf39dd7a8305138ebe4c07eb40557d380fb41635e": {
+      "text": "BİRLİKTE GEÇEN ZAMAN",
+      "hash": "99ab5c2c9867faa21c4d10cdf39dd7a8305138ebe4c07eb40557d380fb41635e"
+    },
+    "phrase.f030bd0966244aa7c2bececaa46075ff607d56e5dbc9bbbe7b251a62b9d5d31b": {
+      "text": "Cam kenarı",
+      "hash": "f030bd0966244aa7c2bececaa46075ff607d56e5dbc9bbbe7b251a62b9d5d31b"
+    },
+    "phrase.296a8eddf82a7a395efa726e9d317d18993249788052745bae334bc871d8b5ee": {
+      "text": "Canlı bilgiler yükleniyor…",
+      "hash": "296a8eddf82a7a395efa726e9d317d18993249788052745bae334bc871d8b5ee"
+    },
+    "phrase.7ab8760cfc27e0b397c952785f158d01416d4b9537f332863b9ac83202c999c7": {
+      "text": "Cep telefonu",
+      "hash": "7ab8760cfc27e0b397c952785f158d01416d4b9537f332863b9ac83202c999c7"
+    },
+    "phrase.009ed110badf6e7bb1d9dc5e70d1dbf1d3dcb8283c23508477ee7cb2b730f07d": {
+      "text": "Change language",
+      "hash": "009ed110badf6e7bb1d9dc5e70d1dbf1d3dcb8283c23508477ee7cb2b730f07d"
+    },
+    "phrase.f316fdd7c560e7106cee7a6ee36bdf7f491c93d87243c6ed00eeba71fa21fec7": {
+      "text": "Cide Belediyesi Loç Vadisi’ni merkezden yaklaşık 20 km uzakta; Valla Kanyonu çıkışı ile Karakadı Kanyonu girişi arasında tanımlıyor. Kastamonu İl Kültür ve Turizm Müdürlüğü vadinin yaklaşık 8 km boyunca uzandığını belirtiyor.",
+      "hash": "f316fdd7c560e7106cee7a6ee36bdf7f491c93d87243c6ed00eeba71fa21fec7"
+    },
+    "phrase.a02d15ffa5587a5ced54c1e529e748536bb886dc6333b4b0825d7e2807e4a910": {
+      "text": "Cide Belediyesi etkinlikleri ↗",
+      "hash": "a02d15ffa5587a5ced54c1e529e748536bb886dc6333b4b0825d7e2807e4a910"
+    },
+    "phrase.97a8f6de5dc37fc0f42eea1cd5a7ec7458ea2877f95714a52e2fda86e1eb664a": {
+      "text": "Cide Belediyesi koyu ilçe merkezinin yaklaşık 11 km batısında konumlandırıyor. Tarihsel kaynaklarda Kytoros adıyla ilişkilendirilen Gideros, bugün sakin suyu ve yoğun bitki örtüsüyle öne çıkıyor.",
+      "hash": "97a8f6de5dc37fc0f42eea1cd5a7ec7458ea2877f95714a52e2fda86e1eb664a"
+    },
+    "phrase.8f4e8c136910d859e5b16b2cfbd070a225ed934d4f47a18e98f90a2cd2f10310": {
+      "text": "Cide Ceviz Helvası",
+      "hash": "8f4e8c136910d859e5b16b2cfbd070a225ed934d4f47a18e98f90a2cd2f10310"
+    },
+    "phrase.fe0ba77ded32e5d482098515ed3b1424327a58e4a44114e123a40a231c965a75": {
+      "text": "Cide Ceviz Helvası, TÜRKPATENT’te 546 tescil numarasıyla mahreç işareti olarak kayıtlı. Tescil tarihi 27 Eylül 2020; ürün bol cevizli, yumurta akı ve pancar şekeri temelli geleneksel yapısıyla tanımlanıyor.",
+      "hash": "fe0ba77ded32e5d482098515ed3b1424327a58e4a44114e123a40a231c965a75"
+    },
+    "phrase.e77d5922d684c9b96f4e6173af99e3b936f7ec011b1df19356e947693d54d36a": {
+      "text": "Cide Gideros Koyu",
+      "hash": "e77d5922d684c9b96f4e6173af99e3b936f7ec011b1df19356e947693d54d36a"
+    },
+    "phrase.79fe9898debabaf06e59bb6cd65aa1adfb64b05ec2aa66706d27cfa5b68bbedc": {
+      "text": "Cide Limanı",
+      "hash": "79fe9898debabaf06e59bb6cd65aa1adfb64b05ec2aa66706d27cfa5b68bbedc"
+    },
+    "phrase.247e81b0d4478e15fc0f7fefc501fad722422a166138d67ceabd50289c2e49d3": {
+      "text": "Cide Limanı ve kıyı yerleşimi",
+      "hash": "247e81b0d4478e15fc0f7fefc501fad722422a166138d67ceabd50289c2e49d3"
+    },
+    "phrase.687bda6966aa6be71cbfc34c9e85886d6ff8f733aaf79b69d8e8195317ebfd0b": {
+      "text": "Cide Limanı · Cide67 · CC BY-SA 3.0",
+      "hash": "687bda6966aa6be71cbfc34c9e85886d6ff8f733aaf79b69d8e8195317ebfd0b"
+    },
+    "phrase.6807c7b760ac821ae20f5be56576d13518cc9263d722a934962e6e2e678402ad": {
+      "text": "Cide Sahili ve Liman",
+      "hash": "6807c7b760ac821ae20f5be56576d13518cc9263d722a934962e6e2e678402ad"
+    },
+    "phrase.4aaaba5f53d81aaceb7c0f06f74d6d88d6b7d72bb9bf76814dfcb664b1f1e4cf": {
+      "text": "Cide gezi rehberindeki bilgiler kamuya açık kaynaklardan derlenmiştir; dış kaynaklı fotoğrafların atıfları ilgili görsellerde belirtilir.",
+      "hash": "4aaaba5f53d81aaceb7c0f06f74d6d88d6b7d72bb9bf76814dfcb664b1f1e4cf"
+    },
+    "phrase.1c526df25603c0141f7191d12247326383577b7694a23f5840e8347ee619ac0d": {
+      "text": "Cide kıyısından dağlara, kanyonlara ve şelalelere uzanan rotalar. Loç Vadisi Cide’dedir; Pınarbaşı, Azdavay ve Ilgaz çevresine geziler için ayrıca zaman ayırabilirsiniz.",
+      "hash": "1c526df25603c0141f7191d12247326383577b7694a23f5840e8347ee619ac0d"
+    },
+    "phrase.5b071013483b1ef7fd0dca751b2c42071c96a94b4cbd46ac3709b218fbeac4be": {
+      "text": "Cide merkezden yaklaşık 11 km",
+      "hash": "5b071013483b1ef7fd0dca751b2c42071c96a94b4cbd46ac3709b218fbeac4be"
+    },
+    "phrase.17e3e96292dc256fbaba6153b1ac2efc68fc646e3a81e1ccf1c3ad3e955e86e9": {
+      "text": "Cide merkezden yaklaşık 20 km",
+      "hash": "17e3e96292dc256fbaba6153b1ac2efc68fc646e3a81e1ccf1c3ad3e955e86e9"
+    },
+    "phrase.3018c8cb5962871146f30748884cca737492d4f95a63bdcad97825bae09acf15": {
+      "text": "Cide merkezden yaklaşık 20 km uzaklıktaki Loç Vadisi, Karakadı, Hamitli, Şenköy ve Çamdibi köylerinin sınırlarına yayılır. Seyir alanından vadiyi izlemek ve köy çevresini tanımak için zaman ayırın. Fotoğraf, vadinin Hamitli Köyü’ndeki tarihi su değirmenini gösterir.",
+      "hash": "3018c8cb5962871146f30748884cca737492d4f95a63bdcad97825bae09acf15"
+    },
+    "phrase.5e0af722be2fd0511fcad01094f99976223f3e0f26539a7c22bd450194389ddb": {
+      "text": "Cide merkezden yaklaşık 55 km",
+      "hash": "5e0af722be2fd0511fcad01094f99976223f3e0f26539a7c22bd450194389ddb"
+    },
+    "phrase.9e2b9c262f5cfe1dec706ed3eec753e0f68ab3481c753da196f066d16af09ba6": {
+      "text": "Cide rota özeti",
+      "hash": "9e2b9c262f5cfe1dec706ed3eec753e0f68ab3481c753da196f066d16af09ba6"
+    },
+    "phrase.2d3eec039e31ecd5d6570b30dce6dc1bafc21d71739b417ef94649084504af9e": {
+      "text": "Cide sahili",
+      "hash": "2d3eec039e31ecd5d6570b30dce6dc1bafc21d71739b417ef94649084504af9e"
+    },
+    "phrase.256abbd9841a8c9867b14ba508a92c15e89df0864e463c53a1b62008bff6d1d8": {
+      "text": "Cide sahili ve Gideros’tan Ilgaz, Küre Dağları, Valla, Horma, Loç Vadisi, Ilgarini, Ilıca ve Çatak’a uzanan fotoğraflı gezi rehberi.",
+      "hash": "256abbd9841a8c9867b14ba508a92c15e89df0864e463c53a1b62008bff6d1d8"
+    },
+    "phrase.dbfb6e71a8f9bde5d7639aaf3a7c3cfd0fe8d7faa7c006d72dfd7ce90715e237": {
+      "text": "Cide sahili ve Karadeniz",
+      "hash": "dbfb6e71a8f9bde5d7639aaf3a7c3cfd0fe8d7faa7c006d72dfd7ce90715e237"
+    },
+    "phrase.a40ec0e5555f9a3db2340a9b3f9b2d30d21935f7fa4d4d5b32acc744fb6f709e": {
+      "text": "Cide sahili ve Karadeniz manzarası",
+      "hash": "a40ec0e5555f9a3db2340a9b3f9b2d30d21935f7fa4d4d5b32acc744fb6f709e"
+    },
+    "phrase.2eb1ff4e93f9bb9dbbb10b0aa51782078da5d7a52f8980734a682ed8e658fdc9": {
+      "text": "Cide sahili · AI destekli restorasyon",
+      "hash": "2eb1ff4e93f9bb9dbbb10b0aa51782078da5d7a52f8980734a682ed8e658fdc9"
+    },
+    "phrase.7ff5ee434c10f50a6ef265a02f13e8a00731f4b03dce6725e94496d836479a5d": {
+      "text": "Cide sahili · Crebain · CC BY-SA 3.0",
+      "hash": "7ff5ee434c10f50a6ef265a02f13e8a00731f4b03dce6725e94496d836479a5d"
+    },
+    "phrase.09b7696a727556150bcad5cdf5d6b0923f2a0e802fca226ff7e77e1c3fed8336": {
+      "text": "Cide sahilinde",
+      "hash": "09b7696a727556150bcad5cdf5d6b0923f2a0e802fca226ff7e77e1c3fed8336"
+    },
+    "phrase.ca99b5a152512ceee0fdf332e1e69f1eba1f329336d4b236527aeaa4d1f0f20e": {
+      "text": "Cide sahilinde gün batımı, kumsaldaki tekne ve Karadeniz",
+      "hash": "ca99b5a152512ceee0fdf332e1e69f1eba1f329336d4b236527aeaa4d1f0f20e"
+    },
+    "phrase.cfd3e2a6bc975ffe139cb21bbed5509902f15483a1e3b8a0f2b659ff43bdb4fd": {
+      "text": "Cide seyahatiniz için birlikte yer açalım. Size nasıl yardımcı olabiliriz?",
+      "hash": "cfd3e2a6bc975ffe139cb21bbed5509902f15483a1e3b8a0f2b659ff43bdb4fd"
+    },
+    "phrase.ad094be6f16a077a648d2726728a28ebd36fa0ee7c36c0f205976c9daddbfcad": {
+      "text": "Cide ve çevresi",
+      "hash": "ad094be6f16a077a648d2726728a28ebd36fa0ee7c36c0f205976c9daddbfcad"
+    },
+    "phrase.a89ac8b6102892898f70e9ef6dfc3c66f2e8166e5dcf3de1922ea0b6cd821c9c": {
+      "text": "Cide yalnızca manzara değil",
+      "hash": "a89ac8b6102892898f70e9ef6dfc3c66f2e8166e5dcf3de1922ea0b6cd821c9c"
+    },
+    "phrase.052f4a0760a8ee1d533cd1129d446c80ce325d6483161dac1738194d6ea64154": {
+      "text": "Cide · Çamdibi ve çevre köyler",
+      "hash": "052f4a0760a8ee1d533cd1129d446c80ce325d6483161dac1738194d6ea64154"
+    },
+    "phrase.b8767e8a88a15cb117f6fdc6b064a7d76a78abb96f98e4ea6ab1c511d9f68d2f": {
+      "text": "Cide'de",
+      "hash": "b8767e8a88a15cb117f6fdc6b064a7d76a78abb96f98e4ea6ab1c511d9f68d2f"
+    },
+    "phrase.3113ac49b4611ef8ab2ba0940b7736cd363b9a2ed6c35f1ec9134c0e4efe0248": {
+      "text": "Cide'de görüşmek üzere",
+      "hash": "3113ac49b4611ef8ab2ba0940b7736cd363b9a2ed6c35f1ec9134c0e4efe0248"
+    },
+    "phrase.09a1e159c1ef9ba685efc021d60cc9c422f7f10cc8a73bcd9231710af63a80de": {
+      "text": "Cide'nin kıvrımlı sahili, kıyı yerleşimi ve Karadeniz'e uzanan yeşil tepeler",
+      "hash": "09a1e159c1ef9ba685efc021d60cc9c422f7f10cc8a73bcd9231710af63a80de"
+    },
+    "phrase.89d2fe68230c969d8d841301f254018aa9014c62b8c58bb630457ad71bf3189f": {
+      "text": "Cide'yi Keşfet",
+      "hash": "89d2fe68230c969d8d841301f254018aa9014c62b8c58bb630457ad71bf3189f"
+    },
+    "phrase.15ee8f3bcd89572c3353d5cfa1fec64d3c78dd0a1e8589146a0f4137a2634856": {
+      "text": "Cide'yi keşfet",
+      "hash": "15ee8f3bcd89572c3353d5cfa1fec64d3c78dd0a1e8589146a0f4137a2634856"
+    },
+    "phrase.ad9aa0e968d71ac1c9d978ee7e5448ae420791fc45c7ae65ce7a458fca50cbed": {
+      "text": "Cide, Kastamonu",
+      "hash": "ad9aa0e968d71ac1c9d978ee7e5448ae420791fc45c7ae65ce7a458fca50cbed"
+    },
+    "phrase.75d11b6b4c48bdb7b0a1f3e407b29ea06403eb950918ec8b0851e5d584a0e582": {
+      "text": "Cide, Kastamonu'da denize yakın, sıcak ve sakin aile pansiyonu.",
+      "hash": "75d11b6b4c48bdb7b0a1f3e407b29ea06403eb950918ec8b0851e5d584a0e582"
+    },
+    "phrase.88a69f8991363914330352b4715e25d56ab9f1efd6bc0d2ba4b97cc3b889de33": {
+      "text": "Cide’de Rıfat Ilgaz Kültür ve Sanat Evi",
+      "hash": "88a69f8991363914330352b4715e25d56ab9f1efd6bc0d2ba4b97cc3b889de33"
+    },
+    "phrase.7dc7296ed8dc5b4f5fcbe79f71d24082b3917f45a558c4020de4d19a182e2911": {
+      "text": "Cide’de gezi planı doğal olarak merkezde başlıyor. Sahil ve liman, kasabanın günlük yaşamını Karadeniz manzarasıyla birlikte verir. Batıya doğru Gideros daha korunaklı bir kıyı deneyimi sunarken, iç kesimde Loç Vadisi bambaşka bir coğrafyaya geçiş yaptırır. Doğu yönündeki Kerempe ise daha uzun bir kıyı yolculuğudur.",
+      "hash": "7dc7296ed8dc5b4f5fcbe79f71d24082b3917f45a558c4020de4d19a182e2911"
+    },
+    "phrase.e51e78aa6e1907668a9ea86efbebe5a9f0171abdabb9c06a8b175d0123e59929": {
+      "text": "Cide’de neyi, neden görmeli?",
+      "hash": "e51e78aa6e1907668a9ea86efbebe5a9f0171abdabb9c06a8b175d0123e59929"
+    },
+    "phrase.2c305b40ba400bd1f04303e0e6798aa10bde9514ff0a3b1ebe9de0075b2a78ec": {
+      "text": "Cide’de sıcak bir konaklama",
+      "hash": "2c305b40ba400bd1f04303e0e6798aa10bde9514ff0a3b1ebe9de0075b2a78ec"
+    },
+    "phrase.8c4e2a67736a74e3aacb8a61d2f4eef3d60040bdecc8c5da851c8ce499de4a53": {
+      "text": "Cide’nin ormanlarla çevrili doğal koyu Gideros. Kıyıdaki ağaçlar, suya düşen ışık ve açık denize uzanan dar bir geçit… Burada manzaranın kendisi başlı başına bir davet.",
+      "hash": "8c4e2a67736a74e3aacb8a61d2f4eef3d60040bdecc8c5da851c8ce499de4a53"
+    },
+    "phrase.2af3be8c02d0e0432ffef00828458775dc114345bd4e3dfe8ec0d6a3d6fa7d23": {
+      "text": "Cide’nin ritmi",
+      "hash": "2af3be8c02d0e0432ffef00828458775dc114345bd4e3dfe8ec0d6a3d6fa7d23"
+    },
+    "phrase.149426f082021ced5806b6cc3d30f276de11cdf71d4c88c20e82ef4f21bb9ad6": {
+      "text": "Cide’yi yalnızca sahiliyle değil; korunaklı koyları, orman yolları, vadileri ve güçlü yerel kültürüyle keşfedin.",
+      "hash": "149426f082021ced5806b6cc3d30f276de11cdf71d4c88c20e82ef4f21bb9ad6"
+    },
+    "phrase.57bbd14657f900e97ee7766c372c86ad8f1bf4ac67405187535581af710680b9": {
+      "text": "Ct",
+      "hash": "57bbd14657f900e97ee7766c372c86ad8f1bf4ac67405187535581af710680b9"
+    },
+    "phrase.b62c681738d13345b46a2bdd1d93ae251d1dcd65f60b83b6343ac33535738fdb": {
+      "text": "Cu",
+      "hash": "b62c681738d13345b46a2bdd1d93ae251d1dcd65f60b83b6343ac33535738fdb"
+    },
+    "phrase.6a5dc2b92d478d3ed08e3eb4f005d2f700b6bdf4d7dc6d4aa01c354399ba5b4d": {
+      "text": "Dağ manzarası",
+      "hash": "6a5dc2b92d478d3ed08e3eb4f005d2f700b6bdf4d7dc6d4aa01c354399ba5b4d"
+    },
+    "phrase.0000d74dc0044036f1b946cb1738862fbec1eaf144b800fcdd61fd7b55c6005a": {
+      "text": "Deneyimlerini paylaşan misafirlerimiz",
+      "hash": "0000d74dc0044036f1b946cb1738862fbec1eaf144b800fcdd61fd7b55c6005a"
+    },
+    "phrase.b78ca6aa870742ad6773527d35f6e11e4bbc4136937be85fb6ab0bc2c1f68ce8": {
+      "text": "Deniz havası,",
+      "hash": "b78ca6aa870742ad6773527d35f6e11e4bbc4136937be85fb6ab0bc2c1f68ce8"
+    },
+    "phrase.3fc74d3f4b4a714821a828a909083037a04ac4a2718b75b051ef94dc163b8e3c": {
+      "text": "Deniz kenarında, Cide’de.",
+      "hash": "3fc74d3f4b4a714821a828a909083037a04ac4a2718b75b051ef94dc163b8e3c"
+    },
+    "phrase.d3d368082dcf06a45780b9e5ff5c097df9feeb759c5784b8e826a4a028ff8187": {
+      "text": "Deniz manzarası",
+      "hash": "d3d368082dcf06a45780b9e5ff5c097df9feeb759c5784b8e826a4a028ff8187"
+    },
+    "phrase.2dbb9ab700f4900992e2133f683e9f6968d9984d35993a92564050b94d47c513": {
+      "text": "Denizden vadilere uzanan bir Karadeniz kasabası",
+      "hash": "2dbb9ab700f4900992e2133f683e9f6968d9984d35993a92564050b94d47c513"
+    },
+    "phrase.ff4167e27eb14bae8bb2e375bb53d31058320c0294e20a81794fed484e92a298": {
+      "text": "Denizden vadiye birkaç güzel rota",
+      "hash": "ff4167e27eb14bae8bb2e375bb53d31058320c0294e20a81794fed484e92a298"
+    },
+    "phrase.2bb649c30523930390c4c73602df9088a397854731d9d300af6aabac21fe62ba": {
+      "text": "Denize yakın",
+      "hash": "2bb649c30523930390c4c73602df9088a397854731d9d300af6aabac21fe62ba"
+    },
+    "phrase.7dd7380a9b14ad4af754d169247ee9ddee1c38f29cb4d5e6315e51891a7f7ff3": {
+      "text": "Denizin ritminde",
+      "hash": "7dd7380a9b14ad4af754d169247ee9ddee1c38f29cb4d5e6315e51891a7f7ff3"
+    },
+    "phrase.1d3f6e1ae34d55bd921a6ea0be0ce16dc7254312774d4ebad7d16220584edd1a": {
+      "text": "Denizin sesi, ormanın nefesi.",
+      "hash": "1d3f6e1ae34d55bd921a6ea0be0ce16dc7254312774d4ebad7d16220584edd1a"
+    },
+    "phrase.ffb309c7457c853c49192d46b177e37b8088a4b38b611a3dcf7bb49540cca3df": {
+      "text": "Devrekani Çayı boyunca uzanan, Küre Dağları Milli Parkı ile iç içe Cide’nin en güçlü doğa rotalarından biri.",
+      "hash": "ffb309c7457c853c49192d46b177e37b8088a4b38b611a3dcf7bb49540cca3df"
+    },
+    "phrase.5e0af114571e55025acf606c01641a41988c08356146848305c5dbd4e84f510d": {
+      "text": "Devrekani Çayı ile Kanlıçay’ın birleştiği yerden Cide yönüne uzanan sarp kayalıklar, seyir teraslarından etkileyici bir kanyon manzarası sunar.",
+      "hash": "5e0af114571e55025acf606c01641a41988c08356146848305c5dbd4e84f510d"
+    },
+    "phrase.5fef1980b264a526c929cc11488fecc705f8d74025667eb3b9fba483ad288e4f": {
+      "text": "Dil değiştir",
+      "hash": "5fef1980b264a526c929cc11488fecc705f8d74025667eb3b9fba483ad288e4f"
+    },
+    "phrase.510c24e13eca93fa05f9152c598ee4a2135940129b2e9831ee1b40b667531b24": {
+      "text": "Doğa günü",
+      "hash": "510c24e13eca93fa05f9152c598ee4a2135940129b2e9831ee1b40b667531b24"
+    },
+    "phrase.988211d4e32a4e37744ecd6addceb77408785cff74a6e0c599d6885d9a958da7": {
+      "text": "Doğal",
+      "hash": "988211d4e32a4e37744ecd6addceb77408785cff74a6e0c599d6885d9a958da7"
+    },
+    "phrase.a5c65224f3d0006f7d3bd16a98c63aae32d919663674c2de7c29bf87212c30a5": {
+      "text": "Doğanın içinde",
+      "hash": "a5c65224f3d0006f7d3bd16a98c63aae32d919663674c2de7c29bf87212c30a5"
+    },
+    "phrase.5e0240a4932b8389db04ed3dee3750c7986d9fedc979a451ed4f0322a84db5e3": {
+      "text": "Doğaya uyanın.",
+      "hash": "5e0240a4932b8389db04ed3dee3750c7986d9fedc979a451ed4f0322a84db5e3"
+    },
+    "phrase.a7229717cff4ba6a793cafe67c7d35ab0c41310204607f46847aa4e1d72a19c3": {
+      "text": "Duyurular",
+      "hash": "a7229717cff4ba6a793cafe67c7d35ab0c41310204607f46847aa4e1d72a19c3"
+    },
+    "phrase.df89888ab10686ef80dba17bdc08f325ac240e15e8777ba9cfddb51c44998aaf": {
+      "text": "Duyurulara şu anda ulaşılamıyor. Lütfen yeniden deneyin.",
+      "hash": "df89888ab10686ef80dba17bdc08f325ac240e15e8777ba9cfddb51c44998aaf"
+    },
+    "phrase.b4ef3e493cc4be5a21833034e0e8ca4512fc46fee6f2043706cc6dece25acad4": {
+      "text": "Dört ana rota",
+      "hash": "b4ef3e493cc4be5a21833034e0e8ca4512fc46fee6f2043706cc6dece25acad4"
+    },
+    "phrase.cec3ee9cfb014f2e2986e2d350fb8aff73fb02f347ec0ba934b3838cf6183419": {
+      "text": "E-POSTA",
+      "hash": "cec3ee9cfb014f2e2986e2d350fb8aff73fb02f347ec0ba934b3838cf6183419"
+    },
+    "phrase.ba118bf7fc9c1aedc1edb28a0aa86e0b43b681f222af6616e13c43be87815b06": {
+      "text": "English",
+      "hash": "ba118bf7fc9c1aedc1edb28a0aa86e0b43b681f222af6616e13c43be87815b06"
+    },
+    "phrase.65f9c67a49da7c021297e129a1bbbbaf6170c95cb015c91f64f9f2d388b10ce4": {
+      "text": "Eski Cide evleri",
+      "hash": "65f9c67a49da7c021297e129a1bbbbaf6170c95cb015c91f64f9f2d388b10ce4"
+    },
+    "phrase.a2b272677bc89dffff91843c66864b636bae2f9bee3fa36179b7225e7d9652c8": {
+      "text": "Eski Cide evleri · Crebain · CC BY-SA 3.0",
+      "hash": "a2b272677bc89dffff91843c66864b636bae2f9bee3fa36179b7225e7d9652c8"
+    },
+    "phrase.f58b837ced39b0afd75499a12ebb17ea101e69c639cb93f807ca0593f0f3de3f": {
+      "text": "Etki alanları",
+      "hash": "f58b837ced39b0afd75499a12ebb17ea101e69c639cb93f807ca0593f0f3de3f"
+    },
+    "phrase.3daa0cf1ead49fa3c766b9d75d5c6270cb921b4a0be45d11de23da7bb39c3085": {
+      "text": "Evcil hayvan kabul edilir",
+      "hash": "3daa0cf1ead49fa3c766b9d75d5c6270cb921b4a0be45d11de23da7bb39c3085"
+    },
+    "phrase.6fb1c81db0f018376d7f5f01b16617922a189884dea8149e5bd61a5ae7aac00c": {
+      "text": "Eviniz Gibi",
+      "hash": "6fb1c81db0f018376d7f5f01b16617922a189884dea8149e5bd61a5ae7aac00c"
+    },
+    "phrase.6f7a2693d192db74022a6ae9185601dc772df30655eabd974f42af291623c028": {
+      "text": "FOTOĞRAF DEFTERİ",
+      "hash": "6f7a2693d192db74022a6ae9185601dc772df30655eabd974f42af291623c028"
+    },
+    "phrase.c644b6510d61178052fddd97b5ab6c9fc0f96a913aaffad2193c5543c9764e26": {
+      "text": "FOTOĞRAFLARIN HİKÂYESİ",
+      "hash": "c644b6510d61178052fddd97b5ab6c9fc0f96a913aaffad2193c5543c9764e26"
+    },
+    "phrase.2bb1feb5172b6ea088f84d15758dcc4e1e720d3c233a26aa3e3402f986e88f1c": {
+      "text": "Fareyle sürükleyin; telefonda parmağınızla çevirebilirsiniz.",
+      "hash": "2bb1feb5172b6ea088f84d15758dcc4e1e720d3c233a26aa3e3402f986e88f1c"
+    },
+    "phrase.fa6b035a5b63ba36f65adf93a2ea628dd4bc955525e182e9adc38408e03ddc89": {
+      "text": "Fotoğraf",
+      "hash": "fa6b035a5b63ba36f65adf93a2ea628dd4bc955525e182e9adc38408e03ddc89"
+    },
+    "phrase.3c22124295eda1a9c90d6a29b2a47afef11e047bb62ad64917411947336148f1": {
+      "text": "Fotoğraf Defteri",
+      "hash": "3c22124295eda1a9c90d6a29b2a47afef11e047bb62ad64917411947336148f1"
+    },
+    "phrase.530caa8946e3fdd9341ce1b4ee151eac493c7e7360f2dfc2430b0996f8eac55a": {
+      "text": "Fotoğraf görüntüleyici",
+      "hash": "530caa8946e3fdd9341ce1b4ee151eac493c7e7360f2dfc2430b0996f8eac55a"
+    },
+    "phrase.8a9495b00f1702255e20d5edec7ad6b3c66f35d46830a8e2ab52e634b25ced5e": {
+      "text": "Fotoğraf görünümü",
+      "hash": "8a9495b00f1702255e20d5edec7ad6b3c66f35d46830a8e2ab52e634b25ced5e"
+    },
+    "phrase.a2c561177e5c3a7451f9a8df5b18fc6c910e87084e32f12c8aab24ad4a082a75": {
+      "text": "Fotoğraf kaynakları & kullanım",
+      "hash": "a2c561177e5c3a7451f9a8df5b18fc6c910e87084e32f12c8aab24ad4a082a75"
+    },
+    "phrase.49bb486d18b3f528d975456c6ab67e9c77d8367506ab0521eba6b7540ad24ce2": {
+      "text": "Fotoğraf kredileri",
+      "hash": "49bb486d18b3f528d975456c6ab67e9c77d8367506ab0521eba6b7540ad24ce2"
+    },
+    "phrase.cae390629c4b59e801637ff1a101277e4356a83a0f5904a60da04c9773181e89": {
+      "text": "Fotoğraf şu anda kullanılamıyor",
+      "hash": "cae390629c4b59e801637ff1a101277e4356a83a0f5904a60da04c9773181e89"
+    },
+    "phrase.77554d812f114c488d4669cafe7b79a34354b528468abb4158aeb3470773f539": {
+      "text": "Fotoğraf, video ve panoramik görünüm",
+      "hash": "77554d812f114c488d4669cafe7b79a34354b528468abb4158aeb3470773f539"
+    },
+    "phrase.372a4f6c75daaf9c4292bb35670d0df6c571d3475e3c62cc0d43c46b661945fb": {
+      "text": "Fotoğraf: Makalp · Wikimedia Commons",
+      "hash": "372a4f6c75daaf9c4292bb35670d0df6c571d3475e3c62cc0d43c46b661945fb"
+    },
+    "phrase.8e12b193cf25f919e533586c83f20240c75933f4e20e784212d16397e6ed12eb": {
+      "text": "Fotoğraflar yükleniyor…",
+      "hash": "8e12b193cf25f919e533586c83f20240c75933f4e20e784212d16397e6ed12eb"
+    },
+    "phrase.f6c75a30619740234ae2e8aeb3caea861af165cd824d2ed4587f5f257262bff8": {
+      "text": "Fotoğrafları keşfedin, size uygun odayı seçin ve konaklama talebinizi bize iletin.",
+      "hash": "f6c75a30619740234ae2e8aeb3caea861af165cd824d2ed4587f5f257262bff8"
+    },
+    "phrase.02dbd28344e38daa3e2a216486d6eb6f5c147fb263849a54921d9a8d493d6a05": {
+      "text": "Fotoğrafı kapat",
+      "hash": "02dbd28344e38daa3e2a216486d6eb6f5c147fb263849a54921d9a8d493d6a05"
+    },
+    "phrase.41533b6d0d098341d7c50d7d561c0a877f64a7e7a19180bb2b36d955c9c9c4db": {
+      "text": "Galeri",
+      "hash": "41533b6d0d098341d7c50d7d561c0a877f64a7e7a19180bb2b36d955c9c9c4db"
+    },
+    "phrase.a7717930409c02e368f6a2d406ae4e03f67fdac773d5d58a78bd9f6656e05316": {
+      "text": "Galeriye göz atın",
+      "hash": "a7717930409c02e368f6a2d406ae4e03f67fdac773d5d58a78bd9f6656e05316"
+    },
+    "phrase.667a54f2abd846013d181f28b8b268db9860a4668cf365281f552a4cd8ce1149": {
+      "text": "Geniş açılı görünümü inceleyin",
+      "hash": "667a54f2abd846013d181f28b8b268db9860a4668cf365281f552a4cd8ce1149"
+    },
+    "phrase.42cbb5c1bdac7ce87f9bcb8665f6649ea32b6f3bbb6b4d9f00876748da9a667b": {
+      "text": "Gezi rehberine git →",
+      "hash": "42cbb5c1bdac7ce87f9bcb8665f6649ea32b6f3bbb6b4d9f00876748da9a667b"
+    },
+    "phrase.e4c02634caf8eb57d8bd24fd373d11387343e74e33cdd1e763d61e38449fc593": {
+      "text": "Gideros Koyu",
+      "hash": "e4c02634caf8eb57d8bd24fd373d11387343e74e33cdd1e763d61e38449fc593"
+    },
+    "phrase.0ffe7d22d7b7f1f4e6bca4719ef26e68b4b72925f3ee3ea924dbfd0d5318140c": {
+      "text": "Gideros Koyu arşiv fotoğrafları",
+      "hash": "0ffe7d22d7b7f1f4e6bca4719ef26e68b4b72925f3ee3ea924dbfd0d5318140c"
+    },
+    "phrase.4e1bda52cc2d35b2c905c2b9a4b4e66acb351862adc3e3e875515a51ccd00db6": {
+      "text": "Gideros Koyu ve çevresindeki ormanlar",
+      "hash": "4e1bda52cc2d35b2c905c2b9a4b4e66acb351862adc3e3e875515a51ccd00db6"
+    },
+    "phrase.4bde9ce22ae4f39daa4604ec9f7f1117fefe45fcc08657e325c5aa359ef2e854": {
+      "text": "Gideros Koyu · Bölge fotoğrafı",
+      "hash": "4bde9ce22ae4f39daa4604ec9f7f1117fefe45fcc08657e325c5aa359ef2e854"
+    },
+    "phrase.9109387c20eb3add3e1a5ce59327605adc9ec1a083a02f8e6daa9a6d164e98c9": {
+      "text": "Gideros Koyu · Cide",
+      "hash": "9109387c20eb3add3e1a5ce59327605adc9ec1a083a02f8e6daa9a6d164e98c9"
+    },
+    "phrase.4973f439b96986384cd69c8d2bf6b21ab221afae66d72f089db5683d009b84f4": {
+      "text": "Gideros Koyu · Makalp / CC BY-SA 3.0",
+      "hash": "4973f439b96986384cd69c8d2bf6b21ab221afae66d72f089db5683d009b84f4"
+    },
+    "phrase.5cc6a17fa3498afd18f66337a8cf0636c3c18a86ffd46fb042aef633d28091a2": {
+      "text": "Gideros Koyu · Makalp · CC BY-SA 3.0",
+      "hash": "5cc6a17fa3498afd18f66337a8cf0636c3c18a86ffd46fb042aef633d28091a2"
+    },
+    "phrase.0e4ec09bfab4834bd40a34da41d5551aa719e13fd7490172048d64cce3dc3468": {
+      "text": "Gideros Koyu, Cide",
+      "hash": "0e4ec09bfab4834bd40a34da41d5551aa719e13fd7490172048d64cce3dc3468"
+    },
+    "phrase.61200d2fb37ce315fe8898eba1012e0802a8abf747de2e70dbde5852b1f27e42": {
+      "text": "Gideros Koyu’ndan gerçek manzaralar ve işletmemizin yayınladığı fotoğraflar. Fotoğraf kaynakları ve kullanım bilgileri.",
+      "hash": "61200d2fb37ce315fe8898eba1012e0802a8abf747de2e70dbde5852b1f27e42"
+    },
+    "phrase.3a8c82f3e4fa70cc61a0ea19f91df8df8fcece1b364bb0c3cc206ae39084d773": {
+      "text": "Gideros Koyu’nun doğal güzelliğinde küçük bir mola. Gündoğdu Pansiyon & Restoran’da konaklama ve restoran ziyaretinizi planlayın.",
+      "hash": "3a8c82f3e4fa70cc61a0ea19f91df8df8fcece1b364bb0c3cc206ae39084d773"
+    },
+    "phrase.026df7e23b3e32e3138762f9373c0bd7570c0218d9e6ff837a58ada70cbcd539": {
+      "text": "Gideros Koyu’nun yeşil kıyıları ve durgun suyu",
+      "hash": "026df7e23b3e32e3138762f9373c0bd7570c0218d9e6ff837a58ada70cbcd539"
+    },
+    "phrase.e1417962036e6e7987ed0a78c0a21158c3273c6cf5091e6ecf48f40b5f43ded0": {
+      "text": "Gideros hakkında · Cide Belediyesi ↗",
+      "hash": "e1417962036e6e7987ed0a78c0a21158c3273c6cf5091e6ecf48f40b5f43ded0"
+    },
+    "phrase.0776319ebe72f9ef12b12de834b7a0289d046b28b0c5f6e607fb177c41c0fb27": {
+      "text": "Gideros · Cide",
+      "hash": "0776319ebe72f9ef12b12de834b7a0289d046b28b0c5f6e607fb177c41c0fb27"
+    },
+    "phrase.18bc8db62c70895bcc0b93f52a6b17ce1d69fdbb2a355eb62534a20d92875c6a": {
+      "text": "Gideros’a küçük bir pencere açın.",
+      "hash": "18bc8db62c70895bcc0b93f52a6b17ce1d69fdbb2a355eb62534a20d92875c6a"
+    },
+    "phrase.8505f618f3648fa861a27130b8791488bff7760aa91969600927b9a3e026f3d8": {
+      "text": "Gideros’ta bir sabaha uyanma fikriyle başlayın. Konaklamanıza dair yayınlanan tüm ayrıntılar burada.",
+      "hash": "8505f618f3648fa861a27130b8791488bff7760aa91969600927b9a3e026f3d8"
+    },
+    "phrase.8c7f5400af36b59a77b7cffadbcda4658508bae9042ec1351e695d0b84d71dfa": {
+      "text": "Gideros’ta hayat yavaşlar",
+      "hash": "8c7f5400af36b59a77b7cffadbcda4658508bae9042ec1351e695d0b84d71dfa"
+    },
+    "phrase.c7eb82d7049ce4da59d797c2a42774d4255b3ac1a1b15f54443804ddc9cbc48b": {
+      "text": "Gideros’ta konaklamayı planlayın. Yayınlanan oda seçeneklerini ve güncel konaklama bilgilerini inceleyin.",
+      "hash": "c7eb82d7049ce4da59d797c2a42774d4255b3ac1a1b15f54443804ddc9cbc48b"
+    },
+    "phrase.4f9b011cab4c92ec8a7c9ebed4b90b9137dbede3191f23bfcd850804e470cf8d": {
+      "text": "Gideros’ta küçük bir mola.",
+      "hash": "4f9b011cab4c92ec8a7c9ebed4b90b9137dbede3191f23bfcd850804e470cf8d"
+    },
+    "phrase.58b7351f4c76ed0031f026aa4757e976d694abbb506f8b625a167a10f1410da3": {
+      "text": "Gideros’ta sofrada buluşalım. Yayınlanan restoran menüsünü ve masa seçeneklerini keşfedin, ziyaretinizi planlayın.",
+      "hash": "58b7351f4c76ed0031f026aa4757e976d694abbb506f8b625a167a10f1410da3"
+    },
+    "phrase.0fff702f7a6eb1f9f3a0ea5071efc51a3284f31c44e82d87c68d1b67143623f5": {
+      "text": "Gideros’ta yeni bir sabaha yer açın.",
+      "hash": "0fff702f7a6eb1f9f3a0ea5071efc51a3284f31c44e82d87c68d1b67143623f5"
+    },
+    "phrase.8928578e1933b5825e63c35a9a4512b2e583bc963032d96e247815c8e80b1d58": {
+      "text": "Gideros’ta,",
+      "hash": "8928578e1933b5825e63c35a9a4512b2e583bc963032d96e247815c8e80b1d58"
+    },
+    "phrase.0e100d3a300e2abad171b66298c8bf634c54535f23069416a508221cd5ff4b67": {
+      "text": "Gideros’ta.",
+      "hash": "0e100d3a300e2abad171b66298c8bf634c54535f23069416a508221cd5ff4b67"
+    },
+    "phrase.40929549dc854ebd3005527325fddd73f1ac3fe116b511fefbbfe0a5a9d8a69c": {
+      "text": "Gideros’un mavisine bakarken sohbet biraz uzasın. Gündoğdu’da restoran ziyaretinizi planlayın, güncel menü ve masa seçeneklerimizi keşfedin.",
+      "hash": "40929549dc854ebd3005527325fddd73f1ac3fe116b511fefbbfe0a5a9d8a69c"
+    },
+    "phrase.3e9f9ff4fee3a2146b3f7b7ae3d3fe257f08f16d78017649589eaaf0c97b0558": {
+      "text": "Giriş tarihi",
+      "hash": "3e9f9ff4fee3a2146b3f7b7ae3d3fe257f08f16d78017649589eaaf0c97b0558"
+    },
+    "phrase.8ad5e755a10c23e663a7942e95fd5226b66256a1c19732781b78063537db9744": {
+      "text": "Giriş ve çıkış tarihlerini seçin. Çıkış tarihi girişten sonra olmalı.",
+      "hash": "8ad5e755a10c23e663a7942e95fd5226b66256a1c19732781b78063537db9744"
+    },
+    "phrase.c688dbe9e0d260d2b578bbc901e8b88252b9fe6aaf6afc0eac88babd1899adca": {
+      "text": "Google Maps kullanıcısı",
+      "hash": "c688dbe9e0d260d2b578bbc901e8b88252b9fe6aaf6afc0eac88babd1899adca"
+    },
+    "phrase.002fad82a6d0ee89505c11bd60175d894870041b89f5aeffccc8ce4b6c9ff49f": {
+      "text": "Google Maps puanı bağlı.",
+      "hash": "002fad82a6d0ee89505c11bd60175d894870041b89f5aeffccc8ce4b6c9ff49f"
+    },
+    "phrase.9e48c824579434aa2adb8a7b09fe59803ecd51eeea9717b1facc411a161e47cb": {
+      "text": "Google Maps yorumları",
+      "hash": "9e48c824579434aa2adb8a7b09fe59803ecd51eeea9717b1facc411a161e47cb"
+    },
+    "phrase.2209e1503100b50f1500ce7d9d087c84bf5031eb0fb317d5d31babdb445f89db": {
+      "text": "Google Maps · Misafir yorumları",
+      "hash": "2209e1503100b50f1500ce7d9d087c84bf5031eb0fb317d5d31babdb445f89db"
+    },
+    "phrase.5662fb7b0c6677d3dd844c99d18c95f6482b2f5003f28495d9c887a1d6b39665": {
+      "text": "Google Maps · Yorumlar Google tarafından alaka düzeyine göre sıralanır; burada sonuçların bir bölümü gösterilir.",
+      "hash": "5662fb7b0c6677d3dd844c99d18c95f6482b2f5003f28495d9c887a1d6b39665"
+    },
+    "phrase.5588a54799c3202d01c9b683711f1fcf1529c34d931e29a3b0aba43351ce8020": {
+      "text": "Google Maps'teki tüm yorumlara git ↗",
+      "hash": "5588a54799c3202d01c9b683711f1fcf1529c34d931e29a3b0aba43351ce8020"
+    },
+    "phrase.6cce0ae9558f1a40367e3845071e936f21c2efd8d6b3050410fa169bfd9bbd89": {
+      "text": "Google yorumları yükleniyor…",
+      "hash": "6cce0ae9558f1a40367e3845071e936f21c2efd8d6b3050410fa169bfd9bbd89"
+    },
+    "phrase.7077b71a515ca996fe0cad7b82fd46daf4589a9184599563ab8d84adbd2b49ca": {
+      "text": "Google'da görüntüle ↗",
+      "hash": "7077b71a515ca996fe0cad7b82fd46daf4589a9184599563ab8d84adbd2b49ca"
+    },
+    "phrase.179c675ecc37359a1e18ba33b4f1236023c7006b5bb72e17a3f027bccb792977": {
+      "text": "GÜNDOĞDU FOTOĞRAF DEFTERİ",
+      "hash": "179c675ecc37359a1e18ba33b4f1236023c7006b5bb72e17a3f027bccb792977"
+    },
+    "phrase.1bda9d886284f5b82ab5a8ea3ab6ce99bb649db3c1d38c92e01c413d9d918db1": {
+      "text": "GÜNDOĞDU RESTORAN",
+      "hash": "1bda9d886284f5b82ab5a8ea3ab6ce99bb649db3c1d38c92e01c413d9d918db1"
+    },
+    "phrase.bb1a54e1852a09d62fb0c981ba9fe7b156386c1e01c04d76dcecd5acfeccc852": {
+      "text": "GÜNDOĞDU İLE TANIŞIN",
+      "hash": "bb1a54e1852a09d62fb0c981ba9fe7b156386c1e01c04d76dcecd5acfeccc852"
+    },
+    "phrase.e0e7f468809f2871dae4ab33dd557140f2271728697a1cbc11cce970f4969687": {
+      "text": "GÜNDOĞDU’DAN HABERLER",
+      "hash": "e0e7f468809f2871dae4ab33dd557140f2271728697a1cbc11cce970f4969687"
+    },
+    "phrase.2574e542482b77aa2f3bd4acbd04509c828eed07dec4026c04d2c3aae42615e3": {
+      "text": "GÜNDOĞDU’YA HOŞ GELDİNİZ",
+      "hash": "2574e542482b77aa2f3bd4acbd04509c828eed07dec4026c04d2c3aae42615e3"
+    },
+    "phrase.4e9e3f356f8b2b8ddf19bbe2db24f3fcfd4df98174c827c85b40a93299301107": {
+      "text": "Gönder ↗",
+      "hash": "4e9e3f356f8b2b8ddf19bbe2db24f3fcfd4df98174c827c85b40a93299301107"
+    },
+    "phrase.bc0e2d98b8cd2096eed56e87b37d533eb2b3fae8bc0330b3ab12fb16c3dbd70e": {
+      "text": "Gösterilebilecek yorum metni bulunamadı.",
+      "hash": "bc0e2d98b8cd2096eed56e87b37d533eb2b3fae8bc0330b3ab12fb16c3dbd70e"
+    },
+    "phrase.a11bdf30b03d51d99b78388c41ae1fa5c50e5976f1ad1f36bb803a7596af884d": {
+      "text": "Gösterilecek masa seçilmedi.",
+      "hash": "a11bdf30b03d51d99b78388c41ae1fa5c50e5976f1ad1f36bb803a7596af884d"
+    },
+    "phrase.555b92a5176c891872b15fbd6eb646caabaff5f0d943abd92e7d298ebf6e3e34": {
+      "text": "Gösterilecek oda seçilmedi.",
+      "hash": "555b92a5176c891872b15fbd6eb646caabaff5f0d943abd92e7d298ebf6e3e34"
+    },
+    "phrase.f5dcd9b89c43b108c146a91c09458bbb0870a9c2f9c92c5a10d9e315c2cc7e83": {
+      "text": "Güncel bilgiler için daha sonra tekrar ziyaret edebilirsiniz.",
+      "hash": "f5dcd9b89c43b108c146a91c09458bbb0870a9c2f9c92c5a10d9e315c2cc7e83"
+    },
+    "phrase.cf2f8b0819a33e6da646ebd7d78eaff006b0d4d97d4073b39b4e795220c80f2d": {
+      "text": "Güncel bilgiler sorgulanıyor…",
+      "hash": "cf2f8b0819a33e6da646ebd7d78eaff006b0d4d97d4073b39b4e795220c80f2d"
+    },
+    "phrase.b95e55a873da48dcb579af7356e65c944aedfc138c48111c0908dafd5c920af8": {
+      "text": "Güncel değerlendirmeler",
+      "hash": "b95e55a873da48dcb579af7356e65c944aedfc138c48111c0908dafd5c920af8"
+    },
+    "phrase.ea5ac8bf626aa41ea7701f35531a7dd0648a365375ff2275744378c2fd4101e8": {
+      "text": "Güncel işletme konumu şu anda görüntülenemiyor.",
+      "hash": "ea5ac8bf626aa41ea7701f35531a7dd0648a365375ff2275744378c2fd4101e8"
+    },
+    "phrase.48e804249f62d78f086b415ef536d887261f2ab496efa4ef285682a63eac9ad2": {
+      "text": "Güncel lezzetler ve fiyatlar,",
+      "hash": "48e804249f62d78f086b415ef536d887261f2ab496efa4ef285682a63eac9ad2"
+    },
+    "phrase.3a78a6e3c88b23e07e127c5f15939fc1c96f3937e93163ec8c20f54e3d52f7f8": {
+      "text": "Güncel masa seçenekleri şu anda görüntülenemiyor. Ziyaret planınız için güncel iletişim kanallarımızı kullanabilirsiniz.",
+      "hash": "3a78a6e3c88b23e07e127c5f15939fc1c96f3937e93163ec8c20f54e3d52f7f8"
+    },
+    "phrase.59f25beeafb605e2dadfc3d2979b8b28810c422c6cb96d90f014acf82648188f": {
+      "text": "Güncel menü ve hizmet ayrıntıları,",
+      "hash": "59f25beeafb605e2dadfc3d2979b8b28810c422c6cb96d90f014acf82648188f"
+    },
+    "phrase.711b3d6e1a0ddb9b4318d8b7ece09d3e68a2469bdc26fc5c2cf16630af5fbaf4": {
+      "text": "Güncel menümüz",
+      "hash": "711b3d6e1a0ddb9b4318d8b7ece09d3e68a2469bdc26fc5c2cf16630af5fbaf4"
+    },
+    "phrase.e1b28d0d6b0c1c57d35e027046264bb8d7f11073fb157c09b3284a68826b996a": {
+      "text": "Güncel müsaitlik doğrulanamıyor. Lütfen işletmemizle görüşün.",
+      "hash": "e1b28d0d6b0c1c57d35e027046264bb8d7f11073fb157c09b3284a68826b996a"
+    },
+    "phrase.1e552b1b0f55b92bec382ab3ec4fe3775f12c95b029a0e67d1c6c176afa2a49f": {
+      "text": "Güncel oda seçenekleri şu anda görüntülenemiyor. Güncel bilgi ve ziyaret planınız için iletişim seçeneklerini inceleyebilirsiniz.",
+      "hash": "1e552b1b0f55b92bec382ab3ec4fe3775f12c95b029a0e67d1c6c176afa2a49f"
+    },
+    "phrase.eb855d7ac4a5a2e81bc03601d524b50e199c22b4cc76eb5ec913944032c676b6": {
+      "text": "Güncel paylaşımlar",
+      "hash": "eb855d7ac4a5a2e81bc03601d524b50e199c22b4cc76eb5ec913944032c676b6"
+    },
+    "phrase.85ebabc7216d6e8472e15db98ab163beeae102ecebbf86ad60a2c590995383a7": {
+      "text": "Güncel yemek seçenekleri ve fiyatlar şu anda görüntülenemiyor. Restoran ziyaretinizle ilgili bilgi almak için iletişim seçeneklerini inceleyebilirsiniz.",
+      "hash": "85ebabc7216d6e8472e15db98ab163beeae102ecebbf86ad60a2c590995383a7"
+    },
+    "phrase.b03b6e9b46e073a7b0febb9efb7a425caf535ae3e06eb6b807e5368c0732808a": {
+      "text": "Güncelleme bekleniyor.",
+      "hash": "b03b6e9b46e073a7b0febb9efb7a425caf535ae3e06eb6b807e5368c0732808a"
+    },
+    "phrase.3cc49760be295f37919e1520d1a8b0c5f516b56ba3c89c49bc79fd91764c7341": {
+      "text": "Güncelleme:",
+      "hash": "3cc49760be295f37919e1520d1a8b0c5f516b56ba3c89c49bc79fd91764c7341"
+    },
+    "phrase.3cabab906a5f1830d0fe3c746fc8bd3190d3f733a14e7d3e1c73ad60821813ce": {
+      "text": "Gündoğdu",
+      "hash": "3cabab906a5f1830d0fe3c746fc8bd3190d3f733a14e7d3e1c73ad60821813ce"
+    },
+    "phrase.fa41e16da34aa7d2f83a34041abae295d56905edf6767baaa7c776b1383909ba": {
+      "text": "Gündoğdu Pansiyon & Restoran",
+      "hash": "fa41e16da34aa7d2f83a34041abae295d56905edf6767baaa7c776b1383909ba"
+    },
+    "phrase.85f265711db3a515ebf65a3dbdd4610762f7454177d27638fee60c20f3893863": {
+      "text": "Gündoğdu Pansiyon & Restoran ana sayfa",
+      "hash": "85f265711db3a515ebf65a3dbdd4610762f7454177d27638fee60c20f3893863"
+    },
+    "phrase.8b7ec45abe7eca94ac52f6011c5b2703d769e6508de5ffe36743eff03a3801e0": {
+      "text": "Gündoğdu Pansiyon & Restoran ile Gideros’ta konaklamayı ve sofrada buluşmayı planlayın. Güncel seçeneklerimizi yayınlandıkça burada keşfedin.",
+      "hash": "8b7ec45abe7eca94ac52f6011c5b2703d769e6508de5ffe36743eff03a3801e0"
+    },
+    "phrase.466fcf30c0e414205c7115234754b58f4a32b2db7531b79979cfa508ee6ae16f": {
+      "text": "Gündoğdu Pansiyon & Restoran masa detayları.",
+      "hash": "466fcf30c0e414205c7115234754b58f4a32b2db7531b79979cfa508ee6ae16f"
+    },
+    "phrase.8928c35c05c217f51094df4aa5a6a6ea20807b6094c16e162d400a00df47625d": {
+      "text": "Gündoğdu Pansiyon & Restoran oda detayları.",
+      "hash": "8928c35c05c217f51094df4aa5a6a6ea20807b6094c16e162d400a00df47625d"
+    },
+    "phrase.d1e6dbceb4b22c1b673cd0f655c7cf6cca5ae6cd0202c95134e067acd3b6e9e0": {
+      "text": "Gündoğdu Pansiyon & Restoran’ın yayınlanan iletişim ve konum bilgileri. Konaklama ve restoran ziyaretinizi planlayın.",
+      "hash": "d1e6dbceb4b22c1b673cd0f655c7cf6cca5ae6cd0202c95134e067acd3b6e9e0"
+    },
+    "phrase.f9db8d264c8f437af051ba7a56d4995c3ab5c96d6e11a94f9fa86af430dad826": {
+      "text": "Gündoğdu · Yardımcı Asistan",
+      "hash": "f9db8d264c8f437af051ba7a56d4995c3ab5c96d6e11a94f9fa86af430dad826"
+    },
+    "phrase.e3218a4c36938ae81ad68ecdf72e5b958407b8ae7ce49aae8bd2565e0466529d": {
+      "text": "Gündoğdu’dan kareler.",
+      "hash": "e3218a4c36938ae81ad68ecdf72e5b958407b8ae7ce49aae8bd2565e0466529d"
+    },
+    "phrase.8135622d9325fcafa3df1ba01788f9a3259ddbd7282f05ab4713065839f2049a": {
+      "text": "Gündoğdu’ya hoş geldiniz",
+      "hash": "8135622d9325fcafa3df1ba01788f9a3259ddbd7282f05ab4713065839f2049a"
+    },
+    "phrase.e11815de852858170c17bd744d005b3b1ea1aab995ef8fd10928affa3c40198f": {
+      "text": "Günün telaşına küçük bir ara.",
+      "hash": "e11815de852858170c17bd744d005b3b1ea1aab995ef8fd10928affa3c40198f"
+    },
+    "phrase.67d93f009dc5a29cd55430c2bd2310bfe6c060db79850e2a293599254bec5df2": {
+      "text": "Gününüz",
+      "hash": "67d93f009dc5a29cd55430c2bd2310bfe6c060db79850e2a293599254bec5df2"
+    },
+    "phrase.6ff1a379d740b915d31d6f17e0a33dea57bbb671eb7432e94f4eff94c32a1d57": {
+      "text": "Güzel bir manzara, birlikte geçirilen zaman. Restoran ziyaretinizi Gideros’un ritminde planlayın.",
+      "hash": "6ff1a379d740b915d31d6f17e0a33dea57bbb671eb7432e94f4eff94c32a1d57"
+    },
+    "phrase.59975c00f65135808722f001840f8d885713f81e7990b9163531eba25c2aa2d0": {
+      "text": "Güzel bir mola,",
+      "hash": "59975c00f65135808722f001840f8d885713f81e7990b9163531eba25c2aa2d0"
+    },
+    "phrase.57629ea8a668a310c16f0a1e6d2e1a1b916b93b6454b3b0cd0cc9f54345422dd": {
+      "text": "GİDEROS KOYU",
+      "hash": "57629ea8a668a310c16f0a1e6d2e1a1b916b93b6454b3b0cd0cc9f54345422dd"
+    },
+    "phrase.df8433af1cd03e8aeb301c0c0cce770d0d49a50ec1a6689eefc525ab9c8e7588": {
+      "text": "GİDEROS KOYU · CİDE",
+      "hash": "df8433af1cd03e8aeb301c0c0cce770d0d49a50ec1a6689eefc525ab9c8e7588"
+    },
+    "phrase.0e4a0eb4086a1024cf0e17666276f900f0a0ccaeea6213f78b4d35040a727175": {
+      "text": "GİDEROS’TA KONAKLAMA",
+      "hash": "0e4a0eb4086a1024cf0e17666276f900f0a0ccaeea6213f78b4d35040a727175"
+    },
+    "phrase.cbb951f64fb0f491b507e9009f0fe632758e56a878eb5565766a3e2530caa14c": {
+      "text": "GİDEROS’UN KIYISINDA",
+      "hash": "cbb951f64fb0f491b507e9009f0fe632758e56a878eb5565766a3e2530caa14c"
+    },
+    "phrase.653c570f56593c8d6bb75aaab80f90ab8b478f7d96bac1cfaecbf3c578a827cd": {
+      "text": "Haberleşmek üzere.",
+      "hash": "653c570f56593c8d6bb75aaab80f90ab8b478f7d96bac1cfaecbf3c578a827cd"
+    },
+    "phrase.5a016f455f4ce8009a855490a27f989fccbb9f7d7902dc814c0970494a44b943": {
+      "text": "Hafta sonu · 2 gece",
+      "hash": "5a016f455f4ce8009a855490a27f989fccbb9f7d7902dc814c0970494a44b943"
+    },
+    "phrase.275c6ddbb351b57c9f0536f3d24ba4184d72181e4d81b4cc38475a195f693b5a": {
+      "text": "Hakkımızda",
+      "hash": "275c6ddbb351b57c9f0536f3d24ba4184d72181e4d81b4cc38475a195f693b5a"
+    },
+    "phrase.d4334a8044bd32cfd489436566bc3742a7cafc7b9ad52932a20fdb71d0f79cca": {
+      "text": "Harita bilgisi henüz yayınlanmadı.",
+      "hash": "d4334a8044bd32cfd489436566bc3742a7cafc7b9ad52932a20fdb71d0f79cca"
+    },
+    "phrase.7e80caf103c497608567a1742e91e04f8f22e870eea1c54e6206aed518c6583d": {
+      "text": "Harita bilgisine şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.",
+      "hash": "7e80caf103c497608567a1742e91e04f8f22e870eea1c54e6206aed518c6583d"
+    },
+    "phrase.ba7f536e2170cf348e2b3a25529b9ce89a8c05e83e2178a5fd85bedfbf56ff86": {
+      "text": "Haritada aç ↗",
+      "hash": "ba7f536e2170cf348e2b3a25529b9ce89a8c05e83e2178a5fd85bedfbf56ff86"
+    },
+    "phrase.4c6f12b3ec7decf63723fc4b31348caca6103ee56773dc526664d9af75585a30": {
+      "text": "Haritamız şu anda hazırlanıyor. Adres bilgimizle bize ulaşabilirsiniz.",
+      "hash": "4c6f12b3ec7decf63723fc4b31348caca6103ee56773dc526664d9af75585a30"
+    },
+    "phrase.fa492919cf6f19c2792069970276958c351978de262f2ee8bb9f7b273c6fd68c": {
+      "text": "Havalimanı transferi",
+      "hash": "fa492919cf6f19c2792069970276958c351978de262f2ee8bb9f7b273c6fd68c"
+    },
+    "phrase.d093c0b8052c360f2a93469c5b6a253cec9421d1ad89f337a632451ff9fd09d9": {
+      "text": "Henüz yayınlanmış Hakkımızda bilgisi bulunmuyor.",
+      "hash": "d093c0b8052c360f2a93469c5b6a253cec9421d1ad89f337a632451ff9fd09d9"
+    },
+    "phrase.c1f63cfa16d32b7ffce42db464c036b36cefa87a3a2096137e2ec55a9398f5fc": {
+      "text": "Henüz yayınlanmış duyuru bulunmuyor.",
+      "hash": "c1f63cfa16d32b7ffce42db464c036b36cefa87a3a2096137e2ec55a9398f5fc"
+    },
+    "phrase.19c7e5be35626fbff210958eaf0a1076ebfa448c176cb5e6d8d856ffdf6f3d02": {
+      "text": "Henüz yayınlanmış galeri fotoğrafı bulunmuyor.",
+      "hash": "19c7e5be35626fbff210958eaf0a1076ebfa448c176cb5e6d8d856ffdf6f3d02"
+    },
+    "phrase.dd63b7786c26dd412343c4f9f9bbe47eb58710e64e3cf746819caa307a97d703": {
+      "text": "Hikâyemizi oku",
+      "hash": "dd63b7786c26dd412343c4f9f9bbe47eb58710e64e3cf746819caa307a97d703"
+    },
+    "phrase.4328e7ce5ae8307469c886393c000a8ff81ed2ac0040366a3a343e56f39104a8": {
+      "text": "Hizmet bilgilerine ulaşılamadı. Lütfen yeniden deneyin veya iletişim sayfamızı kullanın.",
+      "hash": "4328e7ce5ae8307469c886393c000a8ff81ed2ac0040366a3a343e56f39104a8"
+    },
+    "phrase.93b4d25e2a41ea3dcf9eea4cfdbe37cfde6e30fe75455bb31ea3be608adb743f": {
+      "text": "Hizmetlerimiz",
+      "hash": "93b4d25e2a41ea3dcf9eea4cfdbe37cfde6e30fe75455bb31ea3be608adb743f"
+    },
+    "phrase.0cee32034f864b01c88b8884f43ea35f96d376658a1d61b092efbbf1fb4cc09a": {
+      "text": "Horma Kanyonu",
+      "hash": "0cee32034f864b01c88b8884f43ea35f96d376658a1d61b092efbbf1fb4cc09a"
+    },
+    "phrase.e113401525cfdb0038f043d3615f21238918dc74780fa50afca4b2a03c04f9b3": {
+      "text": "Horma Kanyonu ve ahşap yürüyüş platformu",
+      "hash": "e113401525cfdb0038f043d3615f21238918dc74780fa50afca4b2a03c04f9b3"
+    },
+    "phrase.4895a661f2c311f5b70d0bd9b9ac37418c43bd98b70b89b259021d0325ff17eb": {
+      "text": "Horma Kanyonu’nun sonunda Zarı Çayı’nın döküldüğü şelale; doğal havuzu, ağaçları ve zengin bitki örtüsüyle sakin bir manzara durağıdır.",
+      "hash": "4895a661f2c311f5b70d0bd9b9ac37418c43bd98b70b89b259021d0325ff17eb"
+    },
+    "phrase.40711b07150a653b9213268410e697750f32525215e2c6bec8db644c595467af": {
+      "text": "Hızlı tarih seçenekleri",
+      "hash": "40711b07150a653b9213268410e697750f32525215e2c6bec8db644c595467af"
+    },
+    "phrase.a66753e942905e0ca0c0facf101f6919d44ea0d7e71daaa77a4abbfcd2b204b1": {
+      "text": "Ilgarini Mağarası",
+      "hash": "a66753e942905e0ca0c0facf101f6919d44ea0d7e71daaa77a4abbfcd2b204b1"
+    },
+    "phrase.0311cb5d0e454a6dca740dd52b16748d571a387066d9f175fe65dd2bd59eb834": {
+      "text": "Ilgarini Mağarası’nın girişi, 2022",
+      "hash": "0311cb5d0e454a6dca740dd52b16748d571a387066d9f175fe65dd2bd59eb834"
+    },
+    "phrase.f1ad9ddab036f4766019273b88b7388c1abb9d6974c8cd4b8f464b065976b7ab": {
+      "text": "Ilgaz Dağları · Kastamonu / Çankırı",
+      "hash": "f1ad9ddab036f4766019273b88b7388c1abb9d6974c8cd4b8f464b065976b7ab"
+    },
+    "phrase.1342dc699127fd2bafd066bdd8a19656e8c9d638209c5a1e9020a5f19e37451f": {
+      "text": "Ilgaz Dağı Milli Parkı ve Kayak Merkezi",
+      "hash": "1342dc699127fd2bafd066bdd8a19656e8c9d638209c5a1e9020a5f19e37451f"
+    },
+    "phrase.5c01ee70a83b6e416e2f30f815e23b2189d962cbe89668731efc082aad600cdd": {
+      "text": "Ilgaz Dağı Milli Parkı’nda karla kaplı orman",
+      "hash": "5c01ee70a83b6e416e2f30f815e23b2189d962cbe89668731efc082aad600cdd"
+    },
+    "phrase.8865848e20afaa1517fc1aecb58af9e4a8794417628c65451cc15cfc12262fa0": {
+      "text": "Ilıca Şelalesi",
+      "hash": "8865848e20afaa1517fc1aecb58af9e4a8794417628c65451cc15cfc12262fa0"
+    },
+    "phrase.11c605bb3c06cedaa02d3cd23a8670cac593c5c8eb16f5d29d25d700ad5ea324": {
+      "text": "Ilıca Şelalesi, Pınarbaşı, Kastamonu",
+      "hash": "11c605bb3c06cedaa02d3cd23a8670cac593c5c8eb16f5d29d25d700ad5ea324"
+    },
+    "phrase.40baa115d5566593b160676d097a8bb363d114568e775c017a047f1add355af8": {
+      "text": "Isıtma",
+      "hash": "40baa115d5566593b160676d097a8bb363d114568e775c017a047f1add355af8"
+    },
+    "phrase.c9252b008b80fc8ec8d9b2a9954f9cb134f847426c773a7660cfa98a5db7c759": {
+      "text": "Işık yoğunluğu",
+      "hash": "c9252b008b80fc8ec8d9b2a9954f9cb134f847426c773a7660cfa98a5db7c759"
+    },
+    "phrase.d28aa42e25bb0da4bae90349ce43f020e73e31e24a5c03044dad984b58c77e9d": {
+      "text": "KENDİNİZE BİR MOLA AYIRIN",
+      "hash": "d28aa42e25bb0da4bae90349ce43f020e73e31e24a5c03044dad984b58c77e9d"
+    },
+    "phrase.5891d9fca8d6b21f6862db8a93f7ba1f960a29ba7dd54a91bdf50a315890c098": {
+      "text": "KONAKLAMA",
+      "hash": "5891d9fca8d6b21f6862db8a93f7ba1f960a29ba7dd54a91bdf50a315890c098"
+    },
+    "phrase.64e53b7b1240db467f2f1aea4d8e1ef20195786e274b66c19a27581b39d74ada": {
+      "text": "KONAKLAMANIZ İÇİN",
+      "hash": "64e53b7b1240db467f2f1aea4d8e1ef20195786e274b66c19a27581b39d74ada"
+    },
+    "phrase.fa851bd7e0158c129a9b17497f69edeb94c0d8a687b4f56c7feeda7713cca0ad": {
+      "text": "KONAKLAMANIZDAN ÖNCE",
+      "hash": "fa851bd7e0158c129a9b17497f69edeb94c0d8a687b4f56c7feeda7713cca0ad"
+    },
+    "phrase.7b31a9fc4816824bb502e30e5a8d4dc254a50110d875a1ef01c29e587efa4713": {
+      "text": "Kapat",
+      "hash": "7b31a9fc4816824bb502e30e5a8d4dc254a50110d875a1ef01c29e587efa4713"
+    },
+    "phrase.9a4c21905e0a594916e7d3c4a75af8ae8d2ef5a90ce9e86781ad47ab4c2b8467": {
+      "text": "Karadeniz'in kıyısında, denize yakın, sıcak bir aile ortamında sakin ve huzurlu bir konaklama.",
+      "hash": "9a4c21905e0a594916e7d3c4a75af8ae8d2ef5a90ce9e86781ad47ab4c2b8467"
+    },
+    "phrase.702e4db4b0d855fc67cf552f0986f6e07690cd919eb2f95e7abfbaec3873e420": {
+      "text": "Karadeniz'in samimiyeti Cide'de sizi bekliyor",
+      "hash": "702e4db4b0d855fc67cf552f0986f6e07690cd919eb2f95e7abfbaec3873e420"
+    },
+    "phrase.62a024ec305e0a78c43f1d75b9ebceb58f015e41619fac8bde6c706acf28c66a": {
+      "text": "Karadeniz’den merhaba",
+      "hash": "62a024ec305e0a78c43f1d75b9ebceb58f015e41619fac8bde6c706acf28c66a"
+    },
+    "phrase.76f46e79704d675658111f983f1ba824600abf4f8a72ac9649c816b04b312b8e": {
+      "text": "Karadeniz’in saklı bir köşesinde, kendinize bir mola.",
+      "hash": "76f46e79704d675658111f983f1ba824600abf4f8a72ac9649c816b04b312b8e"
+    },
+    "phrase.d7f8d5d7a1ad77a6fb96bd45e7e7757d0c0b3b8313094032b5ea27b65e3e8a2f": {
+      "text": "Karaçam ve köknar ormanlarıyla çevrili Ilgaz, kışın kayak; kar olmayan dönemlerde orman yürüyüşleri ve dağ manzaraları için keşfedilebilir.",
+      "hash": "d7f8d5d7a1ad77a6fb96bd45e7e7757d0c0b3b8313094032b5ea27b65e3e8a2f"
+    },
+    "phrase.64693519125be7702e2072e79613cef39fbc472a9387561998fb9857049a95c1": {
+      "text": "Kastamonu / Bartın · Orman ve doğa rotaları",
+      "hash": "64693519125be7702e2072e79613cef39fbc472a9387561998fb9857049a95c1"
+    },
+    "phrase.8ed6b08507e6e7c1a6e4f0283f96021f3182cd5f636dae39b3267d2dc8d905cd": {
+      "text": "Kastamonu Cide'de denize yakın, sıcak aile pansiyonu. Güncel odalar, Cide rehberi ve rezervasyon bilgileri.",
+      "hash": "8ed6b08507e6e7c1a6e4f0283f96021f3182cd5f636dae39b3267d2dc8d905cd"
+    },
+    "phrase.fc11b07d4c342a13b58cbd49209f92ddc213bef52ae1d26d225b69fd724f652d": {
+      "text": "Kastamonu ve Bartın illerine yayılan milli park 2000 yılında ilan edildi. Cide, Pınarbaşı ve Azdavay çevresindeki farklı ziyaret noktaları parkı tanımak için başlangıç olabilir. Tek bir girişten bütün parkı dolaşmak yerine ilgi alanınıza göre yürüyüş veya seyir rotası seçin.",
+      "hash": "fc11b07d4c342a13b58cbd49209f92ddc213bef52ae1d26d225b69fd724f652d"
+    },
+    "phrase.8792bec680569d583592d8a898d0408c12bf06345e48141a4e7f0334de5634ae": {
+      "text": "Kastamonu İl Kültür ve Turizm Müdürlüğü kanyonu Azdavay merkezinden yaklaşık 7 km uzakta tanımlar. Araç yolculuğunu orman içindeki yürüyüş bölümü tamamlar. Azdavay ve Pınarbaşı çevresini birlikte planlamak isteyenler için ayrı bir seyir durağıdır.",
+      "hash": "8792bec680569d583592d8a898d0408c12bf06345e48141a4e7f0334de5634ae"
+    },
+    "phrase.ea98423441144c7f25d5d1fb9d77879813b30ac467f34f176b765757ab79dc5e": {
+      "text": "Kastamonu’da gezilecek sekiz yer",
+      "hash": "ea98423441144c7f25d5d1fb9d77879813b30ac467f34f176b765757ab79dc5e"
+    },
+    "phrase.75ce24c730f5932290e06ac8e091ad60025c65f089aa03c0bad7e2c803f0e679": {
+      "text": "Kastamonu’da gezilecek yerler",
+      "hash": "75ce24c730f5932290e06ac8e091ad60025c65f089aa03c0bad7e2c803f0e679"
+    },
+    "phrase.fe8ac1d0b825629684f527190a4e04954df7448fff464d83c23b2603233b13b2": {
+      "text": "Kastamonu’nun doğal güzellikleri",
+      "hash": "fe8ac1d0b825629684f527190a4e04954df7448fff464d83c23b2603233b13b2"
+    },
+    "phrase.5c8207beea5a9348c6379324c16e00ec409e9cbc47ab892f3d10c02b9a0c4888": {
+      "text": "Kaynağı da burada.",
+      "hash": "5c8207beea5a9348c6379324c16e00ec409e9cbc47ab892f3d10c02b9a0c4888"
+    },
+    "phrase.1b525a4545180e17edac0a63e14bc12d8e6ae05abc7eb99efd7b504f2b7d0e64": {
+      "text": "Kendinize ayırdığınız zamanda",
+      "hash": "1b525a4545180e17edac0a63e14bc12d8e6ae05abc7eb99efd7b504f2b7d0e64"
+    },
+    "phrase.65e0e4a02ce3f357eeff89fc36baeba2368fd0a933330900153041dd11673e2e": {
+      "text": "Kerempe Feneri",
+      "hash": "65e0e4a02ce3f357eeff89fc36baeba2368fd0a933330900153041dd11673e2e"
+    },
+    "phrase.77f7e776e2f8056b420bc14bd2f1dd94f2b05ce318c20c9a68d902f5162f75ff": {
+      "text": "Kerempe Feneri arkasından Karadeniz",
+      "hash": "77f7e776e2f8056b420bc14bd2f1dd94f2b05ce318c20c9a68d902f5162f75ff"
+    },
+    "phrase.4562e3ab2bdb7b9fb7074dc5ddf73443c735e3d9ec9b4fd9bad75af5e76f6151": {
+      "text": "Kerempe Feneri ve Aydıncık",
+      "hash": "4562e3ab2bdb7b9fb7074dc5ddf73443c735e3d9ec9b4fd9bad75af5e76f6151"
+    },
+    "phrase.9c3dcf54359170b07e3c6b0960096ed07c04cffebb0f9761e5652dd251939e1e": {
+      "text": "Kesin müsaitlik için işletmemizle görüşün.",
+      "hash": "9c3dcf54359170b07e3c6b0960096ed07c04cffebb0f9761e5652dd251939e1e"
+    },
+    "phrase.45d0d89ac96446ba8df3696b2ddbe14d4fea714be921a28d5a4323c5df8cc114": {
+      "text": "Keşfet",
+      "hash": "45d0d89ac96446ba8df3696b2ddbe14d4fea714be921a28d5a4323c5df8cc114"
+    },
+    "phrase.390aa8602a0ffb1cc3b5ce1f7ff5063409451b0021e77a6b424ce1766f3d7d77": {
+      "text": "Kişi sayısı",
+      "hash": "390aa8602a0ffb1cc3b5ce1f7ff5063409451b0021e77a6b424ce1766f3d7d77"
+    },
+    "phrase.64d31070edfd62b5b38b32020f8c4ae58b2f62c8c29712effbb66d06e7987652": {
+      "text": "Kişi sayısı: {0}",
+      "hash": "64d31070edfd62b5b38b32020f8c4ae58b2f62c8c29712effbb66d06e7987652"
+    },
+    "phrase.f7a6e5b531e8f88d883a88450bd3f566023d53a8e643dab9283df9e6ede5a147": {
+      "text": "Klima",
+      "hash": "f7a6e5b531e8f88d883a88450bd3f566023d53a8e643dab9283df9e6ede5a147"
+    },
+    "phrase.ed62102160e2cc81df7e2c4140a824bb5c98ecb4ec516c9e9790186a80993d8e": {
+      "text": "Konaklama bilgisi",
+      "hash": "ed62102160e2cc81df7e2c4140a824bb5c98ecb4ec516c9e9790186a80993d8e"
+    },
+    "phrase.ef05effdbc5d53886c9602e8a62412e3fe850242f15395dc0f595ebb0a9581d6": {
+      "text": "Konaklama boyunca sunulan temel olanaklar",
+      "hash": "ef05effdbc5d53886c9602e8a62412e3fe850242f15395dc0f595ebb0a9581d6"
+    },
+    "phrase.d68acde758d03e3504cb1f4d7e0d198b7b9a6b180f379b2f15ea518b3552e94c": {
+      "text": "Konaklama deneyimlerini paylaşan misafirlerin güncel değerlendirmeleri.",
+      "hash": "d68acde758d03e3504cb1f4d7e0d198b7b9a6b180f379b2f15ea518b3552e94c"
+    },
+    "phrase.d5bbd9b315324d6c9bb88f90ba2c187acfb29bda71a0424df44dcd7062e77e81": {
+      "text": "Konaklama detayları",
+      "hash": "d5bbd9b315324d6c9bb88f90ba2c187acfb29bda71a0424df44dcd7062e77e81"
+    },
+    "phrase.241d4926165972205d74de3b1403ced52ed764201ba2e1410af7f52364b1db2b": {
+      "text": "Konaklama koşulları",
+      "hash": "241d4926165972205d74de3b1403ced52ed764201ba2e1410af7f52364b1db2b"
+    },
+    "phrase.8c4305d2b104a488edfa1e5b62b78d5ca1960a3679e5c68920fd5d34b75f2c6f": {
+      "text": "Konaklama planınız",
+      "hash": "8c4305d2b104a488edfa1e5b62b78d5ca1960a3679e5c68920fd5d34b75f2c6f"
+    },
+    "phrase.a57de149bbd2cbbbada5f7b78b3acb619eed923cc94483cab00535fbae8ad5f0": {
+      "text": "Konaklama talebine geç",
+      "hash": "a57de149bbd2cbbbada5f7b78b3acb619eed923cc94483cab00535fbae8ad5f0"
+    },
+    "phrase.4608544e4c0601fe614285b112fadab522c05420076244fc563d6f2b2b5c8d25": {
+      "text": "Konaklama tarihleri",
+      "hash": "4608544e4c0601fe614285b112fadab522c05420076244fc563d6f2b2b5c8d25"
+    },
+    "phrase.7767701687723712e3c5d6039f6a544d0e2895f1911616ba96de77f20d8fd06f": {
+      "text": "Konaklama ve restoran ziyaretinizi planlamak için yayınlanan iletişim kanallarımızdan bize ulaşabilirsiniz.",
+      "hash": "7767701687723712e3c5d6039f6a544d0e2895f1911616ba96de77f20d8fd06f"
+    },
+    "phrase.dda462e1dc6c9e8b58b3976165d4e28f2ea0e87c6248c6a40505f7c4ba7ffd7c": {
+      "text": "Konaklama, sofrada buluşma ya da küçük bir soru.",
+      "hash": "dda462e1dc6c9e8b58b3976165d4e28f2ea0e87c6248c6a40505f7c4ba7ffd7c"
+    },
+    "phrase.66ef4a1be6f1f846706be8c869a2b885d4f29b2f63ebcd53ae6514145b29f360": {
+      "text": "Konaklamanızı planlayın",
+      "hash": "66ef4a1be6f1f846706be8c869a2b885d4f29b2f63ebcd53ae6514145b29f360"
+    },
+    "phrase.1c1eb640c231fdb25973d8ced103049679f46d14a1b41cb88adb09f2d9ca21f8": {
+      "text": "Konaklamayı günlere göre bölmek isterseniz",
+      "hash": "1c1eb640c231fdb25973d8ced103049679f46d14a1b41cb88adb09f2d9ca21f8"
+    },
+    "phrase.9b50c1031c57398b1bd7712205e56d0f3790f871201b29f26c6c71960f9fa06a": {
+      "text": "Konaklamayı keşfedin",
+      "hash": "9b50c1031c57398b1bd7712205e56d0f3790f871201b29f26c6c71960f9fa06a"
+    },
+    "phrase.7735878f07587182bb5b6ed727caf9bcf4a6e91f4db8cf800225eaf97eacf624": {
+      "text": "Konaklamayı planlayın",
+      "hash": "7735878f07587182bb5b6ed727caf9bcf4a6e91f4db8cf800225eaf97eacf624"
+    },
+    "phrase.6b437c11fbd54f04b62adc7a8f68f7fff384f66d95b86770e3e24b6685312e47": {
+      "text": "Konaklayanlar ne diyor?",
+      "hash": "6b437c11fbd54f04b62adc7a8f68f7fff384f66d95b86770e3e24b6685312e47"
+    },
+    "phrase.d38a4765359b243b26966e5cc88b4318525d0dfd65a7f69bbc01ff59d23e4a94": {
+      "text": "Konforunuz için düşündük",
+      "hash": "d38a4765359b243b26966e5cc88b4318525d0dfd65a7f69bbc01ff59d23e4a94"
+    },
+    "phrase.cc8b7c8aadf02bff89b70cb0a1a0a41a0c200a80e7e9fb417ee37db23dd18084": {
+      "text": "Konum",
+      "hash": "cc8b7c8aadf02bff89b70cb0a1a0a41a0c200a80e7e9fb417ee37db23dd18084"
+    },
+    "phrase.a15739da4b9ac73e4292beef2d2c7b736a75bd8bed7fa0efd3bf013be66152c7": {
+      "text": "Konum hazırlanıyor",
+      "hash": "a15739da4b9ac73e4292beef2d2c7b736a75bd8bed7fa0efd3bf013be66152c7"
+    },
+    "phrase.d3af88f3ba4d80b1cb4162ea2961129ed32d9fbac73674d48cdc398c3937164d": {
+      "text": "Konumumuz",
+      "hash": "d3af88f3ba4d80b1cb4162ea2961129ed32d9fbac73674d48cdc398c3937164d"
+    },
+    "phrase.28d386a2c7d4f0ededaf68216733533f14fb4452c5b727d62737d54c98ff1470": {
+      "text": "Koy rotası",
+      "hash": "28d386a2c7d4f0ededaf68216733533f14fb4452c5b727d62737d54c98ff1470"
+    },
+    "phrase.554ca2a1237557972c9b25625a57105efd79a1f48984a17c2bb0c4e9a3df8f3d": {
+      "text": "Koyu keşfedin",
+      "hash": "554ca2a1237557972c9b25625a57105efd79a1f48984a17c2bb0c4e9a3df8f3d"
+    },
+    "phrase.229d13d72ee27719a3c267ed99ca7938a24ac7a2edf7bc85becba5a7bc0dbc4b": {
+      "text": "Küre Dağları Milli Parkı",
+      "hash": "229d13d72ee27719a3c267ed99ca7938a24ac7a2edf7bc85becba5a7bc0dbc4b"
+    },
+    "phrase.ede97a5130e332cca106eaea628fa0f338e5476b3fd2557ae45bf803760210a2": {
+      "text": "Küre Dağları Milli Parkı, Cide Menük Köyü çevresi",
+      "hash": "ede97a5130e332cca106eaea628fa0f338e5476b3fd2557ae45bf803760210a2"
+    },
+    "phrase.a6a7b117d36ddb4b9f1c0d9695969b7261ea7caa6822f861ff963d35278d5f29": {
+      "text": "Küre Dağları’nın yoğun ormanları içinde bulunan mağara, doğal kaya oluşumlarının yanında Bizans dönemine ait yapı ve mezar kalıntılarıyla da dikkat çeker.",
+      "hash": "a6a7b117d36ddb4b9f1c0d9695969b7261ea7caa6822f861ff963d35278d5f29"
+    },
+    "phrase.625ce6c566f14f73c3fc74169c90752b743bcc39dd3174fee092c7d836823806": {
+      "text": "Küçük bir mola",
+      "hash": "625ce6c566f14f73c3fc74169c90752b743bcc39dd3174fee092c7d836823806"
+    },
+    "phrase.cfe55703a80b3a6dfe71e1772f6a3f2b5ceb0c39ec9b3e8ba7655e22f85bbca7": {
+      "text": "KİŞİ",
+      "hash": "cfe55703a80b3a6dfe71e1772f6a3f2b5ceb0c39ec9b3e8ba7655e22f85bbca7"
+    },
+    "phrase.ebb2ea3636a1f438d2107517a60c748a9aca2399fbb08981ffbc3b66e738e6f8": {
+      "text": "Kısa masa turu",
+      "hash": "ebb2ea3636a1f438d2107517a60c748a9aca2399fbb08981ffbc3b66e738e6f8"
+    },
+    "phrase.7983505ec7a7af4114bb39faf111b8aa83c60f4b90eb79624ccf27f6f989e0ea": {
+      "text": "Kısa not",
+      "hash": "7983505ec7a7af4114bb39faf111b8aa83c60f4b90eb79624ccf27f6f989e0ea"
+    },
+    "phrase.c524e0a9d358d3f9f471babce4ea4be4c648271d723e3170107ebde5f4a774bf": {
+      "text": "Kısa oda turu",
+      "hash": "c524e0a9d358d3f9f471babce4ea4be4c648271d723e3170107ebde5f4a774bf"
+    },
+    "phrase.f8513df7c0cc367ff4e4d9e0f61d8ceb6298a0901afec50e056ba0347824fa56": {
+      "text": "Kıyı Emniyeti verilerine göre fener yerden 8, denizden 82 metre yüksekte ve 20 deniz mili görünüş mesafesine sahip. Cide Belediyesi merkezden yaklaşık 55 km uzaklık veriyor.",
+      "hash": "f8513df7c0cc367ff4e4d9e0f61d8ceb6298a0901afec50e056ba0347824fa56"
+    },
+    "phrase.f999af1e03e48a89c8fd1c6ecfaa319e95608ac43df453ad17a062d73fad3db2": {
+      "text": "Loç Vadisi",
+      "hash": "f999af1e03e48a89c8fd1c6ecfaa319e95608ac43df453ad17a062d73fad3db2"
+    },
+    "phrase.8957d67c473209d2a83defcf26037bdebf8aa96a5c26148089147b45477f3a07": {
+      "text": "Loç Vadisi sınır köylerinden Hamitli’de su değirmeni",
+      "hash": "8957d67c473209d2a83defcf26037bdebf8aa96a5c26148089147b45477f3a07"
+    },
+    "phrase.c65f9c209dcf8e316be6bb2c73143ce2b1b1115a91ec23b534c52c5901c57239": {
+      "text": "Loç Vadisi, Hamitli Köyü’ndeki su değirmeni",
+      "hash": "c65f9c209dcf8e316be6bb2c73143ce2b1b1115a91ec23b534c52c5901c57239"
+    },
+    "phrase.9fe3f4c1b1fa1600d886b1bbbd4f5d0f51f9a11fcae1b14f6946d1d3f6569a5c": {
+      "text": "Lütfen bu alanı doldurun.",
+      "hash": "9fe3f4c1b1fa1600d886b1bbbd4f5d0f51f9a11fcae1b14f6946d1d3f6569a5c"
+    },
+    "phrase.6eb330d6c5f1aca9840de213cd0cc48ef4a342735c0bb3ab09cd34edc64d1bc5": {
+      "text": "Lütfen en az {0}, en fazla {1} değerini girin.",
+      "hash": "6eb330d6c5f1aca9840de213cd0cc48ef4a342735c0bb3ab09cd34edc64d1bc5"
+    },
+    "phrase.fbfea0d73fe5c4d575d4bdfe609f50a6b5b8fb446b42b06935729cf64c3840de": {
+      "text": "Lütfen geçerli bir değer girin.",
+      "hash": "fbfea0d73fe5c4d575d4bdfe609f50a6b5b8fb446b42b06935729cf64c3840de"
+    },
+    "phrase.db3539617def5ccffc8cf8aab49824100c30dd82d3076a49cfc3da20ffe9a3e2": {
+      "text": "Manzara gerçek.",
+      "hash": "db3539617def5ccffc8cf8aab49824100c30dd82d3076a49cfc3da20ffe9a3e2"
+    },
+    "phrase.b628f016f2ccf00f72356d2d5d9d93d76b39e5b99fa4038682146495787ae416": {
+      "text": "Manzaraya bir sandalye,",
+      "hash": "b628f016f2ccf00f72356d2d5d9d93d76b39e5b99fa4038682146495787ae416"
+    },
+    "phrase.058c4ccfa8a0db94b1b88f902f8ad12e0cfb164dda41ee776385fd3cb8f49ac2": {
+      "text": "Masa",
+      "hash": "058c4ccfa8a0db94b1b88f902f8ad12e0cfb164dda41ee776385fd3cb8f49ac2"
+    },
+    "phrase.b3a011318adc1450775cc1d7994724e09bb25900e85650869ab1211340191295": {
+      "text": "Masa bilgileri hazırlanıyor…",
+      "hash": "b3a011318adc1450775cc1d7994724e09bb25900e85650869ab1211340191295"
+    },
+    "phrase.396ba1b75970c0860825bbc33ee7f2d3d227e36f8907cfd095ea0915d28f682c": {
+      "text": "Masa detayları",
+      "hash": "396ba1b75970c0860825bbc33ee7f2d3d227e36f8907cfd095ea0915d28f682c"
+    },
+    "phrase.4b5d2df1754040648ecb62daa1d821f7e02a51c945a35655a425401b8c2156c1": {
+      "text": "Masa detayları ve masa bilgileri.",
+      "hash": "4b5d2df1754040648ecb62daa1d821f7e02a51c945a35655a425401b8c2156c1"
+    },
+    "phrase.314716f7e0a66c5ab1ebd3f7c62ed3a35751f6f7421b98e6b84cb42305b82c2f": {
+      "text": "Masa fotoğrafı hazırlanıyor",
+      "hash": "314716f7e0a66c5ab1ebd3f7c62ed3a35751f6f7421b98e6b84cb42305b82c2f"
+    },
+    "phrase.9c82dfc6a2806ab6a67f12ba645efe79b0a01987745169165c8124258e171c2e": {
+      "text": "Masa fotoğrafı henüz yayınlanmadı",
+      "hash": "9c82dfc6a2806ab6a67f12ba645efe79b0a01987745169165c8124258e171c2e"
+    },
+    "phrase.61b0f4c14482a728e688d21f7b91e47e14c1a3585d9be41c06688dafb922b647": {
+      "text": "Masa kimliği",
+      "hash": "61b0f4c14482a728e688d21f7b91e47e14c1a3585d9be41c06688dafb922b647"
+    },
+    "phrase.a60d43eaa5c030d4223d1fdf0470e8d7a9f4b8f212ba285dea1d4c4a9e28bb2a": {
+      "text": "Masa olanakları",
+      "hash": "a60d43eaa5c030d4223d1fdf0470e8d7a9f4b8f212ba285dea1d4c4a9e28bb2a"
+    },
+    "phrase.af733a0e9bfd950f15b0797b574a401ebcbf9aa2c1bdf1d2f5e81c317396638d": {
+      "text": "Masa seçenekleri",
+      "hash": "af733a0e9bfd950f15b0797b574a401ebcbf9aa2c1bdf1d2f5e81c317396638d"
+    },
+    "phrase.f603efc0a9e4196b8f08a6f6a3a75e361085837de6a3ba965b558f72d57bb570": {
+      "text": "Masa talebi iletin",
+      "hash": "f603efc0a9e4196b8f08a6f6a3a75e361085837de6a3ba965b558f72d57bb570"
+    },
+    "phrase.db56cb38d05cb3df27c01fa9781ae5687ee6a9217b620ae5bbaa0b14e3e4594f": {
+      "text": "Masa videosu",
+      "hash": "db56cb38d05cb3df27c01fa9781ae5687ee6a9217b620ae5bbaa0b14e3e4594f"
+    },
+    "phrase.8cfb2b2ac9d2161c06b8bf851f99a1bf75e70c8cccba8e09582af1ae23c21172": {
+      "text": "Masa özellikleri",
+      "hash": "8cfb2b2ac9d2161c06b8bf851f99a1bf75e70c8cccba8e09582af1ae23c21172"
+    },
+    "phrase.66e48027ed82971b9b9a1f1619365de548373b3d4929f2f182ee9242f1c5c667": {
+      "text": "Masa özellikleri hazırlanıyor…",
+      "hash": "66e48027ed82971b9b9a1f1619365de548373b3d4929f2f182ee9242f1c5c667"
+    },
+    "phrase.efb4e7d620c324f4438b29f390041f325d43e2d4deec53c3476f74fc0184b66b": {
+      "text": "Masanın içinde serbest bakış",
+      "hash": "efb4e7d620c324f4438b29f390041f325d43e2d4deec53c3476f74fc0184b66b"
+    },
+    "phrase.d417bb07f186b3c17cfe73cea794a24b7df25f3cd8b5934bd46b0b6169f11d72": {
+      "text": "Masanıza yakından bakın: fotoğraflar, panoramalar ve kısa bir masa turu.",
+      "hash": "d417bb07f186b3c17cfe73cea794a24b7df25f3cd8b5934bd46b0b6169f11d72"
+    },
+    "phrase.b3d45a99a32daf0f2a4904ec93cb28ac26e7a6666eed3a97f4d493818e4fe4fe": {
+      "text": "Masayı keşfet",
+      "hash": "b3d45a99a32daf0f2a4904ec93cb28ac26e7a6666eed3a97f4d493818e4fe4fe"
+    },
+    "phrase.e2435bdf8ce52f2ed15b7b8a6ef684d1f3db048995a481da1e85967f9fe4c170": {
+      "text": "Mavi: tanı · Sarı: ışık yolu",
+      "hash": "e2435bdf8ce52f2ed15b7b8a6ef684d1f3db048995a481da1e85967f9fe4c170"
+    },
+    "phrase.ff124755f49d844f0087397f61b628ab6128dad9050afe044926df78ee02bc7c": {
+      "text": "Mavinin yeşile sığındığı yer.",
+      "hash": "ff124755f49d844f0087397f61b628ab6128dad9050afe044926df78ee02bc7c"
+    },
+    "phrase.21974c72cb404e5bddaf5f8901d732ecc48f022bf4d567bce4239c85d733924b": {
+      "text": "Max Ritter · Anatolian Studies 74 (2024), Şekil 5",
+      "hash": "21974c72cb404e5bddaf5f8901d732ecc48f022bf4d567bce4239c85d733924b"
+    },
+    "phrase.2ce89b42a60636b3fe1911786c0835de705c64147518b82738242168c18d432e": {
+      "text": "Mağaraya ulaşım orman içi yürüyüş gerektirir; Kültür Portalı yaklaşık 1,5–2 saatlik yürüyüş ve yerel rehber önerir. Ziyareti rehberle planlayın, tarihi kalıntılara dokunmayın. Fotoğraf, Max Ritter’in 2022 araştırmasında çektiği gerçek mağara girişidir.",
+      "hash": "2ce89b42a60636b3fe1911786c0835de705c64147518b82738242168c18d432e"
+    },
+    "phrase.a314bd0b56a3158ca808014aa64343289582b8a9f599b9e9be83dd33912c1e91": {
+      "text": "Menü",
+      "hash": "a314bd0b56a3158ca808014aa64343289582b8a9f599b9e9be83dd33912c1e91"
+    },
+    "phrase.6a9ecf2fb45b9e1f2cea066971d50049e20dfe74ca1b2d2097133510e4f83a1c": {
+      "text": "Menü hazırlanıyor.",
+      "hash": "6a9ecf2fb45b9e1f2cea066971d50049e20dfe74ca1b2d2097133510e4f83a1c"
+    },
+    "phrase.ddc44cac4fe0ff5c99fa5771396d7943f7c4c33020fa3a796a90c29fa6dfa89a": {
+      "text": "Menü kategorileri",
+      "hash": "ddc44cac4fe0ff5c99fa5771396d7943f7c4c33020fa3a796a90c29fa6dfa89a"
+    },
+    "phrase.7ea3c75f8c0d0cbdb4629528f0d522f9cca8345611cc82e1908c6dfb82c3c061": {
+      "text": "Menü yükleniyor…",
+      "hash": "7ea3c75f8c0d0cbdb4629528f0d522f9cca8345611cc82e1908c6dfb82c3c061"
+    },
+    "phrase.73ccf774e3a377da67e57aec59d9162c6be7cb5f6bcb3cde2fa31a5e5a46fdf4": {
+      "text": "Menü ürünü",
+      "hash": "73ccf774e3a377da67e57aec59d9162c6be7cb5f6bcb3cde2fa31a5e5a46fdf4"
+    },
+    "phrase.c51a86716995b25e48754844c8850f57e641ad14e6407545e0bd95720712ba98": {
+      "text": "Menümüz şu anda yayında değil.",
+      "hash": "c51a86716995b25e48754844c8850f57e641ad14e6407545e0bd95720712ba98"
+    },
+    "phrase.4ed111aefb493c27ffc645e11fda0ac16bbd6669a5b74352457754c7c24bfbce": {
+      "text": "Menümüzü keşfedin. Keyfinize eşlik edecek bir şeyler mutlaka vardır.",
+      "hash": "4ed111aefb493c27ffc645e11fda0ac16bbd6669a5b74352457754c7c24bfbce"
+    },
+    "phrase.022ba3aed3545668b7401197b1becefaa6cb34421f4e902451491345b8b7d547": {
+      "text": "Menüye şu anda ulaşılamıyor. Lütfen yeniden deneyin.",
+      "hash": "022ba3aed3545668b7401197b1becefaa6cb34421f4e902451491345b8b7d547"
+    },
+    "phrase.73822f6a1543861529721ee60c4ad169eb1baba392138e67a02f3ea1966f0bb0": {
+      "text": "Menüyü aç",
+      "hash": "73822f6a1543861529721ee60c4ad169eb1baba392138e67a02f3ea1966f0bb0"
+    },
+    "phrase.5746a58b35815df8af0904442cc03dac3b578ccd426fc1f0865f69747e16ab31": {
+      "text": "Menüyü kapat",
+      "hash": "5746a58b35815df8af0904442cc03dac3b578ccd426fc1f0865f69747e16ab31"
+    },
+    "phrase.159a3ca2bf59ac42c2f48ddf35ed969fe16def89fa0f6424edad3461d09e2098": {
+      "text": "Merkez",
+      "hash": "159a3ca2bf59ac42c2f48ddf35ed969fe16def89fa0f6424edad3461d09e2098"
+    },
+    "phrase.c446c2cecf418a4ec70f2be149916250c71a3961a5bef4a2b29305831da91acb": {
+      "text": "Merkez günü",
+      "hash": "c446c2cecf418a4ec70f2be149916250c71a3961a5bef4a2b29305831da91acb"
+    },
+    "phrase.ebe996951836da7f6f230a003da8127bfb9324c373865408bab2a9c8a5b63b66": {
+      "text": "Merkezden kısa bir araç yolculuğuyla ayrı bir yarım gün ayırmaya değer; koyun sakin karakteri acele etmeden gezildiğinde daha iyi hissedilir.",
+      "hash": "ebe996951836da7f6f230a003da8127bfb9324c373865408bab2a9c8a5b63b66"
+    },
+    "phrase.15db11df6907fd1ce0db35a555402101ffbb77ddb1c9f9a417311c386e531e96": {
+      "text": "Mesafeler Cide merkez referans alınarak yaklaşık verilmiştir. Özellikle vadi ve köy yollarında hava ve yol koşulları değişebildiği için çıkmadan önce güncel yerel bilgiyi kontrol etmek iyi olur.",
+      "hash": "15db11df6907fd1ce0db35a555402101ffbb77ddb1c9f9a417311c386e531e96"
+    },
+    "phrase.66496a401fbdefa7c758ccfba5cebb027686e59573097ade21d99181c2d6bc77": {
+      "text": "Mesaj gönderin",
+      "hash": "66496a401fbdefa7c758ccfba5cebb027686e59573097ade21d99181c2d6bc77"
+    },
+    "phrase.c30849130271a7174d22314cd5f0f166820d39e8cfbee29bc2639dc155e94ce9": {
+      "text": "Mesaj hazırla",
+      "hash": "c30849130271a7174d22314cd5f0f166820d39e8cfbee29bc2639dc155e94ce9"
+    },
+    "phrase.42a1a75b0d4b8d228899bc195709f2d25d2b0b65c8494f6503e992e4b7b607b8": {
+      "text": "Mesajınız",
+      "hash": "42a1a75b0d4b8d228899bc195709f2d25d2b0b65c8494f6503e992e4b7b607b8"
+    },
+    "phrase.e937fc9543561397e808cb8855439664c9a0aef0eb24e66b27204e60860f15f8": {
+      "text": "Mesajınız WhatsApp’ta açılır. Göndermek sizin seçiminiz; burada otomatik mesaj gönderilmez.",
+      "hash": "e937fc9543561397e808cb8855439664c9a0aef0eb24e66b27204e60860f15f8"
+    },
+    "phrase.f6cf9610a01a796e56e99009afd1dad957efefca0d6fca2818fc8abe04b64a26": {
+      "text": "Mesajınızı siz gönderirsiniz",
+      "hash": "f6cf9610a01a796e56e99009afd1dad957efefca0d6fca2818fc8abe04b64a26"
+    },
+    "phrase.58cabfa80dee39527d3400001a864017a7ab38c3f736dd529f8546e05334cb5a": {
+      "text": "Milli park Kastamonu ve Çankırı sınırlarında yer alır. Ilgaz Kış Sporları Turizm Merkezi park içindedir. Cide’den daha uzun bir iç bölge yolculuğu gerektirdiği için ayrı bir gezi günü ayırın; kayak planında kar ve tesislerin çalışma durumunu önceden kontrol edin.",
+      "hash": "58cabfa80dee39527d3400001a864017a7ab38c3f736dd529f8546e05334cb5a"
+    },
+    "phrase.b3dd1d333eec4462ca8c950726f33cc5b304b78ccc79f1c616e9c430c44227b5": {
+      "text": "Mini buzdolabı",
+      "hash": "b3dd1d333eec4462ca8c950726f33cc5b304b78ccc79f1c616e9c430c44227b5"
+    },
+    "phrase.9d7f6ab0c8f441d0c8e4b0bc85a0f5c5468f5e5feb58094c06f645f8bd0e4436": {
+      "text": "Mini mutfak",
+      "hash": "9d7f6ab0c8f441d0c8e4b0bc85a0f5c5468f5e5feb58094c06f645f8bd0e4436"
+    },
+    "phrase.b1e97acaa36b85b22e554e4d3f4bc01dc95ad04e5eb9da48af013fb2eaae602f": {
+      "text": "Misafir sayısı",
+      "hash": "b1e97acaa36b85b22e554e4d3f4bc01dc95ad04e5eb9da48af013fb2eaae602f"
+    },
+    "phrase.ea3f34e9afdf13afb88091bc5b6b67520bdd93a6bc85168272f8e0115b3bf2b2": {
+      "text": "Misafir yorumları",
+      "hash": "ea3f34e9afdf13afb88091bc5b6b67520bdd93a6bc85168272f8e0115b3bf2b2"
+    },
+    "phrase.74c926996a3085288f65f41d1ffd3c34119b1034bd24499b16be70f75f474fbd": {
+      "text": "Mobil gezinme",
+      "hash": "74c926996a3085288f65f41d1ffd3c34119b1034bd24499b16be70f75f474fbd"
+    },
+    "phrase.7aef69d7e76c4c0206fa22a410cb3690b34f827719683bdac5b0453434972011": {
+      "text": "Muratbaşı Köyü yakınlarındaki kanyon, Pınarbaşı merkezinin yaklaşık 26 km kuzeyindedir. Gezi için seyir teraslarını tercih edin. Kanyon içinden geçiş, sıradan bir yürüyüş rotası değildir; profesyonel ekip, uygun ekipman ve yerel rehberlik gerektirir.",
+      "hash": "7aef69d7e76c4c0206fa22a410cb3690b34f827719683bdac5b0453434972011"
+    },
+    "phrase.f094fba2285fe49a2c70798a3cd4542459e3c24f86a8cf28b6d96d8e89a65900": {
+      "text": "Müsait oda sayısı: {0}.",
+      "hash": "f094fba2285fe49a2c70798a3cd4542459e3c24f86a8cf28b6d96d8e89a65900"
+    },
+    "phrase.4718da10e84d853be48a59ccf23a8bca605e69409766eeb4ad8d5304d065b6f4": {
+      "text": "Müsaitlik doğrulanamadı.",
+      "hash": "4718da10e84d853be48a59ccf23a8bca605e69409766eeb4ad8d5304d065b6f4"
+    },
+    "phrase.23f9192d6f1b29c0ba285fe4c574ad3e4a076f65616d895aa3a16bed05d2acad": {
+      "text": "Müsaitlik sorgulanıyor…",
+      "hash": "23f9192d6f1b29c0ba285fe4c574ad3e4a076f65616d895aa3a16bed05d2acad"
+    },
+    "phrase.6328083f15aa8508a127e99be3fa833c627e968e04ea834d2d5aadcc2adebf8e": {
+      "text": "Müsaitliği sorgula",
+      "hash": "6328083f15aa8508a127e99be3fa833c627e968e04ea834d2d5aadcc2adebf8e"
+    },
+    "phrase.959ac83470b08035926c2d47195f40832038242d21c760bf85a475eb41cafccc": {
+      "text": "Not: {0}",
+      "hash": "959ac83470b08035926c2d47195f40832038242d21c760bf85a475eb41cafccc"
+    },
+    "phrase.01a63a0bc8f43be199371f9def8c3694adc4e495ba50bacd87594e99f47e70a6": {
+      "text": "Oda",
+      "hash": "01a63a0bc8f43be199371f9def8c3694adc4e495ba50bacd87594e99f47e70a6"
+    },
+    "phrase.228eb3c4acdfc18097d52d3282c45230a85214d802f010ab98c9e5728daf2b83": {
+      "text": "Oda bilgileri hazırlanıyor…",
+      "hash": "228eb3c4acdfc18097d52d3282c45230a85214d802f010ab98c9e5728daf2b83"
+    },
+    "phrase.22a718e74ec7d961cfe1083c414f1dbf4d8fb85556c0591ecb8ed5efea7e34b0": {
+      "text": "Oda bilgilerine ulaşılamıyor.",
+      "hash": "22a718e74ec7d961cfe1083c414f1dbf4d8fb85556c0591ecb8ed5efea7e34b0"
+    },
+    "phrase.9b0eebaaae66c45016c6b29e0b6b8869acf3ba2119089a14376cce83c7e48259": {
+      "text": "Oda bilgilerine şu anda ulaşılamıyor.",
+      "hash": "9b0eebaaae66c45016c6b29e0b6b8869acf3ba2119089a14376cce83c7e48259"
+    },
+    "phrase.c341635707851ff5047a443971026b07b2726a8f25857a71dd10aa969277f758": {
+      "text": "Oda detayları",
+      "hash": "c341635707851ff5047a443971026b07b2726a8f25857a71dd10aa969277f758"
+    },
+    "phrase.04cd31c4863e66765f540d3cdda8869b3bb6c639c3abe45a709b0971a3409c80": {
+      "text": "Oda detayları ve konaklama bilgileri.",
+      "hash": "04cd31c4863e66765f540d3cdda8869b3bb6c639c3abe45a709b0971a3409c80"
+    },
+    "phrase.edc33deeb593ba880fd6f5cf2c013233284360a3e93822ead1a6e0f6327c6fc3": {
+      "text": "Oda detaylarını inceleyebilirsiniz.",
+      "hash": "edc33deeb593ba880fd6f5cf2c013233284360a3e93822ead1a6e0f6327c6fc3"
+    },
+    "phrase.b737334266d157734aaab54d018d91462f7678a8afdb469afc3a7096fd1ea334": {
+      "text": "Oda fotoğrafı",
+      "hash": "b737334266d157734aaab54d018d91462f7678a8afdb469afc3a7096fd1ea334"
+    },
+    "phrase.9a0481adba7356400afad74affd290695f105f47c4e07777b3e3f2c6d1b428da": {
+      "text": "Oda fotoğrafı hazırlanıyor",
+      "hash": "9a0481adba7356400afad74affd290695f105f47c4e07777b3e3f2c6d1b428da"
+    },
+    "phrase.3e1e6ccfc9d2d907a0294bfb9f090c254bdb534e1b4603e77f742590473e2522": {
+      "text": "Oda fotoğrafı henüz yayınlanmadı",
+      "hash": "3e1e6ccfc9d2d907a0294bfb9f090c254bdb534e1b4603e77f742590473e2522"
+    },
+    "phrase.bcdddcfad438726c82b5944fb633c9808347e5a1be380b86ab228032b8d07ce8": {
+      "text": "Oda listesi okunamadı. Tercih belirtmeden talep iletebilirsiniz.",
+      "hash": "bcdddcfad438726c82b5944fb633c9808347e5a1be380b86ab228032b8d07ce8"
+    },
+    "phrase.655dc5b33a0acb0cbccb2745488600ad300f3181b5d7ce230fed0781458505bb": {
+      "text": "Oda olanakları",
+      "hash": "655dc5b33a0acb0cbccb2745488600ad300f3181b5d7ce230fed0781458505bb"
+    },
+    "phrase.c99ed2598d5e949630d763ddfd9e32768cc2f004470c2d3784df415ba550a640": {
+      "text": "Oda tercihi",
+      "hash": "c99ed2598d5e949630d763ddfd9e32768cc2f004470c2d3784df415ba550a640"
+    },
+    "phrase.cfaf370197aaaafef623c14950781decc25a12e99cc7660b07209a2e7671fb3d": {
+      "text": "Oda videosu",
+      "hash": "cfaf370197aaaafef623c14950781decc25a12e99cc7660b07209a2e7671fb3d"
+    },
+    "phrase.9cbbb52c1b72292b039de803bb3225eedf3def5253196e2fbcf7923ceb892e7f": {
+      "text": "Oda özellikleri",
+      "hash": "9cbbb52c1b72292b039de803bb3225eedf3def5253196e2fbcf7923ceb892e7f"
+    },
+    "phrase.a491434978868245b687b3924dd3da0392056c964d34f69f8ba64ce7e908cd08": {
+      "text": "Oda özellikleri hazırlanıyor…",
+      "hash": "a491434978868245b687b3924dd3da0392056c964d34f69f8ba64ce7e908cd08"
+    },
+    "phrase.d1d3d61b3725ecd727e35601bd3e6d592aa9175e2e796198acd7609e98faa3c5": {
+      "text": "Oda özellikleri henüz yayınlanmadı.",
+      "hash": "d1d3d61b3725ecd727e35601bd3e6d592aa9175e2e796198acd7609e98faa3c5"
+    },
+    "phrase.dbed5709c40b690fc5f52958d2485fd5028b723fa33eebd5538a79e819867b09": {
+      "text": "Odalar",
+      "hash": "dbed5709c40b690fc5f52958d2485fd5028b723fa33eebd5538a79e819867b09"
+    },
+    "phrase.0b3c2b51775ca95957f2fc3e38ee11abaf2be6c644fbed2b5109a6f7c8114be8": {
+      "text": "Odalar & Konaklama",
+      "hash": "0b3c2b51775ca95957f2fc3e38ee11abaf2be6c644fbed2b5109a6f7c8114be8"
+    },
+    "phrase.dc908d32ecbbf1de4fd1e138d9253276a9fce29d9527a3dabbec42813752d156": {
+      "text": "Odalar hazırlanıyor…",
+      "hash": "dc908d32ecbbf1de4fd1e138d9253276a9fce29d9527a3dabbec42813752d156"
+    },
+    "phrase.ceac1ad8cccf1d6365812111e2e4f0c1846cebf3085b76718283b27ea6a7c791": {
+      "text": "Odalar okunamadı.",
+      "hash": "ceac1ad8cccf1d6365812111e2e4f0c1846cebf3085b76718283b27ea6a7c791"
+    },
+    "phrase.2ad129ec19952b9f93d2c137b5fdb171f30af90b23df0f22f71e7e5de1af500f": {
+      "text": "Odaları gör",
+      "hash": "2ad129ec19952b9f93d2c137b5fdb171f30af90b23df0f22f71e7e5de1af500f"
+    },
+    "phrase.63644ccbb4265eec6269f34aa0b618245e9a34ed4302d48f3ec0b1897c936592": {
+      "text": "Odaları keşfedin",
+      "hash": "63644ccbb4265eec6269f34aa0b618245e9a34ed4302d48f3ec0b1897c936592"
+    },
+    "phrase.e1d61716586eba6b1012fede711dc4e1a7bbeb5dd720b56e95ec06066ff3355e": {
+      "text": "Odalarımız",
+      "hash": "e1d61716586eba6b1012fede711dc4e1a7bbeb5dd720b56e95ec06066ff3355e"
+    },
+    "phrase.36059d19347ed6519d95346421571b7fc0a9703ea168ac9fe05aca7bd365c073": {
+      "text": "Odanın içinde serbest bakış",
+      "hash": "36059d19347ed6519d95346421571b7fc0a9703ea168ac9fe05aca7bd365c073"
+    },
+    "phrase.6402ff9064a20897cc4329c0f6892cdb9743bc85da2ec115ef506ed3f786c92e": {
+      "text": "Odanıza yakından bakın: fotoğraflar, panoramalar ve kısa bir oda turu.",
+      "hash": "6402ff9064a20897cc4329c0f6892cdb9743bc85da2ec115ef506ed3f786c92e"
+    },
+    "phrase.6fb7ea3980148655a19b796d3a1b4c0e7d299d26c750ade3681e0bc8826cf61a": {
+      "text": "Odanızın detayları hazırlanıyor.",
+      "hash": "6fb7ea3980148655a19b796d3a1b4c0e7d299d26c750ade3681e0bc8826cf61a"
+    },
+    "phrase.c59eba7d7943c4af742831415d17deb5373e86ab16be1735eb9364053eceb3bb": {
+      "text": "Odaya servis",
+      "hash": "c59eba7d7943c4af742831415d17deb5373e86ab16be1735eb9364053eceb3bb"
+    },
+    "phrase.d59bf9f81599bb9c5713b0f4007491b26617ffb94eb038f9fe408e51653572a1": {
+      "text": "Odayı incele",
+      "hash": "d59bf9f81599bb9c5713b0f4007491b26617ffb94eb038f9fe408e51653572a1"
+    },
+    "phrase.9b1fa184c2d116bd2666961975009cb7fa05150c0c575c481eb5768840d20be6": {
+      "text": "Odayı keşfet",
+      "hash": "9b1fa184c2d116bd2666961975009cb7fa05150c0c575c481eb5768840d20be6"
+    },
+    "phrase.3c203fa9695957fd05e714d2155d5315a910badeb104ca66e4bd4ea5608ddabc": {
+      "text": "Olanaklar hazırlanıyor…",
+      "hash": "3c203fa9695957fd05e714d2155d5315a910badeb104ca66e4bd4ea5608ddabc"
+    },
+    "phrase.a8dba25901af616388458b357f9ec404c2a4d2d0c4beca59f351dc95a0e79b09": {
+      "text": "Online konaklama talebi şu anda açık değil.",
+      "hash": "a8dba25901af616388458b357f9ec404c2a4d2d0c4beca59f351dc95a0e79b09"
+    },
+    "phrase.e1bbf27d6f179a25ef75bd1c6e7a018bac6d7d4df1f29f30838692e29dd96295": {
+      "text": "Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.",
+      "hash": "e1bbf27d6f179a25ef75bd1c6e7a018bac6d7d4df1f29f30838692e29dd96295"
+    },
+    "phrase.3f886f5f57f2d92a60434fb3c68c39c08648601df077f4c791987334b1d60d76": {
+      "text": "Online masa talebi şu anda açık değil.",
+      "hash": "3f886f5f57f2d92a60434fb3c68c39c08648601df077f4c791987334b1d60d76"
+    },
+    "phrase.3f050df713b7235df5aabe92d93f0ac9339d0733b7758a88c51df20af11a599f": {
+      "text": "Online oda ve masa talebi şu anda açık değil. Yayınlanan iletişim kanalları üzerinden bilgi alabilirsiniz.",
+      "hash": "3f050df713b7235df5aabe92d93f0ac9339d0733b7758a88c51df20af11a599f"
+    },
+    "phrase.cf7d276ecede554f81edf567c0b994dd18350db3bd61f951b5d3fed2c3a5abfd": {
+      "text": "Orijinal fotoğraf ve kaynak ↗",
+      "hash": "cf7d276ecede554f81edf567c0b994dd18350db3bd61f951b5d3fed2c3a5abfd"
+    },
+    "phrase.a9a0754f1a8e95681912273bc3e60c66d19b14302addaa093fd56ed77fbd7cfc": {
+      "text": "Ormanla çevrili, dar ağızlı doğal liman karakteriyle Cide’nin en özgün kıyı duraklarından biri.",
+      "hash": "a9a0754f1a8e95681912273bc3e60c66d19b14302addaa093fd56ed77fbd7cfc"
+    },
+    "phrase.c9c937902349e9abadd54e7cb68d981d94345196488eb4eda556e5b1c5782639": {
+      "text": "Ormanlarla çevrili Gideros Koyu’nun panoramik görünümü",
+      "hash": "c9c937902349e9abadd54e7cb68d981d94345196488eb4eda556e5b1c5782639"
+    },
+    "phrase.087016e7663a3b70b8a46bbafe3675509e08ee9ad4603cf7bc9004e1b533194a": {
+      "text": "Otomatik bilgi yanıtı gösteriliyor. Ayrıntılar için bize ulaşabilirsiniz.",
+      "hash": "087016e7663a3b70b8a46bbafe3675509e08ee9ad4603cf7bc9004e1b533194a"
+    },
+    "phrase.72630d7ea9d9fd00bb9de7302bb7e38e6e8d7bdd3540438d62d6d6287d3b2cc4": {
+      "text": "Otopark",
+      "hash": "72630d7ea9d9fd00bb9de7302bb7e38e6e8d7bdd3540438d62d6d6287d3b2cc4"
+    },
+    "phrase.15ff83af8d01296bf5e48e9b3d77bffc2eea2229982cab859eee416e08da77db": {
+      "text": "PANSİYON & RESTORAN",
+      "hash": "15ff83af8d01296bf5e48e9b3d77bffc2eea2229982cab859eee416e08da77db"
+    },
+    "phrase.fde144934d67cf19c2ade09a859cdb077033f53ff9c228236dc293733913cd30": {
+      "text": "Panoramik görünüm",
+      "hash": "fde144934d67cf19c2ade09a859cdb077033f53ff9c228236dc293733913cd30"
+    },
+    "phrase.addb7fef95de1b5ac54468c953fb4764ef1ea770f94ebe1842fd6b37aa14d259": {
+      "text": "Pansiyon olanakları",
+      "hash": "addb7fef95de1b5ac54468c953fb4764ef1ea770f94ebe1842fd6b37aa14d259"
+    },
+    "phrase.f9220097e59bb56c8279997d61a01e4c22f8e0838b0eadaceaee5e38177972bd": {
+      "text": "Pansiyon · Cide",
+      "hash": "f9220097e59bb56c8279997d61a01e4c22f8e0838b0eadaceaee5e38177972bd"
+    },
+    "phrase.6d8c1edf0a8c123da81e3947b349c03327dba532cc6f2147edfa4d76d97aaaf2": {
+      "text": "Pe",
+      "hash": "6d8c1edf0a8c123da81e3947b349c03327dba532cc6f2147edfa4d76d97aaaf2"
+    },
+    "phrase.7429450734fb976859a9596ae5db3b6249e1edce8130f8a2c09d9f224b2df8ee": {
+      "text": "Planlama",
+      "hash": "7429450734fb976859a9596ae5db3b6249e1edce8130f8a2c09d9f224b2df8ee"
+    },
+    "phrase.b602b7029be6532204bd31185da415d258df68e8d351c1eb5997c8644f384e28": {
+      "text": "Pt",
+      "hash": "b602b7029be6532204bd31185da415d258df68e8d351c1eb5997c8644f384e28"
+    },
+    "phrase.162c923366fb41edb5baff8b7cdba877ee6d1ae5ff3fd95430235edece02e8a3": {
+      "text": "Pz",
+      "hash": "162c923366fb41edb5baff8b7cdba877ee6d1ae5ff3fd95430235edece02e8a3"
+    },
+    "phrase.dfefe2701f14f9f7c2d623be11d46340a20a0464c67e90355ec810b7f401d231": {
+      "text": "Pınarbaşı · Ahşap yürüyüş yolu",
+      "hash": "dfefe2701f14f9f7c2d623be11d46340a20a0464c67e90355ec810b7f401d231"
+    },
+    "phrase.2285f104bccbf29f6aac85429c64568e41842597aec9c213363561e8088a2c7f": {
+      "text": "Pınarbaşı · Ilıca Köyü",
+      "hash": "2285f104bccbf29f6aac85429c64568e41842597aec9c213363561e8088a2c7f"
+    },
+    "phrase.13622beb8e3f53c8fc5f367fe86cc2afdf7930bff2f5a97ce6541fdaa9dad9c7": {
+      "text": "Pınarbaşı · Muratbaşı Köyü",
+      "hash": "13622beb8e3f53c8fc5f367fe86cc2afdf7930bff2f5a97ce6541fdaa9dad9c7"
+    },
+    "phrase.dd6a956c701256f8b32bc7ab2ab14338641173f8ca18259adb3cce6ca5bd0d5b": {
+      "text": "Pınarbaşı · Rehberli orman yürüyüşü",
+      "hash": "dd6a956c701256f8b32bc7ab2ab14338641173f8ca18259adb3cce6ca5bd0d5b"
+    },
+    "phrase.40bde9c157b42ecf840aa9f03744d9b3e7225fb843296757c46a8435e4effb7d": {
+      "text": "QR Menü",
+      "hash": "40bde9c157b42ecf840aa9f03744d9b3e7225fb843296757c46a8435e4effb7d"
+    },
+    "phrase.bc3a977f4fbdf97944ee34e683f9c6f145b9f9e15d8cb577779159217b00abdb": {
+      "text": "QR Menü →",
+      "hash": "bc3a977f4fbdf97944ee34e683f9c6f145b9f9e15d8cb577779159217b00abdb"
+    },
+    "phrase.5cbac53b937300b62d68788879feeb44f1cd95693bf89d9766305ba4cc903d06": {
+      "text": "Resmî gezi bilgisi ↗",
+      "hash": "5cbac53b937300b62d68788879feeb44f1cd95693bf89d9766305ba4cc903d06"
+    },
+    "phrase.0ba6c94f8e36991b2568dabe8319cbd048bcefd176562d4a6eb7833777ea4929": {
+      "text": "Resmî kaynağı aç ↗",
+      "hash": "0ba6c94f8e36991b2568dabe8319cbd048bcefd176562d4a6eb7833777ea4929"
+    },
+    "phrase.c4df567c9b1d938543197cd0e41738a9766cd05043a57e62dcd9ae123a7def41": {
+      "text": "Restoran",
+      "hash": "c4df567c9b1d938543197cd0e41738a9766cd05043a57e62dcd9ae123a7def41"
+    },
+    "phrase.9d300f85bb1f1c80f7d4bfcdcdad9324774cc9fe4857423c7310a541da0e5523": {
+      "text": "Restoran & Sofrada Buluşma",
+      "hash": "9d300f85bb1f1c80f7d4bfcdcdad9324774cc9fe4857423c7310a541da0e5523"
+    },
+    "phrase.5951bc73569d67f94e995f8b6ad5415bdfacbc091f8849ba299bc850ef14734c": {
+      "text": "Restoranı keşfedin",
+      "hash": "5951bc73569d67f94e995f8b6ad5415bdfacbc091f8849ba299bc850ef14734c"
+    },
+    "phrase.be49bff4931b35662d0c270a76a8189f8f29b4cbaa22e141e0261e8f536fd891": {
+      "text": "Rezervasyon",
+      "hash": "be49bff4931b35662d0c270a76a8189f8f29b4cbaa22e141e0261e8f536fd891"
+    },
+    "phrase.fbbd1da59c6230cd3000a598c939f94aad5fb67d3eb81acd921a8568b7b4f6d6": {
+      "text": "Rezervasyon / Bilgi",
+      "hash": "fbbd1da59c6230cd3000a598c939f94aad5fb67d3eb81acd921a8568b7b4f6d6"
+    },
+    "phrase.c6b8b969a93c7b0ac1fc53169f3a08d6c87850635fedcf20347256bc062e3608": {
+      "text": "Rezervasyon / Bilgi Al",
+      "hash": "c6b8b969a93c7b0ac1fc53169f3a08d6c87850635fedcf20347256bc062e3608"
+    },
+    "phrase.7fe4e68fca640a7aba4fee8341b2bb61ed7c6dcbc1e9f766e266fe40bee0e3c0": {
+      "text": "Rezervasyon talebi",
+      "hash": "7fe4e68fca640a7aba4fee8341b2bb61ed7c6dcbc1e9f766e266fe40bee0e3c0"
+    },
+    "phrase.6fb42f5b416d960283be206ffe146b6f85832919e90898e826901b6c322843d0": {
+      "text": "Rezervasyon talebi gönder",
+      "hash": "6fb42f5b416d960283be206ffe146b6f85832919e90898e826901b6c322843d0"
+    },
+    "phrase.60e24065477772f70c66551b97f6239305da4a64800b7c30b87aca79f57845eb": {
+      "text": "Rezervasyon, oda bilgisi ve ulaşım için bize ulaşabilirsiniz.",
+      "hash": "60e24065477772f70c66551b97f6239305da4a64800b7c30b87aca79f57845eb"
+    },
+    "phrase.e22bd903f51d3feac6491b775578b4f0ab0ef61301e8d0f1822e60d3aaf77670": {
+      "text": "Rotaları keşfet",
+      "hash": "e22bd903f51d3feac6491b775578b4f0ab0ef61301e8d0f1822e60d3aaf77670"
+    },
+    "phrase.a6d55d9dc3799b7814115600e3afe97194b43cd96fec10edf57fade7b0b915c8": {
+      "text": "Rotaları merkezden dışarı doğru düşündük; böylece kısa bir konaklamada da birkaç günlük planda da öncelik vermek kolaylaşıyor.",
+      "hash": "a6d55d9dc3799b7814115600e3afe97194b43cd96fec10edf57fade7b0b915c8"
+    },
+    "phrase.7e17129c1c330dd32ddbd11731007059deddd304286bb8903f9c4a6734208d7c": {
+      "text": "Rıfat Ilgaz Kültür ve Sanat Evi ile Sarı Yazma festival geleneği, ilçenin kültür hafızasının yaşayan parçaları. Cide Belediyesi festival programlarında edebiyat, yerel üretim, müzik ve doğa gezilerini birlikte sürdürüyor.",
+      "hash": "7e17129c1c330dd32ddbd11731007059deddd304286bb8903f9c4a6734208d7c"
+    },
+    "phrase.2f19aa9ab58a995017a3fdfd5c12d39754443c7eb152e6e8b70706b88cafe037": {
+      "text": "Rıfat Ilgaz Kültür ve Sanat Evi · Cide",
+      "hash": "2f19aa9ab58a995017a3fdfd5c12d39754443c7eb152e6e8b70706b88cafe037"
+    },
+    "phrase.fdaf69539df1aaebc51df89797ff496575abdfb8e2796efc7a7e99acfffc3370": {
+      "text": "Rıfat Ilgaz ve Sarı Yazma",
+      "hash": "fdaf69539df1aaebc51df89797ff496575abdfb8e2796efc7a7e99acfffc3370"
+    },
+    "phrase.2986984173b37ca16443276c8e465a58db95242c0ededb2557bb8b8ca0d0ac61": {
+      "text": "SOFRADA BULUŞALIM",
+      "hash": "2986984173b37ca16443276c8e465a58db95242c0ededb2557bb8b8ca0d0ac61"
+    },
+    "phrase.b143558f99f20c5daeb15e525401863484a138a4ddb50ad016aecf99910b28b5": {
+      "text": "SOFRAMIZDAN",
+      "hash": "b143558f99f20c5daeb15e525401863484a138a4ddb50ad016aecf99910b28b5"
+    },
+    "phrase.a951efc79deb7ff3ecb2daabc383401317b475842f9f41aa2bc43f15942d312d": {
+      "text": "Sa",
+      "hash": "a951efc79deb7ff3ecb2daabc383401317b475842f9f41aa2bc43f15942d312d"
+    },
+    "phrase.659e55ae8a3017d96bb3cfac9d45e80808509ef4d8a966c8807327b22a53468c": {
+      "text": "Saat seç",
+      "hash": "659e55ae8a3017d96bb3cfac9d45e80808509ef4d8a966c8807327b22a53468c"
+    },
+    "phrase.8892fa74966770efe87b08229cd35100f623a35c1bc27e5d59e43377e5ae748b": {
+      "text": "Saat: {0}",
+      "hash": "8892fa74966770efe87b08229cd35100f623a35c1bc27e5d59e43377e5ae748b"
+    },
+    "phrase.2c54a22edd20d0c168685bf0d0ec409f0913a9eec1a40acdd46a295a4a10ee4e": {
+      "text": "Sade, rahat ve huzurlu",
+      "hash": "2c54a22edd20d0c168685bf0d0ec409f0913a9eec1a40acdd46a295a4a10ee4e"
+    },
+    "phrase.b17623435e31405dc7b0146d8c4f0b6db25270c18c39fb6a3226f32d7528f334": {
+      "text": "Sahil + liman",
+      "hash": "b17623435e31405dc7b0146d8c4f0b6db25270c18c39fb6a3226f32d7528f334"
+    },
+    "phrase.605680e9083ff77b64994679696df3f7bb6f13c35ec1ad850e8888365df272db": {
+      "text": "Sahil ve liman",
+      "hash": "605680e9083ff77b64994679696df3f7bb6f13c35ec1ad850e8888365df272db"
+    },
+    "phrase.679e55561f7d24237b1c345874b8675840910e22145094945364a667ee042c00": {
+      "text": "Sahil ve liman aynı gün içinde yürüyerek keşfedilebilecek merkez rotasını oluşturur. Kıyı boyunca Cide’nin dağlarla çevrili yerleşim dokusu açık biçimde görülür.",
+      "hash": "679e55561f7d24237b1c345874b8675840910e22145094945364a667ee042c00"
+    },
+    "phrase.911a2b867996fd3ff19237fe4b4885df4a9f825b14d63ac01b8dbce59e92ed4f": {
+      "text": "Sakin bölüm",
+      "hash": "911a2b867996fd3ff19237fe4b4885df4a9f825b14d63ac01b8dbce59e92ed4f"
+    },
+    "phrase.13a50a04ec52ec584a700cf17de60dc03ac6817da7996a496e6c556aa6657bb2": {
+      "text": "Sakin ve konforlu",
+      "hash": "13a50a04ec52ec584a700cf17de60dc03ac6817da7996a496e6c556aa6657bb2"
+    },
+    "phrase.73a1effad82bcc5386af942a7fdf3931195f9e3d4dab5c8c8dc0d697cfdf38e9": {
+      "text": "Seçenekler hazırlanıyor…",
+      "hash": "73a1effad82bcc5386af942a7fdf3931195f9e3d4dab5c8c8dc0d697cfdf38e9"
+    },
+    "phrase.6369b71316aa71f7d4f1d60ab9ac90c568c0e3e1cb902bb700fdc8cabba9309f": {
+      "text": "Seçenekleri yeniden yükle",
+      "hash": "6369b71316aa71f7d4f1d60ab9ac90c568c0e3e1cb902bb700fdc8cabba9309f"
+    },
+    "phrase.58526989138a4b25ad380a572eaead35e53f2ccc4d6e200e65f8ddef226c4d93": {
+      "text": "Seçilen tarihlerde uygun oda görünmüyor.",
+      "hash": "58526989138a4b25ad380a572eaead35e53f2ccc4d6e200e65f8ddef226c4d93"
+    },
+    "phrase.a88d793d49756ff36873c4a486084c0984ca33524e36b26b734351eb8393b868": {
+      "text": "Sigara içilebilir",
+      "hash": "a88d793d49756ff36873c4a486084c0984ca33524e36b26b734351eb8393b868"
+    },
+    "phrase.61438ce54ff99f91e628185f2a0483c6b4976e873a7f9ab90496dbea3a98cc16": {
+      "text": "Sigara içilmeyen oda",
+      "hash": "61438ce54ff99f91e628185f2a0483c6b4976e873a7f9ab90496dbea3a98cc16"
+    },
+    "phrase.5455fc368ccc2c60c8364fc8380317d7e4ba71081ea2d5a45c48100a655d8681": {
+      "text": "Sigara içilmez",
+      "hash": "5455fc368ccc2c60c8364fc8380317d7e4ba71081ea2d5a45c48100a655d8681"
+    },
+    "phrase.6c097b3566d0325df922c4ae5ff3b4ecb085b1d811a5c2d4c6322224ee68b130": {
+      "text": "Sigara politikası",
+      "hash": "6c097b3566d0325df922c4ae5ff3b4ecb085b1d811a5c2d4c6322224ee68b130"
+    },
+    "phrase.96632691d0310d22cac80e3c7fc0ced960b882a03c471176c48c0e0c198a59a9": {
+      "text": "Site dili",
+      "hash": "96632691d0310d22cac80e3c7fc0ced960b882a03c471176c48c0e0c198a59a9"
+    },
+    "phrase.66d54337872aa09a7d52d8a2623bf59769b87b3221cc84266417e7a8414a6535": {
+      "text": "Size bir mesaj kadar yakın",
+      "hash": "66d54337872aa09a7d52d8a2623bf59769b87b3221cc84266417e7a8414a6535"
+    },
+    "phrase.c7d056fde0251fbfafa864664c80e9d190496f4fb890a0ba6fae3920cb9832b6": {
+      "text": "Size nasıl ulaşalım?",
+      "hash": "c7d056fde0251fbfafa864664c80e9d190496f4fb890a0ba6fae3920cb9832b6"
+    },
+    "phrase.ee06015903de3865d7a0960faff3ec52db8f46f956b69d2e3559695767245827": {
+      "text": "Size nasıl yardımcı olalım?",
+      "hash": "ee06015903de3865d7a0960faff3ec52db8f46f956b69d2e3559695767245827"
+    },
+    "phrase.cedc8ac1104f8df139eb1f414020ac1efb514198d227ff57eacbc33d527ff413": {
+      "text": "Size uygun bir mola.",
+      "hash": "cedc8ac1104f8df139eb1f414020ac1efb514198d227ff57eacbc33d527ff413"
+    },
+    "phrase.e6b817707a73d328588d407f396044476bec45229e8c9cf94484478659e0a3bd": {
+      "text": "Size uygun odayı keşfedin; birlikte konaklamanızı planlayalım.",
+      "hash": "e6b817707a73d328588d407f396044476bec45229e8c9cf94484478659e0a3bd"
+    },
+    "phrase.0eda6f89ca4bf9df1d5e353139b2e7b6309054a95f18dd8da5c60f52db7e8db1": {
+      "text": "Size uygun sakin bir köşe",
+      "hash": "0eda6f89ca4bf9df1d5e353139b2e7b6309054a95f18dd8da5c60f52db7e8db1"
+    },
+    "phrase.057b49441beed00b8dc838340ebdd3bb5f520476441bf1fe260e985f172bfb75": {
+      "text": "Sizin için bir oda",
+      "hash": "057b49441beed00b8dc838340ebdd3bb5f520476441bf1fe260e985f172bfb75"
+    },
+    "phrase.def16435f1addd44831c2da49692f659493687e2153911f3d52d4b2485b72f5f": {
+      "text": "Sofrada",
+      "hash": "def16435f1addd44831c2da49692f659493687e2153911f3d52d4b2485b72f5f"
+    },
+    "phrase.bd03a936e1d64af581ed05d5b92d3bf57c01716553ef8db77fbabb8cc54a5d17": {
+      "text": "Sohbet mesajları",
+      "hash": "bd03a936e1d64af581ed05d5b92d3bf57c01716553ef8db77fbabb8cc54a5d17"
+    },
+    "phrase.489e1388c05092f14d624f7353821b6a453d0eee9b1cf6d55f0717bc410ebd62": {
+      "text": "Sohbet uzasın.",
+      "hash": "489e1388c05092f14d624f7353821b6a453d0eee9b1cf6d55f0717bc410ebd62"
+    },
+    "phrase.bc1d7478bad26e73a25efb8cd059c53ff16594c453edd5abbbce58c18ae79ba4": {
+      "text": "Sonraki ay",
+      "hash": "bc1d7478bad26e73a25efb8cd059c53ff16594c453edd5abbbce58c18ae79ba4"
+    },
+    "phrase.5c88ebc536a2ba71fc8c4415488ab2d42b0e3c206e752abe345dbc45336b88ce": {
+      "text": "Sonraki fotoğraf",
+      "hash": "5c88ebc536a2ba71fc8c4415488ab2d42b0e3c206e752abe345dbc45336b88ce"
+    },
+    "phrase.0f8f2623d5cf43fd8a818df8019f9e1b21b4fc1a2ef4357c8f3e395711d53363": {
+      "text": "Sorunuz",
+      "hash": "0f8f2623d5cf43fd8a818df8019f9e1b21b4fc1a2ef4357c8f3e395711d53363"
+    },
+    "phrase.afd85fb12fcf153a2a7b0ec0b0b4aff34fb050ac4b8a6bd8e3be298fd1d2e9bb": {
+      "text": "Sorunuzu bize iletin; iletişim bilgilerinizden size dönüş yapalım.",
+      "hash": "afd85fb12fcf153a2a7b0ec0b0b4aff34fb050ac4b8a6bd8e3be298fd1d2e9bb"
+    },
+    "phrase.21b6487fc8fd0016299f578fd0fe360a2c21877c3f459f7d42fb38a60facbda8": {
+      "text": "Sosyal bağlantılar",
+      "hash": "21b6487fc8fd0016299f578fd0fe360a2c21877c3f459f7d42fb38a60facbda8"
+    },
+    "phrase.9e79c04285285ce7853980dafc172bc97fc4b71651be67d0c61852f1a21e0ec9": {
+      "text": "Su efekti testi",
+      "hash": "9e79c04285285ce7853980dafc172bc97fc4b71651be67d0c61852f1a21e0ec9"
+    },
+    "phrase.b9c1efd03c80aff08181a578babd578febd18d0b70e7c9f727c0261d266e7099": {
+      "text": "Sıcak karşılama",
+      "hash": "b9c1efd03c80aff08181a578babd578febd18d0b70e7c9f727c0261d266e7099"
+    },
+    "phrase.8e2bb40da30ec8c654ad07f31a7478ae9d1984abf2eb01a88cc1f0b143057ea7": {
+      "text": "TELEFON",
+      "hash": "8e2bb40da30ec8c654ad07f31a7478ae9d1984abf2eb01a88cc1f0b143057ea7"
+    },
+    "phrase.8f0431fb46bd3e729a9f73da8b7680cacc249085c866361eb3b9c55843fbe39b": {
+      "text": "Tahmini varış saati",
+      "hash": "8f0431fb46bd3e729a9f73da8b7680cacc249085c866361eb3b9c55843fbe39b"
+    },
+    "phrase.1135a3c2990b05e02676cfe823383bc864fdb70b7cdd660a5127285d50da2ad3": {
+      "text": "Takvimi kapat",
+      "hash": "1135a3c2990b05e02676cfe823383bc864fdb70b7cdd660a5127285d50da2ad3"
+    },
+    "phrase.08a8553fa49f4fa4857afd899ddaeed1d6723edfbd88a0ad4c9bdb822a242de6": {
+      "text": "Talebi Gönder",
+      "hash": "08a8553fa49f4fa4857afd899ddaeed1d6723edfbd88a0ad4c9bdb822a242de6"
+    },
+    "phrase.d8b53eb0a3e4b81446f0089c35d04deed73efab53ed751238138832237e77441": {
+      "text": "Talebiniz gönderilemedi. Bilgilerinizi kontrol edip yeniden deneyin.",
+      "hash": "d8b53eb0a3e4b81446f0089c35d04deed73efab53ed751238138832237e77441"
+    },
+    "phrase.a9748c87828b77174d172bf48620676d7d95b9202dbf062d198003fab917f3ce": {
+      "text": "Talebiniz gönderiliyor…",
+      "hash": "a9748c87828b77174d172bf48620676d7d95b9202dbf062d198003fab917f3ce"
+    },
+    "phrase.dbf04c143c3b7bd79b69199717e99fc6e9d3c18952d21b25a571bd398d9a9a9f": {
+      "text": "Talebiniz ulaştı",
+      "hash": "dbf04c143c3b7bd79b69199717e99fc6e9d3c18952d21b25a571bd398d9a9a9f"
+    },
+    "phrase.7ed42ec979ba0de28fdbef05af00158fcf23f6362edfb5b1ac7971b80d9832bf": {
+      "text": "Talebinizi aldık. İşletmemiz bilgilerinizi değerlendirip sizinle iletişime geçecek.",
+      "hash": "7ed42ec979ba0de28fdbef05af00158fcf23f6362edfb5b1ac7971b80d9832bf"
+    },
+    "phrase.7f074623e5a335406721d21f4e4d5163b5d2dc63d66f736d0d935332f47b16c5": {
+      "text": "Talep numarası:",
+      "hash": "7f074623e5a335406721d21f4e4d5163b5d2dc63d66f736d0d935332f47b16c5"
+    },
+    "phrase.b425eb0f6ccfa5b7781d57a34f1297d17b16f566c8d4aea8ee9e074bc979f89b": {
+      "text": "Talep oluştur",
+      "hash": "b425eb0f6ccfa5b7781d57a34f1297d17b16f566c8d4aea8ee9e074bc979f89b"
+    },
+    "phrase.4fdf0027ac0042c4a18ca9d726e2153161221e42485f2d8275cda50e817061c0": {
+      "text": "Talep sonucu doğrulanamadı. Aynı bilgilerle yeniden deneyin.",
+      "hash": "4fdf0027ac0042c4a18ca9d726e2153161221e42485f2d8275cda50e817061c0"
+    },
+    "phrase.79c4b04b6ee8f31966908d9a8dde2be1560176cd8ae8f7f45d1360fcadb51452": {
+      "text": "Tamam",
+      "hash": "79c4b04b6ee8f31966908d9a8dde2be1560176cd8ae8f7f45d1360fcadb51452"
+    },
+    "phrase.152b3fafd6a91c0e0ca7d3f7521c68634b8f6db9b263aefac69de5ebeca23608": {
+      "text": "Tanışalım",
+      "hash": "152b3fafd6a91c0e0ca7d3f7521c68634b8f6db9b263aefac69de5ebeca23608"
+    },
+    "phrase.75147b1e3e2abdb3ddf589f130514479c870f45c4a5d7e5d5e5b6c7efa16be21": {
+      "text": "Tarih / konu: {0}",
+      "hash": "75147b1e3e2abdb3ddf589f130514479c870f45c4a5d7e5d5e5b6c7efa16be21"
+    },
+    "phrase.54d5fd12a94c8e410717ec4ac803796f43c2fcde42b89bd012aa80e9de38a00b": {
+      "text": "Tarih seç",
+      "hash": "54d5fd12a94c8e410717ec4ac803796f43c2fcde42b89bd012aa80e9de38a00b"
+    },
+    "phrase.b8d383d99942e97810ccc36bc9c45a3eae919d3f27ffe14c27d36ed127d5c1aa": {
+      "text": "Tarih seçimi",
+      "hash": "b8d383d99942e97810ccc36bc9c45a3eae919d3f27ffe14c27d36ed127d5c1aa"
+    },
+    "phrase.a49cb7f8edab8720921cdd22571a0ec946948208a412b7d81b3ca4e660a3e4fd": {
+      "text": "Tarih seçin",
+      "hash": "a49cb7f8edab8720921cdd22571a0ec946948208a412b7d81b3ca4e660a3e4fd"
+    },
+    "phrase.8c0ba742f39dc81e96948a014af876e4afd80e9ce546fb9422f769f557e6fc3b": {
+      "text": "Tarih, oda ve müsaitlik sorgusu",
+      "hash": "8c0ba742f39dc81e96948a014af876e4afd80e9ce546fb9422f769f557e6fc3b"
+    },
+    "phrase.db6bd6057085ff8a44bc65cbb2c0d5ba55a58f02a55947f3ee0827d9181e4a03": {
+      "text": "Tarih: {0}",
+      "hash": "db6bd6057085ff8a44bc65cbb2c0d5ba55a58f02a55947f3ee0827d9181e4a03"
+    },
+    "phrase.46b1632a7c2596e3e8c58eecd09b1f79463304127ef90cbc76dbafe7ffa9c637": {
+      "text": "Tarihlerinizi seçin, müsaitliği sorgulayın veya talebinizi bize iletin.",
+      "hash": "46b1632a7c2596e3e8c58eecd09b1f79463304127ef90cbc76dbafe7ffa9c637"
+    },
+    "phrase.4b1b08ef79e2d2a4ce573be9d21f845bf5ed1328e5ca6b1df267c6752308002b": {
+      "text": "Tarihlerinizi seçin, ziyaret talebinizi birlikte planlayalım.",
+      "hash": "4b1b08ef79e2d2a4ce573be9d21f845bf5ed1328e5ca6b1df267c6752308002b"
+    },
+    "phrase.b0e3681a06992ca1171c1556948cd54ba6d048f2cdb2d79ec2ae57e894bf88ed": {
+      "text": "Tekerlekli sandalye erişimine uygun",
+      "hash": "b0e3681a06992ca1171c1556948cd54ba6d048f2cdb2d79ec2ae57e894bf88ed"
+    },
+    "phrase.fa6906d76ee94d4e8d05a2424fb89005840522ab6dec0ee8055247424977169e": {
+      "text": "Telefon",
+      "hash": "fa6906d76ee94d4e8d05a2424fb89005840522ab6dec0ee8055247424977169e"
+    },
+    "phrase.d01988ee5989ac212323c0384720df3bbadedf53ec0b4a3c1b9445591b32d27a": {
+      "text": "Telefon bilgisi henüz yayınlanmadı.",
+      "hash": "d01988ee5989ac212323c0384720df3bbadedf53ec0b4a3c1b9445591b32d27a"
+    },
+    "phrase.1bf29b8536cfc06f3eaee42de612a2e0c5931dcdbffb6594c34cf2799e9a3a14": {
+      "text": "Telefon: {0}",
+      "hash": "1bf29b8536cfc06f3eaee42de612a2e0c5931dcdbffb6594c34cf2799e9a3a14"
+    },
+    "phrase.b56938465912948a1ad7dc190974d2bb5c6a8e4363f62165962c619c9d0a4bbb": {
+      "text": "Temel masa bilgileri",
+      "hash": "b56938465912948a1ad7dc190974d2bb5c6a8e4363f62165962c619c9d0a4bbb"
+    },
+    "phrase.6e52e170e928b0fbea11321b3b034c454878b13c8ceac8a624eeb4c47deab0d4": {
+      "text": "Temel oda bilgileri",
+      "hash": "6e52e170e928b0fbea11321b3b034c454878b13c8ceac8a624eeb4c47deab0d4"
+    },
+    "phrase.2f1f94389afd98538de7155dd1ca8c6dd23b7750f1377814a0c31b79551cab5f": {
+      "text": "Teras",
+      "hash": "2f1f94389afd98538de7155dd1ca8c6dd23b7750f1377814a0c31b79551cab5f"
+    },
+    "phrase.e2ade98330a41f2f70a048fb5a5647bf4741bebc190a473f8bf053eec9f6a637": {
+      "text": "Teras / veranda",
+      "hash": "e2ade98330a41f2f70a048fb5a5647bf4741bebc190a473f8bf053eec9f6a637"
+    },
+    "phrase.a6ed51e449df51f43333420b4c75eb646f2a448e7a903ff8aba465060762ef8a": {
+      "text": "Tercihim yok",
+      "hash": "a6ed51e449df51f43333420b4c75eb646f2a448e7a903ff8aba465060762ef8a"
+    },
+    "phrase.566659bf9ffbcf705cb1938e0f99886d0e6df6b149018170e0a02f5fcb992f1d": {
+      "text": "TÜRKPATENT kaydı ↗",
+      "hash": "566659bf9ffbcf705cb1938e0f99886d0e6df6b149018170e0a02f5fcb992f1d"
+    },
+    "phrase.09361375d0a15a79ec75bcd9bfc75675a2fd11af09dd2d73340a435a01fb0527": {
+      "text": "Tüm odaları gör →",
+      "hash": "09361375d0a15a79ec75bcd9bfc75675a2fd11af09dd2d73340a435a01fb0527"
+    },
+    "phrase.444277b6f91d3c1c6e281f98322b2a84ac9816055d4245711240c74fe117450f": {
+      "text": "Tüm yorumları gör →",
+      "hash": "444277b6f91d3c1c6e281f98322b2a84ac9816055d4245711240c74fe117450f"
+    },
+    "phrase.f4ebd7225752ca1696f885d12e396f657ff3c91f80b5d065f95970f94204b98b": {
+      "text": "Tüm Ürünler",
+      "hash": "f4ebd7225752ca1696f885d12e396f657ff3c91f80b5d065f95970f94204b98b"
+    },
+    "phrase.0f8b5cb2e84b210d34a4af531296431bc595bb2321d77179deb42718de75bfae": {
+      "text": "Türkçe",
+      "hash": "0f8b5cb2e84b210d34a4af531296431bc595bb2321d77179deb42718de75bfae"
+    },
+    "phrase.b4f2f93ad0cd8dc0c753f4d41e6910e5bdd6a7fc029df915bbbe334446a71b72": {
+      "text": "Uzun kıyı rotası",
+      "hash": "b4f2f93ad0cd8dc0c753f4d41e6910e5bdd6a7fc029df915bbbe334446a71b72"
+    },
+    "phrase.3324ef67f86624eb825803bc2e2b0bb5747ae00fba24bd443c6368545387bde8": {
+      "text": "Vadinin seyir alanları ve köy yolları için ayrı gün düşünmek daha rahat. Yağışlı havalarda yol koşullarını yerelden teyit edin.",
+      "hash": "3324ef67f86624eb825803bc2e2b0bb5747ae00fba24bd443c6368545387bde8"
+    },
+    "phrase.7bc16cc88bc23c9fac08a4cc42737a2f397f9fa85d7068c6687f562f98483267": {
+      "text": "Valla Kanyonu",
+      "hash": "7bc16cc88bc23c9fac08a4cc42737a2f397f9fa85d7068c6687f562f98483267"
+    },
+    "phrase.c79f41ed37b8ae823420442814b28c9fd77efbfe66265ec9c2afa5db75e439ea": {
+      "text": "Valla Kanyonu’nun güney cephesi",
+      "hash": "c79f41ed37b8ae823420442814b28c9fd77efbfe66265ec9c2afa5db75e439ea"
+    },
+    "phrase.cd367ee1126601eaa4ce30d30574ad65d2a0d07345387dd689e610ab30d250fc": {
+      "text": "Valla Kanyonu’nun çıkışında başlayan vadi, Devrekani Çayı’nın çevresindeki ormanlar ve köy yaşamıyla Cide’nin iç kesimlerine açılır.",
+      "hash": "cd367ee1126601eaa4ce30d30574ad65d2a0d07345387dd689e610ab30d250fc"
+    },
+    "phrase.f051fcb8c39459179ee05cc48337617f568015567c7ba76cd3b92719c76f15bb": {
+      "text": "Varış veya dönüş gününe bırakılabilecek en rahat rota. Kasabayı yürüyerek tanımak için iyi başlangıç.",
+      "hash": "f051fcb8c39459179ee05cc48337617f568015567c7ba76cd3b92719c76f15bb"
+    },
+    "phrase.cee8f4416611906ef36c27dc209168d65b489c35db6792e035f86c67efccb100": {
+      "text": "WhatsApp mesajını gözden geçir",
+      "hash": "cee8f4416611906ef36c27dc209168d65b489c35db6792e035f86c67efccb100"
+    },
+    "phrase.44b87253661ea212535563a49effaeed19a2ac63358e891997eaaddc8c782732": {
+      "text": "WhatsApp'tan yaz",
+      "hash": "44b87253661ea212535563a49effaeed19a2ac63358e891997eaaddc8c782732"
+    },
+    "phrase.b318ebb20a947783638ba3ccec8dea17dffc85d035365546c44a4728179f864b": {
+      "text": "WhatsApp’ta aç ↗",
+      "hash": "b318ebb20a947783638ba3ccec8dea17dffc85d035365546c44a4728179f864b"
+    },
+    "phrase.b1d2e0de380b0b90596580d7ad1619587f9ff59ab7ebc9c720048ca2d4741331": {
+      "text": "WhatsApp’tan ulaşın",
+      "hash": "b1d2e0de380b0b90596580d7ad1619587f9ff59ab7ebc9c720048ca2d4741331"
+    },
+    "phrase.16b09e06ef784ef464e61391cf7544ed60a6f9b5e43fb7d4e0c646afa2df48f0": {
+      "text": "YAVAŞLA · NEFES AL · DİNLEN",
+      "hash": "16b09e06ef784ef464e61391cf7544ed60a6f9b5e43fb7d4e0c646afa2df48f0"
+    },
+    "phrase.82026f1a7f23d3141cac08ad6a843438827ac118b221212ee32487d0b39d816f": {
+      "text": "YOLUMUZ GİDEROS’A DÜŞSÜN",
+      "hash": "82026f1a7f23d3141cac08ad6a843438827ac118b221212ee32487d0b39d816f"
+    },
+    "phrase.45168940d77939ad18811e97c67be0a5d6e02531dda41c4763f872dc3f5b7954": {
+      "text": "Yaklaşık 3 km uzunluğundaki yürüyüş platformu, kanyon girişinden Ilıca Şelalesi’ne uzanır. Kayaların suyla aşınmasıyla oluşan çukurlar ve dik duvarlar rotanın karakterini oluşturur. Horma ile Ilıca’yı aynı gezi gününde birleştirebilirsiniz; çıkmadan önce parkurun açık olduğunu teyit edin.",
+      "hash": "45168940d77939ad18811e97c67be0a5d6e02531dda41c4763f872dc3f5b7954"
+    },
+    "phrase.8dd374e87bee54fa758339b0b99379d8049593f5564a5031f60a7ce196c11bc0": {
+      "text": "Yalnız açık alanda sigara içilebilir",
+      "hash": "8dd374e87bee54fa758339b0b99379d8049593f5564a5031f60a7ce196c11bc0"
+    },
+    "phrase.adbdce888f69b14203246a069ae462728483bdbb61b7821fda89edc2229a5a2f": {
+      "text": "Yanıt hazırlanıyor…",
+      "hash": "adbdce888f69b14203246a069ae462728483bdbb61b7821fda89edc2229a5a2f"
+    },
+    "phrase.c72e9c73b8b1026ee9dc12cbe674c88d2aa9e5e12acde5be7557a05c3a22781c": {
+      "text": "Yarın · 1 gece",
+      "hash": "c72e9c73b8b1026ee9dc12cbe674c88d2aa9e5e12acde5be7557a05c3a22781c"
+    },
+    "phrase.e1233f73a73daa5d2725f73a74fe9e72c5cd882cc6daea2f9b083ebf25b9320d": {
+      "text": "Yayınlanan bilgilere şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.",
+      "hash": "e1233f73a73daa5d2725f73a74fe9e72c5cd882cc6daea2f9b083ebf25b9320d"
+    },
+    "phrase.4c06e52b2c49034e779dcfbb2ccfa49f4ad6cc391714e492584dee8d4532b7a6": {
+      "text": "Yayınlanan fiyatlar bilgilendirme amaçlıdır. Rezervasyon talebi, işletme tarafından onaylandıktan sonra kesinleşir.",
+      "hash": "4c06e52b2c49034e779dcfbb2ccfa49f4ad6cc391714e492584dee8d4532b7a6"
+    },
+    "phrase.91a7a7258546e5585af6f8180fc9df289ce612cb4b745176bc129cf6643765c5": {
+      "text": "Yayınlanan iletişim bilgilerini bu sayfadan takip edebilirsiniz.",
+      "hash": "91a7a7258546e5585af6f8180fc9df289ce612cb4b745176bc129cf6643765c5"
+    },
+    "phrase.68f76c0ff467f77cbf9f725e31ed82b14709c04db046c38670c2dbd359f25ebe": {
+      "text": "Yayınlanan iletişim seçeneklerimizle yanınızdayız.",
+      "hash": "68f76c0ff467f77cbf9f725e31ed82b14709c04db046c38670c2dbd359f25ebe"
+    },
+    "phrase.132ecaaab99b9872c714d5f58e112f20339d53f6ecd78a4217c29b8d8776f054": {
+      "text": "Yayınlanan menü, ürünler ve fiyatlar.",
+      "hash": "132ecaaab99b9872c714d5f58e112f20339d53f6ecd78a4217c29b8d8776f054"
+    },
+    "phrase.3074363d8e0f58cef4e7b08853e96aca4aeda889be31bb3f332be176cc3be53d": {
+      "text": "Yayınlanmış aktif oda bulunmuyor.",
+      "hash": "3074363d8e0f58cef4e7b08853e96aca4aeda889be31bb3f332be176cc3be53d"
+    },
+    "phrase.aaa9dc3a9810861862d49aabd9e2199468d9a91de7e3a49d7ca3772dea105ba6": {
+      "text": "Yayınlanmış oda seçeneği bulunmuyor. Tercih belirtmeden talep iletebilirsiniz.",
+      "hash": "aaa9dc3a9810861862d49aabd9e2199468d9a91de7e3a49d7ca3772dea105ba6"
+    },
+    "phrase.2e0b419b5d3f6bdc0ac36676f59a3b319e736c646302fa863fed60ea1c430f07": {
+      "text": "Yaşlı ormanlar, karstik kaya oluşumları, derin kanyonlar ve mağaralarla Batı Karadeniz’in zengin doğa alanlarından biri.",
+      "hash": "2e0b419b5d3f6bdc0ac36676f59a3b319e736c646302fa863fed60ea1c430f07"
+    },
+    "phrase.5b5d02112955dc41dbfe176f5736905ce765be13efa59745a487ad31e62b850f": {
+      "text": "Yemek hizmeti",
+      "hash": "5b5d02112955dc41dbfe176f5736905ce765be13efa59745a487ad31e62b850f"
+    },
+    "phrase.1f30ff52f9d5e535582c74b3e4381c1e8290c3902db4d28c42228a6d736decf1": {
+      "text": "Yeniden dene",
+      "hash": "1f30ff52f9d5e535582c74b3e4381c1e8290c3902db4d28c42228a6d736decf1"
+    },
+    "phrase.99c5989dd558d5659032664c6f674fa0a2a50b1489150378d3ea628daa3ce999": {
+      "text": "Yerel izler",
+      "hash": "99c5989dd558d5659032664c6f674fa0a2a50b1489150378d3ea628daa3ce999"
+    },
+    "phrase.618d24b2fce23946260917b205cc7f81b04ba4d1a966721e0911b4decb3bbb1f": {
+      "text": "Yeşilin bittiği yerde,",
+      "hash": "618d24b2fce23946260917b205cc7f81b04ba4d1a966721e0911b4decb3bbb1f"
+    },
+    "phrase.58e681f36142cc7313043116b0548802ce130d7aacb42e9652ece9494fc3d774": {
+      "text": "Yol tarifi al",
+      "hash": "58e681f36142cc7313043116b0548802ce130d7aacb42e9652ece9494fc3d774"
+    },
+    "phrase.da9d6e1468775959a951ad9593c512c5784fe3518e5a42a573fcf28aa6ba62a7": {
+      "text": "Yol tarifi alın",
+      "hash": "da9d6e1468775959a951ad9593c512c5784fe3518e5a42a573fcf28aa6ba62a7"
+    },
+    "phrase.b32f73f4a6c583d6241ae1d4f164a57108d43d727dbe558d3803a83624ccd723": {
+      "text": "Yola çıkmadan önce bize ulaşabilir, gelişinizi birlikte planlayabilirsiniz.",
+      "hash": "b32f73f4a6c583d6241ae1d4f164a57108d43d727dbe558d3803a83624ccd723"
+    },
+    "phrase.c1bd8139e5a4d5b839382b272ed56ce902e9021aa5b795a3e8166ef261596cac": {
+      "text": "Yolunuz açık olsun.",
+      "hash": "c1bd8139e5a4d5b839382b272ed56ce902e9021aa5b795a3e8166ef261596cac"
+    },
+    "phrase.1a77a9aab08d24d0e8181b9923e54eec8aa222bb2c585874931be87eb3c6643b": {
+      "text": "Yorumlar",
+      "hash": "1a77a9aab08d24d0e8181b9923e54eec8aa222bb2c585874931be87eb3c6643b"
+    },
+    "phrase.7e42bf8e546bf55f1ae211c7f9b8d901068ad1489233df55f7b1a1af70efd6f6": {
+      "text": "Yorumu Google Maps'te gör ↗",
+      "hash": "7e42bf8e546bf55f1ae211c7f9b8d901068ad1489233df55f7b1a1af70efd6f6"
+    },
+    "phrase.f6fa2e863fa14e1f1e794afa8bc4d011fb5d63b89e773be0c572b0e28ec51c9e": {
+      "text": "Zaman yavaşlasın.",
+      "hash": "f6fa2e863fa14e1f1e794afa8bc4d011fb5d63b89e773be0c572b0e28ec51c9e"
+    },
+    "phrase.f2d1bda81bfda865653918eafdfe91717b4640f475f7e3623b65762405b8291b": {
+      "text": "Zarı Çayı’nın kayalar arasında açtığı dar geçidi, kanyon duvarlarına yerleştirilen ahşap platform boyunca keşfedebilirsiniz.",
+      "hash": "f2d1bda81bfda865653918eafdfe91717b4640f475f7e3623b65762405b8291b"
+    },
+    "phrase.55ed35399bf752f472a564ba2a70cbcfb728bbb90df85547abebe61c3583bba0": {
+      "text": "Ziyaret planı asistanını aç",
+      "hash": "55ed35399bf752f472a564ba2a70cbcfb728bbb90df85547abebe61c3583bba0"
+    },
+    "phrase.a6d9abd8cad8c3926c2b7b979f0ce57169556b2e898dc84632289915a9baa746": {
+      "text": "Ziyaret planınız",
+      "hash": "a6d9abd8cad8c3926c2b7b979f0ce57169556b2e898dc84632289915a9baa746"
+    },
+    "phrase.669eae0ec493bba180384dc427df7c8f3a272eb0f5ff89576399859a2622239a": {
+      "text": "Ziyaretinizi birlikte planlayalım.",
+      "hash": "669eae0ec493bba180384dc427df7c8f3a272eb0f5ff89576399859a2622239a"
+    },
+    "phrase.7fa1da07c3a856a3daf989ceaab23ca80326e2e158305144adae0d74ebd1424d": {
+      "text": "Ziyaretinizi planlamak için güncel seçenekleri keşfedin.",
+      "hash": "7fa1da07c3a856a3daf989ceaab23ca80326e2e158305144adae0d74ebd1424d"
+    },
+    "phrase.da4d0264c2021a35ef843ff55d220258d36225c2ad59dcb5bd6090bd6778dea5": {
+      "text": "Ziyaretinizi planlayın",
+      "hash": "da4d0264c2021a35ef843ff55d220258d36225c2ad59dcb5bd6090bd6778dea5"
+    },
+    "phrase.89c683ba0c58f5476cbf99708eb50702e2e109a3f88f9b3e2c2a2009846f9035": {
+      "text": "accessible",
+      "hash": "89c683ba0c58f5476cbf99708eb50702e2e109a3f88f9b3e2c2a2009846f9035"
+    },
+    "phrase.e2edade3009ef5a03096b36c1127c72901cc6b23180b17e8dd12407ec95608a4": {
+      "text": "bir merhaba uzağınızda.",
+      "hash": "e2edade3009ef5a03096b36c1127c72901cc6b23180b17e8dd12407ec95608a4"
+    },
+    "phrase.79d4d25c797e5631e63a781db9a067040204dd7700589a03c64495b15024aea7": {
+      "text": "biraz yavaşlamaktır.",
+      "hash": "79d4d25c797e5631e63a781db9a067040204dd7700589a03c64495b15024aea7"
+    },
+    "phrase.2eb7c15c565bdad62f9520ec7b1447609c1252513d9ff4427e0625f7f52b70de": {
+      "text": "burada başlar.",
+      "hash": "2eb7c15c565bdad62f9520ec7b1447609c1252513d9ff4427e0625f7f52b70de"
+    },
+    "phrase.e1f2a0ffc84c2e7d1d361e05d1cdb9d3534d895317c56118c60e176efb0b31e3": {
+      "text": "büyüt",
+      "hash": "e1f2a0ffc84c2e7d1d361e05d1cdb9d3534d895317c56118c60e176efb0b31e3"
+    },
+    "phrase.f24ab9b7a9ed61699ad7b2af27b6453fe6d9f9dead0f5c15e30befcd6b21b171": {
+      "text": "doğrudan işletmemizin yayınladığı menüden.",
+      "hash": "f24ab9b7a9ed61699ad7b2af27b6453fe6d9f9dead0f5c15e30befcd6b21b171"
+    },
+    "phrase.47d685e84199e6911340dddec78990c3d40738775063c35300ce128ef939b763": {
+      "text": "fotoğrafı",
+      "hash": "47d685e84199e6911340dddec78990c3d40738775063c35300ce128ef939b763"
+    },
+    "phrase.db157ab3a334b6a6990576239a0caaa6985aacbaed66ab7f57fb293a01241d85": {
+      "text": "gününüze bir mola.",
+      "hash": "db157ab3a334b6a6990576239a0caaa6985aacbaed66ab7f57fb293a01241d85"
+    },
+    "phrase.e3950774b6c605735be724aec116ea85004860cc61892188d7b62a3f469d6881": {
+      "text": "güzel bir sofra.",
+      "hash": "e3950774b6c605735be724aec116ea85004860cc61892188d7b62a3f469d6881"
+    },
+    "phrase.c2b0ea29900cac0b754d7b90dd4346f525d6a422840427d85361fe0e85760902": {
+      "text": "hayat",
+      "hash": "c2b0ea29900cac0b754d7b90dd4346f525d6a422840427d85361fe0e85760902"
+    },
+    "phrase.5cf1e7f68fe5d4e082e0851370348972422601bbfa1f436a790e3085633056f6": {
+      "text": "ile başlasın.",
+      "hash": "5cf1e7f68fe5d4e082e0851370348972422601bbfa1f436a790e3085633056f6"
+    },
+    "phrase.e6d7c4b43aa42606e8cdb9e8eca5e00c328c9fc43c8da898ec9de8daf996377b": {
+      "text": "işletme yayınlarıyla paylaşılır.",
+      "hash": "e6d7c4b43aa42606e8cdb9e8eca5e00c328c9fc43c8da898ec9de8daf996377b"
+    },
+    "phrase.4e4eae40331c8ce587f0a02da312783d3823979537b8a060ffee4b0daf5fc0d3": {
+      "text": "kişi",
+      "hash": "4e4eae40331c8ce587f0a02da312783d3823979537b8a060ffee4b0daf5fc0d3"
+    },
+    "phrase.849a25d8f6ce3ded3030f48910843f4aa0b66ce59d8302375322e3dd99472b7d": {
+      "text": "lisansı ile kullanılır. WebP boyutlandırmaları, ekran kırpmaları ve ilk fotoğraftan sosyal paylaşım kırpması hazırlanmıştır. Bu fotoğraf türevleri aynı lisansla sunulur; renk veya içerik değiştirilmemiştir.",
+      "hash": "849a25d8f6ce3ded3030f48910843f4aa0b66ce59d8302375322e3dd99472b7d"
+    },
+    "phrase.075f03bd32a955619a5a9b07980a7d526cb1ba25655a20eb6eec0d5192de78c8": {
+      "text": "mavi başlar.",
+      "hash": "075f03bd32a955619a5a9b07980a7d526cb1ba25655a20eb6eec0d5192de78c8"
+    },
+    "phrase.d3ad4f7bb01ecc7c259418121a3d1f6f42c58b5d7fe6ea24e548055ed524132c": {
+      "text": "menümüzde.",
+      "hash": "d3ad4f7bb01ecc7c259418121a3d1f6f42c58b5d7fe6ea24e548055ed524132c"
+    },
+    "phrase.067d591e160cfdf038105be4669c7c7fc349654668cbb3576c0716e476b39dd6": {
+      "text": "no_smoking",
+      "hash": "067d591e160cfdf038105be4669c7c7fc349654668cbb3576c0716e476b39dd6"
+    },
+    "phrase.f50f2e342c01a143fc80f5736f92f9a91a6de593fa1b0dfe96a2511a0a53f9ed": {
+      "text": "non_smoking",
+      "hash": "f50f2e342c01a143fc80f5736f92f9a91a6de593fa1b0dfe96a2511a0a53f9ed"
+    },
+    "phrase.ceff8d27f6291de224f46c0b3bba38786322fb9548df349706b7458f224d5622": {
+      "text": "outdoor_only",
+      "hash": "ceff8d27f6291de224f46c0b3bba38786322fb9548df349706b7458f224d5622"
+    },
+    "phrase.2db04150425dc59364f0294db1e18ab10cec613b8a2b540c591f938782082dc3": {
+      "text": "sea_view",
+      "hash": "2db04150425dc59364f0294db1e18ab10cec613b8a2b540c591f938782082dc3"
+    },
+    "phrase.71132fbb5b12518402f26900bb7d7df98c554534e5163fa2031d7b385e79bd1e": {
+      "text": "smoking",
+      "hash": "71132fbb5b12518402f26900bb7d7df98c554534e5163fa2031d7b385e79bd1e"
+    },
+    "phrase.6309d31a8138c36fc77f1f6e23a59bc9518ad83932da3444dde952fe50068908": {
+      "text": "smoking_allowed",
+      "hash": "6309d31a8138c36fc77f1f6e23a59bc9518ad83932da3444dde952fe50068908"
+    },
+    "phrase.debdc6fdb6c19c94ff78b653767bfac108d84ed51a54a58a72866dc635b15729": {
+      "text": "wifi",
+      "hash": "debdc6fdb6c19c94ff78b653767bfac108d84ed51a54a58a72866dc635b15729"
+    },
+    "phrase.44ff7b02c80d38b26dd6aa31d9470aed81b32e10331a3c994fb1a9945fd847ba": {
+      "text": "window",
+      "hash": "44ff7b02c80d38b26dd6aa31d9470aed81b32e10331a3c994fb1a9945fd847ba"
+    },
+    "phrase.7050042454eb359a7fdb4f9f8016b2cfa5fa7f6ccf9b0ca6c2ab6b946761f014": {
+      "text": "yavaş başlasın.",
+      "hash": "7050042454eb359a7fdb4f9f8016b2cfa5fa7f6ccf9b0ca6c2ab6b946761f014"
+    },
+    "phrase.821f709615378adfa3b775e5e61b1898ce23802e526c5ddc8ffa0961ffdd8ab8": {
+      "text": "yavaşlar.",
+      "hash": "821f709615378adfa3b775e5e61b1898ce23802e526c5ddc8ffa0961ffdd8ab8"
+    },
+    "phrase.147aa0ae14f597f064386216dc4d5bfd7fdda53dd6932a9d891258d481ce1d77": {
+      "text": "yer açalım.",
+      "hash": "147aa0ae14f597f064386216dc4d5bfd7fdda53dd6932a9d891258d481ce1d77"
+    },
+    "phrase.74a2323375865bf15e84682355eac1c54b9372ec02022002e292712eab884d6e": {
+      "text": "{0} / gece",
+      "hash": "74a2323375865bf15e84682355eac1c54b9372ec02022002e292712eab884d6e"
+    },
+    "phrase.196a1ac4342e318bc79dc9084153ec30d51e7126e95f442d03bdfaed00d55b86": {
+      "text": "{0} Google Maps değerlendirmesi",
+      "hash": "196a1ac4342e318bc79dc9084153ec30d51e7126e95f442d03bdfaed00d55b86"
+    },
+    "phrase.7439c20d10afe13f35cefb063f51486dbe786f7daf4438a28dd362fb94741997": {
+      "text": "{0} büyüt",
+      "hash": "7439c20d10afe13f35cefb063f51486dbe786f7daf4438a28dd362fb94741997"
+    },
+    "phrase.78062932079cebbde2c93e88fb944776c5c0f86ea2752577d32e2f9a3906c58c": {
+      "text": "{0} değerlendirme",
+      "hash": "78062932079cebbde2c93e88fb944776c5c0f86ea2752577d32e2f9a3906c58c"
+    },
+    "phrase.20a7249a25cbe185aba88d6bfdfa002b1ecd8c1387c9afb21d0bbcec4d4defb9": {
+      "text": "{0} fotoğrafı",
+      "hash": "20a7249a25cbe185aba88d6bfdfa002b1ecd8c1387c9afb21d0bbcec4d4defb9"
+    },
+    "phrase.b0b14315dd07043198b2fe21fbd8262619653a8ad8974adad6d5415bd08679e1": {
+      "text": "{0} fotoğrafı {1}",
+      "hash": "b0b14315dd07043198b2fe21fbd8262619653a8ad8974adad6d5415bd08679e1"
+    },
+    "phrase.7710004631971c1d7c802384022b5f0a998e51e6b241f9814fe5d7c93877c9bf": {
+      "text": "{0} fotoğrafı {1} büyüt",
+      "hash": "7710004631971c1d7c802384022b5f0a998e51e6b241f9814fe5d7c93877c9bf"
+    },
+    "phrase.3ed913065027dae9fefecffb5b53d7889d841fc8d88cd062ede8c5ff8a605924": {
+      "text": "{0} fotoğrafını büyüt",
+      "hash": "3ed913065027dae9fefecffb5b53d7889d841fc8d88cd062ede8c5ff8a605924"
+    },
+    "phrase.2b3d366eafd02cd1d6b636c73639df40e57aa60090db8588d3de82bd316e73e0": {
+      "text": "{0} gece",
+      "hash": "2b3d366eafd02cd1d6b636c73639df40e57aa60090db8588d3de82bd316e73e0"
+    },
+    "phrase.ca6c6a10b847e2e10e90467bae5ca14ad9cb39cff4f4f9c68da417e9488eca20": {
+      "text": "{0} kişi",
+      "hash": "ca6c6a10b847e2e10e90467bae5ca14ad9cb39cff4f4f9c68da417e9488eca20"
+    },
+    "phrase.4b45744c3b5bfd65cce010a0bc9ee2a00ba99d39b28146d749196b97003196f8": {
+      "text": "{0} oda",
+      "hash": "4b45744c3b5bfd65cce010a0bc9ee2a00ba99d39b28146d749196b97003196f8"
+    },
+    "phrase.84ee2da1bb202a2d520f0f6b813a8442a707a65681b31bfe8762512bcfecf102": {
+      "text": "{0} · {1} kişi",
+      "hash": "84ee2da1bb202a2d520f0f6b813a8442a707a65681b31bfe8762512bcfecf102"
+    },
+    "phrase.dbd1795c829f843c6487bd71ece25dff57f89d09079ee162959bf0099d887ebe": {
+      "text": "{0} üzerinden 5 yıldız",
+      "hash": "dbd1795c829f843c6487bd71ece25dff57f89d09079ee162959bf0099d887ebe"
+    },
+    "phrase.f745fa58139b0969fc616749ee794e0240f5ec84324f232fa0ed745063883356": {
+      "text": "{0} → {1} · {2}",
+      "hash": "f745fa58139b0969fc616749ee794e0240f5ec84324f232fa0ed745063883356"
+    },
+    "phrase.a591746faa1d324476c79bd0c3f35ce008bac7313a7af6eae2e0dd472b34542f": {
+      "text": "{0} → {1} · {2} gece",
+      "hash": "a591746faa1d324476c79bd0c3f35ce008bac7313a7af6eae2e0dd472b34542f"
+    },
+    "phrase.e550b662f8aa6f0279a0f71e04a86a633c826ae2841c67e4c437ed4b73ed4121": {
+      "text": "{0}. kat",
+      "hash": "e550b662f8aa6f0279a0f71e04a86a633c826ae2841c67e4c437ed4b73ed4121"
+    },
+    "phrase.434cf68298c5ef291bd8696b5aad26ca559d3dfca820dbcfffcee8c7a31e5377": {
+      "text": "© OpenStreetMap katkıda bulunanlar",
+      "hash": "434cf68298c5ef291bd8696b5aad26ca559d3dfca820dbcfffcee8c7a31e5377"
+    },
+    "phrase.3a4321586db614e2ddb51993b08ea80cc249157d82b98b42d7df55bc8b00a286": {
+      "text": "Ça",
+      "hash": "3a4321586db614e2ddb51993b08ea80cc249157d82b98b42d7df55bc8b00a286"
+    },
+    "phrase.d7b83ec6ca01116a05a8e7258b8c1c8f0312d6ae5baae724f9a7867fb1ee1242": {
+      "text": "Çalışma masası",
+      "hash": "d7b83ec6ca01116a05a8e7258b8c1c8f0312d6ae5baae724f9a7867fb1ee1242"
+    },
+    "phrase.62572097b2a567a94f35a8bcbc8c90797c287d60a3447bff7ad8ccac9c07078f": {
+      "text": "Çatak Kanyonu",
+      "hash": "62572097b2a567a94f35a8bcbc8c90797c287d60a3447bff7ad8ccac9c07078f"
+    },
+    "phrase.a273dccb339cca0456e6fb0bb858fcfb45c151c3237a5e3c9d8f698c6f07d354": {
+      "text": "Çatak Kanyonu, Azdavay, Kastamonu",
+      "hash": "a273dccb339cca0456e6fb0bb858fcfb45c151c3237a5e3c9d8f698c6f07d354"
+    },
+    "phrase.38fdc190c74d275589a5589db6d1d55c0b6028b5d5762749d2853994ffed81d8": {
+      "text": "Çevrimiçi hizmetler şu anda kapalı. İletişim sayfamızdan bize ulaşabilirsiniz.",
+      "hash": "38fdc190c74d275589a5589db6d1d55c0b6028b5d5762749d2853994ffed81d8"
+    },
+    "phrase.c4d571295b64f0136cfba83a32382b288b225fa1f9a5fd434a6e50ce294a4a51": {
+      "text": "Çevrimiçi talep alma kapalı. Yalnız müsaitlik sorgulayabilirsiniz.",
+      "hash": "c4d571295b64f0136cfba83a32382b288b225fa1f9a5fd434a6e50ce294a4a51"
+    },
+    "phrase.b76fe71e693d60775391b74c0a4ae5e069eb9a20d1ac76f2a326eec3a480f88d": {
+      "text": "Çizim temsilidir; işletme konumunu göstermez.",
+      "hash": "b76fe71e693d60775391b74c0a4ae5e069eb9a20d1ac76f2a326eec3a480f88d"
+    },
+    "phrase.02a1f7d13ed49a4038e634adb8a6ff76ee55207ae11e8fc0ea26826aa80bf4fa": {
+      "text": "Çocuklu ailelere uygun",
+      "hash": "02a1f7d13ed49a4038e634adb8a6ff76ee55207ae11e8fc0ea26826aa80bf4fa"
+    },
+    "phrase.e255f984209f6acbe3ce88f4410327bea1f7aa812216d0fea44ee901e469ef42": {
+      "text": "Çıkış tarihi",
+      "hash": "e255f984209f6acbe3ce88f4410327bea1f7aa812216d0fea44ee901e469ef42"
+    },
+    "phrase.4b7c27bc30aa935c47af2f44fc96383cb1036c88ae3ad08a3df19f6de28f432b": {
+      "text": "Ödeme bilgileri",
+      "hash": "4b7c27bc30aa935c47af2f44fc96383cb1036c88ae3ad08a3df19f6de28f432b"
+    },
+    "phrase.c12c7ab499f3ab9acada3cc52d572b39f07e2f20d1b95f3f831d65a188190297": {
+      "text": "Önce bir tarih hayal edin.",
+      "hash": "c12c7ab499f3ab9acada3cc52d572b39f07e2f20d1b95f3f831d65a188190297"
+    },
+    "phrase.f0e164ad75ffd62da42fc607753ee038491d1e3e9821be663e089c132ea77d1a": {
+      "text": "Önce gözden geçirin.",
+      "hash": "f0e164ad75ffd62da42fc607753ee038491d1e3e9821be663e089c132ea77d1a"
+    },
+    "phrase.fef58e56c1c8804fd1670d44b3835561eb5d540388f386ec7732130530d685f7": {
+      "text": "Önce kıyıyı, sonra içeriye açılan yolları görün",
+      "hash": "fef58e56c1c8804fd1670d44b3835561eb5d540388f386ec7732130530d685f7"
+    },
+    "phrase.140b6a85ed4fa136f01a66c0fbfd3f72c2a175d40f964c1518d392dea37b7f16": {
+      "text": "Önceki ay",
+      "hash": "140b6a85ed4fa136f01a66c0fbfd3f72c2a175d40f964c1518d392dea37b7f16"
+    },
+    "phrase.d4da46a637694e1a253d3d92162ac40d6eeef562086bd4b2d1a616bf734067c9": {
+      "text": "Önceki fotoğraf",
+      "hash": "d4da46a637694e1a253d3d92162ac40d6eeef562086bd4b2d1a616bf734067c9"
+    },
+    "phrase.50e27016e5a9a9e4afcc27ae130ab99a15dd11924d0b7c089099bd164621fa0c": {
+      "text": "Örn. Yaz dönemi konaklama bilgisi",
+      "hash": "50e27016e5a9a9e4afcc27ae130ab99a15dd11924d0b7c089099bd164621fa0c"
+    },
+    "phrase.7e7113e520b3da8ebe5512d28bcc6e8fd8e7c2f4017d6102701aa47ca8d5f9e1": {
+      "text": "Özel banyo",
+      "hash": "7e7113e520b3da8ebe5512d28bcc6e8fd8e7c2f4017d6102701aa47ca8d5f9e1"
+    },
+    "phrase.32b7325228635c71891abb81a3c97ce30ec2c76ffb88b4d1e10ec454d6f0b3b0": {
+      "text": "Ürün",
+      "hash": "32b7325228635c71891abb81a3c97ce30ec2c76ffb88b4d1e10ec454d6f0b3b0"
+    },
+    "phrase.5e948ad2e2df851508c1b16733932524cee84352a534f5f0ed84b588e338e74a": {
+      "text": "İletişim",
+      "hash": "5e948ad2e2df851508c1b16733932524cee84352a534f5f0ed84b588e338e74a"
+    },
+    "phrase.25dbaf808147d66ded56ac0064876f428f5d0a9c8a8ed476e0fae7096ec716cf": {
+      "text": "İletişim & Ziyaret Planı",
+      "hash": "25dbaf808147d66ded56ac0064876f428f5d0a9c8a8ed476e0fae7096ec716cf"
+    },
+    "phrase.8aa2039b8e820bc3a88fe4f26fc0a6a143895820a4f1b2213b985eff321ba3a7": {
+      "text": "İletişim bilgileri şu anda görüntülenemiyor.",
+      "hash": "8aa2039b8e820bc3a88fe4f26fc0a6a143895820a4f1b2213b985eff321ba3a7"
+    },
+    "phrase.3a1ad86be1e1bdf5ef8bba897305aaa88f7279cded84d3f8ed222a696d1ab5f9": {
+      "text": "İletişim bilgilerine şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.",
+      "hash": "3a1ad86be1e1bdf5ef8bba897305aaa88f7279cded84d3f8ed222a696d1ab5f9"
+    },
+    "phrase.c8a22b771f16836f624c0d50214ffe23fe605d53d29e250be22c1d43313c9c20": {
+      "text": "İletişim seçenekleri",
+      "hash": "c8a22b771f16836f624c0d50214ffe23fe605d53d29e250be22c1d43313c9c20"
+    },
+    "phrase.487d206fa1ed10f8498f8dbb757b43450f1064d72aead7b5ddb6a144b83be04a": {
+      "text": "İletişim ve ulaşım bilgileri →",
+      "hash": "487d206fa1ed10f8498f8dbb757b43450f1064d72aead7b5ddb6a144b83be04a"
+    },
+    "phrase.9b9848faf9c71271b9cd97e1e11b3836133a4f577b95d5a25853fdf5cc1652ee": {
+      "text": "İletişime geçin",
+      "hash": "9b9848faf9c71271b9cd97e1e11b3836133a4f577b95d5a25853fdf5cc1652ee"
+    },
+    "phrase.72c18680d618c7d325bf0cb2e6736bcd72b9ee66f8f71e7d34970b689bbac930": {
+      "text": "İletmek istediğiniz not",
+      "hash": "72c18680d618c7d325bf0cb2e6736bcd72b9ee66f8f71e7d34970b689bbac930"
+    },
+    "phrase.475c8a8716cde145b27803a061b381d58684d48f054514a8c21f36de62a5d4be": {
+      "text": "İlgilendiğiniz tarih / konu",
+      "hash": "475c8a8716cde145b27803a061b381d58684d48f054514a8c21f36de62a5d4be"
+    },
+    "phrase.ef2246ab86204dc611bda3a9a5bc0e6927cf149e38981426d74084bd4467fcda": {
+      "text": "İlçe merkezinin Karadeniz’le doğrudan buluştuğu sahil; yürüyüş, deniz ve gün batımı için Cide’nin en kolay ulaşılan rotası.",
+      "hash": "ef2246ab86204dc611bda3a9a5bc0e6927cf149e38981426d74084bd4467fcda"
+    },
+    "phrase.b8a9fbb7a00cbebe0e382a70b1bf1ae9c120b406420394399a148e40eba0e955": {
+      "text": "İç mekân",
+      "hash": "b8a9fbb7a00cbebe0e382a70b1bf1ae9c120b406420394399a148e40eba0e955"
+    },
+    "phrase.1d1efc464bcbede569f2f3ad22da56c59ace8c169a47038d39d46c17de7ca4ac": {
+      "text": "İçeriğe geç",
+      "hash": "1d1efc464bcbede569f2f3ad22da56c59ace8c169a47038d39d46c17de7ca4ac"
+    },
+    "phrase.1a0b19d22f5fbf24dcca5cb37f7dba20025e2d51be386fff3ab5d8d1b660b111": {
+      "text": "İŞLETMEDEN",
+      "hash": "1a0b19d22f5fbf24dcca5cb37f7dba20025e2d51be386fff3ab5d8d1b660b111"
+    },
+    "phrase.f9c4864403dc0937ff28b3fb256850902ca37febf932d4a27ac50a1f6fd9265a": {
+      "text": "İşletme bilgileri okunamadı.",
+      "hash": "f9c4864403dc0937ff28b3fb256850902ca37febf932d4a27ac50a1f6fd9265a"
+    },
+    "phrase.e416abaddc294eabff0ccbb89475e0c69a7ecb43eabb224fa6b4a68190fa3403": {
+      "text": "İşletme fotoğrafları henüz yayınlanmadı.",
+      "hash": "e416abaddc294eabff0ccbb89475e0c69a7ecb43eabb224fa6b4a68190fa3403"
+    },
+    "phrase.947aec7cd2f15b6f2dda79cd4b7bc67d3512857a8a171133c75b4ca42013cabd": {
+      "text": "İşletme olanakları henüz yayınlanmadı.",
+      "hash": "947aec7cd2f15b6f2dda79cd4b7bc67d3512857a8a171133c75b4ca42013cabd"
+    },
+    "phrase.0d22a26ae879831ab22e7e388b40b1c4916665b45ace1591133a7ec5a98e6b99": {
+      "text": "İşletme tarafından yayınlanan görseller ayrıca “İşletmeden” olarak işaretlenir. Bölge fotoğrafları için yapılan atıf, fotoğrafçının işletmeyi onayladığı anlamına gelmez.",
+      "hash": "0d22a26ae879831ab22e7e388b40b1c4916665b45ace1591133a7ec5a98e6b99"
+    },
+    "phrase.5b9f3f737a01b4c61d86cab69d6e2889cc25bdc7efd9b3bae6ffb1654370d961": {
+      "text": "İşletmeden bir kare",
+      "hash": "5b9f3f737a01b4c61d86cab69d6e2889cc25bdc7efd9b3bae6ffb1654370d961"
+    },
+    "phrase.d43cb49881a945ac315f01a0381869c69681de0b71c4403d05ecdbc46c73fb6f": {
+      "text": "İşletmemizin yayınladığı fotoğraflar.",
+      "hash": "d43cb49881a945ac315f01a0381869c69681de0b71c4403d05ecdbc46c73fb6f"
+    },
+    "phrase.993cfaff8c2140eba2e63d7e63aca808f5507e1850bfde409267c06d1797df11": {
+      "text": "İşletmenin yayınlanmış harita konumu",
+      "hash": "993cfaff8c2140eba2e63d7e63aca808f5507e1850bfde409267c06d1797df11"
+    },
+    "phrase.2493565f672ef53530e4d18955d19b4f369fef89e6b848caa9dab353c6c27184": {
+      "text": "Şelale Pınarbaşı merkezine yaklaşık 12 km uzaklıktaki Ilıca Köyü sınırlarındadır. Ilıca köyünden patika yürüyüşüyle ulaşılabilir; Horma yürüyüş rotasının sonunda da görülebilir. Kayaların ve yürüyüş zemininin ıslak olabileceğini hesaba katarak uygun ayakkabı seçin.",
+      "hash": "2493565f672ef53530e4d18955d19b4f369fef89e6b848caa9dab353c6c27184"
+    },
+    "phrase.cd181936cbc0aa6b98953ac3b2db849eec1b8e3f591650314c6b8e6fce259f2f": {
+      "text": "Şu anda yanıt oluşturulamadı.",
+      "hash": "cd181936cbc0aa6b98953ac3b2db849eec1b8e3f591650314c6b8e6fce259f2f"
+    },
+    "phrase.e55b463f8985c350229066b4eb75628e99e2cafb9ada5b602f36d25629ea5a5d": {
+      "text": "← Başlangıca dön",
+      "hash": "e55b463f8985c350229066b4eb75628e99e2cafb9ada5b602f36d25629ea5a5d"
+    }
+  }
+}

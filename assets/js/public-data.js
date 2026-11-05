@@ -84,8 +84,9 @@
     const news = b.public_surfaces && enabled(p.marketing) && rows(p.marketing?.publications) ? p.marketing.publications.filter(item => text(item.id) && text(item.title) && item.published === true && item.placement === 'homepage_feature' && (!item.channel || item.channel === 'website')).slice(0, 6) : [];
     const gallery = rows(b.gallery) ? b.gallery.map(photo => ({url: media(photo.url), title: text(photo.title) || t('İşletmeden bir kare')})).filter(photo => photo.url).slice(0, 80) : [];
     return {business: b, rooms, tables, menu, news, gallery, contact: contact(b), menuUnavailable: !p.menu, menuEnabled: menuVisible,
-      stayEnabled: b.requests_enabled === true && has('accommodation') && rooms.length > 0,
-      tableEnabled: b.requests_enabled === true && has('food_service') && tables.length > 0};
+      stayEnabled: b.requests_enabled === true && has('rooms') && b.request_types?.includes('pension_reservation') === true && rooms.length > 0,
+      tableEnabled: b.requests_enabled === true && has('restaurant') && b.request_types?.includes('restaurant_reservation') === true && tables.length > 0,
+      generalEnabled: b.requests_enabled === true && b.request_types?.includes('general_info') === true};
   }
   // Each slot starts with real server-rendered, branded fallback content. No persisted snapshot.
   const fallback = new Map();
@@ -241,6 +242,7 @@
     const seo = document.querySelector('[data-business-structured-data]'); if (seo) seo.textContent = JSON.stringify(structured);
     document.querySelectorAll('[data-menu-link]').forEach(node => { node.hidden = !m.menuEnabled; });
     document.dispatchEvent(new CustomEvent('gundogdu:public-data', {detail: m}));
+    window.GundogduLanguage?.translateWidget?.(document.querySelector('#yardimci-asistan-widget'));
   }
   async function read(name, signal) {
     try {
@@ -261,7 +263,15 @@
     if (!quiet) { render(model([])); document.body.dataset.publicState = 'loading'; }
     inFlight = (async () => {
       const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 7000);
-      try { const m = model(await Promise.all(endpoints.map(async name => localize(await read(name, controller.signal), name)))); const snapshot = JSON.stringify(m); if (!quiet || snapshot !== lastSnapshot) render(m); lastSnapshot = snapshot; document.body.dataset.publicState = 'ready'; return m; }
+      try {
+        // Language is authorized by the business publication before any other
+        // localized endpoint is projected. SSR stays Turkish until this GET.
+        const business = await read('business', controller.signal);
+        await window.GundogduLanguage.applyLocalization(business?.localization ?? null);
+        const payloads = [business, ...await Promise.all(['rooms', 'tables', 'menu', 'marketing'].map(name => read(name, controller.signal)))];
+        const m = model(payloads.map((payload, index) => localize(payload, endpoints[index])));
+        const snapshot = JSON.stringify(m); if (!quiet || snapshot !== lastSnapshot) render(m); lastSnapshot = snapshot; document.body.dataset.publicState = 'ready'; return m;
+      }
       finally { clearTimeout(timeout); inFlight = null; }
     })();
     return inFlight;

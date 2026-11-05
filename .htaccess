@@ -1,14 +1,19 @@
 # gundogdu-site
 DirectoryIndex index.php
 Options -Indexes
-ErrorDocument 404 /404.php
-# The pre-Studio canonical adapter may remain as dormant files on a staging
-# site during transfer. Never expose its implementation/config via HTTP.
+# Canonical implementation and preserved independent runtime stay HTTP-private.
 RewriteEngine On
-RewriteRule ^(?:core|site|public|locales|tools|canonical|docs|config|storage)(?:/|$) - [F,L]
-RewriteRule ^(?:template-manifest\.json|README\.md)$ - [F,L]
-RewriteRule ^yardimci-asistan/(?:config|data|lib|knowledge)(?:/|$) - [F,L]
-RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(?:core|site|public|locales|tools|canonical|inc|scripts|tests|docs|config|storage)(?:/|$) - [F,L,NC]
+RewriteRule ^assets/(?:js|css|assistant|i18n|effect-engine|effects|vendor/pannellum)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:404|router)\.php$ - [F,L,NC]
+RewriteRule ^(?:template-manifest\.json|README\.md)$ - [F,L,NC]
+RewriteRule ^yardimci-asistan/(?:config|data|lib|knowledge)(?:/|$) - [F,L,NC]
+RewriteRule (^|/)\. - [F,L,NC]
+RewriteRule ^sitemap\.xml$ index.php?resource=sitemap [QSA,L]
+RewriteCond %{REQUEST_URI} !^/yardimci-asistan(?:/|$)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"

@@ -1,0 +1,634 @@
+/ gece
+01 / BİR KIYI MOLASI
+05xx xxx xx xx veya +ülke kodu
+1 gece
+1 oda
+180° görünüm
+180° panoramik görünüm
+360° masa deneyimi
+360° masa görünümü
+360° oda deneyimi
+360° oda görünümü
+ADRES
+AI desteğiyle sorularınıza yanıt
+AI yanıtları bilgi amaçlıdır. Güncel fiyat, müsaitlik ve rezervasyon için işletme teyidi gerekir.
+AI şu anda kullanılamıyor. Sorunuzu bilgi talebiyle veya WhatsApp üzerinden iletebilirsiniz.
+Ad soyad: {0}
+Adres
+Adres bilgisi henüz yayınlanmadı.
+Adınız soyadınız
+Aile işletmesi
+Aklınızda ne var?
+Alt gezinme
+Ana Sayfa
+Ana gezinme
+Ana menü
+Ana sayfaya dön
+Aradığınız sayfa bulunamadı.
+Asistandan tarih ve kişi bilgilerini iletebilirsiniz. Talebiniz, işletme onayı ile kesinleşir.
+Asistanı kapat
+Aydıncık Köyü sınırlarındaki Kerempe Burnu, açık Karadeniz manzarası ve hâlâ görev yapan tarihi feneriyle uzun kıyı rotasının güçlü durağı.
+Aydıncık ve Kerempe, merkez çevresi gezisinden farklı olarak daha uzun bir kıyı yolculuğu; dönüş saatini hava ve yol durumuna göre planlayın.
+Azdavay · Cam seyir terası
+Azdavay’ın ormanları arasındaki kanyon, yüksekten manzarayı izlemeye imkân veren cam seyir terasıyla tanınır.
+Açık alan
+Bagaj emaneti
+Bahçe
+Bahçe manzarası
+Balkon
+Basamaksız erişim
+Bazen en güzel plan,
+Bağlantı değişmiş olabilir. Ana sayfaya dönebilir veya odalarımıza göz atabilirsiniz.
+Bağlantı kurulamadı. Bilgileriniz bu ekranda korunuyor; yeniden deneyebilirsiniz.
+Belirsiz
+Belirtilmedi
+Bilgi alın
+Bilgi talebi gönder
+Bilgi talebinizi iletin
+Bilgiler yükleniyor…
+Bilgilere şu anda ulaşılamıyor. Lütfen yeniden deneyin.
+Bilmenizde fayda var.
+Bir merhaba
+Bir sonraki güzel anınız,
+Bir yanı orman, bir yanı deniz. Gideros Koyu’nun doğal güzelliğinde, gündelik telaşa küçük bir ara vermeye davetlisiniz.
+Biraz dinlenin.
+Biraz huzur.
+Biraz mavi.
+Biraz yeşil.
+Birlikte planlayalım
+Bizden size
+Bize bir şey sorun
+Bize sormak veya eklemek istedikleriniz…
+Bu form bilgi talebi oluşturur; bir rezervasyon onayı değildir.
+Bu form rezervasyon talebi oluşturur. Kesin fiyat, müsaitlik ve rezervasyon işletmemizin teyidiyle netleşir.
+Bu kategori için aktif ürün bulunmuyor.
+Bu kıyıda aradığınız sayfa yok.
+Bu masa artık yayında değil veya bulunamadı.
+Bu masanın fotoğrafları henüz hazır değil.
+Bu mesaj kesin rezervasyon onayı değildir. Fiyat ve müsaitlik ayrıca teyit edilir.
+Bu oda artık yayında değil veya bulunamadı.
+Bu odanın fotoğrafları henüz hazır değil.
+Bu sitedeki iki bölge fotoğrafı Gideros Koyu’nda 30 Haziran 2007’de Makalp tarafından çekilmiştir. İşletmeye ait güncel bir görünüm veya oda ve restoran görseli olarak sunulmaz.
+Bu sonuç kesin rezervasyon onayı değildir. Seçtiğiniz oda ve son durum işletme tarafından teyit edilir.
+Bugün · 1 gece
+Bugün,
+Bunlar katı programlar değil; Cide’nin coğrafyasını yorulmadan tanımak için pratik bir sıralama.
+Buradaki olanaklar işletme ayarlarında seçilen müşteri-facing bilgilerden otomatik güncellenir.
+BİR YERDEN DAHA FAZLASI
+BİRLİKTE GEÇEN ZAMAN
+Cam kenarı
+Canlı bilgiler yükleniyor…
+Cep telefonu
+Cide Belediyesi Loç Vadisi’ni merkezden yaklaşık 20 km uzakta; Valla Kanyonu çıkışı ile Karakadı Kanyonu girişi arasında tanımlıyor. Kastamonu İl Kültür ve Turizm Müdürlüğü vadinin yaklaşık 8 km boyunca uzandığını belirtiyor.
+Cide Belediyesi etkinlikleri ↗
+Cide Belediyesi koyu ilçe merkezinin yaklaşık 11 km batısında konumlandırıyor. Tarihsel kaynaklarda Kytoros adıyla ilişkilendirilen Gideros, bugün sakin suyu ve yoğun bitki örtüsüyle öne çıkıyor.
+Cide Ceviz Helvası
+Cide Ceviz Helvası, TÜRKPATENT’te 546 tescil numarasıyla mahreç işareti olarak kayıtlı. Tescil tarihi 27 Eylül 2020; ürün bol cevizli, yumurta akı ve pancar şekeri temelli geleneksel yapısıyla tanımlanıyor.
+Cide Gideros Koyu
+Cide Limanı
+Cide Limanı ve kıyı yerleşimi
+Cide Limanı · Cide67 · CC BY-SA 3.0
+Cide Sahili ve Liman
+Cide gezi rehberindeki bilgiler kamuya açık kaynaklardan derlenmiştir; dış kaynaklı fotoğrafların atıfları ilgili görsellerde belirtilir.
+Cide kıyısından dağlara, kanyonlara ve şelalelere uzanan rotalar. Loç Vadisi Cide’dedir; Pınarbaşı, Azdavay ve Ilgaz çevresine geziler için ayrıca zaman ayırabilirsiniz.
+Cide merkezden yaklaşık 11 km
+Cide merkezden yaklaşık 20 km
+Cide merkezden yaklaşık 20 km uzaklıktaki Loç Vadisi, Karakadı, Hamitli, Şenköy ve Çamdibi köylerinin sınırlarına yayılır. Seyir alanından vadiyi izlemek ve köy çevresini tanımak için zaman ayırın. Fotoğraf, vadinin Hamitli Köyü’ndeki tarihi su değirmenini gösterir.
+Cide merkezden yaklaşık 55 km
+Cide rota özeti
+Cide sahili
+Cide sahili ve Gideros’tan Ilgaz, Küre Dağları, Valla, Horma, Loç Vadisi, Ilgarini, Ilıca ve Çatak’a uzanan fotoğraflı gezi rehberi.
+Cide sahili ve Karadeniz
+Cide sahili ve Karadeniz manzarası
+Cide sahili · AI destekli restorasyon
+Cide sahili · Crebain · CC BY-SA 3.0
+Cide sahilinde
+Cide sahilinde gün batımı, kumsaldaki tekne ve Karadeniz
+Cide seyahatiniz için birlikte yer açalım. Size nasıl yardımcı olabiliriz?
+Cide ve çevresi
+Cide yalnızca manzara değil
+Cide · Çamdibi ve çevre köyler
+Cide'de
+Cide'de görüşmek üzere
+Cide'nin kıvrımlı sahili, kıyı yerleşimi ve Karadeniz'e uzanan yeşil tepeler
+Cide'yi Keşfet
+Cide'yi keşfet
+Cide, Kastamonu'da denize yakın, sıcak ve sakin aile pansiyonu.
+Cide’de Rıfat Ilgaz Kültür ve Sanat Evi
+Cide’de gezi planı doğal olarak merkezde başlıyor. Sahil ve liman, kasabanın günlük yaşamını Karadeniz manzarasıyla birlikte verir. Batıya doğru Gideros daha korunaklı bir kıyı deneyimi sunarken, iç kesimde Loç Vadisi bambaşka bir coğrafyaya geçiş yaptırır. Doğu yönündeki Kerempe ise daha uzun bir kıyı yolculuğudur.
+Cide’de neyi, neden görmeli?
+Cide’de sıcak bir konaklama
+Cide’nin ormanlarla çevrili doğal koyu Gideros. Kıyıdaki ağaçlar, suya düşen ışık ve açık denize uzanan dar bir geçit… Burada manzaranın kendisi başlı başına bir davet.
+Cide’nin ritmi
+Cide’yi yalnızca sahiliyle değil; korunaklı koyları, orman yolları, vadileri ve güçlü yerel kültürüyle keşfedin.
+Ct
+Cu
+Dağ manzarası
+Deneyimlerini paylaşan misafirlerimiz
+Deniz havası,
+Deniz kenarında, Cide’de.
+Deniz manzarası
+Denizden vadilere uzanan bir Karadeniz kasabası
+Denizden vadiye birkaç güzel rota
+Denize yakın
+Denizin ritminde
+Denizin sesi, ormanın nefesi.
+Devrekani Çayı boyunca uzanan, Küre Dağları Milli Parkı ile iç içe Cide’nin en güçlü doğa rotalarından biri.
+Devrekani Çayı ile Kanlıçay’ın birleştiği yerden Cide yönüne uzanan sarp kayalıklar, seyir teraslarından etkileyici bir kanyon manzarası sunar.
+Doğa günü
+Doğal
+Doğanın içinde
+Doğaya uyanın.
+Duyurular
+Duyurulara şu anda ulaşılamıyor. Lütfen yeniden deneyin.
+Dört ana rota
+E-POSTA
+Eski Cide evleri
+Eski Cide evleri · Crebain · CC BY-SA 3.0
+Etki alanları
+Evcil hayvan kabul edilir
+Eviniz Gibi
+FOTOĞRAF DEFTERİ
+FOTOĞRAFLARIN HİKÂYESİ
+Fareyle sürükleyin; telefonda parmağınızla çevirebilirsiniz.
+Fotoğraf
+Fotoğraf Defteri
+Fotoğraf görüntüleyici
+Fotoğraf görünümü
+Fotoğraf kaynakları & kullanım
+Fotoğraf şu anda kullanılamıyor
+Fotoğraf, video ve panoramik görünüm
+Fotoğraf: Makalp · Wikimedia Commons
+Fotoğraflar yükleniyor…
+Fotoğrafları keşfedin, size uygun odayı seçin ve konaklama talebinizi bize iletin.
+Fotoğrafı kapat
+Galeri
+Galeriye göz atın
+Geniş açılı görünümü inceleyin
+Gezi rehberine git →
+Gideros Koyu
+Gideros Koyu ve çevresindeki ormanlar
+Gideros Koyu · Bölge fotoğrafı
+Gideros Koyu · Cide
+Gideros Koyu · Makalp · CC BY-SA 3.0
+Gideros Koyu, Cide
+Gideros Koyu’ndan gerçek manzaralar ve işletmemizin yayınladığı fotoğraflar. Fotoğraf kaynakları ve kullanım bilgileri.
+Gideros Koyu’nun doğal güzelliğinde küçük bir mola. Gündoğdu Pansiyon & Restoran’da konaklama ve restoran ziyaretinizi planlayın.
+Gideros Koyu’nun yeşil kıyıları ve durgun suyu
+Gideros hakkında · Cide Belediyesi ↗
+Gideros’a küçük bir pencere açın.
+Gideros’ta bir sabaha uyanma fikriyle başlayın. Konaklamanıza dair yayınlanan tüm ayrıntılar burada.
+Gideros’ta hayat yavaşlar
+Gideros’ta konaklamayı planlayın. Yayınlanan oda seçeneklerini ve güncel konaklama bilgilerini inceleyin.
+Gideros’ta küçük bir mola.
+Gideros’ta sofrada buluşalım. Yayınlanan restoran menüsünü ve masa seçeneklerini keşfedin, ziyaretinizi planlayın.
+Gideros’ta yeni bir sabaha yer açın.
+Gideros’ta,
+Gideros’ta.
+Gideros’un mavisine bakarken sohbet biraz uzasın. Gündoğdu’da restoran ziyaretinizi planlayın, güncel menü ve masa seçeneklerimizi keşfedin.
+Giriş tarihi
+Giriş ve çıkış tarihlerini seçin. Çıkış tarihi girişten sonra olmalı.
+Google Maps kullanıcısı
+Google Maps puanı bağlı.
+Google Maps yorumları
+Google Maps · Misafir yorumları
+Google Maps · Yorumlar Google tarafından alaka düzeyine göre sıralanır; burada sonuçların bir bölümü gösterilir.
+Google Maps'teki tüm yorumlara git ↗
+Google yorumları yükleniyor…
+Google'da görüntüle ↗
+GÜNDOĞDU FOTOĞRAF DEFTERİ
+GÜNDOĞDU RESTORAN
+GÜNDOĞDU İLE TANIŞIN
+GÜNDOĞDU’DAN HABERLER
+GÜNDOĞDU’YA HOŞ GELDİNİZ
+Gönder ↗
+Gösterilebilecek yorum metni bulunamadı.
+Gösterilecek masa seçilmedi.
+Gösterilecek oda seçilmedi.
+Güncel bilgiler için daha sonra tekrar ziyaret edebilirsiniz.
+Güncel bilgiler sorgulanıyor…
+Güncel değerlendirmeler
+Güncel işletme konumu şu anda görüntülenemiyor.
+Güncel lezzetler ve fiyatlar,
+Güncel masa seçenekleri şu anda görüntülenemiyor. Ziyaret planınız için güncel iletişim kanallarımızı kullanabilirsiniz.
+Güncel menü ve hizmet ayrıntıları,
+Güncel menümüz
+Güncel müsaitlik doğrulanamıyor. Lütfen işletmemizle görüşün.
+Güncel oda seçenekleri şu anda görüntülenemiyor. Güncel bilgi ve ziyaret planınız için iletişim seçeneklerini inceleyebilirsiniz.
+Güncel paylaşımlar
+Güncel yemek seçenekleri ve fiyatlar şu anda görüntülenemiyor. Restoran ziyaretinizle ilgili bilgi almak için iletişim seçeneklerini inceleyebilirsiniz.
+Güncelleme bekleniyor.
+Güncelleme:
+Gündoğdu Pansiyon & Restoran ana sayfa
+Gündoğdu Pansiyon & Restoran ile Gideros’ta konaklamayı ve sofrada buluşmayı planlayın. Güncel seçeneklerimizi yayınlandıkça burada keşfedin.
+Gündoğdu Pansiyon & Restoran oda detayları.
+Gündoğdu Pansiyon & Restoran’ın yayınlanan iletişim ve konum bilgileri. Konaklama ve restoran ziyaretinizi planlayın.
+Gündoğdu’dan kareler.
+Gündoğdu’ya hoş geldiniz
+Günün telaşına küçük bir ara.
+Gününüz
+Güzel bir manzara, birlikte geçirilen zaman. Restoran ziyaretinizi Gideros’un ritminde planlayın.
+Güzel bir mola,
+GİDEROS’TA KONAKLAMA
+GİDEROS’UN KIYISINDA
+Haberleşmek üzere.
+Hafta sonu · 2 gece
+Hakkımızda
+Harita bilgisi henüz yayınlanmadı.
+Harita bilgisine şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.
+Haritada aç ↗
+Haritamız şu anda hazırlanıyor. Adres bilgimizle bize ulaşabilirsiniz.
+Havalimanı transferi
+Henüz yayınlanmış Hakkımızda bilgisi bulunmuyor.
+Henüz yayınlanmış duyuru bulunmuyor.
+Henüz yayınlanmış galeri fotoğrafı bulunmuyor.
+Hikâyemizi oku
+Hizmet bilgilerine ulaşılamadı. Lütfen yeniden deneyin veya iletişim sayfamızı kullanın.
+Hizmetlerimiz
+Horma Kanyonu
+Horma Kanyonu ve ahşap yürüyüş platformu
+Horma Kanyonu’nun sonunda Zarı Çayı’nın döküldüğü şelale; doğal havuzu, ağaçları ve zengin bitki örtüsüyle sakin bir manzara durağıdır.
+Hızlı tarih seçenekleri
+Ilgarini Mağarası
+Ilgarini Mağarası’nın girişi, 2022
+Ilgaz Dağları · Kastamonu / Çankırı
+Ilgaz Dağı Milli Parkı ve Kayak Merkezi
+Ilgaz Dağı Milli Parkı’nda karla kaplı orman
+Ilıca Şelalesi
+Ilıca Şelalesi, Pınarbaşı, Kastamonu
+Isıtma
+Işık yoğunluğu
+KENDİNİZE BİR MOLA AYIRIN
+KONAKLAMA
+KONAKLAMANIZ İÇİN
+KONAKLAMANIZDAN ÖNCE
+Kapat
+Karadeniz'in kıyısında, denize yakın, sıcak bir aile ortamında sakin ve huzurlu bir konaklama.
+Karadeniz'in samimiyeti Cide'de sizi bekliyor
+Karadeniz’den merhaba
+Karadeniz’in saklı bir köşesinde, kendinize bir mola.
+Karaçam ve köknar ormanlarıyla çevrili Ilgaz, kışın kayak; kar olmayan dönemlerde orman yürüyüşleri ve dağ manzaraları için keşfedilebilir.
+Kastamonu / Bartın · Orman ve doğa rotaları
+Kastamonu Cide'de denize yakın, sıcak aile pansiyonu. Güncel odalar, Cide rehberi ve rezervasyon bilgileri.
+Kastamonu ve Bartın illerine yayılan milli park 2000 yılında ilan edildi. Cide, Pınarbaşı ve Azdavay çevresindeki farklı ziyaret noktaları parkı tanımak için başlangıç olabilir. Tek bir girişten bütün parkı dolaşmak yerine ilgi alanınıza göre yürüyüş veya seyir rotası seçin.
+Kastamonu İl Kültür ve Turizm Müdürlüğü kanyonu Azdavay merkezinden yaklaşık 7 km uzakta tanımlar. Araç yolculuğunu orman içindeki yürüyüş bölümü tamamlar. Azdavay ve Pınarbaşı çevresini birlikte planlamak isteyenler için ayrı bir seyir durağıdır.
+Kastamonu’da gezilecek sekiz yer
+Kastamonu’da gezilecek yerler
+Kastamonu’nun doğal güzellikleri
+Kaynağı da burada.
+Kendinize ayırdığınız zamanda
+Kerempe Feneri
+Kerempe Feneri arkasından Karadeniz
+Kerempe Feneri ve Aydıncık
+Kesin müsaitlik için işletmemizle görüşün.
+Keşfet
+Kişi sayısı
+Kişi sayısı: {0}
+Klima
+Konaklama bilgisi
+Konaklama boyunca sunulan temel olanaklar
+Konaklama deneyimlerini paylaşan misafirlerin güncel değerlendirmeleri.
+Konaklama detayları
+Konaklama koşulları
+Konaklama planınız
+Konaklama talebine geç
+Konaklama ve restoran ziyaretinizi planlamak için yayınlanan iletişim kanallarımızdan bize ulaşabilirsiniz.
+Konaklama, sofrada buluşma ya da küçük bir soru.
+Konaklamanızı planlayın
+Konaklamayı günlere göre bölmek isterseniz
+Konaklamayı keşfedin
+Konaklamayı planlayın
+Konaklayanlar ne diyor?
+Konforunuz için düşündük
+Konum
+Konum hazırlanıyor
+Konumumuz
+Koy rotası
+Koyu keşfedin
+Küre Dağları Milli Parkı
+Küre Dağları Milli Parkı, Cide Menük Köyü çevresi
+Küre Dağları’nın yoğun ormanları içinde bulunan mağara, doğal kaya oluşumlarının yanında Bizans dönemine ait yapı ve mezar kalıntılarıyla da dikkat çeker.
+Küçük bir mola
+KİŞİ
+Kısa masa turu
+Kısa oda turu
+Kıyı Emniyeti verilerine göre fener yerden 8, denizden 82 metre yüksekte ve 20 deniz mili görünüş mesafesine sahip. Cide Belediyesi merkezden yaklaşık 55 km uzaklık veriyor.
+Loç Vadisi
+Loç Vadisi sınır köylerinden Hamitli’de su değirmeni
+Loç Vadisi, Hamitli Köyü’ndeki su değirmeni
+Lütfen bu alanı doldurun.
+Lütfen en az {0}, en fazla {1} değerini girin.
+Lütfen geçerli bir değer girin.
+Manzara gerçek.
+Manzaraya bir sandalye,
+Masa
+Masa bilgileri hazırlanıyor…
+Masa detayları
+Masa detayları ve masa bilgileri.
+Masa fotoğrafı hazırlanıyor
+Masa fotoğrafı henüz yayınlanmadı
+Masa kimliği
+Masa olanakları
+Masa seçenekleri
+Masa talebi iletin
+Masa videosu
+Masa özellikleri
+Masa özellikleri hazırlanıyor…
+Masanın içinde serbest bakış
+Masanıza yakından bakın: fotoğraflar, panoramalar ve kısa bir masa turu.
+Masayı keşfet
+Mavi: tanı · Sarı: ışık yolu
+Mavinin yeşile sığındığı yer.
+Max Ritter · Anatolian Studies 74 (2024), Şekil 5
+Mağaraya ulaşım orman içi yürüyüş gerektirir; Kültür Portalı yaklaşık 1,5–2 saatlik yürüyüş ve yerel rehber önerir. Ziyareti rehberle planlayın, tarihi kalıntılara dokunmayın. Fotoğraf, Max Ritter’in 2022 araştırmasında çektiği gerçek mağara girişidir.
+Menü
+Menü hazırlanıyor.
+Menü kategorileri
+Menü yükleniyor…
+Menü ürünü
+Menümüz şu anda yayında değil.
+Menümüzü keşfedin. Keyfinize eşlik edecek bir şeyler mutlaka vardır.
+Menüye şu anda ulaşılamıyor. Lütfen yeniden deneyin.
+Menüyü aç
+Menüyü kapat
+Merkez
+Merkez günü
+Merkezden kısa bir araç yolculuğuyla ayrı bir yarım gün ayırmaya değer; koyun sakin karakteri acele etmeden gezildiğinde daha iyi hissedilir.
+Mesafeler Cide merkez referans alınarak yaklaşık verilmiştir. Özellikle vadi ve köy yollarında hava ve yol koşulları değişebildiği için çıkmadan önce güncel yerel bilgiyi kontrol etmek iyi olur.
+Mesaj gönderin
+Mesaj hazırla
+Mesajınız
+Mesajınız WhatsApp’ta açılır. Göndermek sizin seçiminiz; burada otomatik mesaj gönderilmez.
+Mesajınızı siz gönderirsiniz
+Milli park Kastamonu ve Çankırı sınırlarında yer alır. Ilgaz Kış Sporları Turizm Merkezi park içindedir. Cide’den daha uzun bir iç bölge yolculuğu gerektirdiği için ayrı bir gezi günü ayırın; kayak planında kar ve tesislerin çalışma durumunu önceden kontrol edin.
+Mini buzdolabı
+Mini mutfak
+Misafir yorumları
+Mobil gezinme
+Muratbaşı Köyü yakınlarındaki kanyon, Pınarbaşı merkezinin yaklaşık 26 km kuzeyindedir. Gezi için seyir teraslarını tercih edin. Kanyon içinden geçiş, sıradan bir yürüyüş rotası değildir; profesyonel ekip, uygun ekipman ve yerel rehberlik gerektirir.
+Müsait oda sayısı: {0}.
+Müsaitlik doğrulanamadı.
+Müsaitlik sorgulanıyor…
+Müsaitliği sorgula
+Not: {0}
+Oda
+Oda bilgileri hazırlanıyor…
+Oda bilgilerine ulaşılamıyor.
+Oda bilgilerine şu anda ulaşılamıyor.
+Oda detayları
+Oda detayları ve konaklama bilgileri.
+Oda detaylarını inceleyebilirsiniz.
+Oda fotoğrafı
+Oda fotoğrafı hazırlanıyor
+Oda fotoğrafı henüz yayınlanmadı
+Oda listesi okunamadı. Tercih belirtmeden talep iletebilirsiniz.
+Oda olanakları
+Oda tercihi
+Oda videosu
+Oda özellikleri
+Oda özellikleri hazırlanıyor…
+Oda özellikleri henüz yayınlanmadı.
+Odalar
+Odalar & Konaklama
+Odalar hazırlanıyor…
+Odalar okunamadı.
+Odaları gör
+Odaları keşfedin
+Odalarımız
+Odanın içinde serbest bakış
+Odanıza yakından bakın: fotoğraflar, panoramalar ve kısa bir oda turu.
+Odanızın detayları hazırlanıyor.
+Odaya servis
+Odayı incele
+Odayı keşfet
+Olanaklar hazırlanıyor…
+Online konaklama talebi şu anda açık değil.
+Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.
+Online masa talebi şu anda açık değil.
+Online oda ve masa talebi şu anda açık değil. Yayınlanan iletişim kanalları üzerinden bilgi alabilirsiniz.
+Orijinal fotoğraf ve kaynak ↗
+Ormanla çevrili, dar ağızlı doğal liman karakteriyle Cide’nin en özgün kıyı duraklarından biri.
+Ormanlarla çevrili Gideros Koyu’nun panoramik görünümü
+Otomatik bilgi yanıtı gösteriliyor. Ayrıntılar için bize ulaşabilirsiniz.
+Otopark
+PANSİYON & RESTORAN
+Panoramik görünüm
+Pansiyon olanakları
+Pansiyon · Cide
+Pe
+Planlama
+Pt
+Pz
+Pınarbaşı · Ahşap yürüyüş yolu
+Pınarbaşı · Ilıca Köyü
+Pınarbaşı · Muratbaşı Köyü
+Pınarbaşı · Rehberli orman yürüyüşü
+QR Menü
+QR Menü →
+Resmî gezi bilgisi ↗
+Resmî kaynağı aç ↗
+Restoran
+Restoran & Sofrada Buluşma
+Restoranı keşfedin
+Rezervasyon
+Rezervasyon / Bilgi
+Rezervasyon / Bilgi Al
+Rezervasyon talebi
+Rezervasyon talebi gönder
+Rezervasyon, oda bilgisi ve ulaşım için bize ulaşabilirsiniz.
+Rotaları keşfet
+Rotaları merkezden dışarı doğru düşündük; böylece kısa bir konaklamada da birkaç günlük planda da öncelik vermek kolaylaşıyor.
+Rıfat Ilgaz Kültür ve Sanat Evi ile Sarı Yazma festival geleneği, ilçenin kültür hafızasının yaşayan parçaları. Cide Belediyesi festival programlarında edebiyat, yerel üretim, müzik ve doğa gezilerini birlikte sürdürüyor.
+Rıfat Ilgaz Kültür ve Sanat Evi · Cide
+Rıfat Ilgaz ve Sarı Yazma
+SOFRADA BULUŞALIM
+SOFRAMIZDAN
+Sa
+Saat: {0}
+Sade, rahat ve huzurlu
+Sahil + liman
+Sahil ve liman
+Sahil ve liman aynı gün içinde yürüyerek keşfedilebilecek merkez rotasını oluşturur. Kıyı boyunca Cide’nin dağlarla çevrili yerleşim dokusu açık biçimde görülür.
+Sakin bölüm
+Sakin ve konforlu
+Seçenekler hazırlanıyor…
+Seçenekleri yeniden yükle
+Seçilen tarihlerde uygun oda görünmüyor.
+Sigara içilebilir
+Sigara içilmeyen oda
+Sigara içilmez
+Sigara politikası
+Site dili
+Size bir mesaj kadar yakın
+Size nasıl ulaşalım?
+Size nasıl yardımcı olalım?
+Size uygun bir mola.
+Size uygun odayı keşfedin; birlikte konaklamanızı planlayalım.
+Size uygun sakin bir köşe
+Sizin için bir oda
+Sofrada
+Sohbet mesajları
+Sohbet uzasın.
+Sonraki ay
+Sonraki fotoğraf
+Sorunuzu bize iletin; iletişim bilgilerinizden size dönüş yapalım.
+Sosyal bağlantılar
+Su efekti testi
+Sıcak karşılama
+TELEFON
+Tahmini varış saati
+Takvimi kapat
+Talebiniz gönderilemedi. Bilgilerinizi kontrol edip yeniden deneyin.
+Talebiniz gönderiliyor…
+Talebiniz ulaştı
+Talebinizi aldık. İşletmemiz bilgilerinizi değerlendirip sizinle iletişime geçecek.
+Talep numarası:
+Talep oluştur
+Talep sonucu doğrulanamadı. Aynı bilgilerle yeniden deneyin.
+Tamam
+Tanışalım
+Tarih / konu: {0}
+Tarih seçimi
+Tarih seçin
+Tarih, oda ve müsaitlik sorgusu
+Tarih: {0}
+Tarihlerinizi seçin, müsaitliği sorgulayın veya talebinizi bize iletin.
+Tarihlerinizi seçin, ziyaret talebinizi birlikte planlayalım.
+Tekerlekli sandalye erişimine uygun
+Telefon
+Telefon bilgisi henüz yayınlanmadı.
+Telefon: {0}
+Temel masa bilgileri
+Temel oda bilgileri
+Teras
+Teras / veranda
+Tercihim yok
+TÜRKPATENT kaydı ↗
+Tüm odaları gör →
+Tüm yorumları gör →
+Tüm Ürünler
+Uzun kıyı rotası
+Vadinin seyir alanları ve köy yolları için ayrı gün düşünmek daha rahat. Yağışlı havalarda yol koşullarını yerelden teyit edin.
+Valla Kanyonu
+Valla Kanyonu’nun güney cephesi
+Valla Kanyonu’nun çıkışında başlayan vadi, Devrekani Çayı’nın çevresindeki ormanlar ve köy yaşamıyla Cide’nin iç kesimlerine açılır.
+Varış veya dönüş gününe bırakılabilecek en rahat rota. Kasabayı yürüyerek tanımak için iyi başlangıç.
+WhatsApp mesajını gözden geçir
+WhatsApp'tan yaz
+WhatsApp’ta aç ↗
+WhatsApp’tan ulaşın
+YOLUMUZ GİDEROS’A DÜŞSÜN
+Yaklaşık 3 km uzunluğundaki yürüyüş platformu, kanyon girişinden Ilıca Şelalesi’ne uzanır. Kayaların suyla aşınmasıyla oluşan çukurlar ve dik duvarlar rotanın karakterini oluşturur. Horma ile Ilıca’yı aynı gezi gününde birleştirebilirsiniz; çıkmadan önce parkurun açık olduğunu teyit edin.
+Yalnız açık alanda sigara içilebilir
+Yanıt hazırlanıyor…
+Yarın · 1 gece
+Yayınlanan bilgilere şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.
+Yayınlanan fiyatlar bilgilendirme amaçlıdır. Rezervasyon talebi, işletme tarafından onaylandıktan sonra kesinleşir.
+Yayınlanan iletişim bilgilerini bu sayfadan takip edebilirsiniz.
+Yayınlanan iletişim seçeneklerimizle yanınızdayız.
+Yayınlanan menü, ürünler ve fiyatlar.
+Yayınlanmış aktif oda bulunmuyor.
+Yayınlanmış oda seçeneği bulunmuyor. Tercih belirtmeden talep iletebilirsiniz.
+Yaşlı ormanlar, karstik kaya oluşumları, derin kanyonlar ve mağaralarla Batı Karadeniz’in zengin doğa alanlarından biri.
+Yemek hizmeti
+Yeniden dene
+Yerel izler
+Yeşilin bittiği yerde,
+Yol tarifi al
+Yol tarifi alın
+Yola çıkmadan önce bize ulaşabilir, gelişinizi birlikte planlayabilirsiniz.
+Yolunuz açık olsun.
+Yorumlar
+Yorumu Google Maps'te gör ↗
+Zaman yavaşlasın.
+Zarı Çayı’nın kayalar arasında açtığı dar geçidi, kanyon duvarlarına yerleştirilen ahşap platform boyunca keşfedebilirsiniz.
+Ziyaret planı asistanını aç
+Ziyaret planınız
+Ziyaretinizi birlikte planlayalım.
+Ziyaretinizi planlamak için güncel seçenekleri keşfedin.
+Ziyaretinizi planlayın
+accessible
+bir merhaba uzağınızda.
+biraz yavaşlamaktır.
+burada başlar.
+büyüt
+doğrudan işletmemizin yayınladığı menüden.
+fotoğrafı
+gününüze bir mola.
+güzel bir sofra.
+hayat
+ile başlasın.
+işletme yayınlarıyla paylaşılır.
+kişi
+lisansı ile kullanılır. WebP boyutlandırmaları, ekran kırpmaları ve ilk fotoğraftan sosyal paylaşım kırpması hazırlanmıştır. Bu fotoğraf türevleri aynı lisansla sunulur; renk veya içerik değiştirilmemiştir.
+mavi başlar.
+menümüzde.
+no_smoking
+non_smoking
+outdoor_only
+sea_view
+smoking
+smoking_allowed
+wifi
+window
+yavaş başlasın.
+yavaşlar.
+yer açalım.
+{0} / gece
+{0} Google Maps değerlendirmesi
+{0} büyüt
+{0} değerlendirme
+{0} fotoğrafı
+{0} fotoğrafı {1}
+{0} fotoğrafı {1} büyüt
+{0} fotoğrafını büyüt
+{0} gece
+{0} kişi
+{0} oda
+{0} · {1} kişi
+{0} üzerinden 5 yıldız
+{0} → {1} · {2}
+{0} → {1} · {2} gece
+{0}. kat
+© OpenStreetMap katkıda bulunanlar
+Ça
+Çalışma masası
+Çatak Kanyonu
+Çatak Kanyonu, Azdavay, Kastamonu
+Çevrimiçi hizmetler şu anda kapalı. İletişim sayfamızdan bize ulaşabilirsiniz.
+Çevrimiçi talep alma kapalı. Yalnız müsaitlik sorgulayabilirsiniz.
+Çizim temsilidir; işletme konumunu göstermez.
+Çocuklu ailelere uygun
+Çıkış tarihi
+Ödeme bilgileri
+Önce bir tarih hayal edin.
+Önce gözden geçirin.
+Önce kıyıyı, sonra içeriye açılan yolları görün
+Önceki ay
+Önceki fotoğraf
+Örn. Yaz dönemi konaklama bilgisi
+Özel banyo
+Ürün
+İletişim
+İletişim & Ziyaret Planı
+İletişim bilgileri şu anda görüntülenemiyor.
+İletişim bilgilerine şu anda ulaşılamıyor. Lütfen sayfayı yeniden yükleyin.
+İletişim seçenekleri
+İletişim ve ulaşım bilgileri →
+İletişime geçin
+İletmek istediğiniz not
+İlgilendiğiniz tarih / konu
+İlçe merkezinin Karadeniz’le doğrudan buluştuğu sahil; yürüyüş, deniz ve gün batımı için Cide’nin en kolay ulaşılan rotası.
+İç mekân
+İçeriğe geç
+İŞLETMEDEN
+İşletme bilgileri okunamadı.
+İşletme fotoğrafları henüz yayınlanmadı.
+İşletme olanakları henüz yayınlanmadı.
+İşletme tarafından yayınlanan görseller ayrıca “İşletmeden” olarak işaretlenir. Bölge fotoğrafları için yapılan atıf, fotoğrafçının işletmeyi onayladığı anlamına gelmez.
+İşletmeden bir kare
+İşletmemizin yayınladığı fotoğraflar.
+İşletmenin yayınlanmış harita konumu
+Şelale Pınarbaşı merkezine yaklaşık 12 km uzaklıktaki Ilıca Köyü sınırlarındadır. Ilıca köyünden patika yürüyüşüyle ulaşılabilir; Horma yürüyüş rotasının sonunda da görülebilir. Kayaların ve yürüyüş zemininin ıslak olabileceğini hesaba katarak uygun ayakkabı seçin.
+Şu anda yanıt oluşturulamadı.
+← Başlangıca dön

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {checkHero} from './hero-checks.mjs';
 import { createRequire } from 'node:module';
 import { mkdtempSync, cpSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs';
@@ -20,7 +21,7 @@ cpSync(join(site,'assets/img/gideros-2-720.webp'),join(moduleRoot,'media/fixture
 const image = '/yardimci-asistan/media/fixture/photo.webp';
 const clip = spawnSync('ffmpeg',['-loglevel','error','-f','lavfi','-i','color=c=green:s=320x180:d=1','-c:v','libx264','-pix_fmt','yuv420p','-movflags','+faststart',join(moduleRoot,'media/fixture/tour.mp4')]);
 assert.equal(clip.status,0,'Generate isolated playable video fixture');
-const caps = ['customer.requests','accommodation.rooms','service.whatsapp'];
+const caps = ['core.customers','customer.requests','accommodation.rooms','accommodation.reservations','food_service.reservations','service.whatsapp'];
 const businessFixture = {business_name:'YEREL TEST Kıyı Evi',profile_id:'pension_restaurant',phone:'+90 (555) 010 20 30',whatsapp:'+90 555 010 20 30',whatsapp_enabled:true,email:'fixture@example.test',address:'Yalnız Test Sokak No:7',latitude:40.1234,longitude:30.4321,directions_note:'Yalnız izole test kapısı.',about_text:'YALNIZ YEREL API TEST METNİ',gallery:[{id:'fixture-image',kind:'photo',title:'YEREL TEST fotoğrafı',url:image}],social_links:[{platform:'instagram',url:'https://www.instagram.com/example/'}]};
 const roomFixture = {id:'fixture-room',name:'YEREL TEST Odası',description:'İşletme odası değildir; fixture.',capacity:2,bed_info:'YEREL TEST yatak',nightly_price_minor:123456,currency:'TRY',price_note:'Yalnız test fiyatıdır.',media:[{kind:'cover',url:image}]};
 const tableFixture = {id:'fixture-table',name:'YEREL TEST Masası',capacity:4,area:'Test alanı',description:'Fixture masa.',smoking_policy:'non_smoking',features:['indoor','window_side','sea_view'],media:[{kind:'photo',url:'/yardimci-asistan/media/fixture/photo2.webp',sort_order:2},{kind:'cover',url:image,sort_order:1}]};
@@ -74,7 +75,18 @@ try {
   for(let i=0;i<50;i++){try{if((await fetch(apiOrigin+'/yardimci-asistan/api/business.php')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
   const diagnostic = await (await fetch(origin+'/self-http-diagnostic')).json();
   assert.deepEqual(diagnostic,{errno:28,status:0});
-  const beforeSSR = readFileSync(join(moduleRoot,'http-log.jsonl'),'utf8');
+  // The intentionally deadlocked self-request is queued behind the single
+  // PHP worker. Wait for this known request to drain before the SSR snapshot,
+  // otherwise its delayed rooms GET races the no-new-requests assertion.
+  const fixtureLog = join(moduleRoot,'http-log.jsonl');
+  let selfRequestDrained = false;
+  for (let attempt=0;attempt<60;attempt++) {
+    const log = readFileSync(fixtureLog,'utf8');
+    if (log.split('\n').some(line => line.includes('"name":"rooms"'))) { selfRequestDrained=true; break; }
+    await new Promise(resolve=>setTimeout(resolve,50));
+  }
+  assert(selfRequestDrained,'The queued diagnostic GET must finish before SSR no-request proof');
+  const beforeSSR = readFileSync(fixtureLog,'utf8');
   const startSSR = performance.now(); const html = await (await fetch(origin+'/odalar/')).text();
   assert(performance.now()-startSSR < 1000, 'SSR must not wait for its own PHP worker');
   assert(html.includes('hero') && html.includes('stay-placeholder') && !html.includes('class="room-card"'));
@@ -268,17 +280,45 @@ try {
   assert.deepEqual(await page.locator('.gallery-item figcaption>span').allTextContents(),['Önce','Sonra']);
   assert((await page.locator('[data-public-gallery] img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src')))).every(src=>src===image));
   check('QR navigation, category filter, withdrawal and unavailable products; gallery empty and published order only');
-  const localization = translations => ({version:1,source_language:'tr',target_languages:['en'],translations});
+  const catalogResponse = await fetch(origin+'/?resource=translation-source');
+  assert.equal(catalogResponse.status,200);
+  const sourceCatalog = await catalogResponse.json();
+  assert.equal(sourceCatalog.version,1); assert.equal(sourceCatalog.id,'gundogdu-site');
+  assert.equal(sourceCatalog.source_language,'tr'); assert.match(sourceCatalog.revision,/^[a-f0-9]{64}$/);
+  const sourceKey = value => 'phrase.'+createHash('sha256').update(value).digest('hex');
+  assert(sourceCatalog.entries[sourceKey('Odalar')] && sourceCatalog.entries[sourceKey('Ad soyad')]);
+  check('Root translation-source route returns the app-valid gundogdu-site source catalog');
+  const siteText = Object.fromEntries([
+    ['Odalar','Published rooms'],['Oda detayları','Published room details'],['Masa detayları','Published table details'],
+    ['Ad soyad','Full name'],['Sigara içilmez','Non-smoking'],['Dil değiştir','Change language']
+  ].map(([source,translated]) => [sourceCatalog.id+':'+sourceKey(source),{en:{text:translated}}]));
+  const siteMetadata = {version:1,source_language:'tr',target_languages:['en'],
+    languages:[{code:'tr',name:'Türkçe',nativeName:'Türkçe',locale:'tr-TR',direction:'ltr'},{code:'en',name:'English',nativeName:'English',locale:'en-GB',direction:'ltr'}],
+    site_catalog:{id:sourceCatalog.id,entries:sourceCatalog.entries},translations:{site_text:siteText}};
+  const localization = translations => ({...siteMetadata,translations:{...siteMetadata.translations,...translations}});
+  const disabledLocalization = {...siteMetadata,target_languages:[]};
+  const disabledHtml = await (await fetch(origin+'/odalar/oda/?id=fixture-room&lang=en')).text();
+  assert(!disabledHtml.includes('GundogduEnglish'));
+  publish(moduleRoot,'business_context',{...businessFixture,localization:disabledLocalization});
+  publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture],localization:disabledLocalization});
+  await context.addCookies([{name:'gundogdu_language',value:'en',url:origin,httpOnly:true},{name:'gundogdu_site_language',value:'en',url:origin}]);
+  await visit(origin+'/odalar/oda/?id=fixture-room&lang=en');
+  await expect(page.locator('html')).toHaveAttribute('lang','tr');
+  await expect(page.locator('[data-flag-language]:visible')).toHaveCount(0);
+  await expect(page.locator('.desktop-nav')).toContainText('Odalar');
+  await expect(page.locator('[data-room-name]').last()).toHaveText(roomFixture.name);
+  check('Published target_languages [] forces TR and hides the selector for ?lang=en and both old HttpOnly/new client cookies; no static English dictionary is served');
   publish(moduleRoot,'business_context',{...businessFixture,localization:localization({business:{business:{en:{about_text:'Published English about',description:'Published English SEO'}}},gallery:{'fixture-image':{en:{title:'Published English photo'}}}})});
   publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture],localization:localization({room:{'fixture-room':{en:{name:'Published English Room',description:'Published English description'}}}})});
   publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable],localization:localization({table:{'fixture-table':{en:{name:'Published English Table',area:'Published English Area'}}}})});
   publish(moduleRoot,'menu',{...menuFixture,localization:localization({menu_category:{a:{en:{name:'Starters'}}},menu_product:{one:{en:{name:'Published English Dish'}}}})});
-  await visit(origin+'/odalar/oda/?id=fixture-room');
-  await page.locator('[data-flag-language] summary').click(); await page.locator('button[name=lang][value=en]').click();
+  await visit(origin+'/odalar/oda/?id=fixture-room&lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','en'); await expect(page).toHaveURL(/id=fixture-room.*lang=en/);
+  await expect(page.locator('[data-flag-language]')).toBeVisible();
+  await expect(page.locator('[data-flag-language] button[name=lang]')).toHaveCount(2);
   await expect(page.locator('[data-room-name]').last()).toHaveText('Published English Room');
   await expect(page.locator('[data-room-bed]')).toHaveText(roomFixture.bed_info);
-  await expect(page.locator('.desktop-nav')).toContainText('Rooms');
+  await expect(page.locator('.desktop-nav')).toContainText('Published rooms');
   await page.locator('[data-room-reserve]').click(); await expect(page.locator('[name=customer_name]')).toBeVisible();
   await expect(page.locator('[data-ya-form]')).toContainText('Full name'); await page.keyboard.press('Escape');
   await visit(origin+'/'); await expect(page.locator('html')).toHaveAttribute('lang','en'); await expect(page.locator('[data-public-about]')).toHaveText('Published English about');
@@ -290,17 +330,19 @@ try {
   await expect(page.locator('[data-category-id=a]')).toHaveText('Starters');
   await screenshot(page,'fixture-english-menu',true);
   for(const width of [320,390]) { await page.setViewportSize({width,height:844}); for(const path of ['/odalar/oda/?id=fixture-room','/qr-menu/','/restoran/','/restoran/masa/?id=fixture-table']) {await visit(origin+path); assert((await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth))<=1,'English overflow '+width+path);} }
+  publish(moduleRoot,'business_context',{...businessFixture,localization:disabledLocalization});
   publish(moduleRoot,'room_catalog',{enabled:true,rooms:[{...roomFixture,name:'Restoran'}],localization:{...localization({room:{'fixture-room':{en:{name:'Should not appear'}}}}),target_languages:[]}});
   await visit(origin+'/odalar/'); await expect(page.locator('.room-card h3')).toHaveText('Restoran');
+  await expect(page.locator('html')).toHaveAttribute('lang','tr'); await expect(page.locator('[data-flag-language]:visible')).toHaveCount(0);
   publish(moduleRoot,'business_context',{...businessFixture,public_surfaces:['rooms','restaurant']});
   await visit(origin+'/qr-menu/'); await expect(page.locator('.qr-menu-item')).toHaveCount(0); await expect(page.locator('[data-menu-link]:visible')).toHaveCount(0);
-  check('Unsupported endpoint English metadata preserves source business name; missing menu capability hides published menu');
+  check('Unsupported endpoint English metadata preserves source content; missing menu capability hides published menu');
   publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]});
   await visit(origin+'/?lang=tr'); await expect(page.locator('html')).toHaveAttribute('lang','tr');
   await expect(page.locator('.room-card')).toContainText(roomFixture.name);
   publish(moduleRoot,'business_context',businessFixture); publish(moduleRoot,'room_catalog',{enabled:true,rooms:[roomFixture]}); publish(moduleRoot,'table_catalog',{enabled:true,tables:[tableFixture,noImageTable]});
   publish(moduleRoot,'menu',{enabled:true,categories:[{id:'test',name:'YEREL TEST Menü'}],items:[{id:'meal',category_id:'test',name:'YEREL TEST Yemek',price:123.45,currency:'TRY'}]});
-  check('TR/EN selector preserves ID; preference survives navigation; endpoint-specific English projections, Turkish field fallback, gallery/SEO/widget and 320/390px English layouts');
+  check('Published-only TR/EN selector preserves ID; authorized preference survives navigation; endpoint-specific records, Turkish field fallback, gallery/SEO/widget and 320/390px English layouts');
   await visit(origin+'/iletisim/');
   await expect(page.locator('a[href="tel:+905550102030"]')).toBeVisible();
   await expect(page.locator('a[href="https://wa.me/905550102030"]')).toBeVisible();
@@ -409,18 +451,18 @@ try {
   for (const omit of [['accommodation'],['food_service'],['rooms'],['restaurant'],['menu','qr_menu']]) {
     publish(moduleRoot,'business_context',{...businessFixture,public_surfaces:surfaces.filter(s=>!omit.includes(s))});
     await visit(origin+'/restoran/');
-    await expect(page.locator('body')).toHaveAttribute('data-stay-enabled',String(!omit.includes('accommodation')&&!omit.includes('rooms')));
-    await expect(page.locator('body')).toHaveAttribute('data-table-enabled',String(!omit.includes('food_service')&&!omit.includes('restaurant')));
+    await expect(page.locator('body')).toHaveAttribute('data-stay-enabled',String(!omit.includes('rooms')));
+    await expect(page.locator('body')).toHaveAttribute('data-table-enabled',String(!omit.includes('restaurant')));
     if (omit.includes('menu')) await expect(page.locator('.menu-item')).toHaveCount(0);
     if (omit.includes('restaurant')) await expect(page.locator('.table-card')).toHaveCount(0);
     await page.locator('.header-booking').click();
-    await expect(page.locator('[data-ya-request-type="pension_reservation"]:visible')).toHaveCount(omit.includes('accommodation')||omit.includes('rooms')?0:1);
-    await expect(page.locator('[data-ya-request-type="restaurant_reservation"]:visible')).toHaveCount(omit.includes('food_service')||omit.includes('restaurant')?0:1);
+    await expect(page.locator('[data-ya-request-type="pension_reservation"]:visible')).toHaveCount(omit.includes('rooms')?0:1);
+    await expect(page.locator('[data-ya-request-type="restaurant_reservation"]:visible')).toHaveCount(omit.includes('restaurant')?0:1);
   }
   publish(moduleRoot,'business_context',{...businessFixture,requests_enabled:false}); await visit(origin+'/odalar/');
   await expect(page.locator('.room-card')).toHaveCount(3); await expect(page.locator('body')).toHaveAttribute('data-stay-enabled','false');
   await page.locator('.header-booking').click(); await expect(page.locator('[data-ya-request-type]:visible')).toHaveCount(0);
-  check('requests_enabled and each accommodation/food_service/rooms/restaurant/menu surface fail closed independently; canonical widget business fetch cannot bypass catalog gate');
+  check('requests_enabled, room/restaurant catalog and menu gates follow current published aliases; the site hides unpublished widget actions despite its independent business fetch');
   // A fresh publication replaces contact/SEO on the next page load.
   publish(moduleRoot,'business_context',{...businessFixture,phone:'+90 555 111 22 33',address:'Yeni API Adresi',latitude:null,longitude:'',policy_note:'API koşulu',payment_note:'API ödeme'});
   await visit(origin+'/iletisim/'); await expect(page.locator('a[href="tel:+905551112233"]')).toBeVisible();
@@ -452,7 +494,7 @@ try {
   publish(moduleRoot,'table_catalog',{version:1,enabled:false,tables:[tableFixture,noImageTable]});
   publish(moduleRoot,'menu',{enabled:false,categories:[{id:'test',name:'YEREL TEST Menü'}],items:[{id:'meal',category_id:'test',name:'YEREL TEST Yemek',price:123.45,currency:'TRY'}]});
   publish(moduleRoot,'marketing_website',{version:1,enabled:false,publications:[]});
-  publish(moduleRoot,'business_context',{business_name:'YEREL TEST Boş',profile_id:'pension_restaurant',phone:'',address:'',whatsapp:'',email:'',gallery:[],social_links:[]});
+  publish(moduleRoot,'business_context',{business_name:'YEREL TEST Boş',profile_id:'pension_restaurant',requests_enabled:false,phone:'',address:'',whatsapp:'',email:'',gallery:[],social_links:[]});
   await visit(origin+'/');await expect(page.locator('.room-card')).toHaveCount(0);await expect(page.locator('.news-grid')).toHaveCount(0);
   await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);assert(!('telephone' in JSON.parse(await page.locator('[data-business-structured-data]').textContent())));
   await page.locator('.header-booking').click();await expect(page.locator('[data-ya-request-type]:visible')).toHaveCount(0);check('Withdrawn room/table/menu/marketing and blank contact do not retain previous values; booking actions hidden');

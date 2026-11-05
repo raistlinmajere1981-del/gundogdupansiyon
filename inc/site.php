@@ -30,6 +30,7 @@ function page_top(string $page, string $title, string $description): void {
     $GLOBALS['site_page'] = $page;
     $path = $page === 'home' ? '/' : '/' . $page . '/';
     if ($page === 'odalar/oda' && is_string($_GET['id'] ?? null)) $path .= '?id=' . rawurlencode($_GET['id']);
+    retire_legacy_language_cookie();
     header('Content-Type: text/html; charset=utf-8'); header('Cache-Control: no-cache'); header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: strict-origin-when-cross-origin');
     ?><!doctype html>
@@ -50,13 +51,13 @@ function page_top(string $page, string $title, string $description): void {
 <link rel="modulepreload" href="/assets/effect-engine/src/runtime/index.mjs">
 <?php endif; ?>
 <script type="application/ld+json" data-business-structured-data><?= json_html(structured_data()) ?></script>
-<script>window.GundogduEnglish=<?= json_html(site_words()) ?>;</script><script src="/assets/js/language.js" defer></script>
+<script src="/assets/js/language.js" defer></script>
 </head><body data-page="<?= esc($page) ?>" data-site="gundogdu" data-stay-enabled="<?= can_reserve('rooms') ? 'true' : 'false' ?>" data-table-enabled="<?= can_reserve('tables') ? 'true' : 'false' ?>">
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
 <header class="site-header"><div class="header-inner">
 <a class="brand" href="/" aria-label="<?= esc(brand_name()) ?> ana sayfa"><img src="/assets/brand/mark.svg" width="57" height="52" alt=""><span class="brand-copy"><strong>Gündoğdu</strong><small>PANSİYON &amp; RESTORAN</small></span></a>
 <nav class="desktop-nav" aria-label="Ana gezinme"><?php nav_links($page); ?></nav>
-<?php render_flag_language(site_language(), ['tr','en']); booking_link('Rezervasyon', '', 'button header-booking'); ?>
+<?php render_language_shell(); booking_link('Rezervasyon', '', 'button header-booking'); ?>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menüyü aç"><?= icon('menu') ?></button>
 </div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobil gezinme" hidden><?php nav_links($page); booking_link('Ziyaretinizi planlayın'); ?></nav></header>
 <main id="icerik" tabindex="-1">

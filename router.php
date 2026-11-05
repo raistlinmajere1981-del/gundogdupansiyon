@@ -1,35 +1,25 @@
 <?php
-// Local preview only; never in the deploy allowlist.
+// Isolated local preview: module HTTP requests never reach the live backend.
 declare(strict_types=1);
 $path = rawurldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
-if (preg_match('#^/(?:\.|inc/|scripts/|docs/)|\.\.|\\\\#', $path)) { http_response_code(404); exit; }
-if (str_starts_with($path, '/yardimci-asistan/')) {
-    if (getenv('GUNDOGDU_FIXTURE_MODULE') === '1' && is_file(__DIR__ . $path)) return false;
-    require __DIR__ . '/inc/data.php';
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && media_url($path) !== '') {
-        $body = ''; $handle = curl_init(public_origin() . $path);
-        curl_setopt_array($handle, [CURLOPT_TIMEOUT_MS=>4000, CURLOPT_FOLLOWLOCATION=>false,
-            CURLOPT_WRITEFUNCTION=>static function ($handle, string $chunk) use (&$body): int {
-                if (strlen($body) + strlen($chunk) > 10485760) return 0;
-                $body .= $chunk; return strlen($chunk);
-            }]);
-        curl_exec($handle); $type=curl_getinfo($handle, CURLINFO_CONTENT_TYPE); $code=curl_getinfo($handle, CURLINFO_RESPONSE_CODE);
-        if ($code === 200 && in_array($type, ['image/jpeg','image/png','image/webp'], true) && curl_errno($handle) === 0) {
-            header('Content-Type: ' . $type); header('X-Content-Type-Options: nosniff'); echo $body;
-        } else http_response_code(404);
-        curl_close($handle); exit;
-    }
-    // Local preview never forwards customer writes to the live module.
-    if ($_SERVER['REQUEST_METHOD'] !== 'GET' || !preg_match('#^/yardimci-asistan/api/(business|rooms|tables|menu|marketing)\.php$#D', $path)) {
-        http_response_code(503); header('Content-Type: application/json'); echo '{"ok":false,"message":"Yerel önizlemede işlem gönderimi kapalı."}'; exit;
-    }
-    $name = basename($path, '.php'); $payload = preview_public_get($name);
-    header('Content-Type: application/json; charset=utf-8'); header('Cache-Control: no-store');
-    if (!$payload) http_response_code(503);
-    echo json_html($payload ?: ['ok'=>false]); exit;
+if (preg_match('~(?:^|/)\.|[\\\\\x00-\x1f\x7f]~', $path)
+    || preg_match('~^/(?:canonical|inc|scripts|tests|docs|config|storage|core|site|public|locales|tools)(?:/|$)~', $path)
+    || preg_match('~^/assets/(?:js|css|assistant|i18n|effect-engine|effects|vendor/pannellum)(?:/|$)~', $path)) {
+    http_response_code(404); return true;
 }
-if ($path !== '/' && is_file(__DIR__ . $path)) return false;
-if (is_dir(__DIR__ . $path) && is_file(__DIR__ . rtrim($path, '/') . '/index.php')) {
-    require __DIR__ . rtrim($path, '/') . '/index.php'; return true;
+if ($path === '/yardimci-asistan' || str_starts_with($path, '/yardimci-asistan/')) {
+    http_response_code(503); header('Content-Type: application/json; charset=utf-8');
+    header('Cache-Control: no-store');
+    echo '{"ok":false,"message":"Isolated preview: use a synthetic fixture proxy."}';
+    return true;
 }
-require __DIR__ . '/404.php';
+$file = realpath(__DIR__ . $path);
+if ($file !== false && str_starts_with($file, __DIR__ . '/') && is_file($file)) {
+    if (str_starts_with($path, '/assets/') && !str_ends_with($path, '.php') && !is_link(__DIR__ . $path)) return false;
+    if ($path === '/index.php' || preg_match('~^/(?:odalar(?:/oda)?|restoran(?:/masa)?|qr-menu|hakkimizda|iletisim|galeri|duyurular|yorumlar)/index\.php$~D', $path)) {
+        require $file; return true;
+    }
+}
+// Canonical handles aliases, unknown paths and all publication gates.
+require __DIR__ . '/index.php';
+return true;

@@ -45,8 +45,8 @@
   const configNode = document.querySelector('#widget-config');
   let config = JSON.parse(configNode?.textContent || '{}');
   const widget = window.YardimciAsistanWidget;
-  let stayEnabled = false, tableEnabled = false, widgetOpener = null;
-  const allowed = type => type === 'pension_reservation' ? stayEnabled : type === 'restaurant_reservation' ? tableEnabled : true;
+  let stayEnabled = false, tableEnabled = false, generalEnabled = false, widgetOpener = null;
+  const allowed = type => type === 'pension_reservation' ? stayEnabled : type === 'restaurant_reservation' ? tableEnabled : type === 'general_info' ? generalEnabled : false;
   // Capture only rejects unpublished actions. Canonical handlers alone open and submit.
   document.addEventListener('click', event => {
     const trigger = event.target.closest('[data-ya-action], [data-ya-open], [data-ya-request-type]');
@@ -60,7 +60,7 @@
   document.addEventListener('submit', event => {
     if (!event.target.matches('#yardimci-asistan-widget [data-ya-form]')) return;
     const type = new FormData(event.target).get('request_type');
-    if (!allowed(type) || !stayEnabled && !tableEnabled) { event.preventDefault(); event.stopImmediatePropagation(); widget?.open({intent: 'home'}); }
+    if (!allowed(type)) { event.preventDefault(); event.stopImmediatePropagation(); widget?.open({intent: 'home'}); }
   }, true);
   let root = document.querySelector('#yardimci-asistan-widget'), observedRoot = null;
   const present = () => {
@@ -77,12 +77,13 @@
     });
     const home = root.querySelector('.ya-widget-home'), title = root.querySelector('#ya-widget-title');
     if (title?.lastChild?.nodeType === Node.TEXT_NODE && title.lastChild.textContent !== config.businessName) title.lastChild.textContent = config.businessName;
-    const message = !stayEnabled && !tableEnabled ? t('Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.') : !stayEnabled ? t('Online konaklama talebi şu anda açık değil.') : !tableEnabled ? t('Online masa talebi şu anda açık değil.') : '';
+    const message = !stayEnabled && !tableEnabled ? t(generalEnabled ? 'Konaklama ve masa rezervasyonu kapalı; genel bilgi talebi gönderebilirsiniz.' : 'Online konaklama ve masa talebi şu anda açık değil. Yayınlanan iletişim seçeneklerini kullanabilirsiniz.') : !stayEnabled ? t('Online konaklama talebi şu anda açık değil.') : !tableEnabled ? t('Online masa talebi şu anda açık değil.') : '';
     let note = home?.querySelector('.site-widget-note');
     if (home && message) {
       if (!note) { note = document.createElement('p'); note.className = 'site-widget-note'; home.append(note); }
       if (note.textContent !== message) note.textContent = message;
     } else note?.remove();
+    window.GundogduLanguage?.translateWidget?.(root);
   };
   // Observe children only and write only changed values, so skin mutations settle.
   const observe = () => {
@@ -93,10 +94,17 @@
   document.addEventListener('gundogdu:public-data', event => {
     if (lightbox?.open) lightbox.close();
     const m = event.detail, b = m.business, c = m.contact;
-    stayEnabled = m.stayEnabled; tableEnabled = m.tableEnabled;
-    config = {...config, businessName: 'Gündoğdu Pansiyon & Restoran', profileId: '',
-      publicSurfaces: [...(stayEnabled ? ['accommodation'] : []), ...(tableEnabled ? ['food_service'] : []), ...(c.map ? ['directions'] : [])],
-      requestsEnabled: stayEnabled || tableEnabled, aiEnabled: b.ai_enabled === true,
+    stayEnabled = m.stayEnabled; tableEnabled = m.tableEnabled; generalEnabled = m.generalEnabled;
+    const surfaces = Array.isArray(b.public_surfaces) ? b.public_surfaces : [];
+    const requestTypes = [...(stayEnabled ? ['pension_reservation'] : []), ...(tableEnabled ? ['restaurant_reservation'] : []), ...(generalEnabled ? ['general_info'] : [])];
+    config = {...config, businessName: b.display_name || b.name || 'Gündoğdu Pansiyon & Restoran',
+      profileId: ['pension_restaurant', 'pension', 'restaurant', 'market'].includes(b.profile_id) ? b.profile_id : '',
+      publicSurfaces: [...(stayEnabled ? ['accommodation'] : []), ...(tableEnabled ? ['food_service'] : []),
+        ...(m.menuEnabled && surfaces.includes('menu') ? ['menu'] : []),
+        ...(m.menuEnabled && surfaces.includes('qr_menu') ? ['qr_menu'] : []),
+        ...(c.map ? ['directions'] : [])],
+      requestTypes, requestsEnabled: b.requests_enabled === true && requestTypes.length > 0,
+      aiEnabled: b.ai_enabled === true,
       whatsappEnabled: Boolean(c.whatsapp), whatsappPhone: c.whatsapp ? c.whatsapp.slice('https://wa.me/'.length) : '', address: c.address, mapUrl: c.map};
     if (configNode) configNode.textContent = JSON.stringify(config);
     widget?.init(config); observe(); present();

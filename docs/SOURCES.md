@@ -53,7 +53,7 @@ BlackSea, Yardımcı Asistan ve Teknikel reposuna değişiklik yazılmadı.
 
 ## 22 Ekim özellik eşliği uyarlaması
 
-BlackSea read-only kaynaklarından `language.js` endpoint localization algoritması, `rooms.js` oda detay/medya render akışı, `qr-menu.js` kategori/ürün filtreleri, `flag-language.js`, `inc/flag-language.php` ve `assets/flags/{tr,en}.svg` yeniden kullanıldı. Fetch ve capability akışı Gündoğdu’nun tek `public-data.js` sahibinde kaldı; ikinci HTTP istemcisi/poller eklenmedi. Site sözlüğü BlackSea marka metinleri içermez. Gündoğdu fontları, logosu, paleti ve kompozisyonu korundu.
+BlackSea read-only kaynaklarından `language.js` endpoint localization algoritması, `rooms.js` oda detay/medya render akışı, `qr-menu.js` kategori/ürün filtreleri, `flag-language.js`, `inc/flag-language.php` ve `assets/flags/{tr,en}.svg` yeniden kullanıldı. Fetch ve capability akışı Gündoğdu’nun tek `public-data.js` sahibinde kaldı; ikinci HTTP istemcisi/poller eklenmedi. Site sözlüğü BlackSea marka metinleri içermez; `assets/i18n/en.json` ve sabit İngilizce sözlük kaldırılmıştır. Tek kaynak, `scripts/source-phrases.txt` Türkçe ifadelerinden üretilen `assets/i18n/tr.json` kataloğudur ve `/?resource=translation-source` ile Desktop'a sunulur. Görünen hedef diller yalnız uygulama yayınındaki `localization.target_languages` ile `site_text`/kayıt çevirilerinden gelir; eksik alan Türkçe kalır. Gündoğdu fontları, logosu, paleti ve kompozisyonu korundu.
 
 Pannellum 2.5.6 (`assets/vendor/pannellum/`) BlackSea’nin kullandığı sürümdür; JS/CSS dağıtımı jsDelivr npm paketinden alınıp yerelleştirildi. MIT lisansı `assets/vendor/pannellum/LICENSE` içinde dağıtılır. Test videosu ffmpeg ile yalnız geçici fixture dizininde üretilir; gerçek işletme medyası değildir ve deploy edilmez.
 

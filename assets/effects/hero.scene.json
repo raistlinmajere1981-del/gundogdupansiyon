@@ -4,7 +4,7 @@
   "name": "Gideros · Işık ve su",
   "seed": "gundogdu-gideros-1",
   "photo": {
-    "src": "assets/gideros-1-1818.webp",
+    "src": "assets/img/gideros-1-1818.webp",
     "width": 1818,
     "height": 1228,
     "name": "Gideros Bay1 · 2007",
@@ -41,8 +41,8 @@
           879
         ],
         [
-          995,
-          956
+          1030.71,
+          1038.09
         ],
         [
           714.39,
@@ -92,20 +92,20 @@
           855
         ],
         [
-          1100,
-          905
+          1149.48,
+          942.25
         ],
         [
-          965,
-          965
+          1034.58,
+          1039.96
         ],
         [
-          845,
-          1000
+          869.54,
+          1079.3
         ],
         [
-          666.99,
-          1061.13
+          718.22,
+          1111.84
         ],
         [
           540.56,
@@ -138,9 +138,9 @@
       "enabled": true,
       "seed": "1",
       "params": {
-        "count": 60,
-        "speed": 0.65,
-        "opacity": 0.6,
+        "count": 68,
+        "speed": 0.5,
+        "opacity": 0.35,
         "length": 1.35,
         "travel": 1.85,
         "breakProbability": 0.06,
