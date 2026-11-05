@@ -1279,5 +1279,10 @@
   "phrase.cd181936cbc0aa6b98953ac3b2db849eec1b8e3f591650314c6b8e6fce259f2f": "Şu anda yanıt oluşturulamadı.",
   "phrase.e55b463f8985c350229066b4eb75628e99e2cafb9ada5b602f36d25629ea5a5d": "← Başlangıca dön",
   "room.panorama.expand": "Panoramayı tam ekran aç",
-  "room.panorama.close": "Panoramayı kapat"
+  "room.panorama.close": "Panoramayı kapat",
+  "theme.gundogdu.media.viewer": "Fotoğraf görüntüleyici",
+  "theme.gundogdu.media.close": "Kapat",
+  "theme.gundogdu.media.previous": "Önceki fotoğraf",
+  "theme.gundogdu.media.next": "Sonraki fotoğraf",
+  "theme.gundogdu.media.image": "Fotoğraf"
 }

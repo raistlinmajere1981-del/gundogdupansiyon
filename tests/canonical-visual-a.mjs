@@ -12,12 +12,17 @@ const catalog=JSON.parse(spawnSync('php',['-r',"echo json_encode(require 'canoni
 const photoTitle=Object.keys(catalog).find(title=>catalog[title].license==='CC BY 2.0');
 const panoramaTitle=Object.keys(catalog).find(title=>catalog[title].title.includes('360°'));
 state.types=['general_info','pension_reservation','restaurant_reservation'];
-state.business={ai_enabled:true,whatsapp_enabled:true,whatsapp:'+905550000000',address:'TEST yerel adres'};
+state.business={gallery:[{id:'TEST-gallery',title:'TEST İşletme fotoğrafı',url:'/yardimci-asistan/media/TEST-gallery.jpg',published:true}],ai_enabled:true,whatsapp_enabled:true,whatsapp:'+905550000000',address:'TEST yerel adres', social_links:[
+  {platform:'instagram',url:'https://www.instagram.com/test_yayim',published:true},
+  {platform:'facebook',url:'https://www.facebook.com/private',published:false},
+  {platform:'tiktok',url:'javascript:alert(1)',published:true}
+]};
 state.surfaces.push('directions');
 state.menu=Array.from({length:4},(_,i)=>({id:'TEST-food-'+i,category_id:'TEST-category',name:'TEST Yemek '+i,description:'TEST yayınlı ürün açıklaması',image_url:i===3?'':'/yardimci-asistan/media/TEST-food.jpg',price:125+i,currency:'TRY',is_featured:i===0}));
 state.rooms[0].media=[
   {id:'TEST-cover',kind:'cover',url:'/yardimci-asistan/media/TEST-cover.jpg',title:photoTitle,published:true},
   {id:'TEST-pano',kind:'panorama_360',url:'/yardimci-asistan/media/TEST-pano.jpg',title:panoramaTitle,published:true},
+  {id:'TEST-pano-half',kind:'panorama_180',url:'/yardimci-asistan/media/TEST-pano-half.jpg',title:'TEST 180 derece',published:true},
   {id:'TEST-visitor',kind:'photo',url:'/yardimci-asistan/media/TEST-visitor.jpg',title:'TEST Ziyaretçi fotoğrafı',published:true},
   {id:'TEST-private',kind:'photo',url:'/yardimci-asistan/media/PRIVATE.jpg',title:photoTitle,published:false},
 ];
@@ -53,12 +58,57 @@ try {
     await page.goto(base+'/?page=rooms&id=TEST-room');
     await expect(page.locator('[data-panorama=panorama_360]')).toHaveCount(1);await expect(page.locator('img[src*=PRIVATE]')).toHaveCount(0);
     await expect(page.locator('.room-media-item figcaption')).toContainText(['Cerro Tololo','TEST Ziyaretçi']);
+    // Cover and panoramas open inside this page, without fullscreen or a new tab.
+    const mediaDialog=page.locator('.gd-media-dialog');
+    await page.locator('.resource-detail-cover a').click();
+    await expect(mediaDialog).toBeVisible();
+    await expect(mediaDialog.locator('.gd-media-stage > img')).toBeVisible();
+    assert.ok(page.url().includes('page=rooms'));
+    await mediaDialog.locator('.gd-media-close').click();
+    await expect(mediaDialog).toBeHidden();
+    await expect(page.locator('.resource-detail-cover a')).not.toHaveAttribute('target','_blank');
+    const panorama=page.locator('.room-media-item [data-panorama]').first();
+    await expect(panorama.locator('[data-panorama-expand]')).toBeHidden();
+    await panorama.locator('canvas:visible, img:visible').first().click();
+    await expect(mediaDialog).toBeVisible();
+    await expect(mediaDialog.locator('[data-panorama]')).toHaveCount(1);
+    await expect(mediaDialog.locator('[data-panorama] canvas:visible, [data-panorama] img:visible').first()).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(mediaDialog).toBeHidden();
+    await expect(page.locator('.room-media-item [data-panorama]')).toHaveCount(2);
+    const half=page.locator('[data-panorama="panorama_180"]');
+    await expect(half.locator('[data-panorama-expand]')).toHaveCount(0);
+    await half.locator('canvas:visible, img:visible').first().click();
+    await expect(mediaDialog).toBeVisible();
+    await expect(mediaDialog.locator('[data-panorama="panorama_180"]')).toHaveCount(1);
+    await mediaDialog.locator('.gd-media-close').click();
+    await expect(half).toBeVisible();
     await expect(page.locator('#photo-credits')).not.toHaveAttribute('open','');
     await page.locator('#photo-credits summary').click();
     await expect(page.locator('.published-photo-credits li')).toHaveCount(2);
     await expect(page.locator('.published-photo-credits a[href="https://creativecommons.org/licenses/by/2.0/"]')).toHaveCount(1);
     await expect(page.locator('.published-photo-credits a[href="https://creativecommons.org/licenses/by/4.0/"]')).toHaveCount(1);
     await expect(page.locator('.published-photo-credits')).not.toContainText('TEST Ziyaretçi');
+    await page.goto(base+'/?page=gallery');
+    await page.locator('.gallery figure img').first().click();
+    await expect(page.locator('.gd-media-dialog')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.gd-media-dialog')).toBeHidden();
+    await page.goto(base+'/?page=menu');
+    await page.locator('.menu-list .menu-image').first().click();
+    await expect(page.locator('.gd-media-dialog')).toBeVisible();
+    await expect(page.locator('.gd-media-stage > img')).toBeVisible();
+    await page.keyboard.press('Escape');await expect(page.locator('.gd-media-dialog')).toBeHidden();
+    await page.goto(base+'/?page=announcements');
+    await page.locator('.announcement-media img').first().click();
+    await expect(page.locator('.gd-media-dialog')).toBeVisible();
+    await page.locator('.gd-media-close').click();
+    await page.goto(base+'/?page=contact');
+    await expect(page.locator('.contact-social a')).toHaveCount(1);
+    await expect(page.locator('.footer-social a')).toHaveCount(1);
+    await expect(page.locator('.footer-social a').first()).toHaveAttribute('href','https://www.instagram.com/test_yayim');
+    await expect(page.locator('.footer-social')).not.toContainText('Facebook');
+    await expect(page.locator('.footer-social')).not.toContainText('TikTok');
     await page.goto(base+'/');await expect(page.locator('#announcements-preview article')).toHaveCount(3);
     assert.ok(await page.locator('#announcements-preview article p').first().evaluate(p=>p.textContent.length<=150));
     await page.locator('[data-ya-open]').click();const widget=page.locator('#yardimci-asistan-widget');
