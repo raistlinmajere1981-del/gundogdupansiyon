@@ -576,28 +576,35 @@ body.gd-media-open {overflow:hidden}
 }
 
 
-/* Gündoğdu page-specific photographic mastheads. One genuine, unique source
-   per page; no repeated second headings and no interactive/photo click target. */
+/* Interior hero: the whole source photo remains visible. Soft, blurred
+   continuation of the same image fills only the lateral breathing space. */
 .gd-page-hero {
-  isolation:isolate;position:relative;
-  width:100%;height:clamp(190px,21vw,300px);
-  overflow:hidden;background:#25483d
+  isolation:isolate;position:relative;display:flex;align-items:center;
+  justify-content:center;width:100%;height:clamp(290px,39vw,570px);
+  overflow:hidden;background:#1b3a34;
+}
+.gd-page-hero::before {
+  content:"";position:absolute;inset:-36px;z-index:-1;
+  background-image:var(--gd-hero-source);
+  background-position:center;background-size:cover;
+  filter:blur(38px) brightness(.70) saturate(.86);
+  transform:scale(1.06);pointer-events:none
 }
 .gd-page-hero > img {
-  display:block;width:100%;height:100%;
-  object-fit:cover;object-position:center 52%;
+  position:relative;z-index:0;display:block;
+  width:auto;height:100%;max-width:100%;min-width:0;
+  object-fit:contain;object-position:center;
+  filter:drop-shadow(0 0 26px #152c2844);
 }
 .gd-page-hero::after {
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(13,40,36,.02),rgba(13,40,36,.19));
+  background:linear-gradient(180deg,rgba(13,40,36,.02),rgba(13,40,36,.07));
   pointer-events:none
 }
-.gd-page-hero--restaurant > img {object-position:center 51%}
-.gd-page-hero--menu > img {object-position:center 52%}
-.gd-page-hero--about > img {object-position:center 46%}
-.gd-page-hero--gallery > img {object-position:center 50%}
-.gd-page-hero--reviews > img {object-position:center 60%}
-.gd-page-hero--contact > img {object-position:center 42%}
+@media(max-width:760px) {
+ .gd-page-hero {height:clamp(210px,75vw,400px)}
+ .gd-page-hero::before {inset:-20px;filter:blur(24px) brightness(.73) saturate(.86)}
+}
 .gd-region-decoration {
   position:relative;min-height:290px;isolation:isolate;overflow:hidden;
   border:1px solid #b0cbbb5c;border-radius:4px;
@@ -613,6 +620,5 @@ body.gd-media-open {overflow:hidden}
 .site-footer .gd-page-hero-credits ul {padding-inline-start:1.3rem;display:grid;gap:.4rem;margin:.6rem 0}
 .site-footer .gd-page-hero-credits li {font-size:.75rem;line-height:1.6}
 @media(max-width:760px) {
-  .gd-page-hero {height:clamp(150px,36vw,210px)}
   .gd-region-decoration {min-height:180px}
 }

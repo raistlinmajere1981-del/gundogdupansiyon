@@ -13,7 +13,7 @@ const names={
   rooms:'gideros-2-1275.webp',
   restaurant:'hero-restaurant.webp',
   menu:'hero-menu.webp',
-  about:'hero-about.webp',
+  about:'hero-about-cide-landscape.webp',
   gallery:'hero-gallery.webp',
   announcements:'hero-announcements.webp',
   reviews:'hero-reviews.webp',
@@ -40,8 +40,13 @@ test('every interior page owns one unique hard-coded hero photo',()=>{
 });
 test('photo credits and overlay remain compact and accessible',()=>{
   assert.ok(css.includes('rgba(14,37,34,.64)'),'home overlay too dark');
-  assert.ok(main.includes("'?v=7'"),'hero style cache version did not increase');
+  assert.ok(main.includes("'?v=8'"),'hero style cache version did not increase');
   assert.ok(view.includes('aria-hidden="true"'),'page hero must not duplicate H1');
+  assert.ok(css.includes('object-fit:contain'),'hero photo should display fully rather than crop');
+  assert.ok(css.includes('background-image:var(--gd-hero-source)'),'missing blurred photo continuation');
+  assert.ok(view.includes('--gd-hero-source:url('),'hero background does not use the same source');
+  assert.ok(!view.includes('hero-about.webp'),'old inaccurate road sign must not be referenced');
+  assert.ok(credits.includes("author' => 'Erhan3437'"),'new landscape attribution absent');
   assert.ok(credits.includes("foreach ($photos as $photo)"));
   assert.equal((credits.match(/'page' => '/g)||[]).length,7);
   assert.ok(readFileSync(join(root,'canonical/site/views/components/footer.php'),'utf8').includes("render_view('components/page-hero-credits'"));

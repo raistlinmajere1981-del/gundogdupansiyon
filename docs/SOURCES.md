@@ -24,7 +24,7 @@ Yeni özgün SVG çizildi: iki kıyı, koy/ufuk ve doğan güneş. Coğrafi hari
 | --- | --- | --- | --- | --- |
 | restaurant | Cide gideros.jpg | Crebain / 2006 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_gideros.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | menu | Cide Limanı 2014-04-18 18-47.jpg | Cide67 / 2014 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_Liman%C4%B1_2014-04-18_18-47.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| about | Gökçekale 14398.jpg | Panegyrics of Granovetter / 2012 | [Commons](https://commons.wikimedia.org/wiki/File:G%C3%B6k%C3%A7ekale_14398.jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| about | Küre Dağları Milli Parkı · Çukurçal Köyü Cide (2019) | Erhan3437 / 2019 | [Commons](https://commons.wikimedia.org/wiki/File:K%C3%BCre_Da%C4%9Flar%C4%B1_Milli_Park%C4%B1_%C3%87ukur%C3%A7al_K%C3%B6y%C3%BC_Cide_Kastamonu.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | gallery | Cide Ovası 10 09 1984 Küstenebene von Cide.jpg | Volker Höhfeld / 1984 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_Ovas%C4%B1_10_09_1984_K%C3%BCstenebene_von_Cide.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | announcements | Cide sahili.jpg | Crebain / 2006 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_sahili.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | reviews | Çayüstü köyü.jpg | styletech / 2009 | [Commons](https://commons.wikimedia.org/wiki/File:%C3%87ay%C3%BCst%C3%BC_k%C3%B6y%C3%BC.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
