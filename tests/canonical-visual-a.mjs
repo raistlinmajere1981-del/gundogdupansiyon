@@ -45,6 +45,25 @@ try {
     await context.route('**/*',route=>{const url=new URL(route.request().url());if(url.origin!==base)return route.abort();if(url.pathname.startsWith('/yardimci-asistan/media/TEST-'))return route.fulfill({contentType:'image/webp',body:media});return route.continue();});
     const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(base+'/?page=menu');
+    await expect(page.locator('.gd-header-top .site-name')).toBeVisible();
+    await expect(page.locator('.gd-header-top .gd-social--header')).toBeVisible();
+    const topBounds=await page.locator('.gd-header-top').boundingBox();
+    const bottomBounds=await page.locator('.gd-header-bottom').boundingBox();
+    assert.ok(topBounds && bottomBounds && bottomBounds.y>=topBounds.y+topBounds.height-2,JSON.stringify({topBounds,bottomBounds}));
+    const desktopMenu=page.locator('#main-navigation');
+    if(width>760) {
+      await expect(desktopMenu).toBeVisible();
+      const logo=await page.locator('.gd-header-top .site-name').boundingBox();
+      const socials=await page.locator('.gd-header-top .gd-social--header').boundingBox();
+      assert.ok(logo && socials && socials.x>logo.x+logo.width,JSON.stringify({logo,socials}));
+    } else {
+      await expect(desktopMenu).toBeHidden();
+      await page.locator('[data-menu-toggle]').click();
+      await expect(desktopMenu).toBeVisible();
+      await page.locator('[data-menu-toggle]').click();
+      await expect(desktopMenu).toBeHidden();
+    }
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1));
     await expect(page.locator('.menu-publication-note')).toBeHidden();await expect(page.locator('.page-header .eyebrow')).toHaveCount(0);
     await expect(page.locator('.menu-image')).toHaveCount(3);await expect(page.locator('.menu-featured')).toHaveCount(1);
     assert.equal(await page.locator('.menu-list > li > [data-format-currency]').first().getAttribute('data-format-currency'),'125');

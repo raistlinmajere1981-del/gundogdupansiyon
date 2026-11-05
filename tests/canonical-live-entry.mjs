@@ -47,7 +47,20 @@ try {
     }
     reset();state.businessError=true;await page.goto(base+'/');await expect(page.locator('#yardimci-asistan-widget')).toHaveCount(0);reset();
     const key='theme.gundogdu.hero.title';state.localization={version:1,source_language:'tr',target_languages:['en'],languages:[{code:'en',locale:'en-GB',nativeName:'English'},{code:'de',locale:'de-DE',nativeName:'Deutsch'}],site_catalog:{id:source.id,entries:source.entries},translations:{site_text:{[source.id+':'+key]:{en:{text:'TEST Published English'}}}}};
-    await page.goto(base+'/?lang=en');await expect(page.locator('html')).toHaveAttribute('lang','en');await expect(page.locator('h1')).toHaveText('TEST Published English');assert.deepEqual(await page.locator('#site-language option').evaluateAll(nodes=>nodes.map(node=>node.value)),['tr','en']);
+    await page.goto(base+'/?lang=en');await expect(page.locator('html')).toHaveAttribute('lang','en');await expect(page.locator('h1')).toHaveText('TEST Published English');assert.deepEqual(await page.locator('.gd-language-options a').evaluateAll(nodes=>nodes.map(node=>new URL(node.href).searchParams.get('lang'))),['tr','en']);
+    await expect(page.locator('.gd-language-switcher summary img')).toHaveAttribute('src','/assets/site/brand/flag-en.svg');
+    await page.locator('.gd-language-switcher summary').click();
+    await expect(page.locator('.gd-language-options')).toBeVisible();
+    await page.locator('.gd-language-options a[hreflang=tr]').click();
+    await expect(page.locator('html')).toHaveAttribute('lang','tr');
+    await expect(page.locator('.gd-language-switcher summary img')).toHaveAttribute('src','/assets/site/brand/flag-tr.svg');
+    await page.goto(base+'/?page=rooms&id=TEST-room&lang=en');
+    await page.locator('.gd-language-switcher summary').click();
+    await page.locator('.gd-language-options a[hreflang=tr]').click();
+    await expect(page.locator('html')).toHaveAttribute('lang','tr');
+    assert.equal(new URL(page.url()).searchParams.get('id'),'TEST-room');
+    assert.equal(new URL(page.url()).searchParams.get('page'),'rooms');
+    await expect(page.locator('.language-picker button[type=submit]')).toHaveCount(0);
     reset();
     for(const [route,id] of [['rooms','TEST-room'],['restaurant','TEST-table']]) {
       await page.goto(base+`/?page=${route}&id=${id}`);

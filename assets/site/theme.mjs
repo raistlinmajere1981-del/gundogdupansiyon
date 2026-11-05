@@ -1,5 +1,20 @@
 // Site presentation only; canonical widget owns intents, gates, form state and transport.
 export function mount({language}) {
+  // Native details keeps language navigation functional without scripting.
+  // This listener only closes the popover on outside click and Escape.
+  const languageMenu = document.querySelector('[data-language-menu]');
+  if (languageMenu) {
+    document.addEventListener('click', event => {
+      if (languageMenu.open && !languageMenu.contains(event.target)) languageMenu.open = false;
+    });
+    languageMenu.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        languageMenu.open = false;
+        languageMenu.querySelector('summary')?.focus();
+      }
+    });
+  }
   let discoveryObserver;
   let widgetObserver;
   const decorate = root => {

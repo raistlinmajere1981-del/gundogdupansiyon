@@ -26,7 +26,7 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
       'language' => ['code' => $site['language']['code'], 'locale' => $site['language']['locale'], 'direction' => $site['language']['direction'],
           'available' => array_keys($site['language']['catalogs']), 'messages' => $site['language']['messages']],
       'apiBasePath' => $site['module_path'], 'features' => $publication['features'], 'effects' => $view['effects'],
-      'themeModule' => asset($site, 'site/theme.mjs') . '?v=3', 'sourceKeys' => source_keys($site['root']),
+      'themeModule' => asset($site, 'site/theme.mjs') . '?v=4', 'sourceKeys' => source_keys($site['root']),
   ]) ?></script>
   <script type="module" src="<?= e(asset($site, 'site/media-viewer.mjs')) ?>?v=3"></script>
   <script src="<?= e(asset($site, 'core/interaction-language.js')) ?>"></script>
