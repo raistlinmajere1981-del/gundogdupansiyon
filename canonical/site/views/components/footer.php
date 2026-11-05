@@ -10,6 +10,7 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
     <p><a href="https://commons.wikimedia.org/wiki/File:Gideros_Bay1.jpg" target="_blank" rel="noopener noreferrer"><?= e(t($site, 'theme.gundogdu.photo.source1')) ?></a> · <a href="https://commons.wikimedia.org/wiki/File:Gideros_Bay2.jpg" target="_blank" rel="noopener noreferrer"><?= e(t($site, 'theme.gundogdu.photo.source2')) ?></a></p>
     <p><?= e(t($site, 'theme.gundogdu.photo.author')) ?> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer"><?= e(t($site, 'theme.gundogdu.photo.license')) ?></a></p>
     <p><?= e(t($site, 'theme.gundogdu.photo.changes')) ?></p><p><?= e(t($site, 'theme.gundogdu.photo.notice')) ?></p><p><?= e(t($site, 'theme.gundogdu.footer.mark')) ?></p>
+    <?php render_view('components/page-hero-credits', $view, $site); ?>
     <?php render_view('components/published-photo-credits', $view, $site); ?>
     <?php render_view('components/demo-menu-photo-credits', $view, $site); ?>
   </details>

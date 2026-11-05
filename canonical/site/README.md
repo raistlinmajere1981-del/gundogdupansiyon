@@ -39,7 +39,7 @@ web kökü dışında ve pasiftir. Eski motor, scriptler, örnek sahne ve deği�
 vendor motoru manifestin değişmemiş parçasıdır; yüklenmez. Sonraki efekt aşaması
 canonical adaptörün responsive/kadraj ve yaşam döngüsü sözleşmesiyle ayrıca sınanır.
 
-Fotoğraflar Makalp'in 30 Haziran 2007 Gideros Bay1/Bay2 arşivleridir; CC BY-SA 3.0.
+Ana sayfa Makalp'in 30 Haziran 2007 Gideros Bay1 arşiv fotoğrafını kullanır; Odalar hero'su Bay2'dir. İç sayfaların diğer yedi farklı fotoğrafı Cide ve çevresine aittir; kaynak/yazar/lisans ayrıntıları SOURCES.md ve kapalı footer Fotoğraf kredileri alanındadır.
 WebP türevleri aynı lisansla sunulur. İşletme/oda/restoran fotoğrafı veya odadan
 manzara olarak kullanılmaz. Header/footer özgün koy/güneş işaretini kullanır;
 resmî işletme logosu olduğu iddia edilmez. Cormorant 500 ve Manrope 400/600,

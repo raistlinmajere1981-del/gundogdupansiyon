@@ -13,6 +13,7 @@ cd "$repo"
 node scripts/sync-public-assets.mjs --check
 node tests/canonical-cutover.test.mjs
 node tests/canonical-effects.test.mjs
+node --test tests/gundogdu-page-heroes.mjs
 php tests/canonical-entry.php
 python3 tests/canonical-routes.py
 package="$(node scripts/package-site.mjs --stage)"

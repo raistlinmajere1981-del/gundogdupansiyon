@@ -13,11 +13,12 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
   <?php if (in_array($view['page'], ['missing','account'], true)): ?><meta name="robots" content="noindex, nofollow"><?php endif; ?>
   <?php $structured = structured_data($site, $view); if ($structured !== []): ?><script type="application/ld+json"><?= json_html($structured) ?></script><?php endif; ?>
   <link rel="stylesheet" href="<?= e(asset($site, 'core/site.css')) ?>">
-  <link rel="stylesheet" href="<?= e(asset($site, 'site/theme.css') . '?v=6') ?>">
+  <link rel="stylesheet" href="<?= e(asset($site, 'site/theme.css') . '?v=7') ?>">
 </head>
 <body>
   <a class="skip-link" href="#content"><?= e(t($site, 'nav.skip')) ?></a>
   <?php render_view('components/header', $view, $site); ?>
+  <?php render_view('components/page-hero', $view, $site); ?>
   <main id="content" class="shell main-content" tabindex="-1">
     <?php render_view('pages/' . $view['page'], $view, $site); ?>
   </main>

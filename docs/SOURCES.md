@@ -15,6 +15,23 @@ Yeni özgün SVG çizildi: iki kıyı, koy/ufuk ve doğan güneş. Coğrafi hari
 | Gideros Bay1, 1818×1228 | [Commons](https://commons.wikimedia.org/wiki/File:Gideros_Bay1.jpg) · Makalp | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | Gideros Bay2, 1275×941 | [Commons](https://commons.wikimedia.org/wiki/File:Gideros_Bay2.jpg) · Makalp | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 
+
+## İç sayfa başlık fotoğrafları (2026-11-05)
+
+İç sayfalarda ayrı arşiv fotoğrafları kullanılır. Yalnız Gideros Bay2 ve Cide gideros.jpg doğrudan Gideros Koyu'nu gösterir; diğerleri Cide ve çevre yerleşimleridir. Güncel işletme fotoğrafı oldukları iddia edilmez.
+
+| Sayfa | Dosya | Yazar / yıl | Kaynak | Lisans |
+| --- | --- | --- | --- | --- |
+| restaurant | Cide gideros.jpg | Crebain / 2006 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_gideros.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| menu | Cide Limanı 2014-04-18 18-47.jpg | Cide67 / 2014 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_Liman%C4%B1_2014-04-18_18-47.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| about | Gökçekale 14398.jpg | Panegyrics of Granovetter / 2012 | [Commons](https://commons.wikimedia.org/wiki/File:G%C3%B6k%C3%A7ekale_14398.jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| gallery | Cide Ovası 10 09 1984 Küstenebene von Cide.jpg | Volker Höhfeld / 1984 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_Ovas%C4%B1_10_09_1984_K%C3%BCstenebene_von_Cide.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| announcements | Cide sahili.jpg | Crebain / 2006 | [Commons](https://commons.wikimedia.org/wiki/File:Cide_sahili.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| reviews | Çayüstü köyü.jpg | styletech / 2009 | [Commons](https://commons.wikimedia.org/wiki/File:%C3%87ay%C3%BCst%C3%BC_k%C3%B6y%C3%BC.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| contact | Eski cide evleri.jpg | Crebain / 2006 | [Commons](https://commons.wikimedia.org/wiki/File:Eski_cide_evleri.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+
+Tüm görüntüler yalnızca ölçeklendirilip WebP'ye dönüştürüldü; web sayfasındaki başlık alanlarında CSS kırpması kullanılıyor. Atıflar sayfanın varsayılan olarak kapalı «Fotoğraf kredileri» bölümüne alındı.
+
 İki dosya sayfasında yazar, kendi eseri ve lisans bilgileri kontrol edildi. Fotoğraflar **30 Haziran 2007 tarihli gerçek Gideros arşiv fotoğraflarıdır**. Güncel işletme görünümü, oda/restoran görseli veya manzara garantisi olarak sunulmaz.
 
 Bay1 için 720/1200/1818 px WebP, Bay2 için 720/1275 px WebP, ilk fotoğraftan 1200×630 sosyal paylaşım kırpması hazırlandı. İçerik/renk değiştirilmedi; boyutlandırma, yeniden kodlama ve ekran kırpması yapıldı. Fotoğraf türevleri aynı CC BY-SA 3.0 lisansıyla sunulur. Yazar/kaynak/lisans/değişiklik atfı tüm sayfalardaki altbilgi «Fotoğraf kredileri» alanında açılarak görüntülenebilir. Atıf, fotoğrafçının işletmeyi desteklediği anlamına gelmez.
