@@ -143,6 +143,27 @@ try {
     await expect(page.locator('.gd-social--footer a').first()).toHaveAttribute('href','https://www.instagram.com/test_yayim');
     await expect(page.locator('.gd-social--footer')).not.toContainText('Facebook');
     await expect(page.locator('.gd-social--footer')).not.toContainText('TikTok');
+    // Footer remains compact, accessible and clear of the floating Nexa launcher.
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    const footerMetrics=await page.evaluate(() => {
+      const bounds=selector=>document.querySelector(selector)?.getBoundingClientRect();
+      const footer=bounds('.site-footer'), widget=bounds('#yardimci-asistan-widget .ya-widget-button');
+      const intersects=(a,b)=>a && b && a.left<b.right && a.right>b.left && a.top<b.bottom && a.bottom>b.top;
+      const blocked=[...document.querySelectorAll(
+        '.site-footer .site-name,.site-footer .footer-navigation a,.site-footer .gd-social--footer a,.site-footer .photo-credits summary,.site-footer .gd-footer-fineprint small'
+      )].filter(el=>intersects(el.getBoundingClientRect(),widget)).map(el=>el.textContent.trim());
+      return {height:footer.height, blocked, horizontal:document.documentElement.scrollWidth-innerWidth};
+    });
+    assert.ok(footerMetrics.height<=(width>760?260:340),JSON.stringify({width,footerMetrics}));
+    assert.deepEqual(footerMetrics.blocked,[],JSON.stringify({width,footerMetrics}));
+    assert.ok(footerMetrics.horizontal<=1,JSON.stringify({width,footerMetrics}));
+    await page.screenshot({path:new URL('footer-'+width+'.png',artifacts).pathname});
+    await page.locator('#photo-credits summary').click();
+    await expect(page.locator('#photo-credits')).toHaveAttribute('open','');
+    await expect(page.locator('.photo-credits p').first()).toBeVisible();
+    await page.locator('#photo-credits summary').click();
+    await expect(page.locator('#photo-credits')).not.toHaveAttribute('open','');
+
     await page.goto(base+'/');await expect(page.locator('#announcements-preview article')).toHaveCount(3);
     assert.ok(await page.locator('#announcements-preview article p').first().evaluate(p=>p.textContent.length<=150));
     await page.locator('[data-ya-open]').click();const widget=page.locator('#yardimci-asistan-widget');

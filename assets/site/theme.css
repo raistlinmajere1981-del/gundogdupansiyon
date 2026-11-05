@@ -481,3 +481,81 @@ body.gd-media-open {overflow:hidden}
   .site-header .gd-header-controls {gap:.2rem}
   .site-header .gd-header-controls .gd-social--header a {min-width:32px;width:32px}
 }
+
+/* Gündoğdu condensed footer: identity/navigation, then a compact legal/social row.
+   Reserve the bottom-right floating assistant's footprint at all viewport widths. */
+.site-footer {padding:1rem 0 1.15rem;background:var(--site-surface)}
+.site-footer .gd-footer-layout {display:grid;gap:.55rem;min-width:0}
+.site-footer .footer-top {
+  display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);
+  align-items:center;gap:.55rem 1.4rem;margin:0;min-width:0;
+  padding-inline-end:170px
+}
+.site-footer .footer-top .site-name {margin:0;min-width:0;max-width:100%;font-size:.91rem;line-height:1.3}
+.site-footer .footer-top .site-name img {width:38px;height:38px}
+.site-footer .footer-top .site-name span {max-width:26rem}
+.site-footer .footer-navigation {
+  display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;
+  gap:0 .65rem;margin:0;min-width:0;font-size:.75rem;line-height:1.25
+}
+.site-footer .footer-navigation a {min-height:32px;display:inline-flex;align-items:center;white-space:nowrap;padding:.15rem}
+.site-footer .gd-footer-lower {
+  display:flex;align-items:center;gap:.55rem 1.2rem;
+  border-top:1px solid var(--site-border);padding-top:.5rem;
+  padding-inline-end:170px;min-width:0
+}
+.site-footer .gd-social--footer {
+  display:flex;align-items:center;gap:.35rem;flex:none;
+  margin:0;padding:0;border:0
+}
+.site-footer .gd-social--footer a {
+  min-height:35px;padding:.3rem .58rem;font-size:.75rem;border-radius:9px
+}
+.site-footer .gd-social--footer .gd-social-icon {width:16px;height:16px}
+.site-footer .gd-footer-fineprint {display:flex;align-items:center;flex-wrap:wrap;gap:.3rem 1rem;min-width:0}
+.site-footer .photo-credits {
+  border:0;margin:0;padding:0;font-size:.75rem;min-width:0;flex:none;
+  scroll-margin-block:1rem
+}
+.site-footer .photo-credits summary {
+  display:list-item;min-height:34px;padding:.3rem 0;
+  font-size:.75rem;line-height:1.6;white-space:nowrap
+}
+.site-footer .photo-credits[open] {
+  flex-basis:100%;order:2;
+}
+.site-footer .photo-credits[open] summary {margin-bottom:.5rem}
+.site-footer .gd-footer-fineprint > small {
+  display:block;margin:0;color:var(--muted);font-size:.73rem;line-height:1.4;
+  overflow-wrap:anywhere
+}
+@media(max-width:1100px) {
+  .site-footer .footer-top {grid-template-columns:minmax(0,1fr)}
+  .site-footer .footer-navigation {justify-content:flex-start}
+  .site-footer .gd-footer-lower {flex-wrap:wrap;padding-inline-end:160px;gap:.25rem .9rem}
+}
+@media(max-width:760px) {
+  .site-footer {padding:.75rem 0 1rem}
+  .site-footer .gd-footer-layout {gap:.35rem}
+  .site-footer .footer-top {gap:.25rem;padding-inline-end:0}
+  .site-footer .footer-top .site-name {font-size:.83rem}
+  .site-footer .footer-top .site-name img {width:33px;height:33px}
+  .site-footer .footer-navigation {
+    flex-direction:row;flex-wrap:wrap;align-items:center;gap:0 .65rem;
+    font-size:.73rem;line-height:1.3
+  }
+  .site-footer .footer-navigation a {min-height:28px}
+  .site-footer .gd-footer-lower {
+    display:grid;grid-template-columns:1fr;gap:.2rem;
+    padding-inline-end:0;padding-top:.4rem
+  }
+  .site-footer .gd-social--footer {gap:.4rem}
+  .site-footer .gd-social--footer a {min-height:34px;font-size:.73rem}
+  .site-footer .gd-footer-fineprint {
+    display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;
+    width:calc(100% - 165px);min-width:0
+  }
+  .site-footer .photo-credits {max-width:100%;font-size:.72rem}
+  .site-footer .photo-credits summary {min-height:30px}
+  .site-footer .gd-footer-fineprint > small {font-size:.72rem;max-width:100%}
+}
