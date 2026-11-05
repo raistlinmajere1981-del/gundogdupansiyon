@@ -1284,5 +1284,7 @@
   "theme.gundogdu.media.close": "Kapat",
   "theme.gundogdu.media.previous": "Önceki fotoğraf",
   "theme.gundogdu.media.next": "Sonraki fotoğraf",
-  "theme.gundogdu.media.image": "Fotoğraf"
+  "theme.gundogdu.media.image": "Fotoğraf",
+  "catalog.search_short": "Ara…",
+  "catalog.filters": "Filtreler"
 }
