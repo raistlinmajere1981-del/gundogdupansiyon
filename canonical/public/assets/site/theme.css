@@ -553,9 +553,24 @@ body.gd-media-open {overflow:hidden}
   .site-footer .gd-social--footer a {min-height:34px;font-size:.73rem}
   .site-footer .gd-footer-fineprint {
     display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;
-    width:calc(100% - 165px);min-width:0
+    width:calc(100% - 215px);min-width:0
   }
   .site-footer .photo-credits {max-width:100%;font-size:.72rem}
   .site-footer .photo-credits summary {min-height:30px}
   .site-footer .gd-footer-fineprint > small {font-size:.72rem;max-width:100%}
+}
+
+/* Mobile launcher is wider on real publications than in the synthetic preview.
+   Preserve links' accessible names while keeping the visual row icon-only. */
+@media(max-width:760px) {
+  .site-footer .gd-social--footer a {width:37px;height:37px;min-height:37px;padding:0;border-radius:10px}
+  .site-footer .gd-social--footer .gd-social-name {display:none}
+  .site-footer .gd-footer-company {
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+  }
+  .site-footer .gd-footer-copyright {white-space:nowrap}
+}
+@media(max-width:359px) {
+  .site-footer .gd-social--footer a {width:33px;height:34px;min-height:34px}
 }

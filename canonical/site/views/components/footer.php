@@ -13,7 +13,7 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
     <?php render_view('components/published-photo-credits', $view, $site); ?>
     <?php render_view('components/demo-menu-photo-credits', $view, $site); ?>
   </details>
-  <?php if ($view['publication']['name'] !== ''): ?><small>© <?= e(number_text($site, (int) date('Y'))) ?> <?= e($view['publication']['name']) ?></small><?php endif; ?>
+  <?php if ($view['publication']['name'] !== ''): ?><small class="gd-footer-copyright">© <?= e(date('Y')) ?> <span class="gd-footer-company"><?= e($view['publication']['name']) ?></span></small><?php endif; ?>
     </div>
   </div>
 </div></footer>

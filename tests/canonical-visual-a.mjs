@@ -157,6 +157,11 @@ try {
     assert.ok(footerMetrics.height<=(width>760?260:340),JSON.stringify({width,footerMetrics}));
     assert.deepEqual(footerMetrics.blocked,[],JSON.stringify({width,footerMetrics}));
     assert.ok(footerMetrics.horizontal<=1,JSON.stringify({width,footerMetrics}));
+    if(width<=760){
+      await expect(page.locator('.gd-social--footer .gd-social-name')).toBeHidden();
+      assert.ok(await page.locator('.gd-footer-company').evaluate(el=>el.getBoundingClientRect().width<=1));
+      await expect(page.locator('.gd-footer-copyright')).toContainText('© 2026');
+    }
     await page.screenshot({path:new URL('footer-'+width+'.png',artifacts).pathname});
     await page.locator('#photo-credits summary').click();
     await expect(page.locator('#photo-credits')).toHaveAttribute('open','');
