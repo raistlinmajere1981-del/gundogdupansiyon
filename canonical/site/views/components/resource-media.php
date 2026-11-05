@@ -23,10 +23,10 @@ $credit = str_starts_with($url, $site['module_path'] . '/') ? ($creditCatalog[$t
 <figure class="room-media-item">
 <?php if ($kind === 'video'): ?><video controls preload="metadata" aria-label="<?= e($title) ?>"><source src="<?= e($url) ?>"></video>
 <?php elseif (str_starts_with($kind, 'panorama_')): ?>
-<div data-panorama="<?= e($kind) ?>" data-src="<?= e($url) ?>" data-label="<?= e($title) ?>"><img src="<?= e($url) ?>" alt="<?= e($title) ?>" loading="lazy"></div>
+<div data-panorama="<?= e($kind) ?>" data-src="<?= e($url) ?>" data-label="<?= e($title) ?>" role="button" tabindex="0" aria-label="<?= e($title) ?>"><img src="<?= e($url) ?>" alt="<?= e($title) ?>" loading="lazy"></div>
 <p class="room-media-help"><?= e(t($site, 'room.panorama.help')) ?></p>
-<?php else: ?><a href="<?= e($url) ?>" target="_blank" rel="noopener"><img src="<?= e($url) ?>" alt="<?= e($title) ?>" loading="lazy"></a><?php endif; ?>
-<figcaption><a href="<?= e($url) ?>" target="_blank" rel="noopener"><?= e($credit['title'] ?? $title) ?></a></figcaption>
+<?php else: ?><button type="button" class="gd-media-button" data-gd-media-trigger aria-label="<?= e($title) ?>"><img src="<?= e($url) ?>" alt="<?= e($title) ?>" loading="lazy"></button><?php endif; ?>
+<figcaption><?= e($credit['title'] ?? $title) ?></figcaption>
 </figure>
 <?php endforeach; ?>
 </div>

@@ -10,7 +10,7 @@ $truncated = $excerpt !== preg_replace('/\s+/u', ' ', $fullText);
 ?>
 <article class="content-card announcement-card">
   <?php if ($images !== []): ?><div class="announcement-media">
-    <?php foreach ($images as $image): ?><a href="<?= e(media_url($image['url'], $site['module_path'])) ?>" target="_blank" rel="noopener"><img src="<?= e(media_url($image['url'], $site['module_path'])) ?>" alt="<?= e(text($image['altText'] ?? '') ?: $item['title']) ?>" loading="lazy" decoding="async"></a><?php endforeach; ?>
+    <?php foreach ($images as $image): ?><button type="button" class="gd-media-button" data-gd-media-trigger><img src="<?= e(media_url($image['url'], $site['module_path'])) ?>" alt="<?= e(text($image['altText'] ?? '') ?: $item['title']) ?>" loading="lazy" decoding="async"></button><?php endforeach; ?>
   </div><?php endif; ?>
   <div class="announcement-body">
     <h2><?= e($item['title']) ?></h2>

@@ -313,3 +313,82 @@ body.gd-media-open {overflow:hidden}
   .gd-media-stage,.gd-media-stage > img,.gd-media-stage > [data-panorama],
   .gd-media-stage [data-panorama] canvas,.gd-media-stage [data-panorama] img {max-height:calc(100dvh - 86px)}
 }
+
+/* Gündoğdu: small, accessible social icons sourced from the published profile. */
+.header-content .gd-social--header {display:flex;align-items:center;gap:.3rem;flex:none;margin-inline-start:.2rem}
+.gd-social a {
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-width:40px;min-height:40px;padding:.35rem;border-radius:12px;
+  border:1px solid var(--site-border);color:var(--forest);
+  background:transparent;text-decoration:none;line-height:1.3;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease
+}
+.gd-social a:hover,.gd-social a:focus-visible {background:var(--forest);color:#fffefa;border-color:var(--forest);text-decoration:none}
+.gd-social a:focus-visible {outline:3px solid var(--sea);outline-offset:2px}
+.gd-social-icon {display:block;flex:none}
+.gd-social--header .gd-social-name {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.gd-social--footer {display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-block:1.1rem;padding-block:1.15rem;border-block:1px solid var(--site-border)}
+.gd-social--footer a,.gd-social--contact a {padding:.55rem .85rem;border-radius:100px;background:var(--site-bg);font-size:.84rem;font-weight:600;min-height:44px}
+.gd-social--footer .gd-social-name,.gd-social--contact .gd-social-name {display:inline}
+.gd-social--contact {display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-block:.7rem 1.25rem}
+@media(max-width:980px) and (min-width:761px) {
+  .header-content .gd-social--header {margin-inline-start:auto}
+}
+@media(max-width:760px) {
+  .header-content .gd-social--header {order:2;margin-inline-start:auto;margin-inline-end:.25rem}
+  .header-content .main-navigation {order:3}
+  .header-content .language-picker {order:4}
+  .header-content .gd-social--header a {min-width:38px;min-height:38px}
+}
+/* Contact actions: intentionally set all interaction-state colors, no inherited low-contrast text. */
+.contact-layout .contact-actions {display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1.1rem 1.25rem}
+.contact-layout .gd-contact-button,
+.contact-layout .gd-contact-button:link,
+.contact-layout .gd-contact-button:visited {
+  display:inline-flex;align-items:center;justify-content:center;gap:.65rem;
+  min-height:50px;padding:.8rem 1.15rem;border-radius:12px;
+  border:1px solid #244c45;text-decoration:none;font-size:.9rem;font-weight:600;
+  box-shadow:0 4px 12px #183d3314;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease
+}
+.contact-layout .gd-contact-button--primary {background:#244c45;color:#fffefa}
+.contact-layout .gd-contact-button--secondary {background:#ecf2ed;color:#183c35}
+.contact-layout .gd-contact-button:hover,
+.contact-layout .gd-contact-button:focus-visible,
+.contact-layout .gd-contact-button:active {background:#163d35!important;color:#fffefa!important;border-color:#163d35!important;text-decoration:none}
+.contact-layout .gd-contact-button:focus-visible {outline:3px solid #c29562;outline-offset:3px}
+.contact-layout .gd-contact-button-icon {display:grid;place-items:center;min-width:26px;height:26px;border:1px solid currentColor;border-radius:7px;font-size:1rem;line-height:1}
+@media(hover:hover) {.contact-layout .gd-contact-button:hover {transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce) {.gd-social a,.contact-layout .gd-contact-button {transition:none}}
+
+/* No thumbnail ever owns a raw-media navigation destination. */
+#content .gd-media-button {
+  appearance:none;display:block;width:100%;padding:0;margin:0;
+  background:transparent;border:0;border-radius:inherit;text-align:inherit;
+  color:inherit;line-height:inherit;cursor:zoom-in
+}
+#content .gd-media-button img {display:block;width:100%}
+#content .gd-media-button:focus-visible {outline:3px solid var(--sea);outline-offset:4px}
+#content .room-media-item figcaption {overflow-wrap:anywhere}
+#content .menu-list .gd-media-button {width:calc(100% + 2.2rem);margin:-1.1rem -1.1rem 1rem}
+#content .menu-list .gd-media-button .menu-image {width:100%;height:auto;margin:0;border-radius:9px 9px 0 0}
+#content .announcement-media .gd-media-button img {margin:0}
+#content [data-panorama] {cursor:zoom-in}
+#content [data-panorama]:focus-visible {outline:3px solid var(--sea);outline-offset:3px}
+
+/* A bounded working canvas (not the entire screen) for both panorama formats. */
+.gd-media-dialog {width:min(1040px,calc(100vw - 52px))}
+.gd-media-stage {width:100%;min-height:0}
+.gd-media-stage > [data-panorama] {
+  flex:none;width:100%;height:min(56dvh,560px);max-height:min(56dvh,560px);
+  aspect-ratio:auto;background:#14211d;overflow:hidden
+}
+.gd-media-stage [data-panorama] canvas,
+.gd-media-stage [data-panorama] img {
+  display:block;width:100%;height:100%;max-height:none;
+  aspect-ratio:auto;object-fit:cover;touch-action:none
+}
+@media(max-width:600px) {
+  .gd-media-dialog {width:calc(100vw - 16px)}
+  .gd-media-stage > [data-panorama] {height:min(53dvh,380px);max-height:min(53dvh,380px)}
+  .gd-media-stage [data-panorama] canvas,.gd-media-stage [data-panorama] img {height:100%;max-height:none}
+}

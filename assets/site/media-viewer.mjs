@@ -18,8 +18,9 @@ export function mountMediaViewer({language} = {}) {
     if (seen.has(host) || !img.getAttribute('src')) continue;
     seen.add(host);
     const anchor = img.closest('a');
+    const button = img.closest('[data-gd-media-trigger]');
     if (anchor && anchor.contains(img)) anchor.removeAttribute('target');
-    items.push({host, img, anchor, panorama: host !== img,
+    items.push({host, img, anchor, button, panorama: host !== img,
       title: img.getAttribute('alt') || host.dataset.label || ''});
   }
   if (!items.length) return;
@@ -130,8 +131,8 @@ export function mountMediaViewer({language} = {}) {
     open(index, trigger);
   };
   for (const [index, item] of items.entries()) {
-    const target = item.panorama ? item.host : item.anchor || item.img;
-    if (!item.anchor && !item.panorama) {
+    const target = item.panorama ? item.host : item.button || item.anchor || item.img;
+    if (!item.button && !item.anchor && !item.panorama) {
       item.img.tabIndex = 0; item.img.setAttribute('role', 'button');
     }
     if (item.panorama) {item.host.tabIndex = 0; item.host.setAttribute('role','button');}
@@ -158,4 +159,11 @@ export function mountMediaViewer({language} = {}) {
     }
   }
   window.addEventListener('pagehide', () => {closeViewer();panoramaObservers.forEach(observer => observer.disconnect());});
+}
+
+// Independent site-owned entry: do not depend on a cached shared theme module.
+const context = document.getElementById('site-context');
+if (context) {
+  const messages = JSON.parse(context.textContent || '{}').language?.messages || {};
+  mountMediaViewer({language:{text:key=>messages[key] || key}});
 }

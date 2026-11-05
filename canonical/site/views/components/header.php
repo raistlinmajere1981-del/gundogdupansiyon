@@ -6,6 +6,7 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
     <a class="site-name" href="<?= e(page_url($site, 'home')) ?>"><img src="<?= e(asset($site, 'site/brand/mark.svg')) ?>" width="48" height="48" alt=""><span><?= e($view['publication']['name'] ?: t($site, 'site.title')) ?></span></a>
     <button type="button" class="menu-toggle" aria-expanded="true" aria-controls="main-navigation" data-menu-toggle hidden><?= e(t($site, 'nav.close')) ?></button>
     <nav id="main-navigation" class="main-navigation" aria-label="<?= e(t($site, 'nav.main')) ?>"><?php render_navigation($view, $site); ?></nav>
+    <?php render_view('components/social-links', ['publication' => $view['publication'], 'social_variant' => 'header'], $site); ?>
     <?php if (count($site['language']['catalogs']) > 1): ?>
     <form method="get" class="language-picker">
       <?php foreach (language_query_fields($view) as $key => $value): ?><input type="hidden" name="<?= e($key) ?>" value="<?= e($value) ?>"><?php endforeach; ?>

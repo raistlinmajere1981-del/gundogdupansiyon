@@ -33,7 +33,7 @@ $menuPhotoSrc = static function (mixed $value) use ($site): string {
   <?php if (text($category['description'] ?? '') !== ''): ?><p><?= e($category['description']) ?></p><?php endif; ?>
   <ul class="menu-list"><?php foreach ($items as $record): ?>
     <li><div>
-      <?php $image = $menuPhotoSrc($record['image_url'] ?? ''); if ($image !== ''): ?><img class="menu-image" src="<?= e($image) ?>" alt="<?= e($record['name']) ?>" loading="lazy" decoding="async"><?php endif; ?>
+      <?php $image = $menuPhotoSrc($record['image_url'] ?? ''); if ($image !== ''): ?><button type="button" class="gd-media-button" data-gd-media-trigger><img class="menu-image" src="<?= e($image) ?>" alt="<?= e($record['name']) ?>" loading="lazy" decoding="async"></button><?php endif; ?>
       <h3><?= e($record['name']) ?></h3>
       <?php if (($record['is_featured'] ?? false) === true): ?><span class="menu-featured"><?= e(t($site, 'menu.featured')) ?></span><?php endif; ?>
       <?php if (text($record['description'] ?? '') !== ''): ?><p><?= e($record['description']) ?></p><?php endif; ?>

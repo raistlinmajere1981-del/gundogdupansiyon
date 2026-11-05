@@ -1,8 +1,5 @@
 // Site presentation only; canonical widget owns intents, gates, form state and transport.
-import {mountMediaViewer} from './media-viewer.mjs';
-
 export function mount({language}) {
-  mountMediaViewer({language});
   let discoveryObserver;
   let widgetObserver;
   const decorate = root => {
