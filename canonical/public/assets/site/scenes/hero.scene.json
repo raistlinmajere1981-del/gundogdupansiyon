@@ -116,8 +116,8 @@
           835.87
         ],
         [
-          867.87,
-          743.26
+          720.74,
+          619.53
         ],
         [
           1075.27,
@@ -155,10 +155,10 @@
       "enabled": true,
       "seed": "1",
       "params": {
-        "count": 140,
-        "speed": 1.45,
+        "count": 547,
+        "speed": 2.5,
         "opacity": 1.1,
-        "bandOpacity": 0.69,
+        "bandOpacity": 1.55,
         "length": 1,
         "drift": 1
       }
