@@ -1333,5 +1333,12 @@
   "checkout.urunler_toplami_0": "Ürünler toplamı: {0}",
   "checkout.uye_olmadan_devam_edebilirsiniz": "Üye olmadan devam edebilirsiniz.",
   "checkout.il": "İl",
-  "checkout.email_unconfigured": "E-posta hizmeti hazırlanıyor. Yeni hesap ve şifre yenileme kapalı; misafir alışveriş yapabilirsiniz."
+  "checkout.email_unconfigured": "E-posta hizmeti hazırlanıyor. Yeni hesap ve şifre yenileme kapalı; misafir alışveriş yapabilirsiniz.",
+  "theme.gundogdu.qr.view": "Menüyü görüntüle",
+  "theme.gundogdu.qr.demo": "Demo Masa B3 · Sipariş ver",
+  "theme.gundogdu.qr.notice": "Buradan gönderilen sipariş işletmenin Talepler ekranına ulaşır. İşletme onaylayınca masanın adisyonuna eklenir.",
+  "theme.gundogdu.menu.kicker": "Gideros mutfağı",
+  "theme.gundogdu.menu.title": "Lezzetlerimiz",
+  "theme.gundogdu.menu.table_label": "Masa siparişiniz",
+  "theme.gundogdu.menu.close_cart": "Sepeti kapat"
 }

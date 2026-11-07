@@ -27,6 +27,13 @@ for path, page in [('odalar', 'rooms'), ('odalar/oda', 'rooms'), ('restoran', 'r
     assert any(file.endswith('/canonical/public/index.php') for file in reply['included'])
     assert not any(file.endswith('/inc/site.php') for file in reply['included'])
 
+qr_token = 'ABCDEFGHIJKLMNOPQRSTUVWX'
+qr = probe('/qr-menu/', 'lang=tr&table=' + qr_token + '&category=TEST-cat')
+assert qr['status'] == 302
+qr_location = [header[10:] for header in qr['headers'] if header.startswith('Location: ')][0]
+qr_params = parse_qs(urlparse(qr_location).query)
+assert qr_params['page'] == ['menu'] and qr_params['table'] == [qr_token]
+
 for query in ['id[]=bad', 'id=%0Ainjection', 'id=' + 'x' * 2049, 'redirect=https://fixture.test']:
     reply = probe('/odalar/', query)
     assert reply['status'] == 400 and reply['body'] == '' and reply['headers'] == []

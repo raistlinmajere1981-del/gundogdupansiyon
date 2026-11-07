@@ -15,6 +15,18 @@ export function mount({language}) {
       }
     });
   }
+  const qrNav = document.querySelector('[data-qr-demo-nav]');
+  if (qrNav) {
+    document.addEventListener('click', event => {
+      if (qrNav.open && !qrNav.contains(event.target)) qrNav.open = false;
+    });
+    qrNav.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && qrNav.open) {
+        event.preventDefault(); qrNav.open = false;
+        qrNav.querySelector('summary')?.focus();
+      }
+    });
+  }
   let discoveryObserver;
   let widgetObserver;
   const decorate = root => {

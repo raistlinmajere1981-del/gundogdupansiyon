@@ -10,10 +10,14 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
   <?php $favicon = favicon_url($site, $site['favicon'] ?? ''); if ($favicon !== ''): ?><link rel="icon" href="<?= e($favicon) ?>"><?php endif; ?>
   <?php if ($publication['description'] !== ''): ?><meta name="description" content="<?= e($publication['description']) ?>"><?php endif; ?>
   <?php if ($view['canonical'] !== ''): ?><link rel="canonical" href="<?= e($view['canonical']) ?>"><?php endif; ?>
-  <?php if (in_array($view['page'], ['missing','account'], true)): ?><meta name="robots" content="noindex, nofollow"><?php endif; ?>
+  <?php if (in_array($view['page'], ['missing','account'], true) || !empty($view['pages'][$view['page']]['internal']) || ($view['page'] === 'menu' && ($view['table_token'] ?? '') !== '')): ?><meta name="robots" content="noindex, nofollow"><?php endif; ?>
+  <?php if ($view['page'] === 'menu' && ($view['table_token'] ?? '') !== ''): ?><meta name="referrer" content="no-referrer"><?php endif; ?>
   <?php $structured = structured_data($site, $view); if ($structured !== []): ?><script type="application/ld+json"><?= json_html($structured) ?></script><?php endif; ?>
   <link rel="stylesheet" href="<?= e(asset($site, 'core/site.css')) ?>">
-  <link rel="stylesheet" href="<?= e(asset($site, 'site/theme.css') . '?v=8') ?>">
+  <?php if ($view['page'] === 'menu' && !empty($publication['features']['table_orders'])): ?>
+    <link rel="stylesheet" href="<?= e(asset($site, 'core/table-orders.css')) ?>">
+  <?php endif; ?>
+  <link rel="stylesheet" href="<?= e(asset($site, 'site/theme.css') . '?v=12') ?>">
 </head>
 <body>
   <a class="skip-link" href="#content"><?= e(t($site, 'nav.skip')) ?></a>
@@ -44,6 +48,12 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_co
   <?php endif; ?>
   <?php if ($view['page'] === 'catalog'): ?>
     <script src="<?= e(asset($site, 'core/storefront.js')) ?>" data-api-base="<?= e($site['module_path']) ?>/api/" defer></script>
+  <?php endif; ?>
+  <?php if ($view['page'] === 'menu' && !empty($publication['features']['table_orders']) && ($view['table_token'] ?? '') !== ''): ?>
+    <script src="<?= e(asset($site, 'core/table-orders.js')) ?>" defer></script>
+  <?php endif; ?>
+  <?php if ($view['page'] === 'menu'): ?>
+    <script src="<?= e(asset($site, 'site/menu-workspace.js')) ?>?v=5" defer></script>
   <?php endif; ?>
   <?php if (!empty($publication['features']['chat']) || !empty($publication['features']['requests']) || $publication['contact']['available'] || !empty($view['demo_widget_visible'])): ?>
     <script src="<?= e(asset($site, 'core/widget.js')) ?>" data-api-base-url="<?= e($site['module_path']) ?>" data-business-name="<?= e($publication['name']) ?>" data-whatsapp-phone="<?= e($publication['contact']['whatsapp'] !== '' ? text($publication['info']['whatsapp'] ?? '') : '') ?>" data-ai-enabled="<?= $publication['features']['chat'] ? 'true' : 'false' ?>" data-requests-enabled="<?= $publication['features']['requests'] ? 'true' : 'false' ?>" data-request-types="<?= e(json_html($publication['info']['request_types'] ?? [])) ?>" data-public-surfaces="<?= e(json_html($publication['info']['public_surfaces'] ?? [])) ?>" data-force-visible="<?= !empty($view['demo_widget_visible']) ? 'true' : 'false' ?>" data-whatsapp-enabled="<?= $publication['contact']['whatsapp'] !== '' ? 'true' : 'false' ?>" defer></script>

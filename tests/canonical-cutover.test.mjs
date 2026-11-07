@@ -14,8 +14,8 @@ const repo=new URL('../',import.meta.url).pathname;
 const upstream=process.env.YA_TEMPLATE_SOURCE || join(repo,'../YardimciAsistan/web-site-template');
 const json=path=>JSON.parse(readFileSync(path,'utf8'));
 const manifest=json(join(repo,'canonical/template-manifest.json'));
-test('all 77 installed common hashes equal incoming release and baseline',()=>{
-  assert.equal(manifest.template_version,'0.7.6'); assert.equal(Object.keys(manifest.common).length,77);
+test('all 90 installed common hashes equal incoming release and baseline',()=>{
+  assert.equal(manifest.template_version,'0.8.0'); assert.equal(Object.keys(manifest.common).length,90);
   assert.deepEqual(inventory(join(repo,'canonical')),manifest.common);
   assert.deepEqual(manifest.common,json(join(upstream,'template-manifest.json')).common);
   assert.deepEqual(inventory(upstream),manifest.common);
@@ -50,7 +50,7 @@ test('public mirror hashes, root adapter and all wrappers use common owner',()=>
 });
 test('deploy package includes canonical and mirrored assets, excludes old runtime and API',()=>{
   const files=packageFiles(repo);
-  for(const path of ['canonical/core/bootstrap.php','canonical/site/config.php','canonical/site/views/pages/home.php','canonical/public/index.php','assets/core/widget.js','assets/vendor/effect-engine/provenance.json','restoran/masa/index.php','assets/site/img/gideros-1-1818.webp']) assert.ok(files.includes(path),path);
+  for(const path of ['canonical/core/bootstrap.php','canonical/site/config.php','canonical/site/views/pages/home.php','canonical/public/index.php','assets/core/widget.js','assets/vendor/effect-engine/provenance.json','restoran/masa/index.php','assets/site/img/gideros-1-1818.webp','assets/site/menu-workspace.js','canonical/public/assets/site/menu-workspace.js']) assert.ok(files.includes(path),path);
   for(const path of files) assert.ok(!/^(?:inc\/|yardimci-asistan\/|assets\/(?:assistant|i18n|js|css|effects|effect-engine|vendor\/pannellum)\/)|^assets\/[^/]+\.js$/.test(path),path);
   const access=readFileSync(join(repo,'.htaccess'),'utf8');
   assert.match(access,/canonical\|inc/); assert.match(access,/assistant\|i18n/); assert.match(access,/!\^\/yardimci-asistan/);

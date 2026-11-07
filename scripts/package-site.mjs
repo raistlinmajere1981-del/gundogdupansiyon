@@ -20,7 +20,7 @@ export function packageFiles(repo) {
     files.push('canonical/site/'+path);
   }
   for (const path of Object.keys(tree(join(repo,'canonical/public/assets/site')))) {
-    if (!/^(?:theme\.(?:css|mjs)|media-viewer\.mjs|(?:media|scenes)\/\.gitkeep|(?:brand|fonts|img)\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.(?:svg|png|jpe?g|webp|avif|ico|woff2?|ttf|txt)|scenes\/(?:effects-manifest\.json|[A-Za-z0-9_-][A-Za-z0-9_.-]*\.scene\.json))$/.test(path)
+    if (!/^(?:theme\.(?:css|mjs)|media-viewer\.mjs|menu-workspace\.js|(?:media|scenes)\/\.gitkeep|(?:brand|fonts|img)\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.(?:svg|png|jpe?g|webp|avif|ico|woff2?|ttf|txt)|scenes\/(?:effects-manifest\.json|[A-Za-z0-9_-][A-Za-z0-9_.-]*\.scene\.json))$/.test(path)
       || /(?:\.local\.|(?:^|\/)(?:secret|credential))/i.test(path)) throw new Error('Unknown site asset: '+path);
     files.push('canonical/public/assets/site/'+path);
   }

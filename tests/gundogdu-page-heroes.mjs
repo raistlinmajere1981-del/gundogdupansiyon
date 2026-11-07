@@ -40,7 +40,7 @@ test('every interior page owns one unique hard-coded hero photo',()=>{
 });
 test('photo credits and overlay remain compact and accessible',()=>{
   assert.ok(css.includes('rgba(14,37,34,.64)'),'home overlay too dark');
-  assert.ok(main.includes("'?v=8'"),'hero style cache version did not increase');
+  assert.ok(main.includes("'?v=12'"),'hero style cache version did not increase');
   assert.ok(view.includes('aria-hidden="true"'),'page hero must not duplicate H1');
   assert.ok(css.includes('object-fit:contain'),'hero photo should display fully rather than crop');
   assert.ok(css.includes('background-image:var(--gd-hero-source)'),'missing blurred photo continuation');

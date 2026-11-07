@@ -52,6 +52,55 @@ foreach($pages as $page=>$definition) {
     preg_match_all('~(?:src|href)="(/assets/[^"?]+)"~',$rendered,$assets);
     foreach($assets[1] as $asset) check(is_file(__DIR__.'/..'.$asset),'Root asset exists: '.$asset);
 }
+// QR table context stays in the Gündoğdu-specific menu layout while the shared
+// order renderer owns cart actions, price validation, and submit behavior.
+$sources['menu']['data']['table_orders_enabled'] = true;
+$sources['menu']['data']['items'][0]['price'] = 25;
+$sources['menu']['data']['items'][0]['currency'] = 'TRY';
+$qrProjection = \YaSite\project_publication($business, $sources, '/yardimci-asistan', 'tr');
+check($qrProjection['features']['table_orders'] === true, 'Published menu enables ordering');
+$qrView = ['publication'=>$qrProjection,'pages'=>\YaSite\available_pages($qrProjection,$config,$root),
+    'page'=>'menu','title'=>'TEST QR Menü','room'=>null,'table'=>null,'table_token'=>'ABCDEFGHIJKLMNOPQRSTUVWX',
+    'menu_category'=>'','menu_categories'=>$qrProjection['categories'],'effects'=>[],'canonical'=>'','status'=>'ok',
+    'demo_widget_visible'=>false];
+ob_start(); \YaSite\render_view('layout',$qrView,$site); $qrHtml=ob_get_clean();
+foreach(['data-table-order', 'data-menu-entry-id="TEST-item"', 'data-table-order-submit', '/assets/core/table-orders.js',
+    '/assets/core/table-orders.css', 'name="table"', 'content="no-referrer"',
+    'data-gd-menu-workspace', 'data-gd-menu-filter', 'data-gd-category-id',
+    'gd-menu-order-rail', 'data-gd-cart-toggle', '/assets/site/menu-workspace.js'] as $needle) {
+    check(str_contains($qrHtml,$needle),'QR site-owned integration missing: '.$needle);
+}
+// A private server-side fixture makes the public demo menu point to the
+// same real table token without committing a production bearer token.
+$demoTokenFixture = tempnam(sys_get_temp_dir(), 'gd-qr-fixture-');
+check(is_string($demoTokenFixture), 'Temporary demo token fixture created');
+$fixtureToken = 'ABCDEFGHIJKLMNOPQRSTUVWX';
+file_put_contents($demoTokenFixture, $fixtureToken);
+putenv('YA_GUNDOGDU_DEMO_QR_PATH=' . $demoTokenFixture);
+ob_start(); \YaSite\render_view('layout',$qrView,$site); $demoNavHtml=ob_get_clean();
+check(str_contains($demoNavHtml, 'data-qr-demo-nav'), 'Header QR menu is a dropdown');
+check(str_contains($demoNavHtml, 'data-demo-table-order'), 'Demo table appears when ordering is active');
+check(str_contains($demoNavHtml, 'table=' . $fixtureToken), 'Demo link uses live B3 QR token');
+check(!str_contains($demoNavHtml, 'GD_DEMO_TABLE_B3_ORDER_1'), 'Legacy simulation marker is not exposed');
+check(!str_contains($demoNavHtml, 'data-demo-simulation'), 'Real B3 order is not silently simulated');
+$qrView['table_token']='';
+ob_start(); \YaSite\render_view('layout',$qrView,$site); $ordinaryMenu=ob_get_clean();
+check(!str_contains($ordinaryMenu,'data-table-order-submit') && !str_contains($ordinaryMenu,'/assets/core/table-orders.js'),
+    'Ordinary QR menu remains a read-only menu');
+check(str_contains($ordinaryMenu, 'data-gd-menu-workspace') && str_contains($ordinaryMenu, '/assets/site/menu-workspace.js'),
+    'Client-side category switching remains active for read-only menu');
+check(!str_contains($ordinaryMenu, 'data-gd-cart-toggle'), 'Read-only menu does not expose cart drawer');
+check(str_contains($ordinaryMenu, '<noscript><button type="submit">'), 'Category submit fallback exists only without JavaScript');
+$qrView['table_token']='ABCDEFGHIJKLMNOPQRSTUVWX';
+$qrProjection['features']['table_orders']=false;
+$qrView['publication']=$qrProjection;
+ob_start(); \YaSite\render_view('layout',$qrView,$site); $closedQr=ob_get_clean();
+check(!str_contains($closedQr,'data-table-order-submit') && !str_contains($closedQr,'/assets/core/table-orders.js'),
+    'Disabled table order does not expose submit actions');
+check(!str_contains($closedQr, 'data-demo-table-order'), 'Order-closed site hides demo table link');
+unlink($demoTokenFixture);
+putenv('YA_GUNDOGDU_DEMO_QR_PATH');
+
 restore_error_handler();
 foreach([[true,false],[false,true],[false,false]] as [$ai,$requests]) {
     $alternate=$business;$alternate['business']['ai_enabled']=$ai;$alternate['business']['requests_enabled']=$requests;
@@ -70,7 +119,7 @@ foreach(['rooms','tables','menu'] as $key) $sources[$key]['data']['enabled']=fal
 $closed=\YaSite\available_pages(\YaSite\project_publication($business,$sources,'/yardimci-asistan','tr'),$config,$root);
 foreach(['rooms','restaurant','menu'] as $page) check(!isset($closed[$page]),'Endpoint enabled OFF: '.$page);
 $empty=\YaSite\available_pages(\YaSite\project_publication([],[],'/yardimci-asistan','tr'),$config,$root);
-check(array_keys($empty)===['home'],'Unavailable publication only home');
+check(array_keys(array_filter($empty, static fn(array $entry): bool => ($entry['internal'] ?? false) !== true)) === ['home'], 'Unavailable publication only exposes public home');
 $business['localization']=['version'=>1,'source_language'=>'tr','target_languages'=>['en'],'languages'=>[['code'=>'en','locale'=>'en-GB','nativeName'=>'English'],['code'=>'de','locale'=>'de-DE','nativeName'=>'Deutsch']], 'site_catalog'=>['id'=>$source['id'],'entries'=>$source['entries']], 'translations'=>['site_text'=>[$source['id'].':page.home'=>['en'=>['text'=>'TEST Home']]]]];
 $_GET=['lang'=>'en'];$translated=\YaSite\language_context($root,$business);
 check($translated['code']==='en' && $translated['messages']['page.home']==='TEST Home','Published locale ON with matching source hash');

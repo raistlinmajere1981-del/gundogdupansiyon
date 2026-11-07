@@ -8,6 +8,16 @@ $languageLink = static function (string $code) use ($view, $site): string {
 $flag = static function (string $code) use ($site): string {
     return in_array($code, ['tr', 'en'], true) ? asset($site, 'site/brand/flag-' . $code . '.svg') : '';
 };
+// Owner-only demo site: use the actual B3 table token from a private, non-versioned
+// server file. This deliberately enables real requests via the public demo link.
+$demoQrPath = getenv('YA_GUNDOGDU_DEMO_QR_PATH') ?: '/home/yardimciasistangunduodu/.gundogdu-demo-table-token';
+$demoQrToken = '';
+if (is_file($demoQrPath) && !is_link($demoQrPath)) {
+    $candidate = trim((string) file_get_contents($demoQrPath));
+    if (preg_match('/^[A-Za-z0-9_-]{24}$/D', $candidate)) $demoQrToken = $candidate;
+}
+$demoOrderVisible = ($view['publication']['features']['table_orders'] ?? false) === true && $demoQrToken !== '';
+
 ?>
 <header class="site-header">
   <div class="shell gd-header-shell">
@@ -36,7 +46,26 @@ $flag = static function (string $code) use ($site): string {
     </div>
     <div class="gd-header-bottom">
       <button type="button" class="menu-toggle" aria-expanded="true" aria-controls="main-navigation" data-menu-toggle hidden><?= e(t($site, 'nav.close')) ?></button>
-      <nav id="main-navigation" class="main-navigation" aria-label="<?= e(t($site, 'nav.main')) ?>"><?php render_navigation($view, $site); ?></nav>
+      <nav id="main-navigation" class="main-navigation" aria-label="<?= e(t($site, 'nav.main')) ?>">
+        <?php foreach ($view['pages'] as $pageId => $page): ?>
+          <?php if (!empty($page['internal'])) continue; ?>
+          <?php if ($pageId === 'menu'): ?>
+            <details class="gd-qr-nav" data-qr-demo-nav>
+              <summary<?= $view['page'] === 'menu' ? ' aria-current="page"' : '' ?>><?= e(t($site, $page['key'])) ?>
+                <svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 7 5 5 5-5"/></svg>
+              </summary>
+              <div class="gd-qr-nav-options">
+                <a href="<?= e(page_url($site, 'menu')) ?>"<?= $view['page'] === 'menu' && ($view['table_token'] ?? '') === '' ? ' aria-current="page"' : '' ?>><?= e(t($site, 'theme.gundogdu.qr.view')) ?></a>
+                <?php if ($demoOrderVisible): ?>
+                  <a data-demo-table-order href="<?= e(page_url($site, 'menu') . '&table=' . rawurlencode($demoQrToken)) ?>"<?= ($view['table_token'] ?? '') === $demoQrToken ? ' aria-current="page"' : '' ?>><?= e(t($site, 'theme.gundogdu.qr.demo')) ?></a>
+                <?php endif; ?>
+              </div>
+            </details>
+          <?php else: ?>
+            <a href="<?= e(page_url($site, $pageId)) ?>"<?= $view['page'] === $pageId ? ' aria-current="page"' : '' ?>><?= e(t($site, $page['key'])) ?></a>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </nav>
     </div>
   </div>
 </header>
