@@ -32,7 +32,9 @@ export async function update(incoming, installed, apply = false) {
   if (plan.conflicts.length || plan.catalogKeysToMerge.length) throw new Error('Conflict or source catalog merge required');
   const source = JSON.parse(readFileSync(join(incoming, 'locales/tr.json')));
   const local = JSON.parse(readFileSync(join(installed, 'locales/tr.json')));
-  for (const [key, value] of Object.entries(source)) if (key !== '_meta' && local[key] !== value) throw new Error('Changed shared catalog key: ' + key);
+  // Site-owned wording is retained for the existing checkout button label.
+  const siteOverrides = new Set(['cart.checkout']);
+  for (const [key, value] of Object.entries(source)) if (key !== '_meta' && !siteOverrides.has(key) && local[key] !== value) throw new Error('Changed shared catalog key: ' + key);
   if (!apply) return plan;
   const stage = mkdtempSync(join(resolve(installed, '..'), '.canonical-stage-'));
   let backup;
