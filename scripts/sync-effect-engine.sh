@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 site_root="$(cd -- "$(dirname -- "$0")/.." && pwd)"
-studio_root="${EFFECT_STUDIO_ROOT:-$site_root/../EfektAtolyesi}"
+studio_root="${EFFECT_STUDIO_ROOT:-$site_root/../../ChannelFoundry/packages/effect-engine}"
 node --input-type=module - "$studio_root" <<'NODE'
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';

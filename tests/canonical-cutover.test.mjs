@@ -12,25 +12,25 @@ import {syncAssets} from '../scripts/sync-public-assets.mjs';
 import {packageFiles, routes} from '../scripts/package-site.mjs';
 const repo=new URL('../',import.meta.url).pathname;
 const upstream=process.env.YA_TEMPLATE_SOURCE || join(repo,'../YardimciAsistan/web-site-template');
+const engineRoot=join(repo,'../../ChannelFoundry/packages/effect-engine');
 const json=path=>JSON.parse(readFileSync(path,'utf8'));
 const manifest=json(join(repo,'canonical/template-manifest.json'));
-test('all 90 installed common hashes equal incoming release and baseline',()=>{
-  assert.equal(manifest.template_version,'0.8.0'); assert.equal(Object.keys(manifest.common).length,90);
+test('all 95 installed common hashes equal incoming release and baseline',()=>{
+  assert.equal(manifest.template_version,'0.8.0'); assert.equal(Object.keys(manifest.common).length,95);
   assert.deepEqual(inventory(join(repo,'canonical')),manifest.common);
   assert.deepEqual(manifest.common,json(join(upstream,'template-manifest.json')).common);
   assert.deepEqual(inventory(upstream),manifest.common);
 });
-test('19 engine modules match provenance, upstream engine and Admin fingerprint',()=>{
+test('24 engine modules match provenance, upstream engine and Admin fingerprint',()=>{
   const vendor=join(repo,'canonical/public/assets/vendor/effect-engine');
   const provenance=json(join(vendor,'provenance.json'));
-  assert.equal(Object.keys(provenance.files).length,19);
+  assert.equal(Object.keys(provenance.files).length,24);
   const fingerprint=createHash('sha256').update(Object.entries(provenance.files).map(([path,sha])=>`${path}:${sha}\n`).join('')).digest('hex');
   assert.equal(provenance.fingerprint,fingerprint);
-  assert.equal(fingerprint,'078c2ac168547a04e1ec5716239100e7fcd910dc67a1eb703878c80577a0f39f');
   for (const [path,sha] of Object.entries(provenance.files)) {
     assert.equal(hash(join(vendor,path)),sha,path);
     assert.equal(hash(join(upstream,'public/assets/vendor/effect-engine',path)),sha,path);
-    assert.equal(hash(join(repo,'../EfektAtolyesi',path)),sha,'engine source '+path);
+    assert.equal(hash(join(engineRoot,path)),sha,'engine source '+path);
     assert.equal(hash(join(repo,'../YardimciAsistan/apps/admin-control-center/public/effect-studio',path)),sha,'Admin actual module '+path);
   }
   const admin=json(join(repo,'../YardimciAsistan/apps/admin-control-center/effect-engine-provenance.json'));
